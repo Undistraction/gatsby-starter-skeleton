@@ -18,7 +18,8 @@ yarn-error.log*
 logs
 *.log
 
-# Generic: Cache
+# Gatsby: Cache
 ################################################################################
 
 .cache
+public/
