@@ -9,6 +9,7 @@
     "gatsby-link": "^1.6.21",
     "gatsby-plugin-google-analytics": "^1.0.8",
     "gatsby-plugin-react-helmet": "^1.0.5",
+    "gatsby-remark-responsive-iframe": "^1.4.8",
     "gatsby-source-filesystem": "^1.5.5",
     "gatsby-transformer-remark": "^1.7.15",
     "js-yaml": "^3.10.0",
