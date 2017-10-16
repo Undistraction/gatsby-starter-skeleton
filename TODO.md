@@ -1,0 +1,1 @@
+- Switch to using react-css-modules babel plugin

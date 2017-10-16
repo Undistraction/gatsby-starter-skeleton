@@ -1,0 +1,95 @@
+@import 'normalize.css/normalize.css';
+
+/* Colours 
+============================================================================= */
+
+@value c-bg: #FDFDFD;
+@value c-base: #111;
+@value c-link: c-base;
+@value c-hover: #C00;
+
+/* Page 
+============================================================================= */
+
+html,
+body,
+#___gatsby {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  background-color: c-bg;
+}
+
+/* Typography 
+============================================================================= */
+
+:root {
+  /* Now 1rem = 10px */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Cousine', monospace;
+  color: c-base;
+  /* Our default font-size */
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+b {
+  font-weight: bold;
+}
+
+i {
+  font-weight: italic;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  max-width: 60em;
+}
+
+p + p {
+  margin-top: 2.2rem;
+}
+
+/* Headers 
+============================================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 2.2rem;
+}
+
+/* Links 
+============================================================================= */
+
+a {
+  text-decoration: none;
+  color: c-base;
+}
+
+a:link {
+  color: c-link;
+}
+
+a:visited {
+  color: c-link;
+}
+
+a:hover {
+  color: c-hover;
+}
+
+a:active {
+  color: c-link;
+}

@@ -1,0 +1,16 @@
+pages:
+  - 
+    id:   home
+    title:   Site / Home Page
+    description:  The home page of the site
+    keywords: home, site
+  - 
+    id:   about
+    title:   Site / About Page
+    description:  The about page of the site
+    keywords: about, site
+  - 
+    id:   fonts
+    title:   Site / Fonts Page
+    description:  The fonts page of the site
+    keywords: fonts, site
