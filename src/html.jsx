@@ -60,17 +60,21 @@ const html = ({
 
 html.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
-  htmlAttributes: PropTypes.object.isRequired,
+  htmlAttributes: PropTypes.object,
   // eslint-disable-next-line react/forbid-prop-types
-  bodyAttributes: PropTypes.object.isRequired,
+  bodyAttributes: PropTypes.object,
+  body: PropTypes.string.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
-  body: PropTypes.object.isRequired,
+  preBodyComponents: PropTypes.array.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
-  preBodyComponents: PropTypes.object.isRequired,
+  postBodyComponents: PropTypes.array.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
-  postBodyComponents: PropTypes.object.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
-  headComponents: PropTypes.object.isRequired,
+  headComponents: PropTypes.array.isRequired,
+};
+
+html.defaultProps = {
+  htmlAttributes: {},
+  bodyAttributes: {},
 };
 
 export default html;
