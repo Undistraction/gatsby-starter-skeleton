@@ -17,7 +17,7 @@ yarn run dev
 
 Open development server in default browser:
 ```
-yarn fun open
+yarn run open
 ```
 
 Build a production version of the site to `/public`:
@@ -51,9 +51,35 @@ The fabric of the site is split into:
   - Layouts found in `src/layouts`.
   - Pages found in `src/pages`.
 
-## Data
+## Articles
 
-Metadata defined in the `gatsby-config.js` is loaded into the `index` layout component using GraphQL and distributed through the component layer as needed. All general site-related data should be defined here.
+Articles are built using the directories in the `articles` directory. Each directory should contain a markdown file and a separate `images` directory. The markdown file should define frontmatter containing at minimum:
+
+- `title` The title of the article (which will also be used for the `title` field in the page head.
+- `date` The data of the article in the form YYYY-MM-DD.
+
+The following fields can also be used:
+
+- `slug` The last fragment used for the page slug.
+- `description` The description metadata for the page.
+- `keywords` The keywords metadata for the page.
+
+## Dynamic Data
+
+Dynamic data is pulled into the application using GraphQL queries in the pages or layouts from where it is passed into the components.
+
+## Site Data
+
+Site metadata, for example company name or start date for a copyright statement is defined in the `metadata` object within `gatsby-config.js`,  pulled into the index layout an passed into the components.
+
+## Metadata
+
+Metadata is drawn from two locations.
+
+- For pages within the  `/pages` dir pull in their metadata from the file `metadata.yaml`, using a unique key.
+- Articles define their metadata in their frontmatter using `title`, `description` and `keywords` fields. 
+
+
 
 ## Linting
 
