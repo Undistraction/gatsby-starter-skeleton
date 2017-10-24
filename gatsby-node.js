@@ -15,7 +15,6 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     node.internal.type === 'MarkdownRemark' &&
     isArticle(node.fileAbsolutePath)
   ) {
-    console.dir(node.fileAbsolutePath);
     // Create a slug using the fronmatter of the doc
     const { frontmatter } = node;
     const slugSource = frontmatter.slug || frontmatter.title;
@@ -61,9 +60,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     `)
       .then(result => {
         result.data.allMarkdownRemark.edges.map(({ node }) => {
-          console.dir(node);
           if (node.fields && isArticle(node.fields.slug)) {
-            console.log(`Create Article Page: ${node.fields.slug}`);
             // Build page
             createPage({
               path: node.fields.slug,

@@ -1,0 +1,17 @@
+.base {
+  display: flex;
+  flex-direction: row;
+}
+
+.nextLink,
+.previousLink {
+  flex: 0 0 auto;
+}
+
+.nextLink {
+  margin-left: auto;
+}
+
+.previousLink {
+  margin-right: auto;
+}
