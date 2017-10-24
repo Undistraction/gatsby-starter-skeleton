@@ -4,6 +4,8 @@ import graphql from 'graphql';
 import Site from '../components/Site/Site';
 import '../styles/global.css';
 
+require('prismjs/themes/prism-twilight.css');
+
 const TemplateWrapper = ({ children, data }) => (
   <Site data={data}>{children}</Site>
 );

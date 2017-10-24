@@ -8,6 +8,18 @@
 @value c-link: c-base;
 @value c-hover: #C00;
 
+/* Reset Box Sizing  
+============================================================================= */
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 /* Page 
 ============================================================================= */
 

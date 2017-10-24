@@ -7,6 +7,7 @@ import styles from './SiteNav.module.css';
 const SiteNav = ({ className }) => (
   <nav styleName="base" className={className}>
     <Link to="/">Home</Link>
+    <Link to="/articles">Articles</Link>
     <Link to="/fonts">Fonts</Link>
     <Link to="/about">About</Link>
   </nav>

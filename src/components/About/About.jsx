@@ -15,8 +15,4 @@ const About = () => (
   </div>
 );
 
-// About.propTypes = {
-//  className: React.PropTypes.string.isRequired,
-// };
-
 export default CSSModules(About, styles);
