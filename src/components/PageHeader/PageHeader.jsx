@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 import styles from './PageHeader.module.css';
 import PageTitle from '../PageTitle/PageTitle';
@@ -10,8 +11,8 @@ const PageHeader = ({ title, className }) => (
 );
 
 PageHeader.propTypes = {
-  title: React.PropTypes.string.isRequired,
-  className: React.PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default CSSModules(PageHeader, styles);

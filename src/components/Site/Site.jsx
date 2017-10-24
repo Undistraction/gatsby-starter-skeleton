@@ -5,13 +5,11 @@ import styles from './Site.module.css';
 import SiteHeader from '../SiteHeader/SiteHeader';
 import SiteBody from '../SiteBody/SiteBody';
 import SiteFooter from '../SiteFooter/SiteFooter';
-import Head from '../Head/Head';
 
 const Site = ({ children, data }) => {
   const { siteMetadata: metadata } = data.site;
   return (
     <div styleName="base">
-      <Head />
       <SiteHeader className={styles.header} title={metadata.title} />
       <SiteBody className={styles.body}>{children()}</SiteBody>
       <SiteFooter className={styles.footer} metadata={metadata} />

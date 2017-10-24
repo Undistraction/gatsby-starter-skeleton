@@ -8,6 +8,7 @@ import Metadata from '../components/Metadata/Metadata';
 import loadMetadata from '../utils/loadMetadata';
 
 const ArticlesPage = ({ data }) => {
+  console.log('Articles Page');
   const metadata = loadMetadata('articles');
   const articles = pluck('node')(data.allMarkdownRemark.edges);
   const { totalCount: itemCount } = data.allMarkdownRemark;
@@ -28,7 +29,10 @@ ArticlesPage.propTypes = {
 
 export const query = graphql`
   query IndexQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fileAbsolutePath: { regex: "/src/content/articles/" } }
+    ) {
       totalCount
       edges {
         node {

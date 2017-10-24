@@ -2,14 +2,20 @@ const slugify = require('slugify');
 const path = require('path');
 
 const ARTICLE_TEMPLATE = './src/templates/article.jsx';
+const ARTICLES_REGEX = /articles\/./;
 
 const toSlug = source => slugify(source, { lower: true });
+const isArticle = filepath => ARTICLES_REGEX.test(filepath);
 
 // Called whenever a new node is created in the graph
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators;
   // Target only nodes created by Markdown Remark from markdown docs.
-  if (node.internal.type === 'MarkdownRemark') {
+  if (
+    node.internal.type === 'MarkdownRemark' &&
+    isArticle(node.fileAbsolutePath)
+  ) {
+    console.dir(node.fileAbsolutePath);
     // Create a slug using the fronmatter of the doc
     const { frontmatter } = node;
     const slugSource = frontmatter.slug || frontmatter.title;
@@ -55,15 +61,19 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     `)
       .then(result => {
         result.data.allMarkdownRemark.edges.map(({ node }) => {
-          // Build page
-          createPage({
-            path: node.fields.slug,
-            component: path.resolve(ARTICLE_TEMPLATE),
-            context: {
-              // Data passed to context is available in page queries as GraphQL variables.
-              slug: node.fields.slug,
-            },
-          });
+          console.dir(node);
+          if (node.fields && isArticle(node.fields.slug)) {
+            console.log(`Create Article Page: ${node.fields.slug}`);
+            // Build page
+            createPage({
+              path: node.fields.slug,
+              component: path.resolve(ARTICLE_TEMPLATE),
+              context: {
+                // Data passed to context is available in page queries as GraphQL variables.
+                slug: node.fields.slug,
+              },
+            });
+          }
         });
         resolve();
       })

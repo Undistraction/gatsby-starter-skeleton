@@ -6,15 +6,17 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "gatsby": "^1.9.77",
+    "gatsby-image": "^1.0.14",
     "gatsby-link": "^1.6.21",
     "gatsby-plugin-google-analytics": "^1.0.8",
     "gatsby-plugin-react-helmet": "^1.0.5",
-    "gatsby-plugin-sharp": "^1.6.9",
+    "gatsby-plugin-sharp": "^1.6.10",
     "gatsby-remark-prismjs": "^1.2.8",
     "gatsby-remark-responsive-iframe": "^1.4.8",
     "gatsby-remark-responsive-image": "^1.0.0-alpha13-alpha.435e0178",
     "gatsby-source-filesystem": "^1.5.5",
     "gatsby-transformer-remark": "^1.7.15",
+    "gatsby-transformer-sharp": "^1.6.12",
     "js-yaml": "^3.10.0",
     "moment": "^2.19.1",
     "normalize.css": "^7.0.0",
@@ -22,9 +24,7 @@
     "react-css-modules": "^4.7.1",
     "slugify": "^1.2.1"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
@@ -32,8 +32,10 @@
     "open": "open http://localhost:8000",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "deploy-staging": "yarn run build && yarn run surge ./public undistraction-com-staging.surge.sh",
-    "deploy-production": "yarn run build && yarn run surge ./public undistraction.com",
+    "deploy-staging":
+      "yarn run build && yarn run surge ./public example-com-staging.surge.sh",
+    "deploy-production":
+      "yarn run build && yarn run surge ./public example.com",
     "test": "echo \"Error: no test specified\" && exit 1",
     "graph": "open http://localhost:8000/___graphql"
   },
@@ -48,9 +50,5 @@
     "prettier": "^1.7.4",
     "surge": "^0.19.0"
   },
-  "browserslist": [
-    "> 1%",
-    "IE >= 9",
-    "last 2 versions"
-  ]
+  "browserslist": ["> 1%", "IE >= 9", "last 2 versions"]
 }

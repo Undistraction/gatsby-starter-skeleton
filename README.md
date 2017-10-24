@@ -89,3 +89,11 @@ Linting is via ESLint and Prettier, configured in `.eslintrc` and `.prettierrc` 
 
 Google analytics is integrated using a Gatsby plugin and configured with a tracking id in production via an environmental variable. The tracking ID can be found on your `analytics.google.com` account for relevant property, and will take the form: `UA-XXXXXXXX-X`.
 
+
+## Placeholder images
+
+Via placeholder.com
+
+```
+http://via.placeholder.com/2400x1400.jpg?text=Home+2400+x+1400
+```

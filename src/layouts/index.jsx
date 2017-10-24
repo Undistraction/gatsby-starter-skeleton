@@ -6,11 +6,12 @@ import '../styles/global.css';
 
 require('prismjs/themes/prism-twilight.css');
 
-const TemplateWrapper = ({ children, data }) => (
+// eslint-disable-next-line no-unused-vars
+const LayoutTemplate = ({ children, data, location }) => (
   <Site data={data}>{children}</Site>
 );
 
-TemplateWrapper.propTypes = {
+LayoutTemplate.propTypes = {
   children: PropTypes.func.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
@@ -28,4 +29,4 @@ export const query = graphql`
   }
 `;
 
-export default TemplateWrapper;
+export default LayoutTemplate;
