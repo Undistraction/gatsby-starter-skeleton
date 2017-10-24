@@ -1,1 +1,8 @@
+- Implement responsive images via gatsby-image
+- Implement markdown files for fragments.
+- Implement Tags
+- Implement RSS Feed
+- Implement Next / Previous articles
 - Switch to using react-css-modules babel plugin
+- Improve handling of styleName for child components - pass styleName instead of className
+- Investigate Caching
