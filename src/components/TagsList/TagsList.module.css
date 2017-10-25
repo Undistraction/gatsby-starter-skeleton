@@ -1,0 +1,9 @@
+.base {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+.base > * + * {
+  margin-left: 30px;
+}

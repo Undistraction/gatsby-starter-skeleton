@@ -7,11 +7,11 @@ import styles from './ArticleListItem.module.css';
 const ArticleListItem = ({ article }) => {
   const { frontmatter, fields } = article;
   return (
-    <li styleName="base">
+    <div styleName="base">
       <date>{frontmatter.date}</date>{' '}
       <Link to={fields.slug}>{frontmatter.title}</Link>
       <p>{article.excerpt}</p>
-    </li>
+    </div>
   );
 };
 

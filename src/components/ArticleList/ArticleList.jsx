@@ -7,7 +7,9 @@ import styles from './ArticleList.module.css';
 
 const mapIndexed = addIndex(map);
 const renderArticles = mapIndexed((article, key) => (
-  <ArticleListItem article={article} key={key} />
+  <li key={key}>
+    <ArticleListItem article={article} />
+  </li>
 ));
 
 const ArticleList = ({ articles }) => (

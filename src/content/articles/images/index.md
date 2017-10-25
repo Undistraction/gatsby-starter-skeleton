@@ -3,7 +3,7 @@ title: "Images"
 date: "2017-07-01"
 slug: "images"
 description: Use images in your markdown.
-keywords: images, responisve
+keywords: bacon, images, responsive
 ---
 
 Use images in your markdown and they will be made responsive.

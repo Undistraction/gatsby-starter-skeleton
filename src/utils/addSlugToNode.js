@@ -1,6 +1,4 @@
-const slugify = require('slugify');
-
-const toSlug = source => slugify(source, { lower: true });
+const toSlug = require('./toSlug');
 
 const addSlugToNode = (node, createNodeField) => {
   // Create a slug using the fronmatter of the doc
@@ -12,17 +10,6 @@ const addSlugToNode = (node, createNodeField) => {
     node,
     name: 'slug',
     value: slug,
-  });
-  // Create metadata fields
-  const metadata = {
-    keywords: frontmatter.keywords || '',
-    description: frontmatter.description || '',
-    title: frontmatter.title || '',
-  };
-  createNodeField({
-    node,
-    name: 'metadata',
-    value: metadata,
   });
 };
 

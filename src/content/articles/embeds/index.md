@@ -3,7 +3,7 @@ title: "Embeds"
 date: "2017-09-22"
 slug: "embeds"
 description: Use iframe or objects embeds.
-keywords: iframe, object, embed, responsive
+keywords: eggs, iframe, object, embed, responsive
 ---
 Include iframe or object embeds in your markdown and if they have both width and height set to unitless or pixel values, they will be made responsive.
 

@@ -6,6 +6,7 @@ import graphql from 'graphql';
 import { findIndex, pathEq } from 'ramda';
 import Metadata from '../components/Metadata/Metadata';
 import ArticleNav from '../components/ArticleNav/ArticleNav';
+import TagsList from '../components/TagsList/TagsList';
 
 const previousArticle = (article, articles) => {
   const currentId = article.id;
@@ -21,29 +22,31 @@ const nextArticle = (article, articles) => {
     : null;
 };
 
-const Article = ({ data }) => {
+const ArticlePage = ({ data }) => {
   const article = data.markdownRemark;
   const articles = data.allMarkdownRemark.edges;
-  const { metadata } = article.fields;
+  const { metadata, tags } = article.fields;
+  const { frontmatter } = article;
   return (
     <article>
       <Metadata {...metadata} />
-      <header>{article.frontmatter.title}</header>
+      <header>{frontmatter.title}</header>
       <ArticleNav
         previousArticle={previousArticle(article, articles)}
         nextArticle={nextArticle(article, articles)}
       />
       <div dangerouslySetInnerHTML={{ __html: article.html }} />
+      <TagsList tags={tags} />
     </article>
   );
 };
 
-Article.propTypes = {
+ArticlePage.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
 };
 
-export default Article;
+export default ArticlePage;
 
 export const query = graphql`
   query ArticleQuery($slug: String!) {
@@ -52,12 +55,14 @@ export const query = graphql`
       html
       frontmatter {
         title
+        keywords
       }
       fields {
+        tags
         metadata {
-          keywords
           description
           title
+          keywords
         }
       }
     }
