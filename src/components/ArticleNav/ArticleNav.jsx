@@ -33,9 +33,6 @@ const nextArticleMarkup = nextArticle => {
 };
 
 const ArticleNav = ({ previousArticle, nextArticle }) => {
-  console.dir(previousArticle);
-  console.dir(nextArticle);
-
   return (
     <nav styleName="base">
       {previousArticleMarkup(previousArticle)}
