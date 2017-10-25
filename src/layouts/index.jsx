@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import graphql from 'graphql';
+import 'prismjs/themes/prism-twilight.css';
 import Site from '../components/Site/Site';
 import '../styles/global.css';
-
-require('prismjs/themes/prism-twilight.css');
 
 // eslint-disable-next-line no-unused-vars
 const LayoutTemplate = ({ children, data, location }) => (
