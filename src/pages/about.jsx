@@ -9,7 +9,6 @@ import loadMetadata from '../utils/loadMetadata';
 const mainTextFrom = data => data.mainText.childMarkdownRemark.html;
 
 const AboutPage = ({ data }) => {
-  console.log('About Page');
   const metadata = loadMetadata('about');
   return (
     <Page title="About">
