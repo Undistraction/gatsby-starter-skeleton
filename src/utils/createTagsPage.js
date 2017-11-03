@@ -3,13 +3,14 @@ const path = require('path');
 const toSlug = require('./toSlug');
 const { TAG_PATH } = require('./templatePaths');
 const queryAllArticleNodes = require('./queries/queryAllArticleNodes');
+const listToArray = require('./listToArray');
 
 const markdownNodes = data => data.allMarkdownRemark.edges;
 const findKeywords = node => node.node.frontmatter.keywords;
 
 const collectTagsFromNode = (acc, node) => {
   const keywords = findKeywords(node) || [];
-  return acc.concat(keywords.split(','));
+  return acc.concat(listToArray(keywords));
 };
 
 const collectTags = compose(uniq, reduce(collectTagsFromNode, []));
@@ -22,6 +23,7 @@ const createTagsPage = (graphql, createPage) =>
         const tags = collectTags(nodes);
         map(tag => {
           const slug = `tags/${toSlug(tag)}`;
+          console.log(`Creating page for ${tag} at ${slug}`);
           createPage({
             path: slug,
             component: path.resolve(TAG_PATH),
