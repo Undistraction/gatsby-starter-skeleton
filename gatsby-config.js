@@ -35,6 +35,8 @@ module.exports = {
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
               maxWidth: 2400,
+              // Set the quality of the processed images
+              quality: 70,
             },
           },
           {
