@@ -41,6 +41,10 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          // Define which files can be used as downloads and where to put them
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+          },
           'gatsby-remark-responsive-iframe',
           {
             resolve: 'gatsby-remark-responsive-image',
