@@ -23,9 +23,19 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'src',
-        path: `${__dirname}/src/`,
+        path: `${__dirname}/src/content/articles`,
       },
     },
+    // Add the pages dir to src path
+    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/src/content/pages`,
+      },
+    },
+
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
