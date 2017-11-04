@@ -7,13 +7,17 @@ module.exports = {
     startYear: 2017,
   },
   plugins: [
+    // Add react-helmet for changing tags in the page head
     'gatsby-plugin-react-helmet',
+    // Add support for Google analytics
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
+        // Get tracking id for property from your Google Analytics account.
         trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
       },
     },
+    // Add the articles dir to src path
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-filesystem',
