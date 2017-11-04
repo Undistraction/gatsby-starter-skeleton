@@ -27,7 +27,7 @@ export default AboutPage;
 
 export const query = graphql`
   query AboutPageQuery {
-    mainText: file(relativePath: { eq: "content/pages/about/main.md" }) {
+    mainText: file(relativePath: { eq: "about/main.md" }) {
       childMarkdownRemark {
         html
       }

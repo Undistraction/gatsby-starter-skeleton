@@ -32,16 +32,14 @@ export default IndexPage;
 
 export const query = graphql`
   query FrontPageQuery {
-    mainImageSizes: file(
-      relativePath: { eq: "content/pages/home/images/main.jpg" }
-    ) {
+    mainImageSizes: file(relativePath: { eq: "home/images/main.jpg" }) {
       childImageSharp {
         sizes {
           ...GatsbyImageSharpSizes
         }
       }
     }
-    mainText: file(relativePath: { eq: "content/pages/home/main.md" }) {
+    mainText: file(relativePath: { eq: "home/main.md" }) {
       childMarkdownRemark {
         html
       }
