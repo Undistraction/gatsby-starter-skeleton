@@ -32,14 +32,12 @@ const nextArticleMarkup = nextArticle => {
   return '';
 };
 
-const ArticleNav = ({ previousArticle, nextArticle }) => {
-  return (
-    <nav styleName="base">
-      {previousArticleMarkup(previousArticle)}
-      {nextArticleMarkup(nextArticle)}
-    </nav>
-  );
-};
+const ArticleNav = ({ previousArticle, nextArticle }) => (
+  <nav styleName="base">
+    {previousArticleMarkup(previousArticle)}
+    {nextArticleMarkup(nextArticle)}
+  </nav>
+);
 
 ArticleNav.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
