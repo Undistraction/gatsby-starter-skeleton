@@ -1,8 +1,0 @@
-.base {
-  display: flex;
-  flex-direction: row;
-}
-
-.base > * + * {
-  margin-left: 20px;
-}

@@ -4,8 +4,8 @@ const TEMPLATES_DIR = './src/templates/';
 
 const templatePathForFile = file => path.join(TEMPLATES_DIR, file);
 
-const ARTICLE_PATH = templatePathForFile('article.jsx');
-const TAG_PATH = templatePathForFile('tag.jsx');
+const ARTICLE_PATH = templatePathForFile('article.js');
+const TAG_PATH = templatePathForFile('tag.js');
 
 const TEMPLATE_PATHS = {
   ARTICLE_PATH,

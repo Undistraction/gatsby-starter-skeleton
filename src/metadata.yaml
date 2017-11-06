@@ -10,11 +10,6 @@ pages:
     description:  The about page of the site
     keywords: about, site
   - 
-    id:   fonts
-    title:   Site / Fonts Page
-    description:  The fonts page of the site
-    keywords: fonts, site
-  - 
     id:   articles
     title:   Site / Articles Page
     description:  The articles

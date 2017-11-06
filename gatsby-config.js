@@ -2,11 +2,13 @@ module.exports = {
   siteMetadata: {
     owner: 'Your Name Here',
     // This will be used in the site title
-    title: 'Your Site Name Here',
+    title: 'Gatsby Skeleton',
     // This will be used in the site copyright
     startYear: 2017,
   },
   plugins: [
+    // Use styled-components for CSS-in-JS
+    'gatsby-plugin-styled-components',
     // Add react-helmet for changing tags in the page head
     'gatsby-plugin-react-helmet',
     // Add support for Google analytics

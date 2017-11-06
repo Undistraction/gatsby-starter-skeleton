@@ -1,13 +1,26 @@
 import graphql from 'graphql';
-import ArticlesPage from './ArticlesPage';
+import Template from './ArticleTemplate';
 
-export default ArticlesPage;
+export default Template;
 
-// Note: Ideally this would be in its own file and imported from a Page
-// Container, but Gatsby preprocesses the pages looking for a graphql call.
-// Moving it anywhere else results in an error.
 export const query = graphql`
-  query ArticlesQuery {
+  query ArticleQuery($slug: String) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      html
+      frontmatter {
+        title
+        keywords
+      }
+      fields {
+        tags
+        metadata {
+          description
+          title
+          keywords
+        }
+      }
+    }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fileAbsolutePath: { regex: "/src/content/articles/" } }

@@ -1,37 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import graphql from 'graphql';
-import Page from '../components/Page/Page';
-import Home from '../components/Home/Home';
-import Metadata from '../components/Metadata/Metadata';
-import loadMetadata from '../utils/loadMetadata';
+import HomePage from './HomePage';
 
-const mainTextFrom = data => data.mainText.childMarkdownRemark.html;
-const mainImageSizes = data => data.mainImageSizes.childImageSharp.sizes;
+export default HomePage;
 
-const IndexPage = ({ data }) => {
-  console.log('Home Page');
-  const metadata = loadMetadata('home');
-  return (
-    <Page title="Home">
-      <Metadata {...metadata} />
-      <Home
-        mainImageSizes={mainImageSizes(data)}
-        mainText={mainTextFrom(data)}
-      />
-    </Page>
-  );
-};
-
-IndexPage.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  data: PropTypes.object.isRequired,
-};
-
-export default IndexPage;
-
+// Note: Ideally this would be in its own file and imported from a Page
+// Container, but Gatsby preprocesses the pages looking for a graphql call.
+// Moving it anywhere else results in an error.
 export const query = graphql`
-  query FrontPageQuery {
+  query HomePageQuery {
     mainImageSizes: file(relativePath: { eq: "home/images/main.jpg" }) {
       childImageSharp {
         sizes {

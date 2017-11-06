@@ -97,3 +97,7 @@ Via placeholder.com
 ```
 http://via.placeholder.com/2400x1400.jpg?text=Home+2400+x+1400
 ```
+
+## Thanks
+
+Skull By Tina Rataj-Berard (The Noun Project) [CC BY 3.0 (http://creativecommons.org/licenses/by/3.0)], via Wikimedia Commons
