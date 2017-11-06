@@ -1,5 +1,5 @@
 import graphql from 'graphql';
-import ArticlesPage from './ArticlesPage';
+import ArticlesPage from '../components/ArticlesPage';
 
 export default ArticlesPage;
 

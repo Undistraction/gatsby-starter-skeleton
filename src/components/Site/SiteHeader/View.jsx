@@ -8,7 +8,7 @@ import ViewWrapper from './ViewWrapper';
 
 const View = ({ title }) => (
   <ViewWrapper>
-    <Link styleName="base" to="/">
+    <Link to="/">
       <SiteLogo />
     </Link>
     <SiteTitle>{title}</SiteTitle>

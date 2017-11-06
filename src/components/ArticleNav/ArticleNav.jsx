@@ -33,7 +33,7 @@ const nextArticleMarkup = nextArticle => {
 };
 
 const ArticleNav = ({ previousArticle, nextArticle }) => (
-  <nav styleName="base">
+  <nav>
     {previousArticleMarkup(previousArticle)}
     {nextArticleMarkup(nextArticle)}
   </nav>

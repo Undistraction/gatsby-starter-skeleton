@@ -5,7 +5,7 @@ import Link from 'gatsby-link';
 const ArticleListItem = ({ article }) => {
   const { frontmatter, fields } = article;
   return (
-    <div styleName="base">
+    <div>
       <date>{frontmatter.date}</date>{' '}
       <Link to={fields.slug}>{frontmatter.title}</Link>
       <p>{article.excerpt}</p>

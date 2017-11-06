@@ -10,9 +10,7 @@ const renderArticles = mapIndexed((article, key) => (
   </li>
 ));
 
-const ArticleList = ({ articles }) => (
-  <ul styleName="base">{renderArticles(articles)}</ul>
-);
+const ArticleList = ({ articles }) => <ul>{renderArticles(articles)}</ul>;
 
 ArticleList.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
