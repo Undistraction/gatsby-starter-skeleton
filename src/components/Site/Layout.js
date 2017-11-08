@@ -10,7 +10,8 @@ export default styled.div`
   ${flexVertical};
   ${blockCenterH};
   height: 100%;
-
+  color: ${props => props.theme.baseTextColor};
+  background-color: ${props => props.theme.siteBackgroundColor};
   ${LayoutBody} {
     flex: 1 0 auto;
   }

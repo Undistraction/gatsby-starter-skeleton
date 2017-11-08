@@ -42,6 +42,7 @@ const html = ({
           href="https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i"
           rel="stylesheet"
         />
+        <link rel="icon" href="favicons/favicon.ico?v=2" />
         {headComponents}
         {css}
       </head>
