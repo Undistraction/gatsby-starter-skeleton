@@ -1,26 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { toString } from 'ramda';
-import ViewWrapper from './ViewWrapper';
+import Layout from './Layout';
 
-const SiteFooter = ({ metadata }) => {
+const View = ({ metadata }) => {
   const currentYear = toString(new Date().getFullYear());
   const { owner, startYear } = metadata;
   const dateRange =
     currentYear === startYear ? currentYear : `${startYear}–${currentYear}`;
 
   return (
-    <ViewWrapper>
+    <Layout>
       <p>
         Site and contents &copy; {owner} {dateRange}.
       </p>
-    </ViewWrapper>
+    </Layout>
   );
 };
 
-SiteFooter.propTypes = {
+View.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   metadata: PropTypes.object.isRequired,
 };
 
-export default SiteFooter;
+View.displayName = 'SiteFooter';
+
+export default View;

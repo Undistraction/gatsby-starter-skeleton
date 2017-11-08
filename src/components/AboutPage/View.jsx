@@ -1,3 +1,7 @@
+// -----------------------------------------------------------------------------
+// About Page > View >
+// -----------------------------------------------------------------------------
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import HTMLText from '../../components/shared/HTMLText';

@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import GatsbyLink from 'gatsby-link';
-import CSSModules from 'react-css-modules';
-import styles from './ArticleNav.module.css';
+import Layout, { LayoutPrevious, LayoutNext } from './Layout';
 
 const previousArticleMarkup = previousArticle => {
   if (previousArticle) {
     return (
-      <span className={styles.previousLink}>
+      <span>
         Previous Article:{' '}
         <GatsbyLink to={previousArticle.fields.slug}>
           {previousArticle.frontmatter.title}
@@ -21,7 +20,7 @@ const previousArticleMarkup = previousArticle => {
 const nextArticleMarkup = nextArticle => {
   if (nextArticle) {
     return (
-      <span className={styles.nextLink}>
+      <span>
         Next Page:{' '}
         <GatsbyLink to={nextArticle.fields.slug}>
           {nextArticle.frontmatter.title}
@@ -33,10 +32,10 @@ const nextArticleMarkup = nextArticle => {
 };
 
 const ArticleNav = ({ previousArticle, nextArticle }) => (
-  <nav>
-    {previousArticleMarkup(previousArticle)}
-    {nextArticleMarkup(nextArticle)}
-  </nav>
+  <Layout>
+    <LayoutPrevious>{previousArticleMarkup(previousArticle)}</LayoutPrevious>
+    <LayoutNext>{nextArticleMarkup(nextArticle)}</LayoutNext>
+  </Layout>
 );
 
 ArticleNav.propTypes = {
@@ -51,4 +50,4 @@ ArticleNav.defaultProps = {
   nextArticle: null,
 };
 
-export default CSSModules(ArticleNav, styles);
+export default ArticleNav;

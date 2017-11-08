@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { findIndex, pathEq } from 'ramda';
 import Metadata from '../../components/Metadata';
-import ArticleNav from '../../components/ArticleNav/ArticleNav';
+import ArticleNav from '../../components/ArticleNav';
 import TagList from '../../components/TagList';
 import HTMLText from '../../components/shared/HTMLText';
 

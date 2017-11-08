@@ -1,15 +1,13 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import HBox from '../../../shared/HBox';
+import Layout from './Layout';
 
 const SiteNav = () => (
-  <HBox>
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/articles">Articles</Link>
-      <Link to="/about">About</Link>
-    </nav>
-  </HBox>
+  <Layout>
+    <Link to="/">Home</Link>
+    <Link to="/articles">Articles</Link>
+    <Link to="/about">About</Link>
+  </Layout>
 );
 
 export default SiteNav;

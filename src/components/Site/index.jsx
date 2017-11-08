@@ -1,4 +1,4 @@
 import React from 'react';
-import SiteView from './SiteView';
+import View from './View';
 
-export default props => <SiteView {...props} />;
+export default props => <View {...props} />;

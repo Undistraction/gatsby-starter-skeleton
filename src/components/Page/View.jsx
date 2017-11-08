@@ -1,18 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PageHeader from './PageHeader';
-import VBox from '../shared/VBox';
-import BoxChild from '../shared/BoxChild';
+import Layout, { LayoutHeader, LayoutBody } from './Layout';
 
 const Page = ({ title, children }) => (
-  <VBox>
-    <BoxChild>
+  <Layout>
+    <LayoutHeader>
       <PageHeader title={title} />
-    </BoxChild>
-    <BoxChild grow={1}>
+    </LayoutHeader>
+    <LayoutBody>
       <div>{children}</div>
-    </BoxChild>
-  </VBox>
+    </LayoutBody>
+  </Layout>
 );
 
 Page.propTypes = {

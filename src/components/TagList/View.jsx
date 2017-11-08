@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { map, addIndex } from 'ramda';
-import HList from '../shared/Hlist';
 import Tag from './Tag';
+import Layout from './Layout';
 
 const mapIndexed = addIndex(map);
 const buildTags = mapIndexed((tag, key) => (
@@ -13,7 +13,7 @@ const buildTags = mapIndexed((tag, key) => (
 
 const View = ({ tags }) => {
   const tagsElements = buildTags(tags);
-  return <HList>{tagsElements}</HList>;
+  return <Layout>{tagsElements}</Layout>;
 };
 
 View.propTypes = {

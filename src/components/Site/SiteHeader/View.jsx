@@ -4,16 +4,16 @@ import Link from 'gatsby-link';
 import SiteLogo from './SiteLogo';
 import SiteTitle from './SiteTitle';
 import SiteNav from './SiteNav';
-import ViewWrapper from './ViewWrapper';
+import Layout from './Layout';
 
 const View = ({ title }) => (
-  <ViewWrapper>
+  <Layout>
     <Link to="/">
       <SiteLogo />
     </Link>
     <SiteTitle>{title}</SiteTitle>
     <SiteNav />
-  </ViewWrapper>
+  </Layout>
 );
 
 View.propTypes = {

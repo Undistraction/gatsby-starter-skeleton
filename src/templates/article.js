@@ -1,5 +1,5 @@
 import graphql from 'graphql';
-import Template from './ArticleTemplate';
+import Template from '../components/ArticlePage';
 
 export default Template;
 

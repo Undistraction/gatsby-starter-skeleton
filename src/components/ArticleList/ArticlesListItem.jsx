@@ -1,8 +1,12 @@
+// -----------------------------------------------------------------------------
+// Articles List > View > ArticlesListItem
+// -----------------------------------------------------------------------------
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 
-const ArticleListItem = ({ article }) => {
+const ArticlesListItem = ({ article }) => {
   const { frontmatter, fields } = article;
   return (
     <div>
@@ -13,8 +17,9 @@ const ArticleListItem = ({ article }) => {
   );
 };
 
-ArticleListItem.propTypes = {
+ArticlesListItem.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   article: PropTypes.object.isRequired,
 };
-export default ArticleListItem;
+
+export default ArticlesListItem;
