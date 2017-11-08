@@ -64,6 +64,7 @@ The following fields can also be used:
 - `description` The description metadata for the page.
 - `keywords` The keywords metadata for the page.
 
+
 ## Dynamic Data
 
 Dynamic data is pulled into the application using GraphQL queries in the pages or layouts from where it is passed into the components.
@@ -79,7 +80,9 @@ Metadata is drawn from two locations.
 - For pages within the  `/pages` dir pull in their metadata from the file `metadata.yaml`, using a unique key.
 - Articles define their metadata in their frontmatter using `title`, `description` and `keywords` fields. 
 
+## Favicons
 
+Favicons are generated automatically at all configured sizes using the image file `src/images/favicons/favicon.png`.
 
 ## Linting
 

@@ -37,7 +37,23 @@ module.exports = {
         path: `${__dirname}/src/content/pages`,
       },
     },
-
+    {
+      resolve: 'gatsby-plugin-favicon',
+      options: {
+        logo: './src/images/favicon/favicon.png',
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          twitter: true,
+          yandex: false,
+          windows: false,
+        },
+      },
+    },
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
@@ -49,7 +65,7 @@ module.exports = {
           },
           'gatsby-remark-responsive-iframe',
           {
-            resolve: 'gatsby-remark-responsive-image',
+            resolve: 'gatsby-remark-images',
             options: {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
