@@ -6,5 +6,5 @@ import spaceChildrenH from '../../../../styles/mixins/space-children-h';
 export default styled.nav`
   ${flexHorizontal};
   ${uiList};
-  ${spaceChildrenH('15px')};
+  ${props => spaceChildrenH(props.theme.rhythm.hr(1.5))};
 `;
