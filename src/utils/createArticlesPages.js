@@ -1,6 +1,6 @@
 const { map, compose } = require('ramda');
 const path = require('path');
-const reporter = require('gatsby-cli/lib/reporter');
+const reporter = require('./reporter');
 
 const { ARTICLE_PATH } = require('./templatePaths');
 const queryAllArticleNodes = require('./queries/queryAllArticleNodes');

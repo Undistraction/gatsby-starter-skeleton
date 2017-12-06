@@ -25,4 +25,7 @@ module.exports = {
     // Maximum width for the site before it stops growing horizontally.
     maxWidth: 1200,
   },
+  cli: {
+    emoji: '💀',
+  },
 };

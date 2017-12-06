@@ -1,6 +1,6 @@
 const { reduce, compose, uniq, map } = require('ramda');
-const reporter = require('gatsby-cli/lib/reporter');
 const path = require('path');
+const reporter = require('./reporter');
 const toSlug = require('./toSlug');
 const { TAG_PATH } = require('./templatePaths');
 const queryAllArticleNodes = require('./queries/queryAllArticleNodes');

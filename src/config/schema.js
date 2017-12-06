@@ -36,10 +36,15 @@ const layout = Joi.object().keys({
     .required(),
 });
 
+const cli = Joi.object().keys({
+  emoji: Joi.string().optional(),
+});
+
 module.exports = Joi.object().keys({
   meta,
   seo,
   structure,
   media,
   layout,
+  cli,
 });
