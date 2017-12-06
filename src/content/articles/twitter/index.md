@@ -3,7 +3,7 @@ title: "Twitter"
 date: "2017-02-01"
 slug: "twitter"
 description: Link to tweets.
-keywords: images, responsive
+keywords: social-media, twitter
 ---
 
 Use links to tweets and the Twitter JavaScript will be included.
