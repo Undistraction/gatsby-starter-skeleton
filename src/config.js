@@ -13,6 +13,7 @@ module.exports = {
     googleTrackingID: undefined,
   },
   structure: {
+    // Directory path for downloads relative to your root url
     downloadsDirectory: 'downloads',
   },
   media: {

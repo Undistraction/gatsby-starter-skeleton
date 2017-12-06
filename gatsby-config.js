@@ -12,6 +12,8 @@ const trackingConfig = trackingID => ({
   },
 });
 
+const codeDirPath = `${__dirname}/src/content/code`;
+
 const plugins = [
   // Use styled-components for CSS-in-JS
   'gatsby-plugin-styled-components',
@@ -101,7 +103,7 @@ const plugins = [
 
             // Example code links are relative to this dir.
             // eg examples/path/to/file.js
-            directory: `${__dirname}/src/content/code`,
+            directory: codeDirPath,
           },
         },
         {
@@ -119,7 +121,7 @@ const plugins = [
 
             // Example code links are relative to this dir.
             // eg examples/path/to/file.js
-            directory: `${__dirname}/src/content/code`,
+            directory: codeDirPath,
 
             // Optional externals to load from a CDN.
             // This option only applies to REPLs that support it (eg Codepen).
@@ -136,11 +138,6 @@ const plugins = [
             // The redirect page is only shown briefly,
             // But you can use this setting to override its CSS styling.
             // redirectTemplate: `${__dirname}/src/redirect-template.js`),
-
-            // Optional link target.
-            // Note that if a target is specified, "noreferrer" will also be added.
-            // eg <a href="..." target="_blank" rel="noreferrer">...</a>
-            //   target: '_blank',
           },
         },
       ],
