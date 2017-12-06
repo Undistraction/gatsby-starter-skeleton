@@ -1,13 +1,5 @@
 @import 'normalize.css/normalize.css';
 
-/* Colours 
-============================================================================= */
-
-@value c-bg: #FDFDFD;
-@value c-base: #111;
-@value c-link: c-base;
-@value c-hover: #C00;
-
 /* Reset Box Sizing  
 ============================================================================= */
 
@@ -51,7 +43,8 @@ body {
   line-height: 1.4;
 }
 
-b {
+b,
+em {
   font-weight: bold;
 }
 
