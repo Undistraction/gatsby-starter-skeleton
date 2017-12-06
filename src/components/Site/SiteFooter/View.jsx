@@ -2,6 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { toString } from 'ramda';
 import Layout from './Layout';
+import config from '../../../config';
+
+console.log('CONFIG', config);
+
+const credit = () => {
+  if (config.meta.showCredit) {
+    return (
+      <p>
+        Built by <a href="http://undistraction.com">Undistraction</a>
+      </p>
+    );
+  }
+  return '';
+};
 
 const View = ({ metadata }) => {
   const currentYear = toString(new Date().getFullYear());
@@ -14,12 +28,7 @@ const View = ({ metadata }) => {
       <p>
         Site and contents &copy; {owner} {dateRange}.
       </p>
-      <p>
-        Build by{' '}
-        <span role="img" aria-label="Undistraction Logo">
-          ⚫{' '}
-        </span>Undistraction
-      </p>
+      {credit()}
     </Layout>
   );
 };

@@ -6,6 +6,7 @@ module.exports = {
     // This will be used in the site copyright, with a range running from
     // startYear to the current year.
     startYear: 2017,
+    showCredit: true,
   },
   seo: {
     // Your Google Tracking ID, in the form: UA-000000-0.
