@@ -1,5 +1,5 @@
-const createArticlesPage = require('./src/utils/createArticlesPage');
-const createTagsPage = require('./src/utils/createTagsPage');
+const createArticlesPages = require('./src/utils/createArticlesPages');
+const createTagsPages = require('./src/utils/createTagsPages');
 const addSlugToNode = require('./src/utils/addSlugToNode');
 const addMetadataToNode = require('./src/utils/addMetadataToNode');
 const addTagsToNode = require('./src/utils/addTagsToNode');
@@ -23,10 +23,10 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   }
 };
 
-// Called when Gatsby creates the site pages
+// // Called when Gatsby creates the site pages
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
-  const articlePages = createArticlesPage(graphql, createPage);
-  const tagPages = createTagsPage(graphql, createPage);
+  const articlePages = createArticlesPages(graphql, createPage);
+  const tagPages = createTagsPages(graphql, createPage);
   return Promise.all([articlePages, tagPages]);
 };
