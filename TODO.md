@@ -1,4 +1,0 @@
-- Implement RSS Feed
-- Switch to using react-css-modules babel plugin
-- Improve handling of styleName for child components - pass styleName instead of className
-- Investigate Caching
