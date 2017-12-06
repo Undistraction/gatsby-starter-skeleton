@@ -27,4 +27,5 @@ You can also keep code examples locally in the `code` directory and open them up
 in a REPL of your choice:
 
 * [Open In Babel REPL](babel://example)
-* [Try it on CodePen](codepen://example)
+* [Open In Codepen](codepen://example)
+* [Open In Code Sandbox](codesandbox://example)
