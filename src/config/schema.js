@@ -7,6 +7,7 @@ const meta = Joi.object().keys({
   // This will be used in the site copyright, with a range running from
   // startYear to the current year.
   startYear: Joi.date().required(),
+  showCredit: Joi.boolean().required(),
 });
 
 const seo = Joi.object().keys({

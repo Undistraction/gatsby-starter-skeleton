@@ -1,8 +1,6 @@
-const config = require('./src/config');
-const validate = require('./src/config/validate');
+const validatedConfig = require('./src/config/validatedConfig');
 
-const validatedConfig = validate(config);
-const { meta, seo, structure, media, layout } = validatedConfig;
+const { meta, seo, structure, media, layout } = validatedConfig();
 
 const trackingConfig = trackingID => ({
   resolve: 'gatsby-plugin-google-analytics',
