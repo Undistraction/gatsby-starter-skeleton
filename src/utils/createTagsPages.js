@@ -30,7 +30,7 @@ const createTagPage = (tag, slug, createPage) =>
     } catch (error) {
       reject(error);
     }
-    reporter.success(`Creating Tag Page for '${tag}' at slug '${slug}'.`);
+    reporter.success(`Created Tag Page for '${tag}' at slug '${slug}'.`);
     resolve();
   });
 
