@@ -9,19 +9,7 @@ keywords: code, responsive
 Embed code in your markdown and it will be styled using
 [Prism](http://prismjs.com/)
 
-```javascript
-function makeIterator(array) {
-  var nextIndex = 0;
-
-  return {
-    next: function() {
-      return nextIndex < array.length
-        ? { value: array[nextIndex++], done: false }
-        : { done: true };
-    },
-  };
-}
-```
+`embed:example.js`
 
 You can also keep code examples locally in the `code` directory and open them up
 in a REPL of your choice:
