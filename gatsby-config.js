@@ -19,6 +19,7 @@ const plugins = [
   'gatsby-plugin-styled-components',
   // Add react-helmet for changing tags in the page head
   'gatsby-plugin-react-helmet',
+  'gatsby-plugin-twitter',
   // Add the articles dir to src path
   'gatsby-plugin-sharp',
   {
