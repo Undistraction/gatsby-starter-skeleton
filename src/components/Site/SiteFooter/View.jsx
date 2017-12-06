@@ -14,6 +14,12 @@ const View = ({ metadata }) => {
       <p>
         Site and contents &copy; {owner} {dateRange}.
       </p>
+      <p>
+        Build by{' '}
+        <span role="img" aria-label="Undistraction Logo">
+          ⚫{' '}
+        </span>Undistraction
+      </p>
     </Layout>
   );
 };
