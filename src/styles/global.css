@@ -23,24 +23,12 @@ body,
   height: 100%;
 }
 
-html {
-  background-color: c-bg;
-}
-
 /* Typography 
 ============================================================================= */
 
 :root {
   /* Now 1rem = 10px */
   font-size: 62.5%;
-}
-
-body {
-  font-family: 'Cousine', monospace;
-  color: c-base;
-  /* Our default font-size */
-  font-size: 1.6rem;
-  line-height: 1.4;
 }
 
 b,

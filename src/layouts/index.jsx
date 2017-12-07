@@ -8,6 +8,8 @@ import 'prismjs/themes/prism-twilight.css';
 import Site from '../components/Site';
 import theme from '../styles/themes/default';
 
+console.log('theme', theme);
+
 const View = ({ children, data }) => (
   <ThemeProvider theme={theme}>
     <Site data={data}>{children}</Site>
