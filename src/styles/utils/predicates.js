@@ -1,4 +1,5 @@
-import { both, is, complement, curry, join, all, either, gt, __ } from 'ramda';
+import { both, curry, join, all, either, gt, __ } from 'ramda';
+import { isNumber } from 'ramda-adjunct/lib/index';
 import { UNITS } from '../const';
 
 export const isNumberWithUnit = curry((units, value) => {
@@ -7,6 +8,5 @@ export const isNumberWithUnit = curry((units, value) => {
 });
 
 export const isNumberWithPx = isNumberWithUnit([UNITS.PX]);
-export const isNumber = both(is(Number), complement(Number.isNaN));
 export const allAreNumbersOrPixelValues = all(either(isNumber, isNumberWithPx));
 export const isPositiveNumber = both(isNumber, gt(__, 0));

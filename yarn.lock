@@ -6264,9 +6264,9 @@ js-base64@^2.1.9:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.3.2.tgz#a79a923666372b580f8e27f51845c6f7e8fbfbaf"
 
-js-css-units@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/js-css-units/-/js-css-units-0.1.1.tgz#2a17f60e8764312bfed1ad132afbfb49e5ea6170"
+js-css-units@^0.2.9:
+  version "0.2.9"
+  resolved "https://registry.yarnpkg.com/js-css-units/-/js-css-units-0.2.9.tgz#3ddfa1bd717d59e7b1c2a1ecc93619f91d998fdf"
   dependencies:
     ramda "^0.25.0"
     ramda-adjunct "^2.1.0"
