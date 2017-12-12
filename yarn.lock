@@ -4455,7 +4455,7 @@ gatsby-transformer-sharp@^1.6.12:
     fs-extra "^4.0.2"
     image-size "^0.6.0"
 
-gatsby@1.9.128:
+gatsby@^1.9.128:
   version "1.9.128"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.128.tgz#9b78bee5cf160886610f53ef203c645b698454d4"
   dependencies:
@@ -6263,6 +6263,13 @@ jpeg-js@^0.2.0:
 js-base64@^2.1.9:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.3.2.tgz#a79a923666372b580f8e27f51845c6f7e8fbfbaf"
+
+js-css-units@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/js-css-units/-/js-css-units-0.1.1.tgz#2a17f60e8764312bfed1ad132afbfb49e5ea6170"
+  dependencies:
+    ramda "^0.25.0"
+    ramda-adjunct "^2.1.0"
 
 js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
@@ -8940,6 +8947,10 @@ querystringify@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-1.0.0.tgz#6286242112c5b712fa654e526652bf6a13ff05cb"
 
+ramda-adjunct@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/ramda-adjunct/-/ramda-adjunct-2.1.0.tgz#5664029109570bc14584a0e0f39c456a8a87f506"
+
 ramda@^0.25.0:
   version "0.25.0"
   resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.25.0.tgz#8fdf68231cffa90bc2f9460390a0cb74a29b29a9"
@@ -10677,9 +10688,9 @@ styled-components@^2.0.0, styled-components@^2.2.3:
     stylis "3.x"
     supports-color "^3.2.3"
 
-styled-mq@^0.3.10:
-  version "0.3.10"
-  resolved "https://registry.yarnpkg.com/styled-mq/-/styled-mq-0.3.10.tgz#3355380f42f2e02f6fc2a7f39b158266a854fb28"
+styled-mq@0.3.11:
+  version "0.3.11"
+  resolved "https://registry.yarnpkg.com/styled-mq/-/styled-mq-0.3.11.tgz#05dcee8f1485082ce86f3f099b50498a38e2c280"
   dependencies:
     camelcase "^4.1.0"
     dasherize "^2.0.0"
@@ -11448,6 +11459,10 @@ update-notifier@2.3.0:
     latest-version "^3.0.0"
     semver-diff "^2.0.0"
     xdg-basedir "^3.0.0"
+
+urijs@^1.19.0:
+  version "1.19.0"
+  resolved "https://registry.yarnpkg.com/urijs/-/urijs-1.19.0.tgz#d8aa284d0e7469703a6988ad045c4cbfdf08ada0"
 
 urix@^0.1.0:
   version "0.1.0"
