@@ -6,7 +6,9 @@ const meta = Joi.object().keys({
   title: Joi.string().required(),
   // This will be used in the site copyright, with a range running from
   // startYear to the current year.
-  startYear: Joi.date().required(),
+  startYear: Joi.string()
+    .regex(/^(19|20)\d{2}$/)
+    .required(),
   showCredit: Joi.boolean().required(),
 });
 

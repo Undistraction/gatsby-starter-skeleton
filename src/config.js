@@ -5,7 +5,7 @@ module.exports = {
     title: 'Gatsby Skeleton',
     // This will be used in the site copyright, with a range running from
     // startYear to the current year.
-    startYear: 2017,
+    startYear: '2017',
     showCredit: true,
   },
   seo: {
