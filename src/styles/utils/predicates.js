@@ -1,12 +1,6 @@
-import { both, curry, join, all, either, gt, __ } from 'ramda';
-import { isNumber } from 'ramda-adjunct/lib/index';
-import { UNITS } from '../const';
+import { all, either } from 'ramda';
+import { isNumber } from 'ramda-adjunct';
+import { isNumberWithPx } from 'js-css-units';
 
-export const isNumberWithUnit = curry((units, value) => {
-  const regex = `^-?\\d+(?:.\\d+)?(?:${join('|', units)})$`;
-  return new RegExp(regex).test(value);
-});
-
-export const isNumberWithPx = isNumberWithUnit([UNITS.PX]);
+// eslint-disable-next-line import/prefer-default-export
 export const allAreNumbersOrPixelValues = all(either(isNumber, isNumberWithPx));
-export const isPositiveNumber = both(isNumber, gt(__, 0));

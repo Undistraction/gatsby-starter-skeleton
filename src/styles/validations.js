@@ -1,5 +1,5 @@
 import { unless } from 'ramda';
-import { isNumber } from 'ramda-adjunct/lib/index';
+import { isNumber } from 'ramda-adjunct';
 import { allAreNumbersOrPixelValues } from './utils/predicates';
 import { throwInvalidValueError } from './errors';
 

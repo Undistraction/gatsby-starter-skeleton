@@ -9,10 +9,9 @@ import {
   map,
   reverse,
 } from 'ramda';
+import { isNumberWithPx } from 'js-css-units';
 
 import { UNITS } from '../const';
-
-import { isNumberWithPx } from './predicates';
 
 // const toList = unapply(identity);
 
