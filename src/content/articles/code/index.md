@@ -17,3 +17,4 @@ in a REPL of your choice:
 * [Open In Babel REPL](babel://example)
 * [Open In Codepen](codepen://example)
 * [Open In Code Sandbox](codesandbox://example)
+* [Open In Ramda](ramda://example)
