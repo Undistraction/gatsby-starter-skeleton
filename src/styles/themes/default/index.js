@@ -24,7 +24,7 @@ const qs = {
 };
 
 // Configure output units
-const { pxToRem } = units(16);
+const { pxToRem } = units(10);
 const rtm = rhythm(22, pxToRem);
 
 // Apply global styles
