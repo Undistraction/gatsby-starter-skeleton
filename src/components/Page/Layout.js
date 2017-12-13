@@ -14,9 +14,9 @@ export default styled.div`
 
   ${LayoutBody} {
     flex: 1 0 auto;
-
-    ${props => props.theme.qs.aboveMediumWidth`
-      background-color: ${props.theme.bg};
-  `};
   }
 `;
+
+// ${props => props.theme.qs.aboveMediumWidth`
+// background-color: ${props.theme.bg};
+// `};

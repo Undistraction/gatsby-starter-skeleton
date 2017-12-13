@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fonts errors if no font map is supplied 1`] = `"(0 , _ramdaAdjunct2.default) is not a function"`;

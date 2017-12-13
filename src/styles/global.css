@@ -64,30 +64,6 @@ h6 {
   margin-bottom: 2.2rem;
 }
 
-/* Links 
-============================================================================= */
-
-a {
-  text-decoration: none;
-  color: c-base;
-}
-
-a:link {
-  color: c-link;
-}
-
-a:visited {
-  color: c-link;
-}
-
-a:hover {
-  color: c-hover;
-}
-
-a:active {
-  color: c-link;
-}
-
 /* Prism Syntax hightlighting 
 ============================================================================= */
 

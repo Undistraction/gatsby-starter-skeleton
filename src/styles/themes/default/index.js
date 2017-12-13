@@ -35,7 +35,7 @@ injectGlobal`
   }
 
   body {
-    font-family: ${FONTS.default};
+    font-family: ${FONTS.default.stack};
     color: ${COLOURS.black};
     /* Our default font-size */
     font-size: 1.6rem;
@@ -47,4 +47,6 @@ export default {
   rtm,
   qs,
   bg: COLOURS.black,
+  text: COLOURS.black,
+  highlight: COLOURS.orangeRed,
 };

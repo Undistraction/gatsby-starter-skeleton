@@ -1,17 +1,20 @@
 import { unless } from 'ramda';
-import { isNumber } from 'ramda-adjunct';
+import { isValidNumber } from 'js-css-units';
 import { allAreNumbersOrPixelValues } from './utils/predicates';
-import { throwInvalidValueError } from './errors';
+import { composeError, invalidValueErrorMessage } from './errors';
 
 // eslint-disable-next-line import/prefer-default-export
 export const validatePxValues = unless(
   allAreNumbersOrPixelValues,
-  throwInvalidValueError
+  composeError(invalidValueErrorMessage)
 );
 
 export const validatePxValuesAllowZero = unless(
   allAreNumbersOrPixelValues,
-  throwInvalidValueError
+  composeError(invalidValueErrorMessage)
 );
 
-export const validateNumber = unless(isNumber, throwInvalidValueError);
+export const validateNumber = unless(
+  isValidNumber,
+  composeError(invalidValueErrorMessage)
+);

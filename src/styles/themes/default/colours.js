@@ -3,4 +3,5 @@ export default Object.freeze({
   trueWhite: '#FFF',
   black: '#070707',
   white: '#F5F5F5',
+  orangeRed: 'OrangeRed',
 });

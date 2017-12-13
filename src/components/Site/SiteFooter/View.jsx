@@ -3,14 +3,17 @@ import PropTypes from 'prop-types';
 import { toString } from 'ramda';
 import Layout from './Layout';
 import config from '../../../config';
-
-console.log('CONFIG', config);
+import IconLink from '../../shared/IconLink';
+import CreditIcon from '../../shared/CreditIcon';
 
 const credit = () => {
   if (config.meta.showCredit) {
     return (
       <p>
-        Built by <a href="http://undistraction.com">Undistraction</a>
+        Built by{' '}
+        <IconLink to="http://undistraction.com">
+          <CreditIcon />Undistraction
+        </IconLink>
       </p>
     );
   }

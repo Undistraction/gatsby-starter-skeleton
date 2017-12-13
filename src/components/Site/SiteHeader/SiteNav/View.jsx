@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import Link from '../../../shared/Link';
 import Layout from './Layout';
 
 const SiteNav = () => (
