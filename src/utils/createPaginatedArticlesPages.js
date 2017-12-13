@@ -11,7 +11,7 @@ const joinWithFSlash = join('/');
 const markdownNodes = data => data.allMarkdownRemark.edges;
 const isFirstPage = index => index === 0;
 const isLastPage = (index, total) => index === dec(total);
-const fromItemIndex = (perPage, index) => index * inc(perPage);
+const fromItemIndex = (perPage, index) => index * inc(perPage) || 1;
 const toItemIndex = (perPage, index, groupLength) =>
   index * perPage + groupLength;
 
