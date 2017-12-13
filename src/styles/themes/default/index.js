@@ -37,6 +37,7 @@ injectGlobal`
   body {
     font-family: ${FONTS.default.stack};
     color: ${COLOURS.black};
+    
     /* Our default font-size */
     font-size: 1.6rem;
     line-height: 1.4;
