@@ -62,7 +62,7 @@ const plugins = [
         {
           resolve: 'gatsby-remark-copy-linked-files',
           options: {
-            destinationDir: structure.downloadsDir,
+            destinationDir: structure.downloadsDirectory,
           },
         },
         'gatsby-remark-responsive-iframe',
