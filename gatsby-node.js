@@ -6,10 +6,17 @@ const addTagsToNode = require('./src/utils/addTagsToNode');
 const { isTypeMarkdownRemark } = require('./src/utils/checkNodeType');
 
 const ARTICLES_REGEX = /content\/articles\/./;
+// const LAB_REGEX = /content\/lab\/./;
 
 const isArticleByPath = filepath => ARTICLES_REGEX.test(filepath);
+
+// const isLabByPath = filepath => LAB_REGEX.test(filepath);
+
 const isMarkdownArticle = node =>
   isTypeMarkdownRemark(node) && isArticleByPath(node.fileAbsolutePath);
+
+// const isMarkdownLab = node =>
+//   isTypeMarkdownRemark(node) && isLabByPath(node.fileAbsolutePath);
 
 // Called whenever a new node is created in the graph
 // eslint-disable-next-line no-unused-vars

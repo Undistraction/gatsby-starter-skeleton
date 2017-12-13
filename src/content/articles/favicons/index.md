@@ -4,6 +4,7 @@ date: "2016-12-22"
 slug: "favicons"
 description: Automatic Favicon Generation.
 keywords: images, favicons
+image: ./images/main.jpg
 ---
 
 Favicons automatically generated from a single source image. Just replace the

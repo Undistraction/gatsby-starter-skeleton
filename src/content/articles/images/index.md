@@ -4,6 +4,7 @@ date: "2017-07-01"
 slug: "images"
 description: Use images in your markdown.
 keywords: images, responsive
+image: ./images/main.jpg
 ---
 
 Use images in your markdown and they will be made responsive.

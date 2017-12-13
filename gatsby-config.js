@@ -27,8 +27,8 @@ const plugins = [
       path: `${__dirname}/src/content/articles`,
     },
   },
-  // Add the pages dir to src path
   'gatsby-plugin-sharp',
+  // Add the pages dir to src path
   {
     resolve: 'gatsby-source-filesystem',
     options: {

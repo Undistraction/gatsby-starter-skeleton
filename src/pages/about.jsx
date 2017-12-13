@@ -8,6 +8,13 @@ export default AboutPage;
 // Moving it anywhere else results in an error.
 export const query = graphql`
   query AboutPageQuery {
+    mainImageSizes: file(relativePath: { eq: "about/images/main.jpg" }) {
+      childImageSharp {
+        sizes {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
     mainText: file(relativePath: { eq: "about/main.md" }) {
       childMarkdownRemark {
         html

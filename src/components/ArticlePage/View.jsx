@@ -7,6 +7,8 @@ import Metadata from '../../components/Metadata';
 import ArticleNav from '../../components/ArticleNav';
 import TagList from '../../components/TagList';
 import HTMLText from '../../components/shared/HTMLText';
+import Img from "gatsby-image";
+
 
 const previousArticle = (article, articles) => {
   const currentId = article.id;
@@ -30,6 +32,7 @@ const View = ({ data }) => {
   return (
     <article>
       <Metadata {...metadata} />
+      <Img sizes={frontmatter.image.childImageSharp.sizes} />
       <header>{frontmatter.title}</header>
       <ArticleNav
         previousArticle={previousArticle(article, articles)}

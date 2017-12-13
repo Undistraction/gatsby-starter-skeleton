@@ -4,6 +4,7 @@ date: "2017-02-01"
 slug: "twitter"
 description: Link to tweets.
 keywords: social-media, twitter
+image: ./images/main.jpg
 ---
 
 Use links to tweets and the Twitter JavaScript will be included.

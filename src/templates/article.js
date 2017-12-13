@@ -11,6 +11,13 @@ export const query = graphql`
       frontmatter {
         title
         keywords
+        image {
+          childImageSharp {
+            sizes {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
       }
       fields {
         tags
