@@ -9,7 +9,7 @@ export const LayoutFooter = styled.div``;
 export default styled.div`
   ${flexVertical};
   ${blockCenterH};
-  height: 100%;
+  min-height: 100vh;
 
   ${LayoutHeader} {
     flex: 0 0 auto;

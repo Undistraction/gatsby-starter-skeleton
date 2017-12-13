@@ -6,7 +6,6 @@ export const LayoutBody = styled.div``;
 
 export default styled.div`
   ${flexVertical};
-  height: 100%;
 
   ${LayoutHeader} {
     flex: 0 0 auto;
