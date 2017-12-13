@@ -1,4 +1,5 @@
 const createArticlesPages = require('./src/utils/createArticlesPages');
+const createPaginatedArticlesPages = require('./src/utils/createPaginatedArticlesPages');
 const createTagsPages = require('./src/utils/createTagsPages');
 const addSlugToNode = require('./src/utils/addSlugToNode');
 const addMetadataToNode = require('./src/utils/addMetadataToNode');
@@ -33,7 +34,12 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 // // Called when Gatsby creates the site pages
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
+  const paginatedArticlePages = createPaginatedArticlesPages(
+    graphql,
+    createPage,
+    3
+  );
   const articlePages = createArticlesPages(graphql, createPage);
   const tagPages = createTagsPages(graphql, createPage);
-  return Promise.all([articlePages, tagPages]);
+  return Promise.all([paginatedArticlePages, articlePages, tagPages]);
 };

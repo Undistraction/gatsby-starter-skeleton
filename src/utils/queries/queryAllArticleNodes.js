@@ -6,12 +6,16 @@ module.exports = graphql =>
       ) {
         edges {
           node {
+            id
             frontmatter {
+              title
+              date(formatString: "DD MMMM, YYYY")
               keywords
             }
             fields {
               slug
             }
+            excerpt
           }
         }
       }

@@ -1,25 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ArticlesNav from '../ArticlesNav';
 import Page from '../../components/Page';
 import ArticleList from '../../components/ArticleList';
 import Metadata from '../../components/Metadata';
 import loadMetadata from '../../utils/loadMetadata';
 import articlesFrom from '../../data/articlesFrom';
-import itemCountFrom from '../../data/itemCountFrom';
 
-const View = ({ data }) => (
-  <Page title="Articles">
-    <Metadata metadata={loadMetadata('articles')} />
+const View = ({ pathContext }) => {
+  const {
+    items,
+    itemsCount,
+    fromItemIndex,
+    toItemIndex,
+    pageIndex,
+    pageCount,
+    previousPath,
+    nextPath,
+  } = pathContext;
 
-    <p>This site supports many great Features out the box:</p>
-    <header>{itemCountFrom(data)} Articles</header>
-    <ArticleList articles={articlesFrom(data)} />
-  </Page>
-);
+  return (
+    <Page title="Articles">
+      <Metadata metadata={loadMetadata('articles')} />
+      <header>
+        Page {pageIndex} of {pageCount}
+        <br />
+        {fromItemIndex}–{toItemIndex} of {itemsCount} Articles
+        <ArticlesNav previousPath={previousPath} nextPath={nextPath} />
+      </header>
+      <ArticleList articles={articlesFrom(items)} />
+    </Page>
+  );
+};
 
 View.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
-  data: PropTypes.object.isRequired,
+  pathContext: PropTypes.object.isRequired,
 };
 
 View.displayName = 'ArticlesPageView';

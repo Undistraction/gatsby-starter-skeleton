@@ -7,7 +7,7 @@ const queryAllArticleNodes = require('./queries/queryAllArticleNodes');
 
 const markdownNodes = data => data.allMarkdownRemark.edges;
 
-const createArticlesPage = (slug, createPage) =>
+const createArticlePage = (slug, createPage) =>
   new Promise((resolve, reject) => {
     try {
       createPage({
@@ -30,7 +30,7 @@ const createArticlesPages = (graphql, createPage) =>
     .then(result =>
       compose(
         Promise.all,
-        map(({ node }) => createArticlesPage(node.fields.slug, createPage))
+        map(({ node }) => createArticlePage(node.fields.slug, createPage))
       )(markdownNodes(result.data))
     )
     .catch(error => {
