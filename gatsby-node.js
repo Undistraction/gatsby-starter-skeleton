@@ -35,7 +35,12 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
 
-  return createArticlesPages(graphql, createPage)
-    .then(createPaginatedArticlesPages(graphql, createPage, 4))
-    .then(createTagsPages(graphql, createPage));
+  const paginatedArticlePages = createPaginatedArticlesPages(
+    graphql,
+    createPage,
+    3
+  );
+  const articlePages = createArticlesPages(graphql, createPage);
+  const tagPages = createTagsPages(graphql, createPage);
+  return Promise.all([paginatedArticlePages, articlePages, tagPages]);
 };
