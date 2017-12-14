@@ -9,9 +9,7 @@ const config = validatedConfig();
 const { meta, seo } = config;
 
 const plugins = [
-  // Use styled-components for CSS-in-JS
   'gatsby-plugin-styled-components',
-  // Add react-helmet for changing tags in the page head
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-twitter',
   'gatsby-plugin-sharp',
@@ -27,10 +25,10 @@ const siteMetadata = {
   owner: meta.owner,
   // This will be used in the site title
   title: meta.title,
+  description: meta.description,
+  siteUrl: meta.url,
   // This will be used in the site copyright
   startYear: meta.startYear,
-  description: 'A description of your site',
-  siteUrl: 'http://your-site-here.com',
 };
 
 // Add support for Google analytics if a tracking code was defined

@@ -5,6 +5,8 @@ module.exports = {
     title: 'Gatsby Skeleton',
     // This will be used in the site copyright, with a range running from
     // startYear to the current year.
+    description: 'Your site description for RSS feed',
+    url: 'https://example.com',
     startYear: '2017',
     showCredit: true,
   },

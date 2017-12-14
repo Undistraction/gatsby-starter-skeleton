@@ -12,6 +12,10 @@ const meta = Joi.object().keys({
     .regex(/^(19|20)\d{2}$/)
     .required(),
   showCredit: Joi.boolean().required(),
+  description: Joi.string().optional(),
+  url: Joi.string()
+    .uri()
+    .optional(),
 });
 
 const seo = Joi.object().keys({
