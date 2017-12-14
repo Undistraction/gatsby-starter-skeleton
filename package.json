@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@undistraction/gatsby-starter-skeleton-placeholder-mod-1": "^0.0.2",
     "add": "^2.0.6",
     "babel-plugin-styled-components": "^1.3.0",
     "caniuse-db": "^1.0.30000758",
@@ -36,7 +37,7 @@
     "moment": "^2.19.1",
     "normalize.css": "^7.0.0",
     "ramda": "^0.25.0",
-    "ramda-adjunct": "^2.1.0",
+    "ramda-adjunct": "git+ssh://git@github.com/char0n/ramda-adjunct.git",
     "react": "^16.2.0",
     "react-css-modules": "^4.7.1",
     "remark-retext": "^3.1.0",
@@ -49,7 +50,9 @@
     "urijs": "^1.19.0",
     "yarn": "^1.3.2"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
@@ -58,10 +61,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "preview": "gatsby build && gatsby serve",
-    "deploy-staging":
-      "yarn run build && yarn run surge ./public example-com-staging.surge.sh",
-    "deploy-production":
-      "yarn run build && yarn run surge ./public example.com",
+    "deploy-staging": "yarn run build && yarn run surge ./public example-com-staging.surge.sh",
+    "deploy-production": "yarn run build && yarn run surge ./public example.com",
     "test": "jest src/config src/styles --watch ",
     "graph": "open http://localhost:8000/___graphql",
     "lint:js": "eslint src",
@@ -86,5 +87,9 @@
     "stylelint-processor-styled-components": "^1.2.0",
     "surge": "^0.19.0"
   },
-  "browserslist": ["> 1%", "IE >= 9", "last 2 versions"]
+  "browserslist": [
+    "> 1%",
+    "IE >= 9",
+    "last 2 versions"
+  ]
 }

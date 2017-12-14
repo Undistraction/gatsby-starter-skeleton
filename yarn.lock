@@ -6,6 +6,15 @@
   version "8.0.51"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.51.tgz#b31d716fb8d58eeb95c068a039b9b6292817d5fb"
 
+"@undistraction/gatsby-starter-skeleton-placeholder-mod-1@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@undistraction/gatsby-starter-skeleton-placeholder-mod-1/-/gatsby-starter-skeleton-placeholder-mod-1-0.0.2.tgz#e46ec3cdcd1360b7014ba61ef74914115c6f926c"
+  dependencies:
+    ramda "^0.25.0"
+    ramda-adjunct "^2.1.0"
+    react "^16.2.0"
+    react-dom "^16.2.0"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -9001,6 +9010,10 @@ ramda-adjunct@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/ramda-adjunct/-/ramda-adjunct-2.1.0.tgz#5664029109570bc14584a0e0f39c456a8a87f506"
 
+"ramda-adjunct@git+ssh://git@github.com/char0n/ramda-adjunct.git":
+  version "2.2.0"
+  resolved "git+ssh://git@github.com/char0n/ramda-adjunct.git#cb9b58e9d8506688a118cc2ab4db902697ca7e1c"
+
 ramda@^0.25.0:
   version "0.25.0"
   resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.25.0.tgz#8fdf68231cffa90bc2f9460390a0cb74a29b29a9"
@@ -9094,6 +9107,15 @@ react-dom@^15.6.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "^15.5.10"
+
+react-dom@^16.2.0:
+  version "16.2.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.2.0.tgz#69003178601c0ca19b709b33a83369fe6124c044"
+  dependencies:
+    fbjs "^0.8.16"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
 
 react-error-overlay@^3.0.0:
   version "3.0.0"
