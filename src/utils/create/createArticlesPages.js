@@ -21,7 +21,7 @@ const createArticlePage = (slug, createPage) =>
     } catch (error) {
       reject(error);
     }
-    reporter.success(`Created Articles Page at slug '${slug}'.`);
+    reporter.success(`Created Article Page at slug '${slug}'.`);
     resolve();
   });
 
@@ -34,9 +34,7 @@ const createArticlesPages = (graphql, createPage, articlesPath) =>
       )(markdownNodes(result.data))
     )
     .catch(error => {
-      throw new Error(
-        `Articles Pages Couldn't Be Created: ${error.toString()}`
-      );
+      throw new Error(`Articles Pages Couldn't Be Created: ${error}`);
     });
 
 module.exports = createArticlesPages;

@@ -4,17 +4,16 @@ const {
   compose,
   addIndex,
   splitEvery,
-  join,
   inc,
   dec,
 } = require('ramda');
+const { joinWithFSlash } = require('../fileUtils');
 const path = require('path');
 const { ARTICLES_PATH } = require('../templatePaths');
 const queryAllArticleNodes = require('../queries/queryAllArticleNodes');
 const reporter = require('../reporter');
 
 const mapWithIndex = addIndex(map);
-const joinWithFSlash = join('/');
 
 const markdownNodes = data => data.allMarkdownRemark.edges;
 const isFirstPage = index => index === 0;
@@ -34,7 +33,6 @@ const createPaginatedArticlesPage = (
   articlesPath,
   itemsCount
 ) => (group, groupIndex, allGroups) => {
-  console.log('>', itemsCount, articlesPath);
   const groupsCount = allGroups.length;
   const groupLength = group.length;
   const pageIndex = inc(groupIndex);

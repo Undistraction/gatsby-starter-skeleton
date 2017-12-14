@@ -8,7 +8,6 @@ const markdownNodes = data => data.allMarkdownRemark.edges;
 const createLabPage = (graphql, createPage, labPath) =>
   queryAllExperimentNodes(graphql, labPath)
     .then(result => {
-      console.log('LAB Results', result);
       const edges = markdownNodes(result.data);
       const experimentsCount = edges.length;
       createPage({

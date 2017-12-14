@@ -13,7 +13,6 @@ const { structure } = validatedConfig();
 
 const ARTICLES_REGEX = new RegExp(`content/${structure.articles.directory}/`);
 const LAB_REGEX = new RegExp(`content/${structure.lab.directory}/`);
-console.log('>>>>', `content/${structure.lab.directory}`);
 
 const isArticleByPath = filepath => ARTICLES_REGEX.test(filepath);
 const isLabByPath = filepath => LAB_REGEX.test(filepath);
