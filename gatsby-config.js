@@ -18,6 +18,58 @@ const plugins = [
   // Add react-helmet for changing tags in the page head
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-twitter',
+  {
+    resolve: 'gatsby-plugin-feed',
+    options: {
+      query: `
+        {
+          site {
+            siteMetadata {
+              title
+              description
+              siteUrl
+            }
+          }
+        }
+      `,
+      feeds: [
+        {
+          serialize: ({ query: { site, allMarkdownRemark } }) => {
+            return allMarkdownRemark.edges.map(edge => {
+              return Object.assign({}, edge.node.frontmatter, {
+                description: edge.node.excerpt,
+                url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                custom_elements: [{ 'content:encoded': edge.node.html }],
+              });
+            });
+          },
+          query: `
+            {
+              allMarkdownRemark(
+                limit: 1000,
+                sort: { order: DESC, fields: [frontmatter___date] },
+                filter: { fields: { slug: { regex: "/articles/./" } } }
+              ) {
+                edges {
+                  node {
+                    excerpt
+                    html
+                    fields { slug }
+                    frontmatter {
+                      title
+                      date
+                    }
+                  }
+                }
+              }
+            }
+          `,
+          output: '/rss.xml',
+        },
+      ],
+    },
+  },
   // Add the articles dir to src path
   'gatsby-plugin-sharp',
   {
@@ -156,6 +208,8 @@ module.exports = {
     title: meta.title,
     // This will be used in the site copyright
     startYear: meta.startYear,
+    description: 'A description of your site',
+    siteUrl: 'http://your-site-here.com',
   },
   plugins,
 };
