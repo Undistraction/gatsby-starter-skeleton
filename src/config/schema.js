@@ -1,5 +1,7 @@
 const Joi = require('joi');
 
+const fileNameRegex = /^[a-zA-Z0-9-_]+$/;
+
 const meta = Joi.object().keys({
   owner: Joi.string().required(),
   // This will be used in the site title.
@@ -20,7 +22,10 @@ const seo = Joi.object().keys({
 
 const structure = Joi.object().keys({
   downloadsDirectory: Joi.string()
-    .regex(/^[a-zA-Z0-9-_]+$/)
+    .regex(fileNameRegex)
+    .required(),
+  replCodeDirectory: Joi.string()
+    .regex(fileNameRegex)
     .required(),
 });
 

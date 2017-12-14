@@ -16,6 +16,7 @@ module.exports = {
   structure: {
     // Directory path for downloads relative to your root url
     downloadsDirectory: 'downloads',
+    replCodeDirectory: 'code',
   },
   media: {
     images: {
