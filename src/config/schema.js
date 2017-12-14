@@ -2,6 +2,21 @@ const Joi = require('joi');
 
 const fileNameRegex = /^[a-zA-Z0-9-_]+$/;
 
+const item = Joi.object().keys({
+  name: Joi.string()
+    .regex(fileNameRegex)
+    .required(),
+  directory: Joi.string()
+    .regex(fileNameRegex)
+    .required(),
+  path: Joi.string()
+    .regex(fileNameRegex)
+    .required(),
+  perPage: Joi.number()
+    .greater(0)
+    .optional(),
+});
+
 const meta = Joi.object().keys({
   owner: Joi.string().required(),
   // This will be used in the site title.
@@ -31,6 +46,8 @@ const structure = Joi.object().keys({
   replCodeDirectory: Joi.string()
     .regex(fileNameRegex)
     .required(),
+  articles: item,
+  lab: item,
 });
 
 const media = Joi.object().keys({

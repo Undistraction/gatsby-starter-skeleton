@@ -1,9 +1,9 @@
 const { map, compose } = require('ramda');
 const path = require('path');
-const reporter = require('./reporter');
+const reporter = require('../reporter');
 
-const { ARTICLE_PATH } = require('./templatePaths');
-const queryAllArticleNodes = require('./queries/queryAllArticleNodes');
+const { ARTICLE_PATH } = require('../templatePaths');
+const queryAllArticleNodes = require('../queries/queryAllArticleNodes');
 
 const markdownNodes = data => data.allMarkdownRemark.edges;
 
@@ -25,8 +25,8 @@ const createArticlePage = (slug, createPage) =>
     resolve();
   });
 
-const createArticlesPages = (graphql, createPage) =>
-  queryAllArticleNodes(graphql)
+const createArticlesPages = (graphql, createPage, articlesPath) =>
+  queryAllArticleNodes(graphql, articlesPath)
     .then(result =>
       compose(
         Promise.all,

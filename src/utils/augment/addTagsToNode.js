@@ -1,4 +1,4 @@
-const listToArray = require('./listToArray');
+const listToArray = require('../listToArray');
 
 const addTagsToNode = (node, createNodeField) => {
   // Create tags using the frontmatter keywords

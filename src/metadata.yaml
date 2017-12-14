@@ -14,3 +14,8 @@ pages:
     title:   Site / Articles Page
     description:  The articles
     keywords: articles, site
+  - 
+    id:   lab
+    title:   Site / Lab Page
+    description:  The experiments
+    keywords: experiments, lab

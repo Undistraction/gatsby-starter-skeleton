@@ -19,6 +19,17 @@ module.exports = {
     // Directory path for downloads relative to your root url
     downloadsDirectory: 'downloads',
     replCodeDirectory: 'code',
+    articles: {
+      name: 'Articles',
+      directory: 'articles',
+      path: 'articles',
+      perPage: 5,
+    },
+    lab: {
+      name: 'Lab',
+      directory: 'lab',
+      path: 'lab',
+    },
   },
   media: {
     images: {

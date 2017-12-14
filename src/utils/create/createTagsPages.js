@@ -1,10 +1,10 @@
 const { reduce, compose, uniq, map } = require('ramda');
 const path = require('path');
-const reporter = require('./reporter');
-const toSlug = require('./toSlug');
-const { TAG_PATH } = require('./templatePaths');
-const queryAllArticleNodes = require('./queries/queryAllArticleNodes');
-const listToArray = require('./listToArray');
+const reporter = require('../reporter');
+const toSlug = require('../toSlug');
+const { TAG_PATH } = require('../templatePaths');
+const queryAllArticleNodes = require('../queries/queryAllArticleNodes');
+const listToArray = require('../listToArray');
 
 const markdownNodes = data => data.allMarkdownRemark.edges;
 const findKeywords = node => node.node.frontmatter.keywords;
@@ -34,8 +34,8 @@ const createTagPage = (tag, slug, createPage) =>
     resolve();
   });
 
-const createTagsPages = (graphql, createPage) =>
-  queryAllArticleNodes(graphql)
+const createTagsPages = (graphql, createPage, articlesPath) =>
+  queryAllArticleNodes(graphql, articlesPath)
     .then(result =>
       compose(
         Promise.all,

@@ -1,11 +1,19 @@
-const { map, compose, addIndex, splitEvery, join, inc, dec } = require('ramda');
+const {
+  map,
+  curry,
+  compose,
+  addIndex,
+  splitEvery,
+  join,
+  inc,
+  dec,
+} = require('ramda');
 const path = require('path');
-const { ARTICLES_PATH } = require('./templatePaths');
-const queryAllArticleNodes = require('./queries/queryAllArticleNodes');
-const reporter = require('./reporter');
+const { ARTICLES_PATH } = require('../templatePaths');
+const queryAllArticleNodes = require('../queries/queryAllArticleNodes');
+const reporter = require('../reporter');
 
 const mapWithIndex = addIndex(map);
-const PREFIX = 'articles';
 const joinWithFSlash = join('/');
 
 const markdownNodes = data => data.allMarkdownRemark.edges;
@@ -15,19 +23,24 @@ const fromItemIndex = (perPage, index) => index * inc(perPage) || 1;
 const toItemIndex = (perPage, index, groupLength) =>
   index * perPage + groupLength;
 
-const pagePath = (name, pageIndex) =>
-  pageIndex > 0 ? joinWithFSlash([name, pageIndex]) : name;
+const pagePath = curry(
+  (name, pageIndex) =>
+    pageIndex > 0 ? joinWithFSlash([name, pageIndex]) : name
+);
 
-const createPaginatedArticlesPage = (createPage, perPage, itemsCount) => (
-  group,
-  groupIndex,
-  allGroups
-) => {
+const createPaginatedArticlesPage = (
+  createPage,
+  perPage,
+  articlesPath,
+  itemsCount
+) => (group, groupIndex, allGroups) => {
+  console.log('>', itemsCount, articlesPath);
   const groupsCount = allGroups.length;
   const groupLength = group.length;
   const pageIndex = inc(groupIndex);
+  const articlePagePath = pagePath(articlesPath);
   const page = createPage({
-    path: pagePath(PREFIX, groupIndex),
+    path: articlePagePath(groupIndex),
     component: path.resolve(ARTICLES_PATH),
     context: {
       items: group,
@@ -37,10 +50,10 @@ const createPaginatedArticlesPage = (createPage, perPage, itemsCount) => (
       pageIndex,
       pageCount: groupsCount,
       previousPath: !isFirstPage(groupIndex)
-        ? pagePath(PREFIX, dec(groupIndex))
+        ? articlePagePath(dec(groupIndex))
         : null,
       nextPath: !isLastPage(groupIndex, groupsCount)
-        ? pagePath(PREFIX, inc(groupIndex))
+        ? articlePagePath(inc(groupIndex))
         : null,
     },
   });
@@ -50,15 +63,25 @@ const createPaginatedArticlesPage = (createPage, perPage, itemsCount) => (
   return page;
 };
 
-const createPaginatedArticlesPages = (graphql, createPage, perPage = 10) =>
-  queryAllArticleNodes(graphql)
+const createPaginatedArticlesPages = (
+  graphql,
+  createPage,
+  perPage,
+  articlesPath
+) => {
+  return queryAllArticleNodes(graphql, articlesPath)
     .then(result => {
       const edges = markdownNodes(result.data);
       const groupedPages = splitEvery(perPage, edges);
       return compose(
         Promise.all,
         mapWithIndex(
-          createPaginatedArticlesPage(createPage, perPage, edges.length)
+          createPaginatedArticlesPage(
+            createPage,
+            perPage,
+            articlesPath,
+            edges.length
+          )
         )(groupedPages)
       );
     })
@@ -67,5 +90,6 @@ const createPaginatedArticlesPages = (graphql, createPage, perPage = 10) =>
         `Articles Pages Couldn't Be Created: ${error.toString()}`
       );
     });
+};
 
 module.exports = createPaginatedArticlesPages;

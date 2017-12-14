@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ArticlesNav from '../ArticlesNav';
 import Page from '../../components/Page';
 import ArticleList from '../../components/ArticleList';
 import Metadata from '../../components/Metadata';
@@ -8,27 +7,12 @@ import loadMetadata from '../../utils/loadMetadata';
 import nodesFrom from '../../data/nodesFrom';
 
 const View = ({ pathContext }) => {
-  const {
-    items,
-    itemsCount,
-    fromItemIndex,
-    toItemIndex,
-    pageIndex,
-    pageCount,
-    previousPath,
-    nextPath,
-  } = pathContext;
+  const { experiments } = pathContext;
 
   return (
-    <Page title="Articles">
-      <Metadata metadata={loadMetadata('articles')} />
-      <header>
-        Page {pageIndex} of {pageCount}
-        <br />
-        {fromItemIndex}–{toItemIndex} of {itemsCount} Articles
-        <ArticlesNav previousPath={previousPath} nextPath={nextPath} />
-      </header>
-      <ArticleList articles={nodesFrom(items)} />
+    <Page title="Lab">
+      <Metadata metadata={loadMetadata('lab')} />
+      <ArticleList articles={nodesFrom(experiments)} />
     </Page>
   );
 };
