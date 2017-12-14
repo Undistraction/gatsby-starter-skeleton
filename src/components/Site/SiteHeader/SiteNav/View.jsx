@@ -6,6 +6,7 @@ const SiteNav = () => (
   <Layout>
     <Link to="/">Home</Link>
     <Link to="/articles">Articles</Link>
+    <Link to="/lab">Lab</Link>
     <Link to="/about">About</Link>
   </Layout>
 );

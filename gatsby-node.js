@@ -1,3 +1,4 @@
+const createExperimentsPages = require('./src/utils/create/createExperimentsPages');
 const validatedConfig = require('./src/config/validatedConfig');
 const createArticlesPages = require('./src/utils/create/createArticlesPages');
 const createPaginatedArticlesPages = require('./src/utils/create/createPaginatedArticlesPages');
@@ -32,7 +33,6 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     addMetadataToNode(node, createNodeField);
     addTagsToNode(node, createNodeField);
   } else if (nodeIsMarkdownLab(node)) {
-    console.log('>>>>>>>>>');
     addSlugToNode(node, createNodeField, structure.lab.path);
     addMetadataToNode(node, createNodeField);
   }
@@ -58,5 +58,16 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     structure.articles.path
   );
   const labPage = createLabPage(graphql, createPage, structure.lab.path);
-  return Promise.all([paginatedArticlePages, articlePages, tagPages, labPage]);
+  const experimentsPages = createExperimentsPages(
+    graphql,
+    createPage,
+    structure.lab.path
+  );
+  return Promise.all([
+    paginatedArticlePages,
+    articlePages,
+    tagPages,
+    labPage,
+    experimentsPages,
+  ]);
 };
