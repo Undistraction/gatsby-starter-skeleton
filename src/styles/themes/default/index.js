@@ -32,6 +32,8 @@ const rtm = rhythm(22, pxToRem);
 injectGlobal`
   html {
     background-color: ${COLOURS.white};
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   body {

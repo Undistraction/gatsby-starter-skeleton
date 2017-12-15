@@ -21,7 +21,11 @@ const Metadata = ({ title, description, keywords }) => (
 Metadata.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  keywords: PropTypes.string.isRequired,
+  keywords: PropTypes.string,
+};
+
+Metadata.defaultProps = {
+  keywords: '',
 };
 
 export default Metadata;
