@@ -2,9 +2,9 @@ import graphql from 'graphql';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
-import '../styles/global.css';
-// eslint-disable-next-line import/first
+import 'normalize.css/normalize.css';
 import 'prismjs/themes/prism-twilight.css';
+import '../styles/global.css';
 import Site from '../components/Site';
 import theme from '../styles/themes/default';
 
