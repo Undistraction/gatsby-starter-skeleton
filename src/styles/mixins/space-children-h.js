@@ -1,7 +1,10 @@
 import { css } from 'styled-components';
+import { path } from 'ramda';
 
-export default space => css`
+const api = path(['theme', 'api']);
+
+export default values => props => css`
   & > * + * {
-    margin-left: ${space};
+    ${api(props).marginLeft(values)};
   }
 `;

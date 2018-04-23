@@ -1,6 +1,5 @@
 export default Object.freeze({
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-  XLARGE: 'xlarge',
+  SMALL_UP: 'smallUp',
+  MEDIUM_UP: 'mediumUp',
+  LARGE_UP: 'largeUp',
 });

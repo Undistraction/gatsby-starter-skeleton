@@ -6,5 +6,5 @@ import spaceChildrenH from '../../styles/mixins/space-children-h';
 export default styled.ul`
   ${flexHorizontal};
   ${uiList};
-  ${spaceChildrenH('15px')};
+  ${spaceChildrenH('1ru')};
 `;
