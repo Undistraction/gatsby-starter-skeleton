@@ -1,6 +1,7 @@
 const { map, compose } = require('ramda');
 const path = require('path');
 const reporter = require('../reporter');
+const { prefixWithFSlash } = require('../fileUtils');
 
 const { ARTICLE_PATH } = require('../templatePaths');
 const queryAllArticleNodes = require('../queries/queryAllArticleNodes');
@@ -11,7 +12,7 @@ const createArticlePage = (slug, createPage) =>
   new Promise((resolve, reject) => {
     try {
       createPage({
-        path: `/${slug}`,
+        path: prefixWithFSlash(slug),
         component: path.resolve(ARTICLE_PATH),
         context: {
           // Data passed to context is available in page queries as GraphQL variables.

@@ -3,6 +3,7 @@ const path = require('path');
 const reporter = require('../reporter');
 const toSlug = require('../toSlug');
 const { TAG_PATH } = require('../templatePaths');
+const { prefixWithFSlash } = require('../fileUtils');
 const queryAllArticleNodes = require('../queries/queryAllArticleNodes');
 const listToArray = require('../listToArray');
 
@@ -20,7 +21,7 @@ const createTagPage = (tag, slug, createPage) =>
   new Promise((resolve, reject) => {
     try {
       createPage({
-        path: slug,
+        path: prefixWithFSlash(slug),
         component: path.resolve(TAG_PATH),
         context: {
           // Data passed to context is available in page queries as GraphQL variables.

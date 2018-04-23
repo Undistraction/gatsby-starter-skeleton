@@ -12,6 +12,7 @@ const path = require('path');
 const { ARTICLES_PATH } = require('../templatePaths');
 const queryAllArticleNodes = require('../queries/queryAllArticleNodes');
 const reporter = require('../reporter');
+const { prefixWithFSlash } = require('../fileUtils');
 
 const mapWithIndex = addIndex(map);
 
@@ -24,7 +25,7 @@ const toItemIndex = (perPage, index, groupLength) =>
 
 const pagePath = curry((name, pageIndex) => {
   const p = pageIndex > 0 ? joinWithFSlash([name, pageIndex]) : name;
-  return `/${p}`;
+  return prefixWithFSlash(p);
 });
 
 const createPaginatedArticlesPage = (

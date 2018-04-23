@@ -2,6 +2,7 @@ const path = require('path');
 const { LAB_PATH } = require('../templatePaths');
 const queryAllExperimentNodes = require('../queries/queryAllExperimentNodes');
 const reporter = require('../reporter');
+const { prefixWithFSlash } = require('../fileUtils');
 
 const markdownNodes = data => data.allMarkdownRemark.edges;
 
@@ -11,7 +12,7 @@ const createLabPage = (graphql, createPage, labPath) =>
       const edges = markdownNodes(result.data);
       const experimentsCount = edges.length;
       createPage({
-        path: labPath,
+        path: prefixWithFSlash(labPath),
         component: path.resolve(LAB_PATH),
         context: {
           experiments: edges,
