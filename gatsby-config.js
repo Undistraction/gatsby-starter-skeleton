@@ -40,4 +40,7 @@ if (seo.googleTrackingID) {
 module.exports = {
   siteMetadata,
   plugins,
+  // If you are deploying to anything other than the root of a domain, add the
+  // prefix to use here.
+  // pathPrefix: '/example',
 };
