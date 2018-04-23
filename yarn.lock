@@ -4382,17 +4382,17 @@ gatsby-remark-code-repls@^1.0.6:
     recursive-readdir-synchronous "^0.0.3"
     unist-util-map "^1.0.3"
 
-gatsby-remark-copy-linked-files@^1.5.18:
-  version "1.5.20"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.5.20.tgz#ebd53a07738b67d13d75cdecea3d8fdde3914c79"
+gatsby-remark-copy-linked-files@^1.5.32:
+  version "1.5.32"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.5.32.tgz#cc54437710d5c3c153c2f681adcd487f468abfd1"
   dependencies:
     babel-runtime "^6.26.0"
     cheerio "^1.0.0-rc.2"
     fs-extra "^4.0.1"
-    image-size "^0.6.1"
     is-relative-url "^2.0.0"
     lodash "^4.17.4"
     path-is-inside "^1.0.2"
+    probe-image-size "^4.0.0"
     unist-util-visit "^1.1.1"
 
 gatsby-remark-embed-snippet@^1.0.2:
@@ -5424,7 +5424,7 @@ image-size@^0.5.0, image-size@^0.5.1:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
 
-image-size@^0.6.0, image-size@^0.6.1:
+image-size@^0.6.0:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.6.1.tgz#98122a562d59dcc097ef1b2c8191866eb8f5d663"
 
@@ -9317,6 +9317,15 @@ react@^16.2.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
+react@^16.3.2:
+  version "16.3.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.3.2.tgz#fdc8420398533a1e58872f59091b272ce2f91ea9"
+  dependencies:
+    fbjs "^0.8.16"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
+
 read-all-stream@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/read-all-stream/-/read-all-stream-3.1.0.tgz#35c3e177f2078ef789ee4bfafa4373074eaef4fa"
@@ -10917,7 +10926,7 @@ style-search@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/style-search/-/style-search-0.1.0.tgz#7958c793e47e32e07d2b5cafe5c0bf8e12e77902"
 
-styled-components@^2.0.0, styled-components@^2.2.3:
+styled-components@^2.2.3:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-2.2.3.tgz#154575c269880c840f903f580287dab155cf684c"
   dependencies:
@@ -10954,13 +10963,13 @@ styled-mq@0.3.11:
     react "^16.1.0"
     styled-components "^2.2.3"
 
-styled-spinkit@^0.1.8:
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/styled-spinkit/-/styled-spinkit-0.1.8.tgz#faf58192f7ff45378c9e3aa3d00ebfca8f67644f"
+styled-spinkit@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/styled-spinkit/-/styled-spinkit-0.3.0.tgz#0e4edc00dfaf43159de9adc7b3266575b6062c1f"
   dependencies:
-    prop-types "^15.5.10"
+    prop-types "^15.6.0"
     round-to "^2.0.0"
-    styled-components "^2.0.0"
+    styled-components "^2.4.0"
 
 stylelint-config-recommended@^2.0.0:
   version "2.0.0"

@@ -10,3 +10,4 @@ rm -rf ./project/src/content
 cp -r ./content ./project/src/content
 # Insert path prefix option into Gatsby config file
 sed -i '' "s#// pathPrefix: '/example'#pathPrefix: '/gatsby-skeleton-starter'#g" ./project/gatsby-config.js
+echo 'Deloyed Demo to Github Pages'
