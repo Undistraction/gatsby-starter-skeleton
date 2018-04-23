@@ -11,7 +11,7 @@ const createArticlePage = (slug, createPage) =>
   new Promise((resolve, reject) => {
     try {
       createPage({
-        path: slug,
+        path: `/${slug}`,
         component: path.resolve(ARTICLE_PATH),
         context: {
           // Data passed to context is available in page queries as GraphQL variables.

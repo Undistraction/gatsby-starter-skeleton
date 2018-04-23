@@ -22,10 +22,10 @@ const fromItemIndex = (perPage, index) => index * inc(perPage) || 1;
 const toItemIndex = (perPage, index, groupLength) =>
   index * perPage + groupLength;
 
-const pagePath = curry(
-  (name, pageIndex) =>
-    pageIndex > 0 ? joinWithFSlash([name, pageIndex]) : name
-);
+const pagePath = curry((name, pageIndex) => {
+  const p = pageIndex > 0 ? joinWithFSlash([name, pageIndex]) : name;
+  return `/${p}`;
+});
 
 const createPaginatedArticlesPage = (
   createPage,
@@ -66,8 +66,8 @@ const createPaginatedArticlesPages = (
   createPage,
   perPage,
   articlesPath
-) => {
-  return queryAllArticleNodes(graphql, articlesPath)
+) =>
+  queryAllArticleNodes(graphql, articlesPath)
     .then(result => {
       const edges = markdownNodes(result.data);
       const groupedPages = splitEvery(perPage, edges);
@@ -88,6 +88,5 @@ const createPaginatedArticlesPages = (
         `Articles Pages Couldn't Be Created: ${error.toString()}`
       );
     });
-};
 
 module.exports = createPaginatedArticlesPages;
