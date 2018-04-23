@@ -72,7 +72,13 @@
     "lint:js": "eslint src",
     "lint:css": "stylelint './src/**/*.js'",
     "lint": "npm run lint:js && npm run lint:css",
-    "build:demo": "bash scripts/build-demo.sh"
+    "demo:create": "bash scripts/demo-create.sh",
+    "demo:dev": "cd ./demo/project && gatsby develop & yarn open",
+    "demo:serve": "cd ./demo/project && gatsby serve & yarn open",
+    "demo:build": "cd ./demo/project && gatsby build --prefix-paths",
+    "demo:deploy": "gh-pages -d demo/project/public",
+    "demo": "yarn demo:create && yarn demo:build && yarn demo:deploy",
+    "demo:open": "open https://undistraction.github.io/gatsby-skeleton-starter"
   },
   "devDependencies": {
     "eslint": "^4.8.0",
@@ -83,6 +89,8 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-react": "^7.4.0",
+    "gh-pages": "^1.1.0",
+    "github-pages": "^3.0.2",
     "jest": "^21.2.1",
     "postcss-sass": "^0.2.0",
     "prettier": "^1.7.4",

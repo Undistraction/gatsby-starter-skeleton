@@ -1,59 +1,27 @@
 # Gatsby Skeleton Starter
 
-[![NPM Version](https://img.shields.io/npm/v/gatsby-skeleton-starter.svg)](https://www.npmjs.com/package/styled-mq)
-[![Build Status](https://img.shields.io/travis/Undistraction/gatsby-skeleton-starter.svg)](https://travis-ci.org/Undistraction/styled-mq)
+[![NPM
+Version](https://img.shields.io/npm/v/gatsby-skeleton-starter.svg)](https://www.npmjs.com/package/styled-mq)
+[![Build
+Status](https://img.shields.io/travis/Undistraction/gatsby-skeleton-starter.svg)](https://travis-ci.org/Undistraction/styled-mq)
 [![DUB](https://img.shields.io/dub/l/vibe-d.svg)](./LICENSE.md)
 
 The is a static site built with [Gatsby](https://www.gatsbyjs.org/). It would
-particularly suit a developer who wants to publish articles and share code, but
-it would also be fine for a simple blog. It aims to be quick and easy to use
-straight out of the box and easy to customise if you want to.
+particularly suit a developer who wants to publish articles and share code or
+anyone wanting a clean, simple simple blog. It has a minimal and responsive
+design with an emphasis on typography and it aims to be quick and easy to use
+straight out of the box while offering a powerful set of options for
+customisation.
+
+You can see a demo version which also introduces you to the site's features
+[here](https://undistraction.github.io/gatsby-skeleton-starter/articles).
 
 ## Quickstart
 
-Install all NPM modules:
+To build a new Gatsby project using this as your starter:
 
-```
-yarn
-```
-
-Run the site in the development server:
-
-```
-yarn run dev
-```
-
-Open development server in default browser:
-
-```
-yarn run open
-```
-
-Build a production version of the site to `/public`:
-
-```
-yarn run build
-```
-
-Run the built version of the site locally (note: you will get a 404 if you
-haven't already built the site)
-
-```
-yarn run serve
-```
-
-If you have set the site up with Surge you can publish:
-
-Deploy to staging:
-
-```
-yarn run deploy-staging
-```
-
-Deploy to production:
-
-```
-yarn run deploy-production
+```bash
+gatsby new project https://github.com/undistraction/gatsby-skeleton-starter
 ```
 
 ### Configuration
@@ -136,7 +104,69 @@ Via placeholder.com
 http://via.placeholder.com/2400x1400.jpg?text=Home+2400+x+1400
 ```
 
-## Thanks
+## Maintainance
+
+### General
+
+Install all NPM modules:
+
+```bash
+yarn
+```
+
+Run the site on the development server:
+
+```bash
+yarn run dev
+```
+
+Open development server in default browser (`http://localhost:8000`):
+
+```bash
+yarn run open
+```
+
+Build a production version of the site to `/public`:
+
+```bash
+yarn run build
+```
+
+Run the built version of the site locally: Note: you will get a 404 if you
+haven't already built the site.
+
+```bash
+yarn run serve
+```
+
+### Demo
+
+The root project contains very minimal content - just enough to get someone
+started. However the demo version uses a more comprehensive set of content, so a
+separate version must be built and deployed to Github Pages.
+
+This process consists of the following steps:
+
+1. A new Gatsby project is created in `./demo/project`, using this project's
+   master branch from Github as its starter.
+
+2. The content for the demo is swapped in for the default content, using the
+   contents of the `./demo/content` directory.
+
+3. A `pathPrefix` config option is injected into `gatsby-config.js`
+
+4. The demo version is built to `./demo/project/public`
+
+5. The demo version is deployed to Github pages.
+
+There are granular commands for each step, or the entire process can be run
+using:
+
+```bash
+yarn demo
+```
+
+## Thanks / Credit
 
 Skull By Tina Rataj-Berard (The Noun Project) [CC BY 3.0
 (http://creativecommons.org/licenses/by/3.0)], via Wikimedia Commons
