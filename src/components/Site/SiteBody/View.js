@@ -3,9 +3,9 @@ import blockCenterH from '../../../styles/mixins/block-center-h';
 
 export default styled.div`
   ${blockCenterH};
-  width: 50%;
+  width: 100%;
   ${props =>
     props.theme.api({
-      padding: ['10ru'],
+      padding: ['2ru'],
     })};
 `;
