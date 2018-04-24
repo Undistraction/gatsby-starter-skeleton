@@ -1,17 +1,11 @@
 import graphql from 'graphql';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ThemeProvider } from 'styled-components';
 import 'prismjs/themes/prism-twilight.css';
 import '../styles/global.css';
 import Site from '../components/Site';
-import theme from '../styles/themes/default';
 
-const View = ({ children, data }) => (
-  <ThemeProvider theme={theme}>
-    <Site data={data}>{children}</Site>
-  </ThemeProvider>
-);
+const View = ({ children, data }) => <Site data={data}>{children}</Site>;
 
 View.propTypes = {
   children: PropTypes.func.isRequired,

@@ -1,8 +1,8 @@
 import { css } from 'styled-components';
-import { propsApi } from '../utils/api';
+import api from '../api';
 
-export default values => props => css`
+export default values => css`
   & > * + * {
-    ${propsApi(props).marginTop(values)};
+    ${api.marginTop(values)};
   }
 `;

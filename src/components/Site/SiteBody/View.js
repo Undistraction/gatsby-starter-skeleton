@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import blockCenterH from '../../../styles/mixins/block-center-h';
+import api from '../../../styles/api';
 
 export default styled.div`
   ${blockCenterH};
   width: 100%;
-  ${props =>
-    props.theme.api({
-      padding: ['2ru'],
-    })};
+  ${api({
+    padding: ['2ru'],
+  })};
 `;

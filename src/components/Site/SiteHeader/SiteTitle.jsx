@@ -1,8 +1,8 @@
 import styled from 'styled-components';
+import api from '../../../styles/api';
 
 export default styled.h2`
-  ${p =>
-    p.theme.api({
-      baseline: ['s:secondaryTitle'],
-    })};
+  ${api({
+    baseline: ['s:secondaryTitle'],
+  })};
 `;
