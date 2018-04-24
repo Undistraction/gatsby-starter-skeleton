@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PageHeader from './PageHeader';
+import PageBody from './PageBody';
 import Layout, { LayoutHeader, LayoutBody } from './Layout';
 
 const Page = ({ title, children }) => (
@@ -9,7 +10,7 @@ const Page = ({ title, children }) => (
       <PageHeader title={title} />
     </LayoutHeader>
     <LayoutBody>
-      <div>{children}</div>
+      <PageBody>{children}</PageBody>
     </LayoutBody>
   </Layout>
 );

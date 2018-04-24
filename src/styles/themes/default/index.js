@@ -1,16 +1,14 @@
 import createApi from 'cssapi';
 import globalStyles from './globalStyles';
-import COLOURS from './colours';
-import WIDTH_BREAKPOINTS from './breakpoints';
 
 // -----------------------------------------------------------------------------
 // Define Breakpoints
 // -----------------------------------------------------------------------------
 
 const breakpoints = [
-  [WIDTH_BREAKPOINTS.SMALL_UP, 400], // 400–900
-  [WIDTH_BREAKPOINTS.MEDIUM_UP, 900], // 900–1100
-  [WIDTH_BREAKPOINTS.LARGE_UP, 1100], // 1100–
+  ['smallUp', 400], // 400–900
+  ['mediumUp', 900], // 900–1100
+  ['largeUp', 1100], // 1100–
 ];
 
 // -----------------------------------------------------------------------------
@@ -21,10 +19,19 @@ const config = {
   breakpoints,
   data: {
     color: {
-      black: COLOURS.black,
-      white: COLOURS.white,
+      black: '#070707',
+      white: '#F5F5F5',
       bg: 'c:white',
       text: 'c:black',
+    },
+    scale: {
+      smallprint: '12',
+      body: '16',
+      secondaryTitle: '20',
+      primaryTitle: '24',
+    },
+    font: {
+      all: 'Cousine, monospace',
     },
   },
 };
@@ -43,6 +50,4 @@ globalStyles(api);
 
 export default {
   api,
-  text: COLOURS.black,
-  highlight: COLOURS.orangeRed,
 };

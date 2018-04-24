@@ -6,6 +6,14 @@ export default styled.footer`
   ${blockCenterH};
 
   p {
-    margin: 0 auto;
+    ${p =>
+      p.theme.api({
+        margin: ['0 auto 1ru'],
+      })};
   }
+
+  ${p =>
+    p.theme.api({
+      paddingV: ['4ru'],
+    })};
 `;

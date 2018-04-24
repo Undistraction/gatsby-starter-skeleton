@@ -18,6 +18,9 @@ export const query = graphql`
     mainText: file(relativePath: { eq: "about/main.md" }) {
       childMarkdownRemark {
         html
+        frontmatter {
+          title
+        }
       }
     }
   }

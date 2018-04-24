@@ -2,7 +2,6 @@ import graphql from 'graphql';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
-import 'normalize.css/normalize.css';
 import 'prismjs/themes/prism-twilight.css';
 import '../styles/global.css';
 import Site from '../components/Site';

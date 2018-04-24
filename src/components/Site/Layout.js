@@ -9,9 +9,11 @@ export const LayoutFooter = styled.div``;
 export default styled.div`
   ${flexVertical};
   ${blockCenterH};
-  min-height: 100vh;
-
-  ${LayoutHeader} {
+  ${p =>
+    p.theme.api({
+      minHeight: ['100vu'],
+      maxWidth: [1100],
+    })} ${LayoutHeader} {
     flex: 0 0 auto;
   }
 

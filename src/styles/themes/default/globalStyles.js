@@ -1,27 +1,19 @@
 import { injectGlobal } from 'styled-components';
-import FONTS from './fonts';
-import COLOURS from './colours';
+import styledNormalize from 'styled-normalize';
 
 export default api =>
   /* eslint-disable no-unused-expressions */
   injectGlobal`
-    html {
-      ${api.backgroundColor('c:bg')}
-      overflow-y: scroll;
-      overflow-x: hidden;
-    }
 
-    body {
-      font-family: ${FONTS.default.stack};
-      color: ${COLOURS.black};
-      
-      /* Our default font-size */
-      font-size: 1.6rem;
-      line-height: 1.4;
-    }
+    /* ---------------------------------------------------------------------- */
+    /* Normalize Styles
+    /* ---------------------------------------------------------------------- */
 
+    ${styledNormalize}
+
+    /* ---------------------------------------------------------------------- */
     /* Reset Box Sizing
-    ========================================================================= */
+    /* ---------------------------------------------------------------------- */
 
     html {
       box-sizing: border-box;
@@ -33,12 +25,31 @@ export default api =>
       box-sizing: inherit;
     }
 
-    /* Typography
-    ========================================================================= */
+    /* ---------------------------------------------------------------------- */
+    /* Page Setup
+    /* ---------------------------------------------------------------------- */
 
-    :root {
-      /* Now 1rem = 10px */
-      font-size: 62.5%;
+    html {
+      ${api.backgroundColor('c:bg')}
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+
+    body {
+      ${api({
+        backgroundColor: ['c:bg'],
+      })}
+    }
+
+    /* ---------------------------------------------------------------------- */
+    /* Typography
+    /* ---------------------------------------------------------------------- */
+
+    body {
+      ${api({
+        fontFamily: ['f:all'],
+        baseline: ['scale:body'],
+      })}
     }
 
     b,
@@ -57,11 +68,14 @@ export default api =>
     }
 
     p + p {
-      margin-top: 2.2rem;
+      ${api({
+        marginTop: ['1ru'],
+      })}
     }
 
+    /* ---------------------------------------------------------------------- */
     /* Headers
-    ========================================================================= */
+    /* ---------------------------------------------------------------------- */
 
     h1,
     h2,
@@ -69,13 +83,17 @@ export default api =>
     h4,
     h5,
     h6 {
-      font-size: 2rem;
-      font-weight: normal;
-      margin-bottom: 2.2rem;
+      ${api({
+        baseline: ['s:body'],
+        fontWeight: ['normal'],
+        margin: [0],
+      })}
     }
 
-    /* Prism Syntax Hightlighting Tweaks
-    ========================================================================= */
+
+    /* ---------------------------------------------------------------------- */
+    /* Prism Syntax Hightlightling
+    /* ---------------------------------------------------------------------- */
 
     /**
     * Add back the container background-color, border-radius, padding, margin

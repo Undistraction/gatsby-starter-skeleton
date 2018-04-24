@@ -11,9 +11,10 @@ import Page from '../../components/Page';
 import loadMetadata from '../../utils/loadMetadata';
 import mainImageSizesFrom from '../../data/mainImageSizesFrom';
 import mainTextFrom from '../../data/mainTextFrom';
+import titleFrom from '../../data/titleFrom';
 
 const View = ({ data }) => (
-  <Page title="About">
+  <Page title={titleFrom(data)}>
     <Metadata metadata={loadMetadata('about')} />
     <Img sizes={mainImageSizesFrom(data)} />
     <HTMLText htmlText={mainTextFrom(data)} />

@@ -4,7 +4,7 @@ import PageTitle from './PageTitle';
 
 const PageHeader = ({ title }) => (
   <header>
-    <PageTitle title={title} />
+    <PageTitle>{title}</PageTitle>
   </header>
 );
 

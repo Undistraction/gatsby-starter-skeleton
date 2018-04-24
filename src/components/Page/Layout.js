@@ -8,7 +8,12 @@ export default styled.div`
   ${flexVertical};
 
   ${LayoutHeader} {
-    flex: 0 0 auto;
+    ${p =>
+      p.theme.api({
+        flex: ['0 0 auto'],
+        marginBottom: ['0.5ru'],
+        textAlign: ['center'],
+      })};
   }
 
   ${LayoutBody} {
