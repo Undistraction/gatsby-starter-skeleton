@@ -1,7 +1,6 @@
 const { map, compose } = require('ramda');
 const path = require('path');
 const reporter = require('../reporter');
-const copyFile = require('../copyFile');
 const { prefixWithFSlash } = require('../fileUtils');
 
 const { EXPERIMENT_PATH } = require('../templatePaths');
@@ -27,15 +26,6 @@ const createExperimentPage = (node, createPage) =>
     }
     reporter.success(`Created Experiment Page at slug '${slug}'.`);
     resolve();
-  }).then(() => {
-    const { frontmatter: { codePath } } = node;
-    const fromPath = path.resolve(codePath);
-    const toPath = path.resolve(
-      'public',
-      node.fields.slug,
-      path.basename(codePath)
-    );
-    return copyFile(fromPath, toPath);
   });
 
 const createExperimentsPages = (graphql, createPage, labPath) =>

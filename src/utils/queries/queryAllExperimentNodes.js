@@ -10,7 +10,7 @@ module.exports = (graphql, path) =>
             frontmatter {
               title
               date(formatString: "DD MMMM, YYYY")
-              codePath
+              keywords
             }
             fields {
               slug
