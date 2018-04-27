@@ -10,7 +10,6 @@ const ExperimentsListItem = ({ experiment }) => {
   const { frontmatter, fields } = experiment;
   return (
     <div>
-      <date>{frontmatter.date}</date>{' '}
       <Link to={fields.slug}>{frontmatter.title}</Link>
       <p>{experiment.excerpt}</p>
     </div>

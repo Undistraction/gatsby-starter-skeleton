@@ -14,5 +14,6 @@ export default styled.footer`
 
   ${api({
     paddingV: ['4ru'],
+    baseline: ['s:smallprint'],
   })};
 `;

@@ -12,7 +12,8 @@ const credit = () => {
       <p>
         Built by{' '}
         <IconLink to="http://undistraction.com">
-          <CreditIcon />Undistraction
+          <CreditIcon />
+          <span>Undistraction</span>
         </IconLink>
       </p>
     );

@@ -6,6 +6,16 @@ const PageText = styled.div`
   p:first-child {
     font-weight: bold;
   }
+
+  p:first-child:first-letter {
+    float: left;
+    font-size: 1.7em;
+    font-weight: normal;
+    margin-right: 0.3em;
+    padding: 12px 10px 6px;
+    background: black;
+    color: white;
+  }
 `;
 
 const HTMLText = ({ htmlText }) => (

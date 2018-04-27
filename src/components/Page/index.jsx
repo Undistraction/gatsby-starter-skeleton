@@ -1,4 +1,3 @@
-import React from 'react';
-import View from './View';
+import Page from './Page';
 
-export default props => <View {...props} />;
+export default Page;

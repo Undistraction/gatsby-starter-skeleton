@@ -17,8 +17,6 @@ const LAB_REGEX = new RegExp(`content/${structure.lab.directory}/`);
 const isArticleByPath = filepath => ARTICLES_REGEX.test(filepath);
 const isLabByPath = filepath => LAB_REGEX.test(filepath);
 
-// const isLabByPath = filepath => LAB_REGEX.test(filepath);
-
 const nodeIsMarkdownArticle = node =>
   isTypeMarkdownRemark(node) && isArticleByPath(node.fileAbsolutePath);
 const nodeIsMarkdownLab = node =>
