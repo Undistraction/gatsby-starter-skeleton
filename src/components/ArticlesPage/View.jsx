@@ -6,6 +6,7 @@ import ArticleList from '../../components/ArticleList';
 import Metadata from '../../components/Metadata';
 import loadMetadata from '../../utils/loadMetadata';
 import nodesFrom from '../../data/nodesFrom';
+import config from '../../config';
 
 const View = ({ pathContext }) => {
   const {
@@ -20,12 +21,13 @@ const View = ({ pathContext }) => {
   } = pathContext;
 
   return (
-    <Page title="Articles">
+    <Page title={config.structure.articles.name}>
       <Metadata metadata={loadMetadata('articles')} />
       <header>
         Page {pageIndex} of {pageCount}
         <br />
-        {fromItemIndex}–{toItemIndex} of {itemsCount} Articles
+        {fromItemIndex}–{toItemIndex} of {itemsCount}{' '}
+        {config.structure.articles.name}
         <ArticlesNav previousPath={previousPath} nextPath={nextPath} />
       </header>
       <ArticleList articles={nodesFrom(items)} />

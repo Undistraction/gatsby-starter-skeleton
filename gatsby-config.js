@@ -18,7 +18,7 @@ const plugins = [
   favicon(),
   sourceFileSystem('articles'),
   sourceFileSystem('pages'),
-  sourceFileSystem('lab'),
+  sourceFileSystem('projects'),
   remark(config),
 ];
 

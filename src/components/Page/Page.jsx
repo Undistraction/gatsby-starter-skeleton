@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import PageHeader from './PageHeader';
 import PageBody from './PageBody';
-import flexVertical from '../../styles/mixins/flex-vertical';
+import flexVertical from '../../styles/mixins/flexVertical';
 import api from '../../styles/api';
 
 export const LayoutHeader = styled.div``;

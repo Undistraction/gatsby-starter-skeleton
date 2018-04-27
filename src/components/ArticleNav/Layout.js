@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import flexHorizontal from '../../styles/mixins/flex-horizontal';
+import flexHorizontal from '../../styles/mixins/flexHorizontal';
 
 export const LayoutPrevious = styled.div``;
 

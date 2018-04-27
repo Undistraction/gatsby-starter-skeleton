@@ -7,15 +7,15 @@ const templatePathForFile = file => path.join(TEMPLATES_DIR, file);
 const ARTICLE_PATH = templatePathForFile('article.js');
 const ARTICLES_PATH = templatePathForFile('articles.js');
 const TAG_PATH = templatePathForFile('tag.js');
-const LAB_PATH = templatePathForFile('lab.js');
-const EXPERIMENT_PATH = templatePathForFile('experiment.js');
+const PROJECTS_PATH = templatePathForFile('projects.js');
+const PROJECT_PATH = templatePathForFile('project.js');
 
 const TEMPLATE_PATHS = {
   ARTICLE_PATH,
   ARTICLES_PATH,
   TAG_PATH,
-  LAB_PATH,
-  EXPERIMENT_PATH,
+  PROJECTS_PATH,
+  PROJECT_PATH,
 };
 
 Object.freeze(TEMPLATE_PATHS);

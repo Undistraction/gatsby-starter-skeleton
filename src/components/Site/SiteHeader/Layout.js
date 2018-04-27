@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import flexVertical from '../../../styles/mixins/flex-vertical';
-import spaceChildrenV from '../../../styles/mixins/space-children-v';
+import flexVertical from '../../../styles/mixins/flexVertical';
+import spaceChildrenV from '../../../styles/mixins/spaceChildrenV';
 
 export default styled.div`
   ${flexVertical};

@@ -1,8 +1,8 @@
-const createExperimentsPages = require('./src/utils/create/createExperimentsPages');
+const createProjectsPages = require('./src/utils/create/createProjectsPages');
 const validatedConfig = require('./src/config/validatedConfig');
 const createArticlesPages = require('./src/utils/create/createArticlesPages');
 const createPaginatedArticlesPages = require('./src/utils/create/createPaginatedArticlesPages');
-const createLabPage = require('./src/utils/create/createLabPage');
+const createProjectsPage = require('./src/utils/create/createProjectsPage');
 const createTagsPages = require('./src/utils/create/createTagsPages');
 const addSlugToNode = require('./src/utils/augment/addSlugToNode');
 const addMetadataToNode = require('./src/utils/augment/addMetadataToNode');
@@ -11,16 +11,16 @@ const { isTypeMarkdownRemark } = require('./src/utils/checkNodeType');
 
 const { structure } = validatedConfig();
 
-const ARTICLES_REGEX = new RegExp(`content/${structure.articles.directory}/`);
-const LAB_REGEX = new RegExp(`content/${structure.lab.directory}/`);
+const ARTICLES_REGEXP = new RegExp(`content/${structure.articles.directory}/`);
+const PROJECT_REGEXP = new RegExp(`content/${structure.projects.directory}/`);
 
-const isArticleByPath = filepath => ARTICLES_REGEX.test(filepath);
-const isLabByPath = filepath => LAB_REGEX.test(filepath);
+const isArticleByPath = filepath => ARTICLES_REGEXP.test(filepath);
+const isProjectByPath = filepath => PROJECT_REGEXP.test(filepath);
 
 const nodeIsMarkdownArticle = node =>
   isTypeMarkdownRemark(node) && isArticleByPath(node.fileAbsolutePath);
-const nodeIsMarkdownLab = node =>
-  isTypeMarkdownRemark(node) && isLabByPath(node.fileAbsolutePath);
+const nodeIsMarkdownProject = node =>
+  isTypeMarkdownRemark(node) && isProjectByPath(node.fileAbsolutePath);
 
 // eslint-disable-next-line no-unused-vars
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
@@ -29,8 +29,8 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     addSlugToNode(node, createNodeField, structure.articles.path);
     addMetadataToNode(node, createNodeField);
     addTagsToNode(node, createNodeField);
-  } else if (nodeIsMarkdownLab(node)) {
-    addSlugToNode(node, createNodeField, structure.lab.path);
+  } else if (nodeIsMarkdownProject(node)) {
+    addSlugToNode(node, createNodeField, structure.projects.path);
     addMetadataToNode(node, createNodeField);
   }
 };
@@ -54,17 +54,21 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     createPage,
     structure.articles.path
   );
-  const labPage = createLabPage(graphql, createPage, structure.lab.path);
-  const experimentsPages = createExperimentsPages(
+  const projectsPage = createProjectsPage(
     graphql,
     createPage,
-    structure.lab.path
+    structure.projects.path
+  );
+  const projectPages = createProjectsPages(
+    graphql,
+    createPage,
+    structure.projects.path
   );
   return Promise.all([
     paginatedArticlePages,
     articlePages,
     tagPages,
-    labPage,
-    experimentsPages,
+    projectsPage,
+    projectPages,
   ]);
 };

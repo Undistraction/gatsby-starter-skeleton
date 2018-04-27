@@ -40,10 +40,10 @@ module.exports = {
       path: 'articles',
       perPage: 5,
     },
-    lab: {
-      name: 'Lab',
-      directory: 'lab',
-      path: 'lab',
+    projects: {
+      name: 'Projects',
+      directory: 'projects',
+      path: 'projects',
     },
   },
   // ---------------------------------------------------------------------------

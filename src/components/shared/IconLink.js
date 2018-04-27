@@ -1,7 +1,7 @@
 import GatsbyLink from 'gatsby-link';
 import styled from 'styled-components';
 import linkProps from '../../styles/mixins/linkProps';
-import spaceChildrenH from '../../styles/mixins/space-children-h';
+import spaceChildrenH from '../../styles/mixins/spaceChildrenH';
 
 export default styled(GatsbyLink)`
   ${linkProps};

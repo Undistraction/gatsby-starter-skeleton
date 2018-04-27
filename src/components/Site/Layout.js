@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import flexVertical from '../../styles/mixins/flex-vertical';
-import blockCenterH from '../../styles/mixins/block-center-h';
+import flexVertical from '../../styles/mixins/flexVertical';
+import blockCenterH from '../../styles/mixins/blockCenterH';
 import api from '../../styles/api';
 
 export const LayoutHeader = styled.div``;

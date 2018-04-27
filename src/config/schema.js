@@ -47,7 +47,7 @@ const structure = Joi.object().keys({
     .regex(fileNameRegex)
     .required(),
   articles: item,
-  lab: item,
+  projects: item,
 });
 
 const media = Joi.object().keys({
