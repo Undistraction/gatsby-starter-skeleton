@@ -1,3 +1,3 @@
-import Template from '../components/ProjectsPage';
+import Template from '../components/ProjectsPage'
 
-export default Template;
+export default Template

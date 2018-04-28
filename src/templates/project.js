@@ -1,7 +1,7 @@
-import graphql from 'graphql';
-import Template from '../components/ProjectPage';
+import graphql from 'graphql'
+import Template from '../components/ProjectPage'
 
-export default Template;
+export default Template
 
 export const query = graphql`
   query ExperimentQuery($slug: String) {
@@ -47,4 +47,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

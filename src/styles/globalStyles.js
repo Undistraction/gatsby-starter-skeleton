@@ -1,5 +1,5 @@
-import { injectGlobal } from 'styled-components';
-import styledNormalize from 'styled-normalize';
+import { injectGlobal } from 'styled-components'
+import styledNormalize from 'styled-normalize'
 
 export default api =>
   /* eslint-disable no-unused-expressions */
@@ -121,4 +121,4 @@ export default api =>
       float: left; /* 1 */
       min-width: 100%; /* 2 */
     }
-`;
+`

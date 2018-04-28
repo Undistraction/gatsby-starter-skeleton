@@ -1,3 +1,3 @@
-const slugify = require('slugify');
+const slugify = require('slugify')
 
-module.exports = source => slugify(source, { lower: true });
+module.exports = source => slugify(source, { lower: true })

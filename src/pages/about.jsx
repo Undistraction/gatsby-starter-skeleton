@@ -1,7 +1,7 @@
-import graphql from 'graphql';
-import AboutPage from '../components/AboutPage';
+import graphql from 'graphql'
+import AboutPage from '../components/AboutPage'
 
-export default AboutPage;
+export default AboutPage
 
 // Note: Ideally this would be in its own file and imported from a Page
 // Container, but Gatsby preprocesses the pages looking for a graphql call.
@@ -24,4 +24,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

@@ -1,1 +1,1 @@
-export default data => data.mainImageSizes.childImageSharp.sizes;
+export default data => data.mainImageSizes.childImageSharp.sizes

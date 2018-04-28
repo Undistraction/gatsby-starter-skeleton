@@ -1,1 +1,1 @@
-export default data => data.mainText.childMarkdownRemark.frontmatter.title;
+export default data => data.mainText.childMarkdownRemark.frontmatter.title

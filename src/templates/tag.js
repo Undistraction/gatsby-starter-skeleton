@@ -1,7 +1,7 @@
-import graphql from 'graphql';
-import Template from '../components/TagPage';
+import graphql from 'graphql'
+import Template from '../components/TagPage'
 
-export default Template;
+export default Template
 
 export const query = graphql`
   query TagQuery($tag: String) {
@@ -26,4 +26,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

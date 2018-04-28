@@ -1,3 +1,3 @@
-import Template from '../components/ArticlesPage';
+import Template from '../components/ArticlesPage'
 
-export default Template;
+export default Template

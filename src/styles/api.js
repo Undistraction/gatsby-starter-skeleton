@@ -1,5 +1,5 @@
-import createApi from 'cssapi';
-import globalStyles from './globalStyles';
+import createApi from 'cssapi'
+import globalStyles from './globalStyles'
 
 // -----------------------------------------------------------------------------
 // Define Breakpoints
@@ -9,7 +9,7 @@ const breakpoints = [
   ['smallUp', 400], // 400–900
   ['mediumUp', 900], // 900–1100
   ['largeUp', 1100], // 1100–
-];
+]
 
 // -----------------------------------------------------------------------------
 // Configure CSS API
@@ -37,18 +37,18 @@ const config = {
       title: 'Berkshire Swash, cursive',
     },
   },
-};
+}
 
-const api = createApi(config);
+const api = createApi(config)
 
 // -----------------------------------------------------------------------------
 // Global Styles
 // -----------------------------------------------------------------------------
 
-globalStyles(api);
+globalStyles(api)
 
 // -----------------------------------------------------------------------------
 // Export Theme
 // -----------------------------------------------------------------------------
 
-export default api;
+export default api

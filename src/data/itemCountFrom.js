@@ -1,1 +1,1 @@
-export default data => data.allMarkdownRemark.totalCount;
+export default data => data.allMarkdownRemark.totalCount

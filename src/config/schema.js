@@ -1,6 +1,6 @@
-const Joi = require('joi');
+const Joi = require('joi')
 
-const fileNameRegex = /^[a-zA-Z0-9-_]+$/;
+const fileNameRegex = /^[a-zA-Z0-9-_]+$/
 
 const item = Joi.object().keys({
   name: Joi.string()
@@ -15,7 +15,7 @@ const item = Joi.object().keys({
   perPage: Joi.number()
     .greater(0)
     .optional(),
-});
+})
 
 const meta = Joi.object().keys({
   owner: Joi.string().required(),
@@ -31,13 +31,13 @@ const meta = Joi.object().keys({
   url: Joi.string()
     .uri()
     .optional(),
-});
+})
 
 const seo = Joi.object().keys({
   googleTrackingID: Joi.string()
     .regex(/^ua-\d{4,9}-\d{1,4}$/i)
     .optional(),
-});
+})
 
 const structure = Joi.object().keys({
   downloadsDirectory: Joi.string()
@@ -48,7 +48,7 @@ const structure = Joi.object().keys({
     .required(),
   articles: item,
   projects: item,
-});
+})
 
 const media = Joi.object().keys({
   images: Joi.object().keys({
@@ -57,17 +57,17 @@ const media = Joi.object().keys({
       .max(100)
       .required(),
   }),
-});
+})
 
 const layout = Joi.object().keys({
   maxWidth: Joi.number()
     .min(0)
     .required(),
-});
+})
 
 const cli = Joi.object().keys({
   emoji: Joi.string().optional(),
-});
+})
 
 module.exports = Joi.object().keys({
   meta,
@@ -76,4 +76,4 @@ module.exports = Joi.object().keys({
   media,
   layout,
   cli,
-});
+})

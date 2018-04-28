@@ -1,7 +1,7 @@
-import graphql from 'graphql';
-import Template from '../components/ArticlePage';
+import graphql from 'graphql'
+import Template from '../components/ArticlePage'
 
-export default Template;
+export default Template
 
 export const query = graphql`
   query ArticleQuery($slug: String) {
@@ -48,4 +48,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`
