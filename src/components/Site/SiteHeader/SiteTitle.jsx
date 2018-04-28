@@ -3,6 +3,8 @@ import api from '../../../styles/api';
 
 export default styled.h2`
   ${api({
-    baseline: ['s:secondaryTitle'],
+    fontFamily: 'f:title',
+    baseline: 's:megaTitle',
+    letterSpacing: 1, 
   })};
 `;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { pluck } from 'ramda';
 import ArticleList from '../../components/ArticleList';
 
-const View = ({ data, pathContext }) => {
+const TagPage = ({ data, pathContext }) => {
   if (!data.allMarkdownRemark) {
     return <p>No tags found for: {pathContext.tag}</p>;
   }
@@ -20,13 +20,11 @@ const View = ({ data, pathContext }) => {
   );
 };
 
-View.propTypes = {
+TagPage.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   pathContext: PropTypes.object.isRequired,
 };
 
-View.displayName = 'TagTemplateView';
-
-export default View;
+export default TagPage;

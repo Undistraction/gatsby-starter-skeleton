@@ -1,3 +1,3 @@
-import View from './View';
+import ArticlesNav from './ArticlesNav';
 
-export default View;
+export default ArticlesNav;

@@ -1,3 +1,3 @@
-import View from './View';
+import ArticlesPage from './ArticlesPage';
 
-export default View;
+export default ArticlesPage;

@@ -1,4 +1,3 @@
-import React from 'react';
-import View from './View';
+import SiteFooter from './SiteFooter';
 
-export default props => <View {...props} />;
+export default SiteFooter;

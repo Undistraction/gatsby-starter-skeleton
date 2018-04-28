@@ -1,3 +1,3 @@
-import View from './View';
+import ProjectPage from './ProjectPage';
 
-export default View;
+export default ProjectPage;

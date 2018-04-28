@@ -1,25 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { toString } from 'ramda';
-import Layout from './Layout';
 import config from '../../../config';
-import IconLink from '../../shared/IconLink';
-import CreditIcon from '../../shared/CreditIcon';
+import Credit from './Credit';
+import Copyright from './Copyright';
+import blockCenterH from '../../../styles/mixins/blockCenterH';
+import spaceChildrenV from '../../../styles/mixins/spaceChildrenV';
+import api from '../../../styles/api';
 
 const credit = () => {
   if (config.meta.showCredit) {
-    return (
-      <p>
-        Built by{' '}
-        <IconLink to="http://undistraction.com">
-          <CreditIcon />
-          <span>Undistraction</span>
-        </IconLink>
-      </p>
-    );
+    return <Credit />;
   }
   return '';
 };
+
+const Layout = styled.footer`
+  text-align: center;
+  ${blockCenterH};
+  ${spaceChildrenV('1ru')};
+
+  ${api({
+    padding: '4ru 0 1ru',
+    baseline: 's:smallprint',
+  })};
+
+  > * {
+    ${api({
+      margin: ['0 auto 1ru'],
+    })};
+  }
+`;
 
 const View = ({ metadata }) => {
   const currentYear = toString(new Date().getFullYear());
@@ -29,9 +41,7 @@ const View = ({ metadata }) => {
 
   return (
     <Layout>
-      <p>
-        Site and contents &copy; {owner} {dateRange}.
-      </p>
+      <Copyright owner={owner} dateRange={dateRange} />
       {credit()}
     </Layout>
   );

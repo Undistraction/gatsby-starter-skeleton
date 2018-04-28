@@ -9,7 +9,7 @@ import mainImageSizesFrom from '../../data/mainImageSizesFrom';
 import loadMetadata from '../../utils/loadMetadata';
 import titleFrom from '../../data/titleFrom';
 
-const View = ({ data }) => (
+const HomePage = ({ data }) => (
   <Page title={titleFrom(data)}>
     <Metadata metadata={loadMetadata('home')} />
     <Img sizes={mainImageSizesFrom(data)} />
@@ -17,11 +17,9 @@ const View = ({ data }) => (
   </Page>
 );
 
-View.propTypes = {
+HomePage.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
 };
 
-View.displayName = 'HomePageView';
-
-export default View;
+export default HomePage;

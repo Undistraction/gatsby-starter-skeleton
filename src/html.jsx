@@ -39,7 +39,7 @@ const html = ({
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <link
-          href="https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i"
+          href="https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i|Berkshire+Swash"
           rel="stylesheet"
         />
         <link rel="icon" href="favicons/favicon.ico?v=2" />

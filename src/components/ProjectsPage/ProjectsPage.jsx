@@ -7,7 +7,7 @@ import loadMetadata from '../../utils/loadMetadata';
 import nodesFrom from '../../data/nodesFrom';
 import config from '../../config';
 
-const View = ({ pathContext }) => {
+const ProjectsPage = ({ pathContext }) => {
   const { projects } = pathContext;
 
   return (
@@ -18,11 +18,9 @@ const View = ({ pathContext }) => {
   );
 };
 
-View.propTypes = {
+ProjectsPage.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   pathContext: PropTypes.object.isRequired,
 };
 
-View.displayName = 'ArticlesPageView';
-
-export default View;
+export default ProjectsPage;

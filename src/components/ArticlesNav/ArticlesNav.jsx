@@ -1,7 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import GatsbyLink from 'gatsby-link';
-import Layout, { LayoutPrevious, LayoutNext } from './Layout';
+import styled from 'styled-components';
+import flexHorizontal from '../../styles/mixins/flexHorizontal';
+
+export const LayoutPrevious = styled.div``;
+export const LayoutNext = styled.div``;
+
+const Layout = styled.nav`
+  ${flexHorizontal};
+
+  ${LayoutNext} {
+    margin-left: auto;
+  }
+
+  ${LayoutPrevious} {
+    margin-right: auto;
+  }
+
+  ${LayoutNext}, ${LayoutPrevious} {
+    flex: 0 0 auto;
+  }
+`;
 
 const previousPathLink = previousPath => {
   if (previousPath) {

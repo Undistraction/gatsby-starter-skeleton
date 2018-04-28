@@ -11,10 +11,9 @@ import flexHorizontal from '../../styles/mixins/flexHorizontal';
 import uiList from '../../styles/mixins/uiList';
 import api from '../../styles/api';
 
-const Wrapper = styled.ul`
+const View = styled.ul`
   ${flexHorizontal};
   ${uiList};
-  list-style: none;
   flex-wrap: wrap;
   ${api({
     padding: [0],
@@ -29,19 +28,19 @@ const Wrapper = styled.ul`
   }
 `;
 
-const renderArticles = mapIndexed((project, key) => (
+const renderListItems = mapIndexed((project, key) => (
   <li key={key}>
     <ProjectsListItem project={project} />
   </li>
 ));
 
-const View = ({ projects }) => <Wrapper>{renderArticles(projects)}</Wrapper>;
+const ProjectList = ({ projects }) => <View>{renderListItems(projects)}</View>;
 
-View.propTypes = {
+ProjectList.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   projects: PropTypes.array.isRequired,
 };
 
-View.displayName = 'ArticlesList';
+ProjectList.displayName = 'ArticlesList';
 
-export default View;
+export default ProjectList;

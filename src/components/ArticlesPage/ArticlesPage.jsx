@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ArticlesNav from '../ArticlesNav';
 import Page from '../../components/Page';
@@ -7,8 +8,9 @@ import Metadata from '../../components/Metadata';
 import loadMetadata from '../../utils/loadMetadata';
 import nodesFrom from '../../data/nodesFrom';
 import config from '../../config';
+import api from '../../styles/api';
 
-const View = ({ pathContext }) => {
+const ArticlesPage = ({ pathContext }) => {
   const {
     items,
     itemsCount,
@@ -20,26 +22,31 @@ const View = ({ pathContext }) => {
     nextPath,
   } = pathContext;
 
+  const Header = styled.header`
+    ${api({
+      borderBottom: ['1 c:black solid'],
+      marginBottom: ['1ru'],
+    })};
+  `;
+
   return (
     <Page title={config.structure.articles.name}>
       <Metadata metadata={loadMetadata('articles')} />
-      <header>
+      <Header>
         Page {pageIndex} of {pageCount}
         <br />
         {fromItemIndex}–{toItemIndex} of {itemsCount}{' '}
         {config.structure.articles.name}
         <ArticlesNav previousPath={previousPath} nextPath={nextPath} />
-      </header>
+      </Header>
       <ArticleList articles={nodesFrom(items)} />
     </Page>
   );
 };
 
-View.propTypes = {
+ArticlesPage.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   pathContext: PropTypes.object.isRequired,
 };
 
-View.displayName = 'ArticlesPageView';
-
-export default View;
+export default ArticlesPage;

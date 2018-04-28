@@ -1,3 +1,3 @@
-import View from './View';
+import SiteBody from './SiteBody';
 
-export default View;
+export default SiteBody;

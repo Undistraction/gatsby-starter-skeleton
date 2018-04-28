@@ -47,7 +47,7 @@ export default api =>
 
     body {
       ${api({
-        fontFamily: ['f:all'],
+        fontFamily: ['f:default'],
         baseline: ['scale:body'],
       })}
     }

@@ -25,7 +25,7 @@ const nextExperiment = (article, articles) => {
     : null;
 };
 
-const View = ({ data }) => {
+const ProjectPage = ({ data }) => {
   const project = data.markdownRemark;
   const projects = data.allMarkdownRemark.edges;
   const { metadata } = project.fields;
@@ -52,11 +52,9 @@ const View = ({ data }) => {
   );
 };
 
-View.propTypes = {
+ProjectPage.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
 };
 
-View.displayName = 'ExperimentTemplateView';
-
-export default View;
+export default ProjectPage;

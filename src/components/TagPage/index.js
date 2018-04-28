@@ -1,3 +1,3 @@
-import View from './View';
+import TagPage from './TagPage';
 
-export default View;
+export default TagPage;

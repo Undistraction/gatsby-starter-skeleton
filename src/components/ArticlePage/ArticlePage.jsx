@@ -25,7 +25,7 @@ const nextArticle = (article, articles) => {
     : null;
 };
 
-const View = ({ data }) => {
+const ArticlePage = ({ data }) => {
   const article = data.markdownRemark;
   const articles = data.allMarkdownRemark.edges;
   const { metadata, tags } = article.fields;
@@ -45,11 +45,9 @@ const View = ({ data }) => {
   );
 };
 
-View.propTypes = {
+ArticlePage.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
 };
 
-View.displayName = 'ArticleTemplateView';
-
-export default View;
+export default ArticlePage;

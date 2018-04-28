@@ -1,4 +1,3 @@
-import React from 'react';
-import View from './View';
+import SiteHeader from './SiteHeader';
 
-export default props => <View {...props} />;
+export default SiteHeader;

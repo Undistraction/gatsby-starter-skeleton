@@ -18,6 +18,7 @@ const breakpoints = [
 const config = {
   breakpoints,
   data: {
+    rhythm: 23,
     color: {
       black: '#070707',
       white: '#F5F5F5',
@@ -26,12 +27,14 @@ const config = {
     },
     scale: {
       smallprint: '12',
-      body: '16',
+      body: '18',
       secondaryTitle: '20',
-      primaryTitle: '24',
+      primaryTitle: '28',
+      megaTitle: '32',
     },
     font: {
-      all: 'Cousine, monospace',
+      default: 'Cousine, monospace',
+      title: 'Berkshire Swash, cursive',
     },
   },
 };

@@ -5,6 +5,5 @@ import spaceChildrenH from '../../styles/mixins/spaceChildrenH';
 
 export default styled(GatsbyLink)`
   ${linkProps};
-
   ${spaceChildrenH(['0.25ru'])};
 `;

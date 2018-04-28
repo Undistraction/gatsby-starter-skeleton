@@ -1,4 +1,3 @@
-import React from 'react';
-import View from './View';
+import SiteNav from './SiteNav';
 
-export default props => <View {...props} />;
+export default SiteNav;

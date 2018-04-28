@@ -1,4 +1,3 @@
-import React from 'react';
-import View from './View';
+import Metadata from './Metadata';
 
-export default props => <View {...props} />;
+export default Metadata;
