@@ -4,7 +4,7 @@ import Template from '../components/ProjectPage'
 export default Template
 
 export const query = graphql`
-  query ExperimentQuery($slug: String) {
+  query ProjectQuery($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html

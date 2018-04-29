@@ -1,25 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import SiteHeader from './SiteHeader';
-import SiteBody from './SiteBody';
-import SiteFooter from './SiteFooter';
-import flexVertical from '../../styles/mixins/flexVertical';
-import blockCenterH from '../../styles/mixins/blockCenterH';
-import api from '../../styles/api';
+import PropTypes from 'prop-types'
+import React from 'react'
+import styled from 'styled-components'
+import api from '../../styles/api'
+import blockCenterH from '../../styles/mixins/blockCenterH'
+import flexVertical from '../../styles/mixins/flexVertical'
+import SiteBody from './SiteBody'
+import SiteFooter from './SiteFooter'
+import SiteHeader from './SiteHeader'
 
-export const LayoutHeader = styled.div``;
-export const LayoutBody = styled.div``;
-export const LayoutFooter = styled.div``;
+export const LayoutHeader = styled.div``
+export const LayoutBody = styled.div``
+export const LayoutFooter = styled.div``
 
 const Layout = styled.div`
   ${flexVertical};
   ${blockCenterH};
 
   ${api({
-    minHeight: ['100vu'],
+    minHeight: '100vh',
     maxWidth: [1100],
-  })} ${LayoutHeader} {
+  })};
+
+  ${LayoutHeader} {
     flex: 0 0 auto;
   }
 
@@ -33,10 +35,10 @@ const Layout = styled.div`
       margin: '0 6ru',
     })};
   }
-`;
+`
 
 const Site = ({ children, data }) => {
-  const { siteMetadata: metadata } = data.site;
+  const { siteMetadata: metadata } = data.site
   return (
     <Layout>
       <LayoutHeader>
@@ -49,13 +51,13 @@ const Site = ({ children, data }) => {
         <SiteFooter metadata={metadata} />
       </LayoutFooter>
     </Layout>
-  );
-};
+  )
+}
 
 Site.propTypes = {
   children: PropTypes.func.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
-};
+}
 
-export default Site;
+export default Site

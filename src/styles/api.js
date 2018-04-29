@@ -22,11 +22,13 @@ const config = {
     color: {
       black: '#070707',
       white: '#F5F5F5',
+      grey: '#AAA',
       bg: 'c:white',
       text: 'c:black',
+      highlight: 'c:grey',
     },
     scale: {
-      smallprint: '12',
+      smallprint: '14',
       body: '18',
       secondaryTitle: '20',
       primaryTitle: '28',

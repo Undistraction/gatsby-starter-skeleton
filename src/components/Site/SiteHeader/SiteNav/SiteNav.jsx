@@ -1,15 +1,22 @@
-import React from 'react';
-import styled from 'styled-components';
-import Link from '../../../shared/Link';
-import flexHorizontal from '../../../../styles/mixins/flexHorizontal';
-import uiList from '../../../../styles/mixins/uiList';
-import spaceChildrenH from '../../../../styles/mixins/spaceChildrenH';
-import api from '../../../../styles/api';
+import React from 'react'
+import styled from 'styled-components'
+import api from '../../../../styles/api'
+import banner from '../../../../styles/mixins/banner'
+import flexHorizontal from '../../../../styles/mixins/flexHorizontal'
+import linkProps from '../../../../styles/mixins/linkProps'
+import spaceChildrenH from '../../../../styles/mixins/spaceChildrenH'
+import uiList from '../../../../styles/mixins/uiList'
+import Button from '../../../shared/Button'
+
+const SiteNavLink = styled(Button).attrs({
+  activeClassName: 'isActive',
+})``
 
 const View = styled.nav`
   ${flexHorizontal};
   ${uiList};
   ${spaceChildrenH('1ru')};
+  ${banner('bottom')}
   ${api({
     position: 'relative',
     backgroundColor: 'c:black',
@@ -17,40 +24,27 @@ const View = styled.nav`
     color: ['c:white'],
   })};
 
-  &::before {
-    content: '';
+  ${SiteNavLink} {
+    ${linkProps('c:white', 'c:highlight')}
     z-index: 1;
-    ${api({
-      backgroundColor: ['c:black'],
-      width: ['1.5ru'],
-      height: ['100%'],
-      position: ['absolute'],
-      top: ['-0.5ru'],
-      left: ['-1ru'],
-    })};
-  }
-
-  &::after {
-    content: '';
-    z-index: 1;
-    ${api({
-      backgroundColor: ['c:black'],
-      width: ['1.5ru'],
-      height: ['100%'],
-      position: ['absolute'],
-      top: ['-0.5ru'],
-      right: ['-1ru'],
-    })};
-  }
-`;
+    letter-spacing: 0.5px;
+    &.isActive {
+      ${api({
+        color: ['c:highlight'],
+      })};
+    }
+  }}
+`
 
 const SiteNav = () => (
   <View>
-    <Link to="/">Home</Link>
-    <Link to="/articles">Articles</Link>
-    <Link to="/projects">Projects</Link>
-    <Link to="/about">About</Link>
+    <SiteNavLink to="/" exact>
+      Home
+    </SiteNavLink>
+    <SiteNavLink to="/articles">Articles</SiteNavLink>
+    <SiteNavLink to="/projects">Projects</SiteNavLink>
+    <SiteNavLink to="/about">About</SiteNavLink>
   </View>
-);
+)
 
-export default SiteNav;
+export default SiteNav

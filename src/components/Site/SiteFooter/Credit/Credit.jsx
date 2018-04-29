@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import circle from '../../../../styles/mixins/circle';
-import IconLink from '../../../shared/IconLink';
-import api from '../../../../styles/api';
+import React from 'react'
+import styled from 'styled-components'
+import api from '../../../../styles/api'
+import circle from '../../../../styles/mixins/circle'
+import IconLink from '../../../shared/IconLink'
 
 const CreditIcon = styled.span`
   display: inline-block;
   ${circle([12])};
-`;
+`
 
 const View = styled.p`
   ${CreditIcon} {
@@ -16,16 +16,16 @@ const View = styled.p`
       top: 2,
     })};
   }
-`;
+`
 
 const Credit = () => (
   <View>
     Built by{' '}
-    <IconLink to="http://undistraction.com">
+    <IconLink href="http://undistraction.com">
       <CreditIcon />
       <span>Undistraction</span>
     </IconLink>
   </View>
-);
+)
 
-export default Credit;
+export default Credit

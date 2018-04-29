@@ -1,43 +1,42 @@
 // eslint-disable react/no-danger
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { findIndex, pathEq } from 'ramda';
-import Img from 'gatsby-image';
+import Img from 'gatsby-image'
+import PropTypes from 'prop-types'
+import { findIndex, pathEq } from 'ramda'
+import React from 'react'
+import ArticleNav from '../../components/ArticleNav'
+import Metadata from '../../components/Metadata'
+import HTMLText from '../../components/shared/HTMLText'
 
-import Metadata from '../../components/Metadata';
-import ArticleNav from '../../components/ArticleNav';
-import HTMLText from '../../components/shared/HTMLText';
+const nodeIdPath = pathEq(['node', 'id'])
 
-const nodeIdPath = pathEq(['node', 'id']);
+const previousProject = (article, articles) => {
+  const currentId = article.id
+  const currentIndex = findIndex(nodeIdPath(currentId))(articles)
+  return currentIndex > 0 ? articles[currentIndex - 1].node : null
+}
 
-const previousExperiment = (article, articles) => {
-  const currentId = article.id;
-  const currentIndex = findIndex(nodeIdPath(currentId))(articles);
-  return currentIndex > 0 ? articles[currentIndex - 1].node : null;
-};
-
-const nextExperiment = (article, articles) => {
-  const currentId = article.id;
-  const currentIndex = findIndex(nodeIdPath(currentId))(articles);
+const nextProject = (article, articles) => {
+  const currentId = article.id
+  const currentIndex = findIndex(nodeIdPath(currentId))(articles)
   return currentIndex < articles.length - 1
     ? articles[currentIndex + 1].node
-    : null;
-};
+    : null
+}
 
 const ProjectPage = ({ data }) => {
-  const project = data.markdownRemark;
-  const projects = data.allMarkdownRemark.edges;
-  const { metadata } = project.fields;
-  const { frontmatter } = project;
+  const project = data.markdownRemark
+  const projects = data.allMarkdownRemark.edges
+  const { metadata } = project.fields
+  const { frontmatter } = project
   return (
     <article>
       <Metadata {...metadata} />
       <Img sizes={frontmatter.image.childImageSharp.sizes} />
       <header>{frontmatter.title}</header>
       <ArticleNav
-        previousExperiment={previousExperiment(project, projects)}
-        nextExperiment={nextExperiment(project, projects)}
+        previousProject={previousProject(project, projects)}
+        nextProject={nextProject(project, projects)}
       />
       <HTMLText htmlText={project.html} />
       <div
@@ -49,12 +48,12 @@ const ProjectPage = ({ data }) => {
         }}
       />
     </article>
-  );
-};
+  )
+}
 
 ProjectPage.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
-};
+}
 
-export default ProjectPage;
+export default ProjectPage

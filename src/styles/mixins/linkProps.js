@@ -1,19 +1,24 @@
-import { css } from 'styled-components';
+import { css } from 'styled-components'
+import api from '../api'
 
-export default () => css`
-  color: inherit;
+export default (defaultColor = 'red', highlightColor = 'blue') => css`
   font-weight: bold;
+  ${api({
+    color: defaultColor,
+  })} color: inherit;
   text-decoration: none;
 
   &:link,
   &:visited,
   &:active {
-    color: inherit;
-    font-weight: bold;
+    ${api({
+      color: defaultColor,
+    })};
   }
 
   &:hover {
-    text-decoration: underline;
-    text-decoration-skip: ink;
+    ${api({
+      color: highlightColor,
+    })};
   }
-`;
+`

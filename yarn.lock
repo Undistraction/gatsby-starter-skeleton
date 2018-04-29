@@ -2565,9 +2565,9 @@ css-what@2.1:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.0.tgz#9467d032c38cfaefb9f2d79501253062f87fa1bd"
 
-cssapi@^0.4.4:
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/cssapi/-/cssapi-0.4.4.tgz#ce891374ed8b939db8266fb84e046548c79cf66b"
+cssapi@^0.4.7:
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/cssapi/-/cssapi-0.4.7.tgz#d7734d59c3d8c71a62eda6b88171403ab1556362"
   dependencies:
     dasherize "^2.0.0"
     ramda "^0.25.0"

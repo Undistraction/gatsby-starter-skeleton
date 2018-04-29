@@ -31,15 +31,18 @@ module.exports = {
   // Site Structure
   // ---------------------------------------------------------------------------
   structure: {
-    // Directory path for downloads relative to your root url
+    // Directory path for downloads, relative to your root url
     downloadsDirectory: 'downloads',
+    // Directly path for code used in REPLs
     replCodeDirectory: 'code',
+    // Configuration for articles
     articles: {
       name: 'Articles',
       directory: 'articles',
       path: 'articles',
       perPage: 5,
     },
+    // Configuration for projects
     projects: {
       name: 'Projects',
       directory: 'projects',
@@ -60,6 +63,7 @@ module.exports = {
   // ---------------------------------------------------------------------------
   layout: {
     // Maximum width for the site before it stops growing horizontally.
+    // Note: This is used to decide what dimensions saved images should have.
     maxWidth: 1200,
   },
   // ---------------------------------------------------------------------------
@@ -68,4 +72,4 @@ module.exports = {
   cli: {
     emoji: '💀',
   },
-};
+}
