@@ -4,8 +4,9 @@ import linkProps from '../../styles/mixins/linkProps'
 import TextLink from '../shared/TextLink'
 
 const Button = styled(TextLink)`
-  font-weight: normal;
   ${linkProps('c:white', 'c:highlight')};
+  font-weight: normal;
+  display: block;
   ${api({
     color: 'c:white',
     backgroundColor: 'c:black',

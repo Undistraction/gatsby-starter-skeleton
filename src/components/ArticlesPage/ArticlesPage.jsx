@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import Metadata from '../../components/Metadata'
-import Page from '../../components/Page'
+import Metadata from '../shared/Metadata'
+import Page from '../shared/Page'
 import config from '../../config'
 import loadMetadata from '../../utils/loadMetadata'
-import Articles from '../Articles/Articles'
+import Articles from './Articles'
 
 const ArticlesPage = ({ pathContext }) => (
   <Page title={config.structure.articles.name} hasImage={false}>
-    <Metadata metadata={loadMetadata('articles')} />
+    <Metadata {...loadMetadata('articles')} />
     <Articles context={pathContext} />
   </Page>
 )

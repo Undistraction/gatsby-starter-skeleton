@@ -3,9 +3,9 @@
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import React from 'react'
-import Metadata from '../../components/Metadata'
-import Page from '../../components/Page'
-import Article from '../Article'
+import Metadata from '../shared/Metadata'
+import Page from '../shared/Page'
+import Article from './Article'
 
 const ArticlePage = ({ data }) => {
   const article = data.markdownRemark
@@ -14,7 +14,7 @@ const ArticlePage = ({ data }) => {
 
   return (
     <Page title={frontmatter.title}>
-      <Metadata metadata={metadata} />
+      <Metadata {...metadata} />
       <Img sizes={frontmatter.image.childImageSharp.sizes} />
       <Article data={data} />
     </Page>

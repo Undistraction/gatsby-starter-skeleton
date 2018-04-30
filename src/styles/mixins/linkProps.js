@@ -2,11 +2,11 @@ import { css } from 'styled-components'
 import api from '../api'
 
 export default (defaultColor = 'red', highlightColor = 'blue') => css`
-  font-weight: bold;
   ${api({
     color: defaultColor,
   })} color: inherit;
   text-decoration: none;
+  transition: all 0.5s ease-in-out;
 
   &:link,
   &:visited,
@@ -17,6 +17,7 @@ export default (defaultColor = 'red', highlightColor = 'blue') => css`
   }
 
   &:hover {
+    transition: all 0.5s ease-in-out;
     ${api({
       color: highlightColor,
     })};

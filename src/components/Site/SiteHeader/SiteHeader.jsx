@@ -14,7 +14,7 @@ const Layout = styled.div`
   align-items: center;
   width: 100%;
   ${api({
-    padding: '4ru 0 1ru',
+    padding: '2.5ru 0 1ru',
   })};
 
   ${SiteTitle} {

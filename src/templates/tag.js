@@ -17,10 +17,18 @@ export const query = graphql`
             slug
             tags
           }
+          excerpt
           frontmatter {
             title
             keywords
             date
+            image {
+              childImageSharp {
+                sizes {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }

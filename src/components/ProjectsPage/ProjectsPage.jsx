@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import Metadata from '../../components/Metadata'
-import Page from '../../components/Page'
-import ProjectsList from '../../components/ProjectsList'
+import Metadata from '../shared/Metadata'
+import Page from '../shared/Page'
+import ProjectsList from './ProjectsList'
 import config from '../../config'
 import nodesFrom from '../../data/nodesFrom'
 import loadMetadata from '../../utils/loadMetadata'
@@ -12,7 +12,7 @@ const ProjectsPage = ({ pathContext }) => {
 
   return (
     <Page title={config.structure.projects.name} hasImage={false}>
-      <Metadata metadata={loadMetadata('projects')} />
+      <Metadata {...loadMetadata('projects')} />
       <ProjectsList projects={nodesFrom(projects)} />
     </Page>
   )

@@ -23,9 +23,11 @@ const config = {
       black: '#070707',
       white: '#F5F5F5',
       grey: '#AAA',
+      lightGrey: '#E9E9E9',
       bg: 'c:white',
       text: 'c:black',
       highlight: 'c:grey',
+      disabled: 'c:lightGrey',
     },
     scale: {
       smallprint: '14',

@@ -11,7 +11,7 @@ module.exports = structure => ({
     // // eg ['react', 'react-dom'] or ['react@15', 'react-dom@15']
     // dependencies: ['react', 'react-dom'],
 
-    // Example code links are relative to this dir.
+    // Article  code links are relative to this dir.
     // eg examples/path/to/file.js
     directory: `${process.cwd()}/src/content/${structure.replCodeDirectory}`,
 
@@ -31,4 +31,4 @@ module.exports = structure => ({
     // But you can use this setting to override its CSS styling.
     // redirectTemplate: `${__dirname}/src/redirect-template.js`),
   },
-});
+})

@@ -48,6 +48,7 @@ const structure = Joi.object().keys({
     .required(),
   articles: item,
   projects: item,
+  tags: item,
 })
 
 const media = Joi.object().keys({

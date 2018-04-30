@@ -19,3 +19,7 @@ pages:
     title:   Site / Projects Page
     description:  The Projects
     keywords: projects
+  - 
+    id:   tags
+    description:  The Tags
+    keywords: tags

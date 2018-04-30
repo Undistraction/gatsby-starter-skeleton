@@ -1,23 +1,15 @@
-const { reduce, compose, uniq, map } = require('ramda')
+const { collectTags } = require('../tags')
+const { join, pipe, map } = require('ramda')
 const path = require('path')
 const reporter = require('../reporter')
 const toSlug = require('../toSlug')
 const { TAG_PATH } = require('../templatePaths')
 const { prefixWithFSlash } = require('../fileUtils')
-const queryAllArticleNodes = require('../queries/queryAllArticleNodes')
-const listToArray = require('../listToArray')
+const queryAllTaggedNodes = require('../queries/queryAllTaggedNodes')
 
 const markdownNodes = data => data.allMarkdownRemark.edges
-const findKeywords = node => node.node.frontmatter.keywords
 
-const collectTagsFromNode = (acc, node) => {
-  const keywords = findKeywords(node) || []
-  return acc.concat(listToArray(keywords))
-}
-
-const collectTags = compose(uniq, reduce(collectTagsFromNode, []))
-
-const createTagPage = (tag, slug, createPage) =>
+const createTagPage = (tag, tags, slug, createPage) =>
   new Promise((resolve, reject) => {
     try {
       createPage({
@@ -26,6 +18,7 @@ const createTagPage = (tag, slug, createPage) =>
         context: {
           // Data passed to context is available in page queries as GraphQL variables.
           tag,
+          tags,
         },
       })
     } catch (error) {
@@ -34,18 +27,18 @@ const createTagPage = (tag, slug, createPage) =>
     reporter.success(`Created Tag Page for '${tag}' at slug '${slug}'.`)
     resolve()
   })
-
-const createTagsPages = (graphql, createPage, articlesPath) =>
-  queryAllArticleNodes(graphql, articlesPath)
+const createTagsPages = (graphql, createPage, taggedItemPaths) =>
+  queryAllTaggedNodes(graphql, join('|', taggedItemPaths))
     .then(result =>
-      compose(
-        Promise.all,
-        map(tag => {
-          const slug = `tags/${toSlug(tag)}`
-          createTagPage(tag, slug, createPage)
-        }),
+      pipe(
+        markdownNodes,
         collectTags,
-        markdownNodes
+        tags =>
+          map(tag => {
+            const slug = `tags/${toSlug(tag)}`
+            createTagPage(tag, tags, slug, createPage)
+          }, tags),
+        Promise.all
       )(result.data)
     )
     .catch(error => {

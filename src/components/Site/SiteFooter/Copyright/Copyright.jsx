@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import api from '../../../../styles/api'
 import banner from '../../../../styles/mixins/banner'
 
-const View = styled.p`
+const Layout = styled.p`
   ${banner()};
   position: relative;
   ${api({
@@ -15,9 +15,9 @@ const View = styled.p`
 `
 
 const Copyright = ({ owner, dateRange }) => (
-  <View>
+  <Layout>
     Site and contents &copy; {owner} {dateRange}
-  </View>
+  </Layout>
 )
 
 Copyright.propTypes = {

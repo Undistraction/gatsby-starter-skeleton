@@ -9,7 +9,7 @@ const CreditIcon = styled.span`
   ${circle([12])};
 `
 
-const View = styled.p`
+const Layout = styled.p`
   ${CreditIcon} {
     ${api({
       position: 'relative',
@@ -19,13 +19,13 @@ const View = styled.p`
 `
 
 const Credit = () => (
-  <View>
+  <Layout>
     Built by{' '}
     <IconLink href="http://undistraction.com">
       <CreditIcon />
       <span>Undistraction</span>
     </IconLink>
-  </View>
+  </Layout>
 )
 
 export default Credit

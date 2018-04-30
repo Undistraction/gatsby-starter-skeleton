@@ -48,6 +48,11 @@ module.exports = {
       directory: 'projects',
       path: 'projects',
     },
+    tags: {
+      name: 'Tags',
+      directory: 'tags',
+      path: 'tags',
+    },
   },
   // ---------------------------------------------------------------------------
   // Media

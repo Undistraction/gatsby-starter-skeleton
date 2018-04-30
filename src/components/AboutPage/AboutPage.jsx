@@ -5,8 +5,8 @@
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import React from 'react'
-import Metadata from '../../components/Metadata'
-import Page from '../../components/Page'
+import Metadata from '../shared/Metadata'
+import Page from '../shared/Page'
 import HTMLText from '../../components/shared/HTMLText'
 import mainImageSizesFrom from '../../data/mainImageSizesFrom'
 import mainTextFrom from '../../data/mainTextFrom'
@@ -15,7 +15,7 @@ import loadMetadata from '../../utils/loadMetadata'
 
 const AboutPage = ({ data }) => (
   <Page title={titleFrom(data)}>
-    <Metadata metadata={loadMetadata('about')} />
+    <Metadata {...loadMetadata('about')} />
     <Img sizes={mainImageSizesFrom(data)} />
     <HTMLText htmlText={mainTextFrom(data)} />
   </Page>

@@ -7,12 +7,22 @@ import linkProps from '../../../../styles/mixins/linkProps'
 import spaceChildrenH from '../../../../styles/mixins/spaceChildrenH'
 import uiList from '../../../../styles/mixins/uiList'
 import Button from '../../../shared/Button'
+import config from '../../../../config'
 
 const SiteNavLink = styled(Button).attrs({
   activeClassName: 'isActive',
-})``
+})`
+  ${linkProps('c:white', 'c:highlight')};
+  letter-spacing: 0.5px;
 
-const View = styled.nav`
+  &.isActive {
+    ${api({
+      color: 'c:highlight',
+    })};
+  }
+`
+
+const Layout = styled.nav`
   ${flexHorizontal};
   ${uiList};
   ${spaceChildrenH('1ru')};
@@ -20,31 +30,31 @@ const View = styled.nav`
   ${api({
     position: 'relative',
     backgroundColor: 'c:black',
-    padding: ['0.75ru 1ru'],
-    color: ['c:white'],
+    padding: '0.75ru 1ru',
+    color: 'c:white',
   })};
 
   ${SiteNavLink} {
-    ${linkProps('c:white', 'c:highlight')}
     z-index: 1;
-    letter-spacing: 0.5px;
-    &.isActive {
-      ${api({
-        color: ['c:highlight'],
-      })};
-    }
   }}
 `
 
 const SiteNav = () => (
-  <View>
+  <Layout>
     <SiteNavLink to="/" exact>
       Home
     </SiteNavLink>
-    <SiteNavLink to="/articles">Articles</SiteNavLink>
-    <SiteNavLink to="/projects">Projects</SiteNavLink>
+    <SiteNavLink to={`/${config.structure.articles.path}`}>
+      {config.structure.articles.name}
+    </SiteNavLink>
+    <SiteNavLink to={`/${config.structure.projects.path}`}>
+      {config.structure.projects.name}
+    </SiteNavLink>
+    <SiteNavLink to={`/${config.structure.tags.path}`}>
+      {config.structure.tags.name}
+    </SiteNavLink>
     <SiteNavLink to="/about">About</SiteNavLink>
-  </View>
+  </Layout>
 )
 
 export default SiteNav

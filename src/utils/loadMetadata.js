@@ -7,6 +7,7 @@ const loadMetadata = page => {
   const pageMetadata = find(propEq('id', page))(metadata.pages)
   if (isNil(pageMetadata))
     throw new Error(`Problem loading metadata for page: '${page}'`)
+
   return pageMetadata
 }
 
