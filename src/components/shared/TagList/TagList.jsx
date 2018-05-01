@@ -18,7 +18,7 @@ const Layout = styled.ul`
 
   > * {
     ${api({
-      padding: '0.25ru',
+      padding: '0.125ru',
     })};
   }
 `

@@ -6,18 +6,20 @@ module.exports = {
   // Metadata
   // ---------------------------------------------------------------------------
   meta: {
-    owner: 'Your Name Here',
-    // This will be used in the site title.
-    title: 'Gatsby Skeleton',
-    // This will be used in the site copyright, with a date range running from
-    // startYear to the current year.
-    description: 'Your site description for RSS feed',
-
-    url: 'https://example.com',
-    // Starting year for copyright range
-    startYear: '2018',
-    // Show the credit in the footer (much appreciated)
-    showCredit: true,
+    site: {
+      owner: 'Your Name Here',
+      // This will be used in the site title.
+      title: 'Gatsby Skeleton',
+      // This will be used in the site copyright, with a date range running from
+      // startYear to the current year.
+      description: 'Your site description for RSS feed',
+      // Used in RSS Feed
+      url: 'https://example.com',
+      // Starting year for copyright range
+      startYear: '2018',
+      // Show the credit in the footer (much appreciated)
+      showCredit: true,
+    },
   },
   // ---------------------------------------------------------------------------
   // SEO
@@ -35,9 +37,9 @@ module.exports = {
     downloadsDirectory: 'downloads',
     // Directly path for code used in REPLs
     replCodeDirectory: 'code',
-    // Configuration for articles
+    // Configuration for articles.
     articles: {
-      name: 'Articles',
+      name: 'Spanky',
       directory: 'articles',
       path: 'articles',
       perPage: 5,
@@ -48,6 +50,7 @@ module.exports = {
       directory: 'projects',
       path: 'projects',
     },
+    // Configuration for projects
     tags: {
       name: 'Tags',
       directory: 'tags',

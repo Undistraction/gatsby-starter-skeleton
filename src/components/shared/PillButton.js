@@ -6,7 +6,7 @@ const PillButton = styled(Button)`
   ${api({
     fontSize: 's:smallprint',
     borderRadius: '1ru',
-    padding: '0.3ru 0.5ru',
+    padding: '0.25ru 0.5ru',
   })};
 `
 
