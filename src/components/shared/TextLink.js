@@ -1,6 +1,6 @@
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-import linkProps from '../../styles/mixins/linkProps'
+import linkProps from '../styles/mixins/linkProps'
 
 const TextLink = styled(Link)`
   font-weight: bold;

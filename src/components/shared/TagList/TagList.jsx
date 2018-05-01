@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import flexHorizontal from '../../../styles/mixins/flexHorizontal'
-import uiList from '../../../styles/mixins/uiList'
+import flexHorizontal from '../../styles/mixins/flexHorizontal'
+import uiList from '../../styles/mixins/uiList'
 import Tag from './Tag'
-import api from '../../../styles/api'
+import api from '../../styles/api'
 import renderListItems from '../../helpers/renderListItems'
 
 const Layout = styled.ul`

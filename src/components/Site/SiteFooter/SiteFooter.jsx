@@ -5,9 +5,9 @@ import { toString } from 'ramda'
 import config from '../../../config'
 import Credit from './Credit'
 import Copyright from './Copyright'
-import blockCenterH from '../../../styles/mixins/blockCenterH'
-import spaceChildrenV from '../../../styles/mixins/spaceChildrenV'
-import api from '../../../styles/api'
+import blockCenterH from '../../styles/mixins/blockCenterH'
+import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
+import api from '../../styles/api'
 
 const credit = () => {
   if (config.meta.showCredit) {

@@ -7,8 +7,8 @@ import styled from 'styled-components'
 import ProjectNav from './ProjectNav'
 import TagList from '../../shared/TagList'
 import HTMLText from '../../shared/HTMLText'
-import flexVertical from '../../../styles/mixins/flexVertical'
-import spaceChildrenV from '../../../styles/mixins/spaceChildrenV'
+import flexVertical from '../../styles/mixins/flexVertical'
+import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
 
 const nodeIdPath = pathEq(['node', 'id'])
 

@@ -2,7 +2,7 @@ import graphql from 'graphql'
 import React from 'react'
 import PropTypes from 'prop-types'
 import 'prismjs/themes/prism-twilight.css'
-import '../styles/global.css'
+import '../components/styles/global.css'
 import Site from '../components/Site'
 
 const IndexLayout = ({ children, data }) => <Site data={data}>{children}</Site>

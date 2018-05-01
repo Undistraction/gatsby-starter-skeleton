@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import flexHorizontal from '../../styles/mixins/flexHorizontal'
+import flexHorizontal from '../styles/mixins/flexHorizontal'
 import ArrowButtonLink from '../shared/ArrowButtonLink'
 import DisabledArrowButtonLink from '../shared/DisabledArrowButtonLink'
 

@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import api from '../../styles/api'
-import arrow from '../../styles/mixins/arrow'
+import api from '../styles/api'
+import arrow from '../styles/mixins/arrow'
 import Button from '../shared/Button'
-import directionBounce from '../../styles/animations/directionBounce'
+import directionBounce from '../styles/animations/directionBounce'
 
 const ArrowButtonLink = styled(Button)`
   display: block;

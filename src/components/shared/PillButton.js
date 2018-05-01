@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import api from '../../styles/api'
+import api from '../styles/api'
 import Button from './Button'
 
 const PillButton = styled(Button)`

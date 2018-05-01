@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import api from '../../../styles/api'
-import curvedInset from '../../../styles/mixins/curvedInset'
-import transformCenterH from '../../../styles/mixins/transformCenterH'
+import api from '../../styles/api'
+import curvedInset from '../../styles/mixins/curvedInset'
+import transformCenterH from '../../styles/mixins/transformCenterH'
 
 const PageTitle = styled.h1`
   font-weight: bold;

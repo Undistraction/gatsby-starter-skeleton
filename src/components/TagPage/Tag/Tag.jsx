@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import TaggedItemList from './TaggedItemList'
-import flexVertical from '../../../styles/mixins/flexVertical'
-import spaceChildrenV from '../../../styles/mixins/spaceChildrenV'
+import flexVertical from '../../styles/mixins/flexVertical'
+import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
 import TagList from '../../shared/TagList'
 
 const Header = styled.header`

@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import ArticleList from './ArticleList'
 import nodesFrom from '../../../data/nodesFrom'
-import api from '../../../styles/api'
-import flexVertical from '../../../styles/mixins/flexVertical'
-import spaceChildrenV from '../../../styles/mixins/spaceChildrenV'
+import api from '../../styles/api'
+import flexVertical from '../../styles/mixins/flexVertical'
+import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
 import ArticlesNav from './ArticlesNav'
 
 const ArticlesInfo = styled.div`

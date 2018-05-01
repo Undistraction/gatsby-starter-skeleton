@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import spaceChildrenV from '../../../../styles/mixins/spaceChildrenV'
-import uiList from '../../../../styles/mixins/uiList'
+import spaceChildrenV from '../../../styles/mixins/spaceChildrenV'
+import uiList from '../../../styles/mixins/uiList'
 import TaggedItemListItem from './TaggedItemListItem'
 import renderListItems from '../../../helpers/renderListItems'
 

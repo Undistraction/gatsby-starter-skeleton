@@ -6,9 +6,9 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import ProjectsListItem from './ProjectsListItem'
-import flexHorizontal from '../../../styles/mixins/flexHorizontal'
-import uiList from '../../../styles/mixins/uiList'
-import api from '../../../styles/api'
+import flexHorizontal from '../../styles/mixins/flexHorizontal'
+import uiList from '../../styles/mixins/uiList'
+import api from '../../styles/api'
 import renderListItems from '../../helpers/renderListItems'
 
 const Layout = styled.ul`

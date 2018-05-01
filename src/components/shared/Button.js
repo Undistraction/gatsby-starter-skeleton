@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import api from '../../styles/api'
-import linkProps from '../../styles/mixins/linkProps'
+import api from '../styles/api'
+import linkProps from '../styles/mixins/linkProps'
 import TextLink from '../shared/TextLink'
 
 const Button = styled(TextLink)`

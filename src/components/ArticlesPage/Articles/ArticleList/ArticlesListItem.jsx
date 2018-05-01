@@ -3,12 +3,12 @@ import Img from 'gatsby-image'
 import Link from 'gatsby-link'
 import React from 'react'
 import styled from 'styled-components'
-import flexVertical from '../../../../styles/mixins/flexVertical'
-import flexHorizontal from '../../../../styles/mixins/flexHorizontal'
-import spaceChildrenV from '../../../../styles/mixins/spaceChildrenV'
-import spaceChildrenH from '../../../../styles/mixins/spaceChildrenH'
+import flexVertical from '../../../styles/mixins/flexVertical'
+import flexHorizontal from '../../../styles/mixins/flexHorizontal'
+import spaceChildrenV from '../../../styles/mixins/spaceChildrenV'
+import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'
 import TextLink from '../../../shared/TextLink'
-import api from '../../../../styles/api'
+import api from '../../../styles/api'
 
 const ImgLayout = styled.div``
 const InfoLayout = styled.div`

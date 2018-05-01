@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import api from '../../styles/api'
-import arrow from '../../styles/mixins/arrow'
+import api from '../styles/api'
+import arrow from '../styles/mixins/arrow'
 
 const DisabledArrowButtonLink = styled.div`
   position: relative;
