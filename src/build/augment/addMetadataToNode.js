@@ -9,7 +9,6 @@ const addMetadataToNode = (node, createNodeField) => {
     pick(['keywords', 'description', 'title']),
     mergeRight(DEFAULT_METADATA)
   )(frontmatter)
-
   createNodeField({
     node,
     name: 'metadata',

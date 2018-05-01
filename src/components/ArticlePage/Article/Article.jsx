@@ -9,6 +9,7 @@ import TagList from '../../shared/TagList'
 import HTMLText from '../../shared/HTMLText'
 import flexVertical from '../../styles/mixins/flexVertical'
 import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
+import { markdownItem, markdownItems } from '../../helpers/text'
 
 const nodeIdPath = pathEq(['node', 'id'])
 
@@ -26,32 +27,22 @@ const nextArticle = (article, articles) => {
     : null
 }
 
-const Header = styled.header``
-const Body = styled.div``
-const Footer = styled.footer``
-
 const Layout = styled.article`
   ${flexVertical};
   ${spaceChildrenV('1ru')};
 `
 const Article = ({ data }) => {
-  const article = data.markdownRemark
-  const articles = data.allMarkdownRemark.edges
+  const article = markdownItem(data)
+  const articles = markdownItems(data)
   const { tags } = article.fields
   return (
     <Layout>
-      <Header>
-        <ArticleNav
-          previousArticle={previousArticle(article, articles)}
-          nextArticle={nextArticle(article, articles)}
-        />
-      </Header>
-      <Body>
-        <HTMLText htmlText={article.html} />
-      </Body>
-      <Footer>
-        <TagList tags={tags} />
-      </Footer>
+      <ArticleNav
+        previousArticle={previousArticle(article, articles)}
+        nextArticle={nextArticle(article, articles)}
+      />
+      <HTMLText htmlText={article.html} />
+      <TagList tags={tags} />
     </Layout>
   )
 }

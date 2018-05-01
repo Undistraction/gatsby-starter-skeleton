@@ -4,18 +4,19 @@ import Img from 'gatsby-image'
 import Page from '../shared/Page'
 import HTMLText from '../../components/shared/HTMLText'
 import Metadata from '../shared/Metadata'
-import mainTextFrom from '../../data/mainTextFrom'
-import mainImageSizesFrom from '../../data/mainImageSizesFrom'
+import { mainImageSizes } from '../helpers/images'
+import { mainText } from '../helpers/text'
+import { homePageTitle, homePageMetadata } from '../helpers/siteMetadata'
 
 const HomePage = ({ data }) => {
-  const metadata = data.site.siteMetadata.metadata.home
-  const { title } = data.site.siteMetadata.structure.pages.home
+  const title = homePageTitle(data)
+  const metadata = homePageMetadata(data)
 
   return (
     <Page title={title}>
       <Metadata {...metadata} />
-      <Img sizes={mainImageSizesFrom(data)} />
-      <HTMLText htmlText={mainTextFrom(data)} />
+      <Img sizes={mainImageSizes(data)} />
+      <HTMLText htmlText={mainText(data)} />
     </Page>
   )
 }

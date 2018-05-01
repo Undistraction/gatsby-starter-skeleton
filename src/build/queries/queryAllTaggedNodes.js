@@ -1,3 +1,5 @@
+const validatedConfig = require('../../config/validatedConfig')
+
 module.exports = (graphql, paths) =>
   graphql(`
     {
@@ -10,7 +12,7 @@ module.exports = (graphql, paths) =>
             id
             frontmatter {
               title
-              date(formatString: "DD MMMM, YYYY")
+              date(formatString: "${validatedConfig().data.dateFormat}")
               keywords
             }
             fields {

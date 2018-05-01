@@ -3,17 +3,17 @@ import React from 'react'
 import Metadata from '../shared/Metadata'
 import Page from '../shared/Page'
 import Articles from './Articles'
+import {
+  articlesPageMetadata,
+  articlesPageTitle,
+} from '../helpers/siteMetadata'
 
-const ArticlesPage = ({ data, pathContext }) => {
-  const metadata = data.site.siteMetadata.metadata.articles
-  const { title } = data.site.siteMetadata.structure.resources.articles
-  return (
-    <Page title={title} hasImage={false}>
-      <Metadata {...metadata} />
-      <Articles context={pathContext} />
-    </Page>
-  )
-}
+const ArticlesPage = ({ data, pathContext }) => (
+  <Page title={articlesPageTitle(data)} hasImage={false}>
+    <Metadata {...articlesPageMetadata(data)} />
+    <Articles context={pathContext} />
+  </Page>
+)
 
 ArticlesPage.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types

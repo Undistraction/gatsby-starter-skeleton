@@ -1,3 +1,5 @@
+const validatedConfig = require('../../config/validatedConfig')
+
 module.exports = (graphql, path) =>
   graphql(`
     {
@@ -10,7 +12,7 @@ module.exports = (graphql, path) =>
             id
             frontmatter {
               title
-              date(formatString: "DD MMMM, YYYY")
+              date(formatString: "${validatedConfig().data.dateFormat}")
               keywords
               image {
                 childImageSharp {

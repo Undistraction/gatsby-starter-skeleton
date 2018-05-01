@@ -2,7 +2,7 @@ const { map, compose } = require('ramda')
 const path = require('path')
 const reporter = require('../reporter')
 const { PROJECT_TEMPLATE_PATH } = require('../const/templatePaths')
-const queryAllProjectNodes = require('../queries/queryAllProjectNodes')
+const queryAllResourceNodes = require('../queries/queryAllResourceNodes')
 
 const markdownNodes = data => data.allMarkdownRemark.edges
 
@@ -27,7 +27,7 @@ const createProjectPage = (node, createPage) =>
   })
 
 const createProjectsPages = (graphql, createPage, projectsPath) =>
-  queryAllProjectNodes(graphql, projectsPath)
+  queryAllResourceNodes(graphql, projectsPath)
     .then(result =>
       compose(
         Promise.all,

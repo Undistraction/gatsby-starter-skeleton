@@ -4,15 +4,17 @@ import Metadata from '../shared/Metadata'
 import Page from '../shared/Page'
 import ProjectsList from './ProjectsList'
 import nodesFrom from '../../data/nodesFrom'
+import {
+  projectsPageTitle,
+  projectsPageMetadata,
+} from '../helpers/siteMetadata'
 
 const ProjectsPage = ({ data, pathContext }) => {
-  const metadata = data.site.siteMetadata.metadata.projects
-  const { title } = data.site.siteMetadata.structure.resources.projects
   const { projects } = pathContext
 
   return (
-    <Page title={title} hasImage={false}>
-      <Metadata {...metadata} />
+    <Page title={projectsPageTitle(data)} hasImage={false}>
+      <Metadata {...projectsPageMetadata} />
       <ProjectsList projects={nodesFrom(projects)} />
     </Page>
   )

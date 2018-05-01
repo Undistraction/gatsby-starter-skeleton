@@ -4,7 +4,7 @@ const { curry, compose, splitEvery, inc, dec } = require('ramda')
 const { mapIndexed } = require('ramda-adjunct')
 const { joinWithFSlash } = require('../utils/file')
 const { ARTICLES_TEMPLATE_PATH } = require('../const/templatePaths')
-const queryAllArticleNodes = require('../queries/queryAllArticleNodes')
+const queryAllResourceNodes = require('../queries/queryAllResourceNodes')
 const reporter = require('../reporter')
 
 const markdownNodes = data => data.allMarkdownRemark.edges
@@ -59,7 +59,7 @@ const createPaginatedArticlesPages = (
   perPage,
   articlesPath
 ) =>
-  queryAllArticleNodes(graphql, articlesPath)
+  queryAllResourceNodes(graphql, articlesPath)
     .then(result => {
       const edges = markdownNodes(result.data)
       const groupedPages = splitEvery(perPage, edges)

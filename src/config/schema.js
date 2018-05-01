@@ -21,6 +21,7 @@ const data = Joi.object().keys({
   url: Joi.string()
     .uri()
     .optional(),
+  dateFormat: Joi.string().required(),
 })
 
 // -----------------------------------------------------------------------------

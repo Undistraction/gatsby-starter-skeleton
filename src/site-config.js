@@ -18,6 +18,8 @@ module.exports = {
     startYear: '2018',
     // Show the credit in the footer (much appreciated)
     showCredit: true,
+    // Formatting for data
+    dateFormat: 'DD MMMM, YYYY',
   },
   // ---------------------------------------------------------------------------
   // Metadata

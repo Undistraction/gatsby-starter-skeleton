@@ -8,17 +8,18 @@ import React from 'react'
 import Metadata from '../shared/Metadata'
 import Page from '../shared/Page'
 import HTMLText from '../../components/shared/HTMLText'
-import mainImageSizesFrom from '../../data/mainImageSizesFrom'
-import mainTextFrom from '../../data/mainTextFrom'
+import { aboutPageTitle, aboutPageMetadata } from '../helpers/siteMetadata'
+import { mainImageSizes } from '../helpers/images'
+import { mainText } from '../helpers/text'
 
 const AboutPage = ({ data }) => {
-  const metadata = data.site.siteMetadata.metadata.about
-  const { title } = data.site.siteMetadata.structure.pages.about
+  const title = aboutPageTitle(data)
+  const metadata = aboutPageMetadata(data)
   return (
     <Page title={title}>
       <Metadata {...metadata} />
-      <Img sizes={mainImageSizesFrom(data)} />
-      <HTMLText htmlText={mainTextFrom(data)} />
+      <Img sizes={mainImageSizes(data)} />
+      <HTMLText htmlText={mainText(data)} />
     </Page>
   )
 }

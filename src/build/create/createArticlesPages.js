@@ -3,7 +3,7 @@ const path = require('path')
 const reporter = require('../reporter')
 
 const { ARTICLE_TEMPLATE_PATH } = require('../const/templatePaths')
-const queryAllArticleNodes = require('../queries/queryAllArticleNodes')
+const queryAllResourceNodes = require('../queries/queryAllResourceNodes')
 
 const markdownNodes = data => data.allMarkdownRemark.edges
 
@@ -25,7 +25,7 @@ const createArticlePage = (slug, createPage) =>
   })
 
 const createArticlesPages = (graphql, createPage, articlesPath) =>
-  queryAllArticleNodes(graphql, articlesPath)
+  queryAllResourceNodes(graphql, articlesPath)
     .then(result =>
       compose(
         Promise.all,

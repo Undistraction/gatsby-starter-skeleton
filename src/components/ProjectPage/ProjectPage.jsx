@@ -6,15 +6,16 @@ import React from 'react'
 import Metadata from '../shared/Metadata'
 import Page from '../shared/Page'
 import Project from './Project'
+import { markdownItemMetadata, markdownItemTitle } from '../helpers/text'
 
 const ProjectPage = ({ data }) => {
+  console.log('??', data)
   const project = data.markdownRemark
-  const { metadata } = project.fields
   const { frontmatter } = project
 
   return (
-    <Page title={frontmatter.title}>
-      <Metadata {...metadata} />
+    <Page title={markdownItemTitle(data)}>
+      <Metadata {...markdownItemMetadata(data)} />
       <Img sizes={frontmatter.image.childImageSharp.sizes} />
       <Project data={data} />
     </Page>
