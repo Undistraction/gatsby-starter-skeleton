@@ -6,8 +6,7 @@ const googleAnalytics = require('./src/config/plugins/googleAnalytics')
 const remark = require('./src/config/plugins/remark')
 
 const config = validatedConfig()
-const { meta, seo } = config
-const { site: siteMeta } = meta
+const { site, seo } = config
 
 // -----------------------------------------------------------------------------
 // Define Plugins Used
@@ -27,23 +26,12 @@ const plugins = [
   remark(config),
 ]
 
-const siteMetadata = {
-  // This will be used in the site title
-  title: siteMeta.title,
-  // Used in the copyright
-  owner: siteMeta.owner,
-  startYear: siteMeta.startYear,
-  // Used in the RSS feed
-  description: siteMeta.description,
-  siteUrl: siteMeta.url,
-}
-
 // Add support for Google analytics if a tracking code was defined
 if (seo.googleTrackingID) {
   plugins.push(googleAnalytics(seo))
 }
 
 module.exports = {
-  siteMetadata,
+  siteMetadata: site,
   plugins,
 }

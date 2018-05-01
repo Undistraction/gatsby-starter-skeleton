@@ -3,22 +3,50 @@
 
 module.exports = {
   // ---------------------------------------------------------------------------
+  // Site Data
+  // ---------------------------------------------------------------------------
+  site: {
+    owner: 'Your Name Here',
+    // This will be used in the site title.
+    title: 'Gatsby Skeleton',
+    // This will be used in the site copyright, with a date range running from
+    // startYear to the current year.
+    description: 'Your site description for RSS feed',
+    // Used in RSS Feed
+    url: 'https://example.com',
+    // Starting year for copyright range
+    startYear: '2018',
+    // Show the credit in the footer (much appreciated)
+    showCredit: true,
+  },
+  // ---------------------------------------------------------------------------
   // Metadata
   // ---------------------------------------------------------------------------
-  meta: {
-    site: {
-      owner: 'Your Name Here',
-      // This will be used in the site title.
-      title: 'Gatsby Skeleton',
-      // This will be used in the site copyright, with a date range running from
-      // startYear to the current year.
-      description: 'Your site description for RSS feed',
-      // Used in RSS Feed
-      url: 'https://example.com',
-      // Starting year for copyright range
-      startYear: '2018',
-      // Show the credit in the footer (much appreciated)
-      showCredit: true,
+  metadata: {
+    home: {
+      title: 'Site / Home Page',
+      description: 'The home page of the site',
+      keywords: 'home, site',
+    },
+    about: {
+      title: 'Site / About Page',
+      description: 'The about page of the site',
+      keywords: 'about, site',
+    },
+    articles: {
+      title: 'Site / Articles Page',
+      description: 'The Articles',
+      keywords: 'articles, site',
+    },
+    projects: {
+      title: 'Site / Projects Page',
+      description: 'The Projects',
+      keywords: 'projects',
+    },
+    tags: {
+      title: 'Site / Tags Page',
+      description: 'All tags used on the site',
+      keywords: 'tags',
     },
   },
   // ---------------------------------------------------------------------------

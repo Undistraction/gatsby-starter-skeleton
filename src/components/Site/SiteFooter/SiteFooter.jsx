@@ -1,20 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { toString } from 'ramda'
-import config from '../../../config'
 import Credit from './Credit'
 import Copyright from './Copyright'
 import blockCenterH from '../../styles/mixins/blockCenterH'
 import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
 import api from '../../styles/api'
-
-const credit = () => {
-  if (config.meta.showCredit) {
-    return <Credit />
-  }
-  return ''
-}
+import { currentYear } from '../../helpers/date'
 
 const Layout = styled.footer`
   text-align: center;
@@ -34,15 +26,14 @@ const Layout = styled.footer`
 `
 
 const SiteFooter = ({ metadata }) => {
-  const currentYear = toString(new Date().getFullYear())
-  const { owner, startYear } = metadata
-  const dateRange =
-    currentYear === startYear ? currentYear : `${startYear}–${currentYear}`
+  const endYear = currentYear()
+  const { owner, startYear, showCredit } = metadata
+  const dateRange = endYear === startYear ? endYear : `${startYear}–${endYear}`
 
   return (
     <Layout>
       <Copyright owner={owner} dateRange={dateRange} />
-      {credit()}
+      {showCredit && <Credit />}
     </Layout>
   )
 }
