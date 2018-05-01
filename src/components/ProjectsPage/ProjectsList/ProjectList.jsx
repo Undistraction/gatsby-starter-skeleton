@@ -37,6 +37,4 @@ ProjectList.propTypes = {
   projects: PropTypes.array.isRequired,
 }
 
-ProjectList.displayName = 'ArticlesList'
-
 export default ProjectList

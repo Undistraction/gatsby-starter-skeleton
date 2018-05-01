@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { assoc, pluck } from 'ramda'
 import Metadata from '../shared/Metadata'
-import loadMetadata from '../../generate/loadMetadata'
+import loadMetadata from '../../build/loadMetadata'
 import Page from '../shared/Page/Page'
 import Tag from './Tag'
 

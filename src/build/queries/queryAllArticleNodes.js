@@ -3,7 +3,7 @@ module.exports = (graphql, path) =>
     {
       allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
-        filter: { fields: { slug: { regex: "/${path}/./" } } }
+        filter: { fields: { slug: { regex: "${path}/./" } } }
       ) {
         edges {
           node {
@@ -12,6 +12,17 @@ module.exports = (graphql, path) =>
               title
               date(formatString: "DD MMMM, YYYY")
               keywords
+              image {
+                childImageSharp {
+                  sizes(maxWidth: 1000) {
+                    aspectRatio
+                    base64
+                    sizes
+                    src
+                    srcSet
+                  }
+                }
+              }
             }
             fields {
               slug

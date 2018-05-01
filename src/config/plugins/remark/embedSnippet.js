@@ -12,6 +12,6 @@ module.exports = structure => ({
 
     // Article  code links are relative to this dir.
     // eg examples/path/to/file.js
-    directory: `${process.cwd()}/src/content/${structure.replCodeDirectory}`,
+    directory: `${process.cwd()}/src/content/${structure.replCodeDir}`,
   },
 })

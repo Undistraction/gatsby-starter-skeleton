@@ -1,10 +1,10 @@
-module.exports = (layout, media) => ({
+module.exports = images => ({
   resolve: 'gatsby-remark-images',
   options: {
     // The maximum width of images on the site.
-    maxWidth: layout.maxWidth * 2,
+    maxWidth: images.maxWidth * 2,
     // Set the quality of the processed images
-    quality: media.images.quality,
+    quality: images.quality,
     linkImagesToOriginal: false,
   },
-});
+})

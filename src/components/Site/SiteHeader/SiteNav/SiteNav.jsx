@@ -7,7 +7,7 @@ import linkProps from '../../../styles/mixins/linkProps'
 import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'
 import uiList from '../../../styles/mixins/uiList'
 import Button from '../../../shared/Button'
-import config from '../../../../config'
+import config from '../../../../site-config'
 
 const SiteNavLink = styled(Button).attrs({
   activeClassName: 'isActive',
@@ -44,14 +44,14 @@ const SiteNav = () => (
     <SiteNavLink to="/" exact>
       Home
     </SiteNavLink>
-    <SiteNavLink to={`/${config.structure.articles.path}`}>
-      {config.structure.articles.name}
+    <SiteNavLink to={`${config.structure.resources.articles.path}`}>
+      {config.structure.resources.articles.name}
     </SiteNavLink>
-    <SiteNavLink to={`/${config.structure.projects.path}`}>
-      {config.structure.projects.name}
+    <SiteNavLink to={`${config.structure.resources.projects.path}`}>
+      {config.structure.resources.projects.name}
     </SiteNavLink>
-    <SiteNavLink to={`/${config.structure.tags.path}`}>
-      {config.structure.tags.name}
+    <SiteNavLink to={`${config.structure.resources.tags.path}`}>
+      {config.structure.resources.tags.name}
     </SiteNavLink>
     <SiteNavLink to="/about">About</SiteNavLink>
   </Layout>

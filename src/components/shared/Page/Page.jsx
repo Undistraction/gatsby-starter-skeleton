@@ -36,8 +36,6 @@ const Page = ({ title, children, hasImage }) => (
   </Layout>
 )
 
-Page.displayName = 'Page'
-
 Page.propTypes = {
   children: PropTypes.node,
   title: PropTypes.string.isRequired,

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import ArticleList from './ArticleList'
 import nodesFrom from '../../../data/nodesFrom'
@@ -28,7 +29,7 @@ const Layout = styled.div`
   ${spaceChildrenV('1ru')};
 `
 
-const Articles = context => {
+const Articles = ({ context }) => {
   const {
     items,
     itemsCount,
@@ -36,7 +37,7 @@ const Articles = context => {
     toItemIndex,
     previousPath,
     nextPath,
-  } = context.context
+  } = context
 
   return (
     <Layout>
@@ -49,6 +50,11 @@ const Articles = context => {
       <ArticleList articles={nodesFrom(items)} />
     </Layout>
   )
+}
+
+Articles.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  context: PropTypes.object.isRequired,
 }
 
 export default Articles

@@ -5,7 +5,7 @@ module.exports = {
   // ---------------------------------------------------------------------------
   // Site Data
   // ---------------------------------------------------------------------------
-  site: {
+  data: {
     owner: 'Your Name Here',
     // This will be used in the site title.
     title: 'Gatsby Skeleton',
@@ -23,11 +23,6 @@ module.exports = {
   // Metadata
   // ---------------------------------------------------------------------------
   metadata: {
-    home: {
-      title: 'Site / Home Page',
-      description: 'The home page of the site',
-      keywords: 'home, site',
-    },
     about: {
       title: 'Site / About Page',
       description: 'The about page of the site',
@@ -61,28 +56,56 @@ module.exports = {
   // Site Structure
   // ---------------------------------------------------------------------------
   structure: {
+    // -------------------------------------------------------------------------
+    // Directories
+    // -------------------------------------------------------------------------
+
     // Directory path for downloads, relative to your root url
-    downloadsDirectory: 'downloads',
+    downloadsDir: 'downloads',
     // Directly path for code used in REPLs
-    replCodeDirectory: 'code',
-    // Configuration for articles.
-    articles: {
-      name: 'Spanky',
-      directory: 'articles',
-      path: 'articles',
-      perPage: 5,
+    replCodeDir: 'code',
+
+    // -------------------------------------------------------------------------
+    // Pages
+    // -------------------------------------------------------------------------
+    pages: {
+      home: {
+        title: 'Home',
+        path: '/',
+      },
+      about: {
+        title: 'About',
+        path: '/about',
+      },
+      notFound: {
+        title: 'Page Not Found',
+        path: '/404',
+      },
     },
-    // Configuration for projects
-    projects: {
-      name: 'Projects',
-      directory: 'projects',
-      path: 'projects',
-    },
-    // Configuration for projects
-    tags: {
-      name: 'Tags',
-      directory: 'tags',
-      path: 'tags',
+
+    // -------------------------------------------------------------------------
+    // Resources
+    // -------------------------------------------------------------------------
+    resources: {
+      // Configuration for articles.
+      articles: {
+        name: 'Articles',
+        directory: 'articles',
+        path: '/articles',
+        perPage: 5,
+      },
+      // Configuration for projects
+      projects: {
+        name: 'Projects',
+        directory: 'projects',
+        path: '/projects',
+      },
+      // Configuration for projects
+      tags: {
+        name: 'Tags',
+        directory: 'tags',
+        path: '/tags',
+      },
     },
   },
   // ---------------------------------------------------------------------------
@@ -90,18 +113,12 @@ module.exports = {
   // ---------------------------------------------------------------------------
   media: {
     images: {
+      maxWidth: 1200,
       // JPG quality for images encoded for the site.
       quality: 60,
     },
   },
-  // ---------------------------------------------------------------------------
-  // Layout
-  // ---------------------------------------------------------------------------
-  layout: {
-    // Maximum width for the site before it stops growing horizontally.
-    // Note: This is used to decide what dimensions saved images should have.
-    maxWidth: 1200,
-  },
+
   // ---------------------------------------------------------------------------
   // CLI
   // ---------------------------------------------------------------------------

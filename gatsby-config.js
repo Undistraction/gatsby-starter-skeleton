@@ -6,7 +6,7 @@ const googleAnalytics = require('./src/config/plugins/googleAnalytics')
 const remark = require('./src/config/plugins/remark')
 
 const config = validatedConfig()
-const { site, seo } = config
+const { seo } = config
 
 // -----------------------------------------------------------------------------
 // Define Plugins Used
@@ -32,6 +32,6 @@ if (seo.googleTrackingID) {
 }
 
 module.exports = {
-  siteMetadata: site,
+  siteMetadata: config,
   plugins,
 }

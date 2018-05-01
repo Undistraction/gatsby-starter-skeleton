@@ -17,10 +17,12 @@ export const query = graphql`
   query MainLayoutQuery {
     site {
       siteMetadata {
-        owner
-        title
-        startYear
-        showCredit
+        data {
+          owner
+          title
+          startYear
+          showCredit
+        }
       }
     }
   }

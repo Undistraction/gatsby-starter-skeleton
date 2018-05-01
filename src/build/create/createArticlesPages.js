@@ -1,7 +1,6 @@
 const { map, compose } = require('ramda')
 const path = require('path')
 const reporter = require('../reporter')
-const { prefixWithFSlash } = require('../utils/file')
 
 const { ARTICLE_TEMPLATE_PATH } = require('../const/templatePaths')
 const queryAllArticleNodes = require('../queries/queryAllArticleNodes')
@@ -12,7 +11,7 @@ const createArticlePage = (slug, createPage) =>
   new Promise((resolve, reject) => {
     try {
       createPage({
-        path: prefixWithFSlash(slug),
+        path: slug,
         component: path.resolve(ARTICLE_TEMPLATE_PATH),
         context: {
           slug,

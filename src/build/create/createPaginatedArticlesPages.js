@@ -6,7 +6,6 @@ const { joinWithFSlash } = require('../utils/file')
 const { ARTICLES_TEMPLATE_PATH } = require('../const/templatePaths')
 const queryAllArticleNodes = require('../queries/queryAllArticleNodes')
 const reporter = require('../reporter')
-const { prefixWithFSlash } = require('../utils/file')
 
 const markdownNodes = data => data.allMarkdownRemark.edges
 const isFirstPage = isZero
@@ -15,10 +14,10 @@ const fromItemIndex = (perPage, index) => index * inc(perPage) || 1
 const toItemIndex = (perPage, index, groupLength) =>
   index * perPage + groupLength
 
-const pagePath = curry((name, pageIndex) => {
-  const p = pageIndex > 0 ? joinWithFSlash([name, pageIndex]) : name
-  return prefixWithFSlash(p)
-})
+const pagePath = curry(
+  (name, pageIndex) =>
+    pageIndex > 0 ? joinWithFSlash([name, pageIndex]) : name
+)
 
 const createPaginatedArticlesPage = (
   createPage,

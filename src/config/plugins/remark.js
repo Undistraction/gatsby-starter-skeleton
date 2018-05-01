@@ -12,13 +12,13 @@ const codeRepls = require('./remark/codeRepls')
 //     .join(' ')
 // }
 
-module.exports = ({ layout, media, structure }) => ({
+module.exports = ({ media, structure }) => ({
   resolve: 'gatsby-transformer-remark',
   options: {
     plugins: [
       'gatsby-remark-responsive-iframe',
-      copyLinkedFiles(structure.downloadsDirectory),
-      images(layout, media),
+      copyLinkedFiles(structure.downloadsDir),
+      images(media.images),
       prismjs(),
       embedSnippet(structure),
       codeRepls(structure),

@@ -25,9 +25,10 @@ const Layout = styled.footer`
   }
 `
 
-const SiteFooter = ({ metadata }) => {
+const SiteFooter = ({ owner, startYear, showCredit }) => {
   const endYear = currentYear()
-  const { owner, startYear, showCredit } = metadata
+  console.log('END YEAR', endYear)
+
   const dateRange = endYear === startYear ? endYear : `${startYear}–${endYear}`
 
   return (
@@ -40,9 +41,9 @@ const SiteFooter = ({ metadata }) => {
 
 SiteFooter.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
-  metadata: PropTypes.object.isRequired,
+  owner: PropTypes.string.isRequired,
+  startYear: PropTypes.string.isRequired,
+  showCredit: PropTypes.bool.isRequired,
 }
-
-SiteFooter.displayName = 'SiteFooter'
 
 export default SiteFooter

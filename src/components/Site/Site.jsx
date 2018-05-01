@@ -38,17 +38,18 @@ const Layout = styled.div`
 `
 
 const Site = ({ children, data }) => {
-  const { siteMetadata: metadata } = data.site
+  const { data: siteData } = data.site.siteMetadata
+  const { title, owner, startYear, showCredit } = siteData
   return (
     <Layout>
       <LayoutHeader>
-        <SiteHeader title={metadata.title} />
+        <SiteHeader title={title} />
       </LayoutHeader>
       <LayoutBody grow="1">
         <SiteBody>{children()}</SiteBody>
       </LayoutBody>
       <LayoutFooter>
-        <SiteFooter metadata={metadata} />
+        <SiteFooter {...{ owner, startYear, showCredit }} />
       </LayoutFooter>
     </Layout>
   )

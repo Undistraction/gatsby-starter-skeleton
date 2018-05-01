@@ -3,22 +3,23 @@ import React from 'react'
 import Metadata from '../shared/Metadata'
 import Page from '../shared/Page'
 import ProjectsList from './ProjectsList'
-import config from '../../config'
 import nodesFrom from '../../data/nodesFrom'
-import loadMetadata from '../../generate/loadMetadata'
 
-const ProjectsPage = ({ pathContext }) => {
+const ProjectsPage = ({ data, pathContext }) => {
+  const metadata = data.site.siteMetadata.metadata.projects
   const { projects } = pathContext
 
   return (
-    <Page title={config.structure.projects.name} hasImage={false}>
-      <Metadata {...loadMetadata('projects')} />
+    <Page title={metadata.title} hasImage={false}>
+      <Metadata {...metadata} />
       <ProjectsList projects={nodesFrom(projects)} />
     </Page>
   )
 }
 
 ProjectsPage.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.object.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   pathContext: PropTypes.object.isRequired,
 }

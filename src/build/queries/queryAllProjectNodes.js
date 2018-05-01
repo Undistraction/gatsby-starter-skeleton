@@ -3,7 +3,7 @@ module.exports = (graphql, path) =>
     {
       allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
-        filter: { fields: { slug: { regex: "/${path}/./" } } }
+        filter: { fields: { slug: { regex: "${path}/./" } } }
       ) {
         edges {
           node {

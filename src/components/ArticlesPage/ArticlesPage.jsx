@@ -2,18 +2,21 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import Metadata from '../shared/Metadata'
 import Page from '../shared/Page'
-import config from '../../config'
-import loadMetadata from '../../generate/loadMetadata'
 import Articles from './Articles'
 
-const ArticlesPage = ({ pathContext }) => (
-  <Page title={config.structure.articles.name} hasImage={false}>
-    <Metadata {...loadMetadata('articles')} />
-    <Articles context={pathContext} />
-  </Page>
-)
+const ArticlesPage = ({ data, pathContext }) => {
+  const metadata = data.site.siteMetadata.metadata.articles
+  return (
+    <Page title={metadata.title} hasImage={false}>
+      <Metadata {...metadata} />
+      <Articles context={pathContext} />
+    </Page>
+  )
+}
 
 ArticlesPage.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.object.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   pathContext: PropTypes.object.isRequired,
 }

@@ -1,6 +1,6 @@
-module.exports = downloadsDirectory => ({
+module.exports = downloadsDir => ({
   resolve: 'gatsby-remark-copy-linked-files',
   options: {
-    destinationDir: downloadsDirectory,
+    destinationDir: downloadsDir,
   },
-});
+})
