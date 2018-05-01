@@ -1,4 +1,4 @@
-const listToArray = require('../listToArray')
+const { stringListToArray } = require('../utils/string')
 
 const addTagsToNode = (node, createNodeField) => {
   const { frontmatter } = node
@@ -7,7 +7,7 @@ const addTagsToNode = (node, createNodeField) => {
   createNodeField({
     node,
     name: 'tags',
-    value: listToArray(tags),
+    value: stringListToArray(tags),
   })
 }
 

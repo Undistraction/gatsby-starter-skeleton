@@ -4,7 +4,7 @@ const path = require('path')
 const reporter = require('../reporter')
 const { toSlug } = require('../utils/url')
 const { TAG_TEMPLATE_PATH } = require('../const/templatePaths')
-const queryAllTaggedNodes = require('../queries/queryAllTaggedNodes')
+const queryAllResourceNodes = require('../queries/queryAllResourceNodes')
 
 const markdownNodes = data => data.allMarkdownRemark.edges
 
@@ -28,7 +28,7 @@ const createTagPage = (tag, tags, slug, createPage) =>
   })
 
 const createTagsPages = (graphql, createPage, taggedItemPaths) =>
-  queryAllTaggedNodes(graphql, join('|', taggedItemPaths))
+  queryAllResourceNodes(graphql, join('|', taggedItemPaths))
     .then(result =>
       pipe(
         markdownNodes,

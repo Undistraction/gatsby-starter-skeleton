@@ -1,12 +1,12 @@
-const { compose, reduce, uniq } = require('ramda')
-const listToArray = require('../listToArray')
+const { lensPath, view } = require('ramda')
 
-const findKeywords = node => node.node.frontmatter.keywords
+const { concat, compose, reduce, uniq, defaultTo } = require('ramda')
+const { stringListToArray } = require('../utils/string')
 
-const collectTagsFromNode = (acc, node) => {
-  const keywords = findKeywords(node) || []
-  return acc.concat(listToArray(keywords))
-}
+const lKeywords = lensPath(['node', 'frontmatter', 'keywords'])
+
+const collectTagsFromNode = (acc, node) =>
+  compose(concat(acc), stringListToArray, defaultTo([]), view(lKeywords))(node)
 
 // eslint-disable-next-line import/prefer-default-export
 module.exports = {
