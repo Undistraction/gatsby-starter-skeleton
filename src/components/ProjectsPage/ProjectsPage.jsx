@@ -5,7 +5,7 @@ import Page from '../shared/Page'
 import ProjectsList from './ProjectsList'
 import config from '../../config'
 import nodesFrom from '../../data/nodesFrom'
-import loadMetadata from '../../utils/loadMetadata'
+import loadMetadata from '../../generate/loadMetadata'
 
 const ProjectsPage = ({ pathContext }) => {
   const { projects } = pathContext

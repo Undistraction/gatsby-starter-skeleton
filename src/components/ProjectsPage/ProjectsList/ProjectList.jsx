@@ -4,12 +4,12 @@
 
 import React from 'react'
 import styled from 'styled-components'
-import { mapIndexed } from 'ramda-adjunct'
 import PropTypes from 'prop-types'
 import ProjectsListItem from './ProjectsListItem'
 import flexHorizontal from '../../../styles/mixins/flexHorizontal'
 import uiList from '../../../styles/mixins/uiList'
 import api from '../../../styles/api'
+import renderListItems from '../../helpers/renderListItems'
 
 const Layout = styled.ul`
   ${flexHorizontal};
@@ -28,14 +28,8 @@ const Layout = styled.ul`
   }
 `
 
-const renderListItems = mapIndexed((project, key) => (
-  <li key={key}>
-    <ProjectsListItem project={project} />
-  </li>
-))
-
 const ProjectList = ({ projects }) => (
-  <Layout>{renderListItems(projects)}</Layout>
+  <Layout>{renderListItems(ProjectsListItem, 'project', projects)}</Layout>
 )
 
 ProjectList.propTypes = {

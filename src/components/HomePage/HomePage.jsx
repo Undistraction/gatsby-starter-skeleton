@@ -6,7 +6,7 @@ import HTMLText from '../../components/shared/HTMLText'
 import Metadata from '../shared/Metadata'
 import mainTextFrom from '../../data/mainTextFrom'
 import mainImageSizesFrom from '../../data/mainImageSizesFrom'
-import loadMetadata from '../../utils/loadMetadata'
+import loadMetadata from '../../generate/loadMetadata'
 import titleFrom from '../../data/titleFrom'
 
 const HomePage = ({ data }) => (

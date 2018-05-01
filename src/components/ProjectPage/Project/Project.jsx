@@ -26,9 +26,9 @@ const nextProject = (project, projects) => {
     : null
 }
 
-const ProjectHeader = styled.header``
-const ProjectBody = styled.div``
-const ProjectFooter = styled.footer``
+const Header = styled.header``
+const Body = styled.div``
+const Footer = styled.footer``
 
 const Layout = styled.article`
   ${flexVertical};
@@ -39,21 +39,20 @@ const Project = ({ data }) => {
   const projects = data.allMarkdownRemark.edges
   const { tags } = project.fields
 
-  console.log('DATA', project.fields)
   return (
     <Layout>
-      <ProjectHeader>
+      <Header>
         <ProjectNav
           previousProject={previousProject(project, projects)}
           nextProject={nextProject(project, projects)}
         />
-      </ProjectHeader>
-      <ProjectBody>
+      </Header>
+      <Body>
         <HTMLText htmlText={project.html} />
-      </ProjectBody>
-      <ProjectFooter>
+      </Body>
+      <Footer>
         <TagList tags={tags} />
-      </ProjectFooter>
+      </Footer>
     </Layout>
   )
 }

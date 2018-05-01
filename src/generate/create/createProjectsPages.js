@@ -1,9 +1,9 @@
 const { map, compose } = require('ramda')
 const path = require('path')
 const reporter = require('../reporter')
-const { prefixWithFSlash } = require('../fileUtils')
+const { prefixWithFSlash } = require('../utils/file')
 
-const { PROJECT_PATH } = require('../templatePaths')
+const { PROJECT_TEMPLATE_PATH } = require('../const/templatePaths')
 const queryAllProjectNodes = require('../queries/queryAllProjectNodes')
 
 const markdownNodes = data => data.allMarkdownRemark.edges
@@ -15,7 +15,7 @@ const createProjectPage = (node, createPage) =>
     try {
       createPage({
         path: prefixWithFSlash(slug),
-        component: path.resolve(PROJECT_PATH),
+        component: path.resolve(PROJECT_TEMPLATE_PATH),
         context: {
           // Data passed to context is available in page queries as GraphQL variables.
           slug,

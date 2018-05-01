@@ -1,5 +1,5 @@
 const { compose, reduce, uniq } = require('ramda')
-const listToArray = require('./listToArray')
+const listToArray = require('../listToArray')
 
 const findKeywords = node => node.node.frontmatter.keywords
 

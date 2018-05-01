@@ -1,10 +1,10 @@
-const { collectTags } = require('../tags')
+const { collectTags } = require('../utils/tags')
 const { join, pipe, map } = require('ramda')
 const path = require('path')
 const reporter = require('../reporter')
-const toSlug = require('../toSlug')
-const { TAG_PATH } = require('../templatePaths')
-const { prefixWithFSlash } = require('../fileUtils')
+const { toSlug } = require('../utils/url')
+const { TAG_TEMPLATE_PATH } = require('../const/templatePaths')
+const { prefixWithFSlash } = require('../utils/file')
 const queryAllTaggedNodes = require('../queries/queryAllTaggedNodes')
 
 const markdownNodes = data => data.allMarkdownRemark.edges
@@ -14,7 +14,7 @@ const createTagPage = (tag, tags, slug, createPage) =>
     try {
       createPage({
         path: prefixWithFSlash(slug),
-        component: path.resolve(TAG_PATH),
+        component: path.resolve(TAG_TEMPLATE_PATH),
         context: {
           // Data passed to context is available in page queries as GraphQL variables.
           tag,

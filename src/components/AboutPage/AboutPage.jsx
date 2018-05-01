@@ -11,7 +11,7 @@ import HTMLText from '../../components/shared/HTMLText'
 import mainImageSizesFrom from '../../data/mainImageSizesFrom'
 import mainTextFrom from '../../data/mainTextFrom'
 import titleFrom from '../../data/titleFrom'
-import loadMetadata from '../../utils/loadMetadata'
+import loadMetadata from '../../generate/loadMetadata'
 
 const AboutPage = ({ data }) => (
   <Page title={titleFrom(data)}>

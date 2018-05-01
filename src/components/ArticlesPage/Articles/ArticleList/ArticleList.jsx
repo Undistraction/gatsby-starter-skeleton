@@ -1,16 +1,10 @@
 import PropTypes from 'prop-types'
-import { mapIndexed } from 'ramda-adjunct'
 import React from 'react'
 import styled from 'styled-components'
 import spaceChildrenV from '../../../../styles/mixins/spaceChildrenV'
 import uiList from '../../../../styles/mixins/uiList'
 import ArticlesListItem from './ArticlesListItem'
-
-const renderListItems = mapIndexed((article, key) => (
-  <li key={key}>
-    <ArticlesListItem article={article} />
-  </li>
-))
+import renderListItems from '../../../helpers/renderListItems'
 
 const Layout = styled.ul`
   ${uiList};
@@ -18,7 +12,7 @@ const Layout = styled.ul`
 `
 
 const ArticlesList = ({ articles }) => (
-  <Layout>{renderListItems(articles)}</Layout>
+  <Layout>{renderListItems(ArticlesListItem, 'article', articles)}</Layout>
 )
 
 ArticlesList.propTypes = {

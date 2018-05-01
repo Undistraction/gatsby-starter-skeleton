@@ -1,19 +1,21 @@
 import PropTypes from 'prop-types'
-import { mapIndexed } from 'ramda-adjunct'
 import React from 'react'
 import styled from 'styled-components'
 import flexHorizontal from '../../../styles/mixins/flexHorizontal'
 import uiList from '../../../styles/mixins/uiList'
 import Tag from './Tag'
 import api from '../../../styles/api'
+import renderListItems from '../../helpers/renderListItems'
 
 const Layout = styled.ul`
   ${flexHorizontal};
   ${uiList};
   flex-wrap: wrap;
+
   ${api({
     margin: '-0.25ru',
   })};
+
   > * {
     ${api({
       padding: '0.25ru',
@@ -21,14 +23,8 @@ const Layout = styled.ul`
   }
 `
 
-const buildTags = mapIndexed((tag, key) => (
-  <li key={key}>
-    <Tag tag={tag} />
-  </li>
-))
-
 const TagList = ({ tags }) => {
-  const tagsElements = buildTags(tags)
+  const tagsElements = renderListItems(Tag, 'tag', tags)
   return <Layout>{tagsElements}</Layout>
 }
 

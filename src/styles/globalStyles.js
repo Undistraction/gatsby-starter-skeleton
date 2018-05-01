@@ -58,7 +58,7 @@ export default api =>
     }
 
     i {
-      font-weight: italic;
+      font-style: italic;
     }
 
     p {
