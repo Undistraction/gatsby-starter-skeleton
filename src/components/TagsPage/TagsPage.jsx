@@ -8,7 +8,6 @@ import Tags from './Tags'
 
 const TagsPage = ({ pathContext }) => {
   const { tags } = pathContext
-
   return (
     <Page title={config.structure.tags.name} hasImage={false}>
       <Metadata {...loadMetadata('tags')} />

@@ -1,5 +1,5 @@
 import graphql from 'graphql'
-import Template from '../components/TagPage'
+import Template from '../TagPage'
 
 export default Template
 

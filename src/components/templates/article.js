@@ -1,10 +1,10 @@
 import graphql from 'graphql'
-import Template from '../components/ProjectPage'
+import Template from '../ArticlePage'
 
 export default Template
 
 export const query = graphql`
-  query ProjectQuery($slug: String) {
+  query ArticleQuery($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
@@ -24,6 +24,7 @@ export const query = graphql`
         metadata {
           description
           title
+          keywords
         }
       }
     }
