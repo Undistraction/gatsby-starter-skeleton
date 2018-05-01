@@ -23,6 +23,32 @@ export const query = graphql`
           startYear
           showCredit
         }
+        structure {
+          resources {
+            projects {
+              title
+              path
+            }
+            articles {
+              title
+              path
+            }
+            tags {
+              title
+              path
+            }
+          }
+          pages {
+            about {
+              title
+              path
+            }
+            home {
+              title
+              path
+            }
+          }
+        }
       }
     }
   }

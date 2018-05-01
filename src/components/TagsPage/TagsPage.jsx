@@ -6,9 +6,10 @@ import Tags from './Tags'
 
 const TagsPage = ({ data, pathContext }) => {
   const metadata = data.site.siteMetadata.metadata.tags
+  const { title } = data.site.siteMetadata.structure.resources.tags
   const { tags } = pathContext
   return (
-    <Page title={metadata.title} hasImage={false}>
+    <Page title={title} hasImage={false}>
       <Metadata {...metadata} />
       <Tags tags={tags} />
     </Page>

@@ -1,26 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import api from '../../../styles/api'
 import banner from '../../../styles/mixins/banner'
 import flexHorizontal from '../../../styles/mixins/flexHorizontal'
-import linkProps from '../../../styles/mixins/linkProps'
 import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'
 import uiList from '../../../styles/mixins/uiList'
-import Button from '../../../shared/Button'
-import config from '../../../../site-config'
-
-const SiteNavLink = styled(Button).attrs({
-  activeClassName: 'isActive',
-})`
-  ${linkProps('c:white', 'c:highlight')};
-  letter-spacing: 0.5px;
-
-  &.isActive {
-    ${api({
-      color: 'c:highlight',
-    })};
-  }
-`
+import SiteNavLink from './SiteNavLink/SiteNavLink'
 
 const Layout = styled.nav`
   ${flexHorizontal};
@@ -34,27 +20,24 @@ const Layout = styled.nav`
     color: 'c:white',
   })};
 
-  ${SiteNavLink} {
+  * > {
     z-index: 1;
   }}
 `
 
-const SiteNav = () => (
+const SiteNav = ({ pages }) => (
   <Layout>
-    <SiteNavLink to="/" exact>
-      Home
-    </SiteNavLink>
-    <SiteNavLink to={`${config.structure.resources.articles.path}`}>
-      {config.structure.resources.articles.name}
-    </SiteNavLink>
-    <SiteNavLink to={`${config.structure.resources.projects.path}`}>
-      {config.structure.resources.projects.name}
-    </SiteNavLink>
-    <SiteNavLink to={`${config.structure.resources.tags.path}`}>
-      {config.structure.resources.tags.name}
-    </SiteNavLink>
-    <SiteNavLink to="/about">About</SiteNavLink>
+    <SiteNavLink page={pages.home} />
+    <SiteNavLink page={pages.articles} />
+    <SiteNavLink page={pages.projects} />
+    <SiteNavLink page={pages.tags} />
+    <SiteNavLink page={pages.about} />
   </Layout>
 )
+
+SiteNav.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  pages: PropTypes.object.isRequired,
+}
 
 export default SiteNav

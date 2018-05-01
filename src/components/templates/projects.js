@@ -15,6 +15,13 @@ export const query = graphql`
             keywords
           }
         }
+        structure {
+          resources {
+            projects {
+              title
+            }
+          }
+        }
       }
     }
   }

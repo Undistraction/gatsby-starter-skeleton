@@ -23,15 +23,20 @@ module.exports = {
   // Metadata
   // ---------------------------------------------------------------------------
   metadata: {
+    home: {
+      title: 'Site / Home Page',
+      description: 'The home page of the site',
+      keywords: 'home',
+    },
     about: {
       title: 'Site / About Page',
       description: 'The about page of the site',
-      keywords: 'about, site',
+      keywords: 'about',
     },
     articles: {
       title: 'Site / Articles Page',
       description: 'The Articles',
-      keywords: 'articles, site',
+      keywords: 'articles',
     },
     projects: {
       title: 'Site / Projects Page',
@@ -41,6 +46,11 @@ module.exports = {
     tags: {
       title: 'Site / Tags Page',
       description: 'All tags used on the site',
+      keywords: 'tags',
+    },
+    tag: {
+      title: 'Tag: ',
+      description: 'Resources tagged with',
       keywords: 'tags',
     },
   },
@@ -89,20 +99,20 @@ module.exports = {
     resources: {
       // Configuration for articles.
       articles: {
-        name: 'Articles',
+        title: 'Articles',
         directory: 'articles',
         path: '/articles',
         perPage: 5,
       },
       // Configuration for projects
       projects: {
-        name: 'Projects',
+        title: 'Projects',
         directory: 'projects',
         path: '/projects',
       },
       // Configuration for projects
       tags: {
-        name: 'Tags',
+        title: 'Tags',
         directory: 'tags',
         path: '/tags',
       },

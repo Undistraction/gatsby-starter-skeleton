@@ -6,16 +6,19 @@ import HTMLText from '../../components/shared/HTMLText'
 import Metadata from '../shared/Metadata'
 import mainTextFrom from '../../data/mainTextFrom'
 import mainImageSizesFrom from '../../data/mainImageSizesFrom'
-import loadMetadata from '../../build/loadMetadata'
-import titleFrom from '../../data/titleFrom'
 
-const HomePage = ({ data }) => (
-  <Page title={titleFrom(data)}>
-    <Metadata {...loadMetadata('home')} />
-    <Img sizes={mainImageSizesFrom(data)} />
-    <HTMLText htmlText={mainTextFrom(data)} />
-  </Page>
-)
+const HomePage = ({ data }) => {
+  const metadata = data.site.siteMetadata.metadata.home
+  const { title } = data.site.siteMetadata.structure.pages.home
+
+  return (
+    <Page title={title}>
+      <Metadata {...metadata} />
+      <Img sizes={mainImageSizesFrom(data)} />
+      <HTMLText htmlText={mainTextFrom(data)} />
+    </Page>
+  )
+}
 
 HomePage.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types

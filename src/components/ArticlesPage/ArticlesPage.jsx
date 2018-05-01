@@ -6,8 +6,9 @@ import Articles from './Articles'
 
 const ArticlesPage = ({ data, pathContext }) => {
   const metadata = data.site.siteMetadata.metadata.articles
+  const { title } = data.site.siteMetadata.structure.resources.articles
   return (
-    <Page title={metadata.title} hasImage={false}>
+    <Page title={title} hasImage={false}>
       <Metadata {...metadata} />
       <Articles context={pathContext} />
     </Page>

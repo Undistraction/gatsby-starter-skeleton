@@ -7,10 +7,11 @@ import nodesFrom from '../../data/nodesFrom'
 
 const ProjectsPage = ({ data, pathContext }) => {
   const metadata = data.site.siteMetadata.metadata.projects
+  const { title } = data.site.siteMetadata.structure.resources.projects
   const { projects } = pathContext
 
   return (
-    <Page title={metadata.title} hasImage={false}>
+    <Page title={title} hasImage={false}>
       <Metadata {...metadata} />
       <ProjectsList projects={nodesFrom(projects)} />
     </Page>

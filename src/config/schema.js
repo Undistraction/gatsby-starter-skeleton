@@ -51,7 +51,7 @@ const seo = Joi.object().keys({
 // -----------------------------------------------------------------------------
 
 const resource = Joi.object().keys({
-  name: Joi.string().required(),
+  title: Joi.string().required(),
   directory: Joi.string()
     .regex(fileNameRegex)
     .allow('')

@@ -49,6 +49,7 @@ const Layout = styled(Link)`
   ${Title} {
     text-align: center;
     position: relative;
+    font-weight: bold;
   }
 `
 

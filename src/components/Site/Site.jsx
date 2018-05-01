@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { merge } from 'ramda'
 import React from 'react'
 import styled from 'styled-components'
 import api from '../styles/api'
@@ -8,9 +9,9 @@ import SiteBody from './SiteBody'
 import SiteFooter from './SiteFooter'
 import SiteHeader from './SiteHeader'
 
-export const LayoutHeader = styled.div``
-export const LayoutBody = styled.div``
-export const LayoutFooter = styled.div``
+export const Header = styled.div``
+export const Body = styled.div``
+export const Footer = styled.div``
 
 const Layout = styled.div`
   ${flexVertical};
@@ -21,15 +22,15 @@ const Layout = styled.div`
     maxWidth: [1100],
   })};
 
-  ${LayoutHeader} {
+  ${Header} {
     flex: 0 0 auto;
   }
 
-  ${LayoutBody} {
+  ${Body} {
     flex: 2 0 auto;
   }
 
-  ${LayoutFooter} {
+  ${Footer} {
     flex: 0 0 auto;
     ${api({
       margin: '0 6ru',
@@ -37,20 +38,25 @@ const Layout = styled.div`
   }
 `
 
-const Site = ({ children, data }) => {
-  const { data: siteData } = data.site.siteMetadata
-  const { title, owner, startYear, showCredit } = siteData
+const Site = ({ data, children }) => {
+  const {
+    data: { title, owner, startYear, showCredit },
+    structure: { pages, resources },
+  } = data.site.siteMetadata
+
+  const pagesData = merge(pages, resources)
+
   return (
     <Layout>
-      <LayoutHeader>
-        <SiteHeader title={title} />
-      </LayoutHeader>
-      <LayoutBody grow="1">
+      <Header>
+        <SiteHeader title={title} pages={pagesData} />
+      </Header>
+      <Body grow="1">
         <SiteBody>{children()}</SiteBody>
-      </LayoutBody>
-      <LayoutFooter>
+      </Body>
+      <Footer>
         <SiteFooter {...{ owner, startYear, showCredit }} />
-      </LayoutFooter>
+      </Footer>
     </Layout>
   )
 }

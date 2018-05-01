@@ -23,5 +23,23 @@ export const query = graphql`
         }
       }
     }
+    site {
+      siteMetadata {
+        metadata {
+          home {
+            title
+            description
+            keywords
+          }
+        }
+        structure {
+          pages {
+            about {
+              title
+            }
+          }
+        }
+      }
+    }
   }
 `

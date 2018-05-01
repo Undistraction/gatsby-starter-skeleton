@@ -24,16 +24,18 @@ const Layout = styled.div`
   }
 `
 
-const SiteHeader = ({ title }) => (
+const SiteHeader = ({ title, pages }) => (
   <Layout>
     <SiteLogoLink />
     <SiteTitle>{title}</SiteTitle>
-    <SiteNav />
+    <SiteNav pages={pages} />
   </Layout>
 )
 
 SiteHeader.propTypes = {
   title: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  pages: PropTypes.object.isRequired,
 }
 
 export default SiteHeader

@@ -33,5 +33,16 @@ export const query = graphql`
         }
       }
     }
+    site {
+      siteMetadata {
+        metadata {
+          tag {
+            title
+            description
+            keywords
+          }
+        }
+      }
+    }
   }
 `
