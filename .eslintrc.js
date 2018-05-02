@@ -1,5 +1,9 @@
 module.exports = {
-  extends: ['eslint-config-airbnb', 'prettier'],
+  extends: [
+    'eslint-config-airbnb-base',
+    'plugin:react/recommended',
+    'prettier',
+  ],
   plugins: ['prettier'],
   env: {
     browser: true,
@@ -19,18 +23,16 @@ module.exports = {
     'no-param-reassign': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-confusing-arrow': 'off',
-    quotes: ['error', 'single', { avoidEscape: true }],
+    quotes: [
+      'error',
+      'backtick',
+      { avoidEscape: true, allowTemplateLiterals: true },
+    ],
     'jsx-quotes': ['error', 'prefer-double'],
     'comma-dangle': ['error', 'always-multiline'],
     'valid-jsdoc': ['error'],
     'no-restricted-syntax': ['error', 'LabeledStatement', 'WithStatement'],
     'import/extensions': ['off', 'never'],
-    'jsx-a11y/anchor-is-valid': [
-      'error',
-      {
-        // By default it will error if a <Link /> comp doesn't have an 'href' attribute, but Gatsby uses a 'to' attribute.
-        components: [],
-      },
-    ],
+    'no-unused-expressions': ['error', { allowTaggedTemplates: true }],
   },
-};
+}

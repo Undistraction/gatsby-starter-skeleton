@@ -20,27 +20,34 @@ const isProjectByPath = filepath => PROJECT_REGEXP.test(filepath)
 
 const nodeIsMarkdownArticle = node =>
   isTypeMarkdownRemark(node) && isArticleByPath(node.fileAbsolutePath)
+
 const nodeIsMarkdownProject = node =>
   isTypeMarkdownRemark(node) && isProjectByPath(node.fileAbsolutePath)
 
-// eslint-disable-next-line no-unused-vars
+const augmentResource = (pathName, createNodeField, node) => {
+  addSlugToNode(node, createNodeField, pathName)
+  addMetadataToNode(node, createNodeField)
+  addTagsToNode(node, createNodeField)
+}
+
+// -----------------------------------------------------------------------------
+// Gatsby Callbacks
+// -----------------------------------------------------------------------------
+
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators
+
   if (nodeIsMarkdownArticle(node)) {
-    addSlugToNode(node, createNodeField, resources.articles.path)
-    addMetadataToNode(node, createNodeField)
-    addTagsToNode(node, createNodeField)
+    augmentResource(resources.articles.path, createNodeField, node)
   } else if (nodeIsMarkdownProject(node)) {
-    addSlugToNode(node, createNodeField, resources.projects.path)
-    addMetadataToNode(node, createNodeField)
-    addTagsToNode(node, createNodeField)
+    augmentResource(resources.projects.path, createNodeField, node)
   }
 }
 
-// // Called when Gatsby creates the site pages
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
   const taggedItemPaths = [resources.articles.path, resources.projects.path]
+
   const paginatedArticlePages = createPaginatedArticlesPages(
     graphql,
     createPage,
@@ -48,29 +55,35 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     resources.articles.directory,
     resources.articles.path
   )
+
   const articlePages = createArticlesPages(
     graphql,
     createPage,
     resources.articles.path
   )
+
   const tagPages = createTagsPages(graphql, createPage, taggedItemPaths)
+
   const projectsPage = createProjectsPage(
     graphql,
     createPage,
     resources.projects.directory,
     resources.projects.path
   )
+
   const projectPages = createProjectsPages(
     graphql,
     createPage,
     resources.projects.path
   )
+
   const tagsPage = createTagsPage(
     graphql,
     createPage,
     resources.tags.path,
     taggedItemPaths
   )
+
   return Promise.all([
     paginatedArticlePages,
     articlePages,

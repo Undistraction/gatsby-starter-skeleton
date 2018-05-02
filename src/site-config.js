@@ -7,18 +7,17 @@ module.exports = {
   // ---------------------------------------------------------------------------
 
   data: {
+    // Used in the site copyright
     owner: 'Your Name Here',
-    // This will be used in the site copyright, with a date range running from
-    // startYear to the current year.
-    description: 'Your site description for RSS feed',
-    title: 'Title for RSS Feed',
     // Used in RSS Feed
+    title: 'Title for RSS Feed',
+    description: 'Your site description for RSS feed',
     url: 'https://example.com',
-    // Starting year for copyright range
+    // Starting year of copyright range
     startYear: '2017',
     // Show the credit in the footer (much appreciated)
     showCredit: true,
-    // Formatting for data
+    // Formatting for dates displayed across the site
     dateFormat: 'DD MMMM, YYYY',
   },
 
@@ -58,6 +57,7 @@ module.exports = {
       keywords: 'tags',
     },
   },
+
   // ---------------------------------------------------------------------------
   // SEO
   // ---------------------------------------------------------------------------
@@ -88,15 +88,21 @@ module.exports = {
 
     pages: {
       home: {
+        // Page title
         title: 'Home',
+        // Path used in URL
         path: '/',
       },
       about: {
+        // Page title
         title: 'About',
+        // Path used in URL
         path: '/about',
       },
       notFound: {
+        // Page title
         title: 'Page Not Found',
+        // Path used in URL
         path: '/404',
       },
     },
@@ -142,6 +148,7 @@ module.exports = {
 
   media: {
     images: {
+      // The maximum width an image will be displayed at
       maxWidth: 1200,
       // JPG quality for images encoded for the site.
       quality: 60,
@@ -152,7 +159,9 @@ module.exports = {
   // CLI
   // ---------------------------------------------------------------------------
 
+  // Internal
   cli: {
+    // Emojo used to prefix messages reported during build
     emoji: '💀',
   },
 }
