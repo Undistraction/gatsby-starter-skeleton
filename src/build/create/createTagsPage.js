@@ -1,13 +1,13 @@
-const path = require('path')
-const { pipe, defaultTo } = require('ramda')
-const { collectTags } = require('../utils/tags')
-const { TAGS_TEMPLATE_PATH } = require('../const/templatePaths')
-const queryAllResourceNodes = require('../queries/queryAllResourceNodes')
-const reporter = require('../reporter')
+const path = require(`path`)
+const { pipe, defaultTo } = require(`ramda`)
+const { collectTags } = require(`../utils/tags`)
+const { TAGS_TEMPLATE_PATH } = require(`../const/templatePaths`)
+const queryAllResourceNodes = require(`../queries/queryAllResourceNodes`)
+const reporter = require(`../reporter`)
 
 const markdownNodes = data => data.allMarkdownRemark.edges
 
-const createTagsPage = (graphql, createPage, tagsPath, taggedItemPaths) =>
+const createTagsPage = (graphql, createPage, taggedItemPaths, tagsPath) =>
   queryAllResourceNodes(graphql, taggedItemPaths)
     .then(result => {
       const tags = pipe(markdownNodes, collectTags, defaultTo([]))(result.data)

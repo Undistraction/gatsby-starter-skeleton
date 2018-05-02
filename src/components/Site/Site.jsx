@@ -18,7 +18,7 @@ const Layout = styled.div`
   ${blockCenterH};
 
   ${api({
-    minHeight: '100vh',
+    minHeight: `100vh`,
     maxWidth: [1100],
   })};
 
@@ -33,7 +33,7 @@ const Layout = styled.div`
   ${Footer} {
     flex: 0 0 auto;
     ${api({
-      margin: '0 6ru',
+      margin: `0 6ru`,
     })};
   }
 `

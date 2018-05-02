@@ -1,5 +1,5 @@
 module.exports = () => ({
-  resolve: 'gatsby-remark-prismjs',
+  resolve: `gatsby-remark-prismjs`,
   options: {
     // Class prefix for <pre> tags containing syntax highlighting;
     // defaults to 'language-' (eg <pre class="language-js">).
@@ -8,6 +8,6 @@ module.exports = () => ({
     // you may use this to prevent Prism from re-processing syntax.
     // This is an uncommon use-case though;
     // If you're unsure, it's best to use the default value.
-    classPrefix: 'language-',
+    classPrefix: `language-`,
   },
-});
+})

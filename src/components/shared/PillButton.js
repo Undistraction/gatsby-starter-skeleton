@@ -4,9 +4,9 @@ import Button from './Button'
 
 const PillButton = styled(Button)`
   ${api({
-    fontSize: 's:smallprint',
-    borderRadius: '1ru',
-    padding: '0.25ru 0.5ru',
+    fontSize: `s:smallprint`,
+    borderRadius: `1ru`,
+    padding: `0.25ru 0.5ru`,
   })};
 `
 

@@ -1,7 +1,7 @@
-const path = require('path')
-const { PROJECTS_TEMPLATE_PATH } = require('../const/templatePaths')
-const queryAllResourceNodes = require('../queries/queryAllResourceNodes')
-const reporter = require('../reporter')
+const path = require(`path`)
+const { PROJECTS_TEMPLATE_PATH } = require(`../const/templatePaths`)
+const queryAllResourceNodes = require(`../queries/queryAllResourceNodes`)
+const reporter = require(`../reporter`)
 
 const markdownNodes = data => data.allMarkdownRemark.edges
 

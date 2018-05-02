@@ -1,3 +1,3 @@
-import TagPage from './TagPage';
+import TagPage from './TagPage'
 
-export default TagPage;
+export default TagPage

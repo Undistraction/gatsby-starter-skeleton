@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
 import api from '../api'
 
-export default (defaultColor = 'red', highlightColor = 'blue') => css`
+export default (defaultColor = `red`, highlightColor = `blue`) => css`
   ${api({
     color: defaultColor,
   })} color: inherit;

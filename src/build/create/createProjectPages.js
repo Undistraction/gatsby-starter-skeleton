@@ -1,8 +1,8 @@
-const { map, compose } = require('ramda')
-const path = require('path')
-const reporter = require('../reporter')
-const { PROJECT_TEMPLATE_PATH } = require('../const/templatePaths')
-const queryAllResourceNodes = require('../queries/queryAllResourceNodes')
+const { map, compose } = require(`ramda`)
+const path = require(`path`)
+const reporter = require(`../reporter`)
+const { PROJECT_TEMPLATE_PATH } = require(`../const/templatePaths`)
+const queryAllResourceNodes = require(`../queries/queryAllResourceNodes`)
 
 const markdownNodes = data => data.allMarkdownRemark.edges
 
@@ -26,7 +26,7 @@ const createProjectPage = (node, createPage) =>
     resolve()
   })
 
-const createProjectPages = (graphql, createPage, projectsDir, projectsPath) =>
+const createProjectPages = (graphql, createPage, projectsDir) =>
   queryAllResourceNodes(graphql, projectsDir)
     .then(result =>
       compose(

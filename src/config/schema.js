@@ -1,4 +1,4 @@
-const Joi = require('joi')
+const Joi = require(`joi`)
 
 const fileNameRegex = /^[a-zA-Z]+[a-zA-Z0-9-_]+$/
 const pathRegex = /^[/a-zA-Z_]*[/a-zA-Z0-9-_]*$/
@@ -55,12 +55,12 @@ const resource = Joi.object().keys({
   title: Joi.string().required(),
   directory: Joi.string()
     .regex(fileNameRegex)
-    .allow('')
+    .allow(``)
     .optional(),
   path: Joi.string()
     .regex(pathRegex)
     .required(),
-  perPage: Joi.number()
+  groupSize: Joi.number()
     .greater(0)
     .optional(),
 })
@@ -69,7 +69,7 @@ const page = Joi.object().keys({
   title: Joi.string(),
   path: Joi.string()
     .regex(pathRegex)
-    .allow('')
+    .allow(``)
     .required(),
 })
 

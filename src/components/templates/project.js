@@ -4,7 +4,7 @@ import Template from '../ProjectPage'
 export default Template
 
 export const query = graphql`
-  query ProjectQuery($slug: String) {
+  query ProjectQuery($slug: String, $dateFormat: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
@@ -38,7 +38,7 @@ export const query = graphql`
           id
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: $dateFormat)
           }
           fields {
             slug

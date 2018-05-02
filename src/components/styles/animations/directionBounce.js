@@ -7,13 +7,13 @@ const directionBounce = direction => keyframes`
   }
   60% {
     ${api({
-      [direction]: '-0.5rem',
+      [direction]: `-0.5rem`,
     })}
   }
 
   85% {
     ${api({
-      [direction]: '0.2rem',
+      [direction]: `0.2rem`,
     })}
   }
 

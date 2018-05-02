@@ -1,8 +1,8 @@
-import { css } from 'styled-components';
-import api from '../api';
+import { css } from 'styled-components'
+import api from '../api'
 
 export default values => css`
   & > * + * {
     ${api.marginTop(values)};
   }
-`;
+`

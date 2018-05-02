@@ -30,14 +30,14 @@ export default api =>
     /* ---------------------------------------------------------------------- */
 
     html {
-      ${api.backgroundColor('c:bg')}
+      ${api.backgroundColor(`c:bg`)}
       overflow-y: scroll;
       overflow-x: hidden;
     }
 
     body {
       ${api({
-        backgroundColor: ['c:bg'],
+        backgroundColor: [`c:bg`],
       })}
     }
 
@@ -47,8 +47,8 @@ export default api =>
 
     body {
       ${api({
-        fontFamily: ['f:default'],
-        baseline: ['scale:body'],
+        fontFamily: [`f:default`],
+        baseline: [`scale:body`],
       })}
     }
 
@@ -69,7 +69,7 @@ export default api =>
 
     p + p {
       ${api({
-        marginTop: ['1ru'],
+        marginTop: [`1ru`],
       })}
     }
 
@@ -84,8 +84,8 @@ export default api =>
     h5,
     h6 {
       ${api({
-        baseline: ['s:body'],
-        fontWeight: ['normal'],
+        baseline: [`s:body`],
+        fontWeight: [`normal`],
         margin: [0],
       })}
     }

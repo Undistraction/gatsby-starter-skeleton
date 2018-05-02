@@ -7,9 +7,9 @@ import directionBounce from '../styles/animations/directionBounce'
 const ArrowButtonLink = styled(Button)`
   display: block;
   ${({ direction }) => direction}: 0;
-  ${p => arrow(p.direction, '0.6ru', 'c:black')};
+  ${p => arrow(p.direction, `0.6ru`, `c:black`)};
   ${api({
-    padding: '0.4ru 1ru',
+    padding: `0.4ru 1ru`,
   })};
 
   &:hover {

@@ -6,9 +6,9 @@ import globalStyles from './globalStyles'
 // -----------------------------------------------------------------------------
 
 const breakpoints = [
-  ['smallUp', 400], // 400–900
-  ['mediumUp', 900], // 900–1100
-  ['largeUp', 1100], // 1100–
+  [`smallUp`, 400], // 400–900
+  [`mediumUp`, 900], // 900–1100
+  [`largeUp`, 1100], // 1100–
 ]
 
 // -----------------------------------------------------------------------------
@@ -20,25 +20,25 @@ const config = {
   data: {
     rhythm: 23,
     color: {
-      black: '#070707',
-      white: '#F5F5F5',
-      grey: '#AAA',
-      lightGrey: '#E9E9E9',
-      bg: 'c:white',
-      text: 'c:black',
-      highlight: 'c:grey',
-      disabled: 'c:lightGrey',
+      black: `#070707`,
+      white: `#F5F5F5`,
+      grey: `#AAA`,
+      lightGrey: `#E9E9E9`,
+      bg: `c:white`,
+      text: `c:black`,
+      highlight: `c:grey`,
+      disabled: `c:lightGrey`,
     },
     scale: {
-      smallprint: '14',
-      body: '18',
-      secondaryTitle: '20',
-      primaryTitle: '28',
-      megaTitle: '32',
+      smallprint: `14`,
+      body: `18`,
+      secondaryTitle: `20`,
+      primaryTitle: `28`,
+      megaTitle: `32`,
     },
     font: {
-      default: 'Cousine, monospace',
-      title: 'Berkshire Swash, cursive',
+      default: `Cousine, monospace`,
+      title: `Berkshire Swash, cursive`,
     },
   },
 }

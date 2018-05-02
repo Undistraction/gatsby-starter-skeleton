@@ -8,17 +8,17 @@ module.exports = {
 
   data: {
     // Used in the site copyright
-    owner: 'Your Name Here',
+    owner: `Your Name Here`,
     // Used in RSS Feed
-    title: 'Title for RSS Feed',
-    description: 'Your site description for RSS feed',
-    url: 'https://example.com',
+    title: `Title for RSS Feed`,
+    description: `Your site description for RSS feed`,
+    url: `https://example.com`,
     // Starting year of copyright range
-    startYear: '2017',
+    startYear: `2017`,
     // Show the credit in the footer (much appreciated)
     showCredit: true,
     // Formatting for dates displayed across the site
-    dateFormat: 'DD MMMM, YYYY',
+    dateFormat: `DD MMMM, YYYY`,
   },
 
   // ---------------------------------------------------------------------------
@@ -27,34 +27,34 @@ module.exports = {
 
   metadata: {
     home: {
-      title: 'Site / Home Page',
-      description: 'The home page of the site',
-      keywords: 'home',
+      title: `Site / Home Page`,
+      description: `The home page of the site`,
+      keywords: `home`,
     },
     about: {
-      title: 'Site / About Page',
-      description: 'The about page of the site',
-      keywords: 'about',
+      title: `Site / About Page`,
+      description: `The about page of the site`,
+      keywords: `about`,
     },
     articles: {
-      title: 'Site / Articles Page',
-      description: 'The Articles',
-      keywords: 'articles',
+      title: `Site / Articles Page`,
+      description: `The Articles`,
+      keywords: `articles`,
     },
     projects: {
-      title: 'Site / Projects Page',
-      description: 'The Projects',
-      keywords: 'projects',
+      title: `Site / Projects Page`,
+      description: `The Projects`,
+      keywords: `projects`,
     },
     tags: {
-      title: 'Site / Tags Page',
-      description: 'All tags used on the site',
-      keywords: 'tags',
+      title: `Site / Tags Page`,
+      description: `All tags used on the site`,
+      keywords: `tags`,
     },
     tag: {
-      title: 'Tag: ',
-      description: 'Resources tagged with',
-      keywords: 'tags',
+      title: `Tag: `,
+      description: `Resources tagged with`,
+      keywords: `tags`,
     },
   },
 
@@ -78,9 +78,9 @@ module.exports = {
     // -------------------------------------------------------------------------
 
     // Directory path for downloads, relative to your root url
-    downloadsDir: 'downloads',
+    downloadsDir: `downloads`,
     // Directly path for code used in REPLs
-    replCodeDir: 'code',
+    replCodeDir: `code`,
 
     // -------------------------------------------------------------------------
     // Pages
@@ -89,21 +89,21 @@ module.exports = {
     pages: {
       home: {
         // Page title
-        title: 'Home',
+        title: `Home`,
         // Path used in URL
-        path: '/',
+        path: `/`,
       },
       about: {
         // Page title
-        title: 'About',
+        title: `About`,
         // Path used in URL
-        path: '/about',
+        path: `/about`,
       },
       notFound: {
         // Page title
-        title: 'Page Not Found',
+        title: `Page Not Found`,
         // Path used in URL
-        path: '/404',
+        path: `/404`,
       },
     },
 
@@ -115,29 +115,29 @@ module.exports = {
       // Configuration for articles.
       articles: {
         // Page title
-        title: 'Articles',
+        title: `Articles`,
         // Name of dir containing markdown docs
-        directory: 'articles',
+        directory: `articles`,
         // Path used in URL
-        path: '/articles',
+        path: `/articles`,
         // Paginate to this number of items per page
-        perPage: 5,
+        groupSize: 5,
       },
       // Configuration for projects
       projects: {
         // Page title
-        title: 'Projects',
+        title: `Projects`,
         // Name of dir containing markdown docs
-        directory: 'projects',
+        directory: `projects`,
         // Path used in URL
-        path: '/projects',
+        path: `/projects`,
       },
       // Configuration for projects
       tags: {
         // Page title
-        title: 'Tags',
+        title: `Tags`,
         // Path used in URL
-        path: '/tags',
+        path: `/tags`,
       },
     },
   },
@@ -162,6 +162,6 @@ module.exports = {
   // Internal
   cli: {
     // Emojo used to prefix messages reported during build
-    emoji: '💀',
+    emoji: `💀`,
   },
 }

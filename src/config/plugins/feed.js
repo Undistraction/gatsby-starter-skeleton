@@ -1,13 +1,16 @@
 module.exports = () => ({
-  resolve: 'gatsby-plugin-feed',
+  resolve: `gatsby-plugin-feed`,
   options: {
     query: `
       {
         site {
           siteMetadata {
-            title
-            description
-            siteUrl
+            data {
+              title
+              description
+              url
+
+            }
           }
         }
       }
@@ -18,8 +21,8 @@ module.exports = () => ({
           allMarkdownRemark.edges.map(edge =>
             Object.assign({}, edge.node.frontmatter, {
               description: edge.node.excerpt,
-              url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-              guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+              url: site.siteMetadata.data.url + edge.node.fields.slug,
+              guid: site.siteMetadata.data.url + edge.node.fields.slug,
               custom_elements: [{ 'content:encoded': edge.node.html }],
             })
           ),
@@ -44,8 +47,8 @@ module.exports = () => ({
             }
           }
         `,
-        output: '/rss.xml',
+        output: `/rss.xml`,
       },
     ],
   },
-});
+})

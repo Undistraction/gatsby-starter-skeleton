@@ -1,5 +1,5 @@
-const validatedConfig = require('../../config/validatedConfig')
-const { isTypeMarkdownRemark } = require('./node')
+const validatedConfig = require(`../../config/validatedConfig`)
+const { isTypeMarkdownRemark } = require(`./node`)
 
 const { resources } = validatedConfig().structure
 

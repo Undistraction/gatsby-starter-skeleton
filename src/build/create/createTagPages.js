@@ -1,15 +1,15 @@
-const { collectTags } = require('../utils/tags')
-const { join, pipe, map } = require('ramda')
-const path = require('path')
-const reporter = require('../reporter')
-const { toSlug } = require('../utils/url')
-const { TAG_TEMPLATE_PATH } = require('../const/templatePaths')
-const queryAllResourceNodes = require('../queries/queryAllResourceNodes')
+const { collectTags, toTagSlug } = require(`../utils/tags`)
+const { pipe, map } = require(`ramda`)
+const path = require(`path`)
+const reporter = require(`../reporter`)
+const { TAG_TEMPLATE_PATH } = require(`../const/templatePaths`)
+const queryAllResourceNodes = require(`../queries/queryAllResourceNodes`)
 
 const markdownNodes = data => data.allMarkdownRemark.edges
 
-const createTagPage = (tag, tags, slug, createPage) =>
-  new Promise((resolve, reject) => {
+const createTagPage = (tag, tags, createPage) => {
+  const slug = toTagSlug(tag)
+  return new Promise((resolve, reject) => {
     try {
       createPage({
         path: slug,
@@ -26,17 +26,17 @@ const createTagPage = (tag, tags, slug, createPage) =>
     reporter.success(`Created Tag Page for '${tag}' at slug '${slug}'.`)
     resolve()
   })
+}
 
 const createTagPages = (graphql, createPage, taggedItemPaths) =>
-  queryAllResourceNodes(graphql, join('|', taggedItemPaths))
+  queryAllResourceNodes(graphql, taggedItemPaths)
     .then(result =>
       pipe(
         markdownNodes,
         collectTags,
         tags =>
           map(tag => {
-            const slug = `tags/${toSlug(tag)}`
-            createTagPage(tag, tags, slug, createPage)
+            createTagPage(tag, tags, createPage)
           }, tags),
         Promise.all
       )(result.data)

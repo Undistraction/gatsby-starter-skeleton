@@ -1,49 +1,44 @@
-const { curry, inc, dec } = require('ramda')
-const { isZero } = require('./predicates')
-const { joinWithFSlash } = require('./file')
+const { multiply, inc, dec } = require(`ramda`)
+const { isZero } = require(`./predicates`)
 
 const isFirstPage = isZero
-const isLastPage = (index, total) => index === dec(total)
-const fromItemIndex = (perPage, index) => index * inc(perPage) || 1
-const toItemIndex = (perPage, index, groupLength) =>
-  index * perPage + groupLength
 
-const pagePath = curry(
-  (name, pageIndex) =>
-    pageIndex > 0 ? joinWithFSlash([name, pageIndex]) : name
-)
+const isLastPage = (index, total) => index === dec(total)
+
+const startIndex = (groupSize, groupIndex) => multiply(groupSize, groupIndex)
+
+const endIndex = (groupSize, index, groupLength) =>
+  index * groupSize + groupLength
+
+const previousPath = (articlePagePath, groupIndex) =>
+  !isFirstPage(groupIndex) ? articlePagePath(dec(groupIndex)) : null
+
+const nextPath = (articlePagePath, groupIndex, groupTotal) =>
+  !isLastPage(groupIndex, groupTotal) ? articlePagePath(inc(groupIndex)) : null
 
 const createPagination = (
   articlePagePath,
-  itemsCount,
-  perPage,
+  total,
+  groupSize,
   group,
   groupIndex,
-  allGroups
+  groups
 ) => {
-  const groupsCount = allGroups.length
-  const groupLength = group.length
-  const pageIndex = inc(groupIndex)
-  const firstItemIndex = perPage * groupIndex
+  const groupTotal = groups.length
+  const thisGroupSize = group.length
+
   return {
-    items: group,
-    itemsCount,
-    perPage,
-    fromItemIndex: fromItemIndex(perPage, groupIndex),
-    toItemIndex: toItemIndex(perPage, groupIndex, groupLength),
-    firstItemIndex,
-    pageIndex,
-    pageCount: groupsCount,
-    previousPath: !isFirstPage(groupIndex)
-      ? articlePagePath(dec(groupIndex))
-      : null,
-    nextPath: !isLastPage(groupIndex, groupsCount)
-      ? articlePagePath(inc(groupIndex))
-      : null,
+    total,
+    startIndex: startIndex(groupSize, groupIndex),
+    endIndex: endIndex(groupSize, groupIndex, thisGroupSize),
+    groupIndex,
+    groupTotal,
+    thisGroupSize,
+    previousPath: previousPath(articlePagePath, groupIndex),
+    nextPath: nextPath(articlePagePath, groupIndex, groupTotal),
   }
 }
 
 module.exports = {
-  pagePath,
   createPagination,
 }

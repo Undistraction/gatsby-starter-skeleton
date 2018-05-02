@@ -1,3 +1,3 @@
-import Site from './Site';
+import Site from './Site'
 
-export default Site;
+export default Site

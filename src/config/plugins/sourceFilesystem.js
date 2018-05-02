@@ -1,7 +1,7 @@
 module.exports = dir => ({
-  resolve: 'gatsby-source-filesystem',
+  resolve: `gatsby-source-filesystem`,
   options: {
-    name: 'src',
+    name: `src`,
     path: `${process.cwd()}/src/content/${dir}`,
   },
-});
+})

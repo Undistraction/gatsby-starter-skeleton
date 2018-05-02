@@ -1,10 +1,10 @@
 module.exports = structure => ({
-  resolve: 'gatsby-remark-code-repls',
+  resolve: `gatsby-remark-code-repls`,
   options: {
     // Optional default link text.
     // Defaults to "REPL".
     // eg <a href="...">Click here</a>
-    defaultText: 'Open in REPL',
+    defaultText: `Open in REPL`,
 
     // // Optional runtime dependencies to load from NPM.
     // // This option only applies to REPLs that support it (eg CodeSandbox).

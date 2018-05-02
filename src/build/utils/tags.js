@@ -1,14 +1,12 @@
-const { lensPath, view } = require('ramda')
+const { pipe, flatten, path, map, uniq } = require(`ramda`)
+const { toSlug } = require(`./url`)
 
-const { concat, compose, reduce, uniq, defaultTo } = require('ramda')
-const { stringListToArray } = require('../utils/string')
+const collectTags = pipe(map(path([`node`, `fields`, `tags`])), flatten, uniq)
 
-const lKeywords = lensPath(['node', 'frontmatter', 'keywords'])
-
-const collectTagsFromNode = (acc, node) =>
-  compose(concat(acc), stringListToArray, defaultTo([]), view(lKeywords))(node)
+const toTagSlug = tag => `tags/${toSlug(tag)}`
 
 // eslint-disable-next-line import/prefer-default-export
 module.exports = {
-  collectTags: compose(uniq, reduce(collectTagsFromNode, [])),
+  collectTags,
+  toTagSlug,
 }

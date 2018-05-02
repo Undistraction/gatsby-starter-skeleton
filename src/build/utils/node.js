@@ -1,4 +1,4 @@
-const NODE_TYPES = require('../const/nodeTypes')
+const NODE_TYPES = require(`../const/nodeTypes`)
 
 const isNodeType = (node, nodeType) => node.internal.type === nodeType
 

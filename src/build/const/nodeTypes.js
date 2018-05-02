@@ -1,4 +1,4 @@
-const MARKDOWN_REMARK = 'MarkdownRemark'
+const MARKDOWN_REMARK = `MarkdownRemark`
 
 const NODE_TYPES = {
   MARKDOWN_REMARK,

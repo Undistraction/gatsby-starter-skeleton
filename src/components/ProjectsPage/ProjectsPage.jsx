@@ -8,23 +8,18 @@ import {
   projectsPageTitle,
   projectsPageMetadata,
 } from '../helpers/siteMetadata'
+import { markdownItemNodes } from '../helpers/text'
 
-const ProjectsPage = ({ data, pathContext }) => {
-  const { projects } = pathContext
-
-  return (
-    <Page title={projectsPageTitle(data)} hasImage={false}>
-      <Metadata {...projectsPageMetadata(data)} />
-      <ProjectsList projects={nodesFrom(projects)} />
-    </Page>
-  )
-}
+const ProjectsPage = ({ data }) => (
+  <Page title={projectsPageTitle(data)} hasImage={false}>
+    <Metadata {...projectsPageMetadata(data)} />
+    <ProjectsList projects={markdownItemNodes(data)} />
+  </Page>
+)
 
 ProjectsPage.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
-  pathContext: PropTypes.object.isRequired,
 }
 
 export default ProjectsPage

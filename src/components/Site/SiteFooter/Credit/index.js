@@ -1,3 +1,3 @@
-import Credit from './Credit';
+import Credit from './Credit'
 
-export default Credit;
+export default Credit

@@ -1,12 +1,12 @@
-const { stringListToArray } = require('../utils/string')
+const { stringListToArray } = require(`../utils/string`)
 
 const addTagsToNode = (node, createNodeField) => {
   const { frontmatter } = node
-  const tags = frontmatter.keywords || ''
+  const tags = frontmatter.keywords || ``
 
   createNodeField({
     node,
-    name: 'tags',
+    name: `tags`,
     value: stringListToArray(tags),
   })
 }

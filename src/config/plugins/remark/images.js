@@ -1,5 +1,5 @@
 module.exports = images => ({
-  resolve: 'gatsby-remark-images',
+  resolve: `gatsby-remark-images`,
   options: {
     // The maximum width of images on the site.
     maxWidth: images.maxWidth * 2,

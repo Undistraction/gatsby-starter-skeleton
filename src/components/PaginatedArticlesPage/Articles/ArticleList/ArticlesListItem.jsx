@@ -13,17 +13,17 @@ import api from '../../../styles/api'
 const ImgLayout = styled.div``
 const InfoLayout = styled.div`
   ${flexVertical};
-  ${spaceChildrenV('0.5ru')};
+  ${spaceChildrenV(`0.5ru`)};
 `
 const Header = styled.header`
   ${flexVertical};
-  ${spaceChildrenV('0.5ru')};
+  ${spaceChildrenV(`0.5ru`)};
 `
 
 const Body = styled.div``
 const Layout = styled.div`
   ${flexHorizontal};
-  ${spaceChildrenH('1ru')};
+  ${spaceChildrenH(`1ru`)};
 
   ${ImgLayout} {
     width: 25%;
@@ -32,7 +32,7 @@ const Layout = styled.div`
 
 const Date = styled.time`
   ${api({
-    fontSize: 's:smallprint',
+    fontSize: `s:smallprint`,
   })};
 `
 
