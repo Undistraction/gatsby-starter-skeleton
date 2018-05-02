@@ -26,7 +26,7 @@ const createProjectPage = (node, createPage) =>
     resolve()
   })
 
-const createProjectsPages = (graphql, createPage, projectsPath) =>
+const createProjectPages = (graphql, createPage, projectsPath) =>
   queryAllResourceNodes(graphql, projectsPath)
     .then(result =>
       compose(
@@ -38,4 +38,4 @@ const createProjectsPages = (graphql, createPage, projectsPath) =>
       throw new Error(`Projects Pages Couldn't Be Created: ${error.toString()}`)
     })
 
-module.exports = createProjectsPages
+module.exports = createProjectPages

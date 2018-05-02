@@ -24,7 +24,7 @@ const createArticlePage = (slug, createPage) =>
     resolve()
   })
 
-const createArticlesPages = (graphql, createPage, articlesPath) =>
+const createArticlePages = (graphql, createPage, articlesPath) =>
   queryAllResourceNodes(graphql, articlesPath)
     .then(result =>
       compose(
@@ -36,4 +36,4 @@ const createArticlesPages = (graphql, createPage, articlesPath) =>
       throw new Error(`Articles Pages Couldn't Be Created: ${error}`)
     })
 
-module.exports = createArticlesPages
+module.exports = createArticlePages

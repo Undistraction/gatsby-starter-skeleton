@@ -1,7 +1,7 @@
 const createTagsPage = require('./src/build/create/createTagsPage')
-const createProjectsPages = require('./src/build/create/createProjectsPages')
+const createProjectPages = require('./src/build/create/createProjectPages')
 const validatedConfig = require('./src/config/validatedConfig')
-const createArticlesPages = require('./src/build/create/createArticlesPages')
+const createArticlePages = require('./src/build/create/createArticlePages')
 const createPaginatedArticlesPages = require('./src/build/create/createPaginatedArticlesPages')
 const createProjectsPage = require('./src/build/create/createProjectsPage')
 const createTagsPages = require('./src/build/create/createTagsPages')
@@ -56,7 +56,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     resources.articles.path
   )
 
-  const articlePages = createArticlesPages(
+  const articlePages = createArticlePages(
     graphql,
     createPage,
     resources.articles.path
@@ -71,7 +71,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     resources.projects.path
   )
 
-  const projectPages = createProjectsPages(
+  const projectPages = createProjectPages(
     graphql,
     createPage,
     resources.projects.path
