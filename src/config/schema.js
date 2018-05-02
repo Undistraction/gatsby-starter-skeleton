@@ -56,7 +56,7 @@ const resource = Joi.object().keys({
   directory: Joi.string()
     .regex(fileNameRegex)
     .allow('')
-    .required(),
+    .optional(),
   path: Joi.string()
     .regex(pathRegex)
     .required(),

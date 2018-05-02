@@ -21,6 +21,7 @@ export const aboutPageTitle = pageTitle('about')
 export const articlesPageTitle = resourceTitle('articles')
 export const projectsPageTitle = resourceTitle('projects')
 export const tagsPageTitle = resourceTitle('tags')
+export const notFoundPageTitle = resourceTitle('notFound')
 
 export const homePageMetadata = pageMetadata('home')
 export const aboutPageMetadata = pageMetadata('about')

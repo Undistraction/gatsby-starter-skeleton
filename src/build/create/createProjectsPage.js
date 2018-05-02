@@ -5,8 +5,8 @@ const reporter = require('../reporter')
 
 const markdownNodes = data => data.allMarkdownRemark.edges
 
-const createProjectsPage = (graphql, createPage, projectPath) =>
-  queryAllResourceNodes(graphql, projectPath)
+const createProjectsPage = (graphql, createPage, projectDir, projectPath) =>
+  queryAllResourceNodes(graphql, projectDir)
     .then(result => {
       const edges = markdownNodes(result.data)
       const projectsCount = edges.length
@@ -24,5 +24,4 @@ const createProjectsPage = (graphql, createPage, projectPath) =>
     .catch(error => {
       throw new Error(`Projects Page Couldn't Be Created: ${error.toString()}`)
     })
-
 module.exports = createProjectsPage

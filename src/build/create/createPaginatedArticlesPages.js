@@ -57,9 +57,10 @@ const createPaginatedArticlesPages = (
   graphql,
   createPage,
   perPage,
+  articlesDir,
   articlesPath
 ) =>
-  queryAllResourceNodes(graphql, articlesPath)
+  queryAllResourceNodes(graphql, articlesDir)
     .then(result => {
       const edges = markdownNodes(result.data)
       const groupedPages = splitEvery(perPage, edges)

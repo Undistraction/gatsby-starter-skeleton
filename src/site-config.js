@@ -7,15 +7,14 @@ module.exports = {
   // ---------------------------------------------------------------------------
   data: {
     owner: 'Your Name Here',
-    // This will be used in the site title.
-    title: 'Gatsby Skeleton',
     // This will be used in the site copyright, with a date range running from
     // startYear to the current year.
     description: 'Your site description for RSS feed',
+    title: 'Title for RSS Feed',
     // Used in RSS Feed
     url: 'https://example.com',
     // Starting year for copyright range
-    startYear: '2018',
+    startYear: '2017',
     // Show the credit in the footer (much appreciated)
     showCredit: true,
     // Formatting for data
@@ -101,21 +100,29 @@ module.exports = {
     resources: {
       // Configuration for articles.
       articles: {
+        // Page title
         title: 'Articles',
+        // Name of dir containing markdown docs
         directory: 'articles',
+        // Path used in URL
         path: '/articles',
+        // Paginate to this number of items per page
         perPage: 5,
       },
       // Configuration for projects
       projects: {
+        // Page title
         title: 'Projects',
+        // Name of dir containing markdown docs
         directory: 'projects',
+        // Path used in URL
         path: '/projects',
       },
       // Configuration for projects
       tags: {
+        // Page title
         title: 'Tags',
-        directory: 'tags',
+        // Path used in URL
         path: '/tags',
       },
     },

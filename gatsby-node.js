@@ -45,6 +45,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     graphql,
     createPage,
     resources.articles.perPage,
+    resources.articles.directory,
     resources.articles.path
   )
   const articlePages = createArticlesPages(
@@ -56,6 +57,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   const projectsPage = createProjectsPage(
     graphql,
     createPage,
+    resources.projects.directory,
     resources.projects.path
   )
   const projectPages = createProjectsPages(
