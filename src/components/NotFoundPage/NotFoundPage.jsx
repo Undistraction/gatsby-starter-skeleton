@@ -6,7 +6,7 @@ import { notFoundPageTitle } from '../helpers/siteMetadata'
 
 const NotFoundPage = ({ data, location }) => (
   <Page title={notFoundPageTitle(data)} hasImage={false}>
-    <NotFoundMessage pathname={location.pathname} />
+    <NotFoundMessage path={location.pathname} />
   </Page>
 )
 

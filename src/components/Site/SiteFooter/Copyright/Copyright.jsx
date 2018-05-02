@@ -8,9 +8,9 @@ const Layout = styled.p`
   ${banner()};
   position: relative;
   ${api({
-    padding: '1ru',
-    background: 'c:black',
-    color: 'c:white',
+    padding: `1ru`,
+    background: `c:black`,
+    color: `c:white`,
   })};
 `
 

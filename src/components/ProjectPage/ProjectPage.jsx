@@ -6,20 +6,19 @@ import React from 'react'
 import Metadata from '../shared/Metadata'
 import Page from '../shared/Page'
 import Project from './Project'
-import { markdownItemMetadata, markdownItemTitle } from '../helpers/text'
+import {
+  markdownItemMetadata,
+  markdownItemTitle,
+  markdownItemImageSizes,
+} from '../helpers/markdown'
 
-const ProjectPage = ({ data }) => {
-  const project = data.markdownRemark
-  const { frontmatter } = project
-
-  return (
-    <Page title={markdownItemTitle(data)}>
-      <Metadata {...markdownItemMetadata(data)} />
-      <Img sizes={frontmatter.image.childImageSharp.sizes} />
-      <Project data={data} />
-    </Page>
-  )
-}
+const ProjectPage = ({ data }) => (
+  <Page title={markdownItemTitle(data)}>
+    <Metadata {...markdownItemMetadata(data)} />
+    <Img sizes={markdownItemImageSizes(data)} />
+    <Project data={data} />
+  </Page>
+)
 
 ProjectPage.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types

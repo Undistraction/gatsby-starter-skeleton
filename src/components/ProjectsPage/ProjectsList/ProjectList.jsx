@@ -17,19 +17,19 @@ const Layout = styled.ul`
   flex-wrap: wrap;
   ${api({
     padding: [0],
-    margin: ['-0.5ru'],
+    margin: [`-0.5ru`],
   })};
 
   & > * {
     width: 33.3%;
     ${api({
-      padding: ['0.5ru'],
+      padding: [`0.5ru`],
     })};
   }
 `
 
 const ProjectList = ({ projects }) => (
-  <Layout>{renderListItems(ProjectsListItem, 'project', projects)}</Layout>
+  <Layout>{renderListItems(ProjectsListItem, `project`, projects)}</Layout>
 )
 
 ProjectList.propTypes = {

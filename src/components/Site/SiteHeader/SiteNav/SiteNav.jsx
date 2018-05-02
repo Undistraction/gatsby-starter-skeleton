@@ -11,13 +11,13 @@ import SiteNavLink from './SiteNavLink/SiteNavLink'
 const Layout = styled.nav`
   ${flexHorizontal};
   ${uiList};
-  ${spaceChildrenH('1ru')};
-  ${banner('bottom')}
+  ${spaceChildrenH(`1ru`)};
+  ${banner(`bottom`)}
   ${api({
-    position: 'relative',
-    backgroundColor: 'c:black',
-    padding: '0.75ru 1ru',
-    color: 'c:white',
+    position: `relative`,
+    backgroundColor: `c:black`,
+    padding: `0.75ru 1ru`,
+    color: `c:white`,
   })};
 
   * > {

@@ -51,7 +51,7 @@ const Site = ({ data, children }) => {
       <Header>
         <SiteHeader title={title} pages={pagesData} />
       </Header>
-      <Body grow="1">
+      <Body>
         <SiteBody>{children()}</SiteBody>
       </Body>
       <Footer>

@@ -9,8 +9,9 @@ module.exports = {
   data: {
     // Used in the site copyright
     owner: `Your Name Here`,
+    // Used for the main site title and in RSS Feed
+    title: `Gatsby Skeleton`,
     // Used in RSS Feed
-    title: `Title for RSS Feed`,
     description: `Your site description for RSS feed`,
     url: `https://example.com`,
     // Starting year of copyright range

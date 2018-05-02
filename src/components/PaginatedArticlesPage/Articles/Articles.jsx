@@ -2,11 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import ArticleList from './ArticleList/ArticleList'
-import nodesFrom from '../../../data/nodesFrom'
 import api from '../../styles/api'
 import flexVertical from '../../styles/mixins/flexVertical'
 import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
-import ArticlesNav from './ArticlesNav'
+import NextPreviousNav from '../../shared/NextPreviousNav'
 
 const ArticlesInfo = styled.div`
   text-align: center;
@@ -24,6 +23,8 @@ const Header = styled.header`
   }
 `
 
+const Body = styled.div``
+
 const Layout = styled.div`
   ${flexVertical};
   ${spaceChildrenV(`1ru`)};
@@ -35,13 +36,14 @@ const Articles = ({ articles, pagination }) => {
   return (
     <Layout>
       <Header>
-        <ArticlesNav previousPath={previousPath} nextPath={nextPath} />
+        <NextPreviousNav previousPath={previousPath} nextPath={nextPath} />
         <ArticlesInfo>
           {startIndex}–{endIndex} of {total}
-          {` `}
         </ArticlesInfo>
       </Header>
-      <ArticleList articles={nodesFrom(articles)} />
+      <Body>
+        <ArticleList articles={articles} />
+      </Body>
     </Layout>
   )
 }

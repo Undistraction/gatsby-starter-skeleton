@@ -4,13 +4,14 @@ import PropTypes from 'prop-types'
 import { findIndex, pathEq } from 'ramda'
 import React from 'react'
 import styled from 'styled-components'
-import ProjectNav from './ProjectNav'
 import TagList from '../../shared/TagList'
 import HTMLText from '../../shared/HTMLText'
 import flexVertical from '../../styles/mixins/flexVertical'
 import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
+import { frontmatterTitle, fieldsSlug } from '../../helpers/markdown'
+import NextPreviousNav from '../../shared/NextPreviousNav'
 
-const nodeIdPath = pathEq(['node', 'id'])
+const nodeIdPath = pathEq([`node`, `id`])
 
 const previousProject = (project, projects) => {
   const currentId = project.id
@@ -32,19 +33,23 @@ const Footer = styled.footer``
 
 const Layout = styled.article`
   ${flexVertical};
-  ${spaceChildrenV('1ru')};
+  ${spaceChildrenV(`1ru`)};
 `
 const Project = ({ data }) => {
   const project = data.markdownRemark
   const projects = data.allMarkdownRemark.edges
   const { tags } = project.fields
+  const next = nextProject(project, projects)
+  const previous = previousProject(project, projects)
 
   return (
     <Layout>
       <Header>
-        <ProjectNav
-          previousProject={previousProject(project, projects)}
-          nextProject={nextProject(project, projects)}
+        <NextPreviousNav
+          previousLabel={frontmatterTitle(previous)}
+          nextLabel={frontmatterTitle(next)}
+          previousPath={fieldsSlug(previous)}
+          nextPath={fieldsSlug(next)}
         />
       </Header>
       <Body>

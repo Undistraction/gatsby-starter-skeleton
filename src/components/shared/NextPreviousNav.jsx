@@ -47,16 +47,14 @@ const NextPreviousNav = ({
   nextPath,
   previousLabel,
   nextLabel,
-}) => {
-  return (
-    <Layout>
-      <LayoutPrevious>
-        {previousPathLink(previousPath, previousLabel)}
-      </LayoutPrevious>
-      <LayoutNext>{nextPathLink(nextPath, nextLabel)}</LayoutNext>
-    </Layout>
-  )
-}
+}) => (
+  <Layout>
+    <LayoutPrevious>
+      {previousPathLink(previousPath, previousLabel)}
+    </LayoutPrevious>
+    <LayoutNext>{nextPathLink(nextPath, nextLabel)}</LayoutNext>
+  </Layout>
+)
 
 NextPreviousNav.propTypes = {
   previousPath: PropTypes.string,
@@ -68,8 +66,8 @@ NextPreviousNav.propTypes = {
 NextPreviousNav.defaultProps = {
   previousPath: null,
   nextPath: null,
-  previousLabel: 'Previous',
-  nextLabel: 'Next',
+  previousLabel: `Previous`,
+  nextLabel: `Next`,
 }
 
 export default NextPreviousNav

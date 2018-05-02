@@ -8,18 +8,15 @@ export default HomePage
 // Moving it anywhere else results in an error.
 export const query = graphql`
   query HomePageQuery {
-    mainImageSizes: file(relativePath: { eq: "home/images/main.jpg" }) {
-      childImageSharp {
-        sizes {
-          ...GatsbyImageSharpSizes
-        }
-      }
-    }
-    mainText: file(relativePath: { eq: "home/main.md" }) {
-      childMarkdownRemark {
-        html
-        frontmatter {
-          title
+    markdownRemark(frontmatter: { slug: { eq: "home" } }) {
+      html
+      frontmatter {
+        image {
+          childImageSharp {
+            sizes {
+              ...GatsbyImageSharpSizes
+            }
+          }
         }
       }
     }

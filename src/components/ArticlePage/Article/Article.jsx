@@ -1,17 +1,20 @@
-// eslint-disable react/no-danger
-
 import PropTypes from 'prop-types'
 import { findIndex, pathEq } from 'ramda'
 import React from 'react'
 import styled from 'styled-components'
-import ArticleNav from './ArticleNav'
 import TagList from '../../shared/TagList'
 import HTMLText from '../../shared/HTMLText'
 import flexVertical from '../../styles/mixins/flexVertical'
 import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
-import { markdownItem, markdownItems } from '../../helpers/text'
+import {
+  markdownItem,
+  markdownItems,
+  frontmatterTitle,
+  fieldsSlug,
+} from '../../helpers/markdown'
+import NextPreviousNav from '../../shared/NextPreviousNav'
 
-const nodeIdPath = pathEq(['node', 'id'])
+const nodeIdPath = pathEq([`node`, `id`])
 
 const previousArticle = (article, articles) => {
   const currentId = article.id
@@ -29,17 +32,22 @@ const nextArticle = (article, articles) => {
 
 const Layout = styled.article`
   ${flexVertical};
-  ${spaceChildrenV('1ru')};
+  ${spaceChildrenV(`1ru`)};
 `
 const Article = ({ data }) => {
   const article = markdownItem(data)
   const articles = markdownItems(data)
+  const next = nextArticle(article, articles)
+  const previous = previousArticle(article, articles)
+
   const { tags } = article.fields
   return (
     <Layout>
-      <ArticleNav
-        previousArticle={previousArticle(article, articles)}
-        nextArticle={nextArticle(article, articles)}
+      <NextPreviousNav
+        previousLabel={frontmatterTitle(previous)}
+        nextLabel={frontmatterTitle(next)}
+        previousPath={fieldsSlug(previous)}
+        nextPath={fieldsSlug(next)}
       />
       <HTMLText htmlText={article.html} />
       <TagList tags={tags} />

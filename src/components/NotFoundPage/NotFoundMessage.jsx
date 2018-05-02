@@ -7,10 +7,10 @@ const Layout = styled.div`
   text-align: center;
 `
 
-const NotFoundMessage = ({ pathname }) => (
+const NotFoundMessage = ({ path }) => (
   <Layout>
     <p>
-      There was no page at <i>{pathname}</i>.
+      There was no page at <i>{path}</i>.
     </p>
     <p>
       Would you like to go to the <TextLink to="/">Home page</TextLink>?
@@ -19,7 +19,7 @@ const NotFoundMessage = ({ pathname }) => (
 )
 
 NotFoundMessage.propTypes = {
-  pathname: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
 }
 
 export default NotFoundMessage

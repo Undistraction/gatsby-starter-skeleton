@@ -1,6 +1,4 @@
-import { view, lensPath } from 'ramda'
-
-const lMainImageSizes = lensPath([`mainImageSizes`, `childImageSharp`, `sizes`])
+import { lensPath } from 'ramda'
 
 // eslint-disable-next-line import/prefer-default-export
-export const mainImageSizes = view(lMainImageSizes)
+export const lImageSizes = lensPath([`image`, `childImageSharp`, `sizes`])

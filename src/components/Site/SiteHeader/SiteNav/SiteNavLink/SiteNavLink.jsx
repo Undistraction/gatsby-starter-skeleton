@@ -4,22 +4,23 @@ import styled from 'styled-components'
 import api from '../../../../styles/api'
 import linkProps from '../../../../styles/mixins/linkProps'
 import Button from '../../../../shared/Button'
+import { isHomePage } from '../../../../helpers/paths'
 
 const Link = styled(Button).attrs({
-  activeClassName: 'isActive',
+  activeClassName: `isActive`,
 })`
-  ${linkProps('c:white', 'c:highlight')};
+  ${linkProps(`c:white`, `c:highlight`)};
   letter-spacing: 0.5px;
 
   &.isActive {
     ${api({
-      color: 'c:highlight',
+      color: `c:highlight`,
     })};
   }
 `
 
 const SiteNavLink = ({ page }) => (
-  <Link exact={page.path === '/'} to={page.path}>
+  <Link exact={isHomePage(page.path)} to={page.path}>
     {page.title}
   </Link>
 )

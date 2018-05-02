@@ -7,12 +7,12 @@ import {
   articlesPageMetadata,
   articlesPageTitle,
 } from '../helpers/siteMetadata'
-import { markdownItems } from '../helpers/text'
+import { markdownItemNodes } from '../helpers/markdown'
 
 const ArticlesPage = ({ data, pathContext }) => (
   <Page title={articlesPageTitle(data)} hasImage={false}>
     <Metadata {...articlesPageMetadata(data)} />
-    <Articles articles={markdownItems(data)} pagination={pathContext} />
+    <Articles articles={markdownItemNodes(data)} pagination={pathContext} />
   </Page>
 )
 ArticlesPage.propTypes = {

@@ -9,20 +9,15 @@ import Metadata from '../shared/Metadata'
 import Page from '../shared/Page'
 import HTMLText from '../../components/shared/HTMLText'
 import { aboutPageTitle, aboutPageMetadata } from '../helpers/siteMetadata'
-import { mainImageSizes } from '../helpers/images'
-import { mainText } from '../helpers/text'
+import { markdownItemImageSizes, htmlText } from '../helpers/markdown'
 
-const AboutPage = ({ data }) => {
-  const title = aboutPageTitle(data)
-  const metadata = aboutPageMetadata(data)
-  return (
-    <Page title={title}>
-      <Metadata {...metadata} />
-      <Img sizes={mainImageSizes(data)} />
-      <HTMLText htmlText={mainText(data)} />
-    </Page>
-  )
-}
+const AboutPage = ({ data }) => (
+  <Page title={aboutPageTitle(data)}>
+    <Metadata {...aboutPageMetadata(data)} />
+    <Img sizes={markdownItemImageSizes(data)} />
+    <HTMLText htmlText={htmlText(data)} />
+  </Page>
+)
 
 AboutPage.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types

@@ -12,6 +12,11 @@ import curvedInset from '../../styles/mixins/curvedInset'
 import flexVertical from '../../styles/mixins/flexVertical'
 import linkProps from '../../styles/mixins/linkProps'
 import scaleBounce from '../../styles/animations/scaleBounce'
+import {
+  fieldsSlug,
+  frontmatterTitle,
+  frontmatterImageSizes,
+} from '../../helpers/markdown'
 
 const TitleWrapper = styled.div`
   ${flexVertical};
@@ -26,12 +31,12 @@ const TitleWrapper = styled.div`
 
 const Title = styled.div`
   position: relative;
-  ${curvedInset('top')};
+  ${curvedInset(`top`)};
   ${api({
-    padding: '0.3ru 1ru 0',
-    marginH: '1ru',
-    top: '2px',
-    borderBottom: '2px solid c:white',
+    padding: `0.3ru 1ru 0`,
+    marginH: `1ru`,
+    top: `2px`,
+    borderBottom: `2px solid c:white`,
   })};
 `
 
@@ -40,7 +45,7 @@ const ImgLayout = styled.div``
 const Layout = styled(Link)`
   position: relative;
   display: block;
-  ${linkProps('c:black', 'c:highlight')};
+  ${linkProps(`c:black`, `c:highlight`)};
 
   &:hover {
     animation: ${scaleBounce(1.05, 0.97)} 0.3s ease-in-out;
@@ -53,19 +58,16 @@ const Layout = styled(Link)`
   }
 `
 
-const ProjectsListItem = ({ project }) => {
-  const { frontmatter, fields } = project
-  return (
-    <Layout to={fields.slug}>
-      <ImgLayout>
-        <Img sizes={frontmatter.image.childImageSharp.sizes} />
-      </ImgLayout>
-      <TitleWrapper>
-        <Title>{frontmatter.title}</Title>
-      </TitleWrapper>
-    </Layout>
-  )
-}
+const ProjectsListItem = ({ project }) => (
+  <Layout to={fieldsSlug(project)}>
+    <ImgLayout>
+      <Img sizes={frontmatterImageSizes(project)} />
+    </ImgLayout>
+    <TitleWrapper>
+      <Title>{frontmatterTitle(project)}</Title>
+    </TitleWrapper>
+  </Layout>
+)
 
 ProjectsListItem.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types

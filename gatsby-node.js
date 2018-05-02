@@ -36,7 +36,6 @@ const createPageWithConfig = createPage =>
 
 exports.onCreateNode = ({ node, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators
-
   if (nodeIsMarkdownArticle(node)) {
     augmentResource(resources.articles.path, createNodeField, node)
   } else if (nodeIsMarkdownProject(node)) {

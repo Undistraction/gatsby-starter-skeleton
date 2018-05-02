@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import TaggedItemList from './TaggedItemList'
+import ResourceList from './ResourceList'
 import flexVertical from '../../styles/mixins/flexVertical'
 import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
 import TagList from '../../shared/TagList'
 
 const Header = styled.header`
   ${flexVertical};
-  ${spaceChildrenV('2ru')};
+  ${spaceChildrenV(`2ru`)};
   text-align: center;
 `
 
@@ -18,7 +18,7 @@ const Body = styled.div``
 
 const Layout = styled.div`
   ${flexVertical};
-  ${spaceChildrenV('2ru')};
+  ${spaceChildrenV(`2ru`)};
 `
 
 const Tag = ({ taggedItems, tag, tags }) =>
@@ -32,7 +32,7 @@ const Tag = ({ taggedItems, tag, tags }) =>
         {taggedItems.length} items are tagged with {tag}
       </Header>
       <Body>
-        <TaggedItemList items={taggedItems} />
+        <ResourceList resources={taggedItems} />
       </Body>
       <Footer>
         <TagList tags={tags} />

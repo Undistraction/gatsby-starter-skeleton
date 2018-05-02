@@ -10,8 +10,8 @@ import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'
 import TextLink from '../../../shared/TextLink'
 import api from '../../../styles/api'
 
-const ImgLayout = styled.div``
-const InfoLayout = styled.div`
+const Media = styled.div``
+const Info = styled.div`
   ${flexVertical};
   ${spaceChildrenV(`0.5ru`)};
 `
@@ -25,7 +25,7 @@ const Layout = styled.div`
   ${flexHorizontal};
   ${spaceChildrenH(`1ru`)};
 
-  ${ImgLayout} {
+  ${Media} {
     width: 25%;
   }
 `
@@ -40,12 +40,12 @@ const ArticlesListItem = ({ article }) => {
   const { frontmatter, fields } = article
   return (
     <Layout>
-      <ImgLayout>
+      <Media>
         <Link to={fields.slug}>
           <Img sizes={frontmatter.image.childImageSharp.sizes} />
         </Link>
-      </ImgLayout>
-      <InfoLayout>
+      </Media>
+      <Info>
         <Header>
           <TextLink to={fields.slug}>{frontmatter.title}</TextLink>
           <Date>{frontmatter.date}</Date>
@@ -53,7 +53,7 @@ const ArticlesListItem = ({ article }) => {
         <Body>
           <p>{article.excerpt}</p>
         </Body>
-      </InfoLayout>
+      </Info>
     </Layout>
   )
 }

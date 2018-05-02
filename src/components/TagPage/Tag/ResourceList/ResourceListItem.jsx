@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
-import { test } from 'ramda'
 import Link from 'gatsby-link'
 import React from 'react'
 import styled from 'styled-components'
@@ -9,49 +8,50 @@ import flexHorizontal from '../../../styles/mixins/flexHorizontal'
 import spaceChildrenV from '../../../styles/mixins/spaceChildrenV'
 import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'
 import TextLink from '../../../shared/TextLink'
+import { resourceType } from '../../../helpers/resources'
 
-const ImgLayout = styled.div``
-const InfoLayout = styled.div`
+const Media = styled.div``
+const Info = styled.div`
   ${flexVertical};
-  ${spaceChildrenV('0.5ru')};
+  ${spaceChildrenV(`0.5ru`)};
 `
 const Header = styled.header``
 
 const Body = styled.div``
 const Layout = styled.div`
   ${flexHorizontal};
-  ${spaceChildrenH('1ru')};
+  ${spaceChildrenH(`1ru`)};
 
-  ${ImgLayout} {
+  ${Media} {
     width: 25%;
   }
 `
 
-const ArticlesListItem = ({ item }) => {
-  const type = test(/articles\//, item.fields.slug) ? 'Article' : 'Project'
-  const { frontmatter, fields } = item
+const ResourceListItem = ({ resource }) => {
+  const { frontmatter, fields } = resource
   return (
     <Layout>
-      <ImgLayout>
+      <Media>
         <Link to={fields.slug}>
           <Img sizes={frontmatter.image.childImageSharp.sizes} />
         </Link>
-      </ImgLayout>
-      <InfoLayout>
+      </Media>
+      <Info>
         <Header>
-          {type}: <TextLink to={fields.slug}>{frontmatter.title}</TextLink>
+          {resourceType(resource.fields.slug)}:{` `}
+          <TextLink to={fields.slug}>{frontmatter.title}</TextLink>
         </Header>
         <Body>
-          <p>{item.excerpt}</p>
+          <p>{resource.excerpt}</p>
         </Body>
-      </InfoLayout>
+      </Info>
     </Layout>
   )
 }
 
-ArticlesListItem.propTypes = {
+ResourceListItem.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
-  item: PropTypes.object.isRequired,
+  resource: PropTypes.object.isRequired,
 }
 
-export default ArticlesListItem
+export default ResourceListItem

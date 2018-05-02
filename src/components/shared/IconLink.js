@@ -1,9 +1,8 @@
 import styled from 'styled-components'
-import linkProps from '../styles/mixins/linkProps'
 import spaceChildrenH from '../styles/mixins/spaceChildrenH'
+import TextLink from './TextLink'
 
-const IconLink = styled.a`
-  ${linkProps(`c:black`, `c:white`)};
+const IconLink = styled(TextLink)`
   ${spaceChildrenH([`0.25em`])};
 `
 

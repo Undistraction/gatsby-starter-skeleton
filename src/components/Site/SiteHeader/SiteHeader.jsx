@@ -10,16 +10,16 @@ import SiteTitle from './SiteTitle'
 
 const Layout = styled.div`
   ${flexVertical};
-  ${spaceChildrenV('0.5ru')};
+  ${spaceChildrenV(`0.5ru`)};
   align-items: center;
   width: 100%;
   ${api({
-    padding: '2.5ru 0 1ru',
+    padding: `2.5ru 0 1ru`,
   })};
 
   ${SiteTitle} {
     ${api({
-      marginBottom: '0.5ru',
+      marginBottom: `0.5ru`,
     })};
   }
 `

@@ -8,7 +8,7 @@ import {
   markdownItemFrontmatter,
   markdownItemMetadata,
   markdownItemTitle,
-} from '../helpers/text'
+} from '../helpers/markdown'
 
 const ArticlePage = ({ data }) => (
   <Page title={markdownItemTitle(data)}>

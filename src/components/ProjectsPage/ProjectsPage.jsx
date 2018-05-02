@@ -3,12 +3,11 @@ import React from 'react'
 import Metadata from '../shared/Metadata'
 import Page from '../shared/Page'
 import ProjectsList from './ProjectsList'
-import nodesFrom from '../../data/nodesFrom'
 import {
   projectsPageTitle,
   projectsPageMetadata,
 } from '../helpers/siteMetadata'
-import { markdownItemNodes } from '../helpers/text'
+import { markdownItemNodes } from '../helpers/markdown'
 
 const ProjectsPage = ({ data }) => (
   <Page title={projectsPageTitle(data)} hasImage={false}>
