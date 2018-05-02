@@ -29,7 +29,7 @@ const Layout = styled.div`
   ${spaceChildrenV('1ru')};
 `
 
-const Articles = ({ pagination }) => {
+const Articles = ({ articles, pagination }) => {
   const {
     items,
     itemsCount,
@@ -39,6 +39,8 @@ const Articles = ({ pagination }) => {
     nextPath,
   } = pagination
 
+  console.log('ITEMS', items)
+
   return (
     <Layout>
       <Header>
@@ -47,7 +49,7 @@ const Articles = ({ pagination }) => {
           {fromItemIndex}–{toItemIndex} of {itemsCount}{' '}
         </ArticlesInfo>
       </Header>
-      <ArticleList articles={nodesFrom(items)} />
+      <ArticleList articles={nodesFrom(articles)} />
     </Layout>
   )
 }
@@ -55,6 +57,8 @@ const Articles = ({ pagination }) => {
 Articles.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   pagination: PropTypes.object.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  articles: PropTypes.array.isRequired,
 }
 
 export default Articles

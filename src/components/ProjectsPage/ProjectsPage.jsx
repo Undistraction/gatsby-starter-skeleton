@@ -14,7 +14,7 @@ const ProjectsPage = ({ data, pathContext }) => {
 
   return (
     <Page title={projectsPageTitle(data)} hasImage={false}>
-      <Metadata {...projectsPageMetadata} />
+      <Metadata {...projectsPageMetadata(data)} />
       <ProjectsList projects={nodesFrom(projects)} />
     </Page>
   )

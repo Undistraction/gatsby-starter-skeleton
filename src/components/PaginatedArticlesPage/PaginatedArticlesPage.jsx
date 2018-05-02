@@ -7,12 +7,15 @@ import {
   articlesPageMetadata,
   articlesPageTitle,
 } from '../helpers/siteMetadata'
+import { markdownItems } from '../helpers/text'
 
 const ArticlesPage = ({ data, pathContext }) => {
+  console.log('DATA', data)
+  console.log('FIRST', pathContext.firstItemIndex)
   return (
     <Page title={articlesPageTitle(data)} hasImage={false}>
       <Metadata {...articlesPageMetadata(data)} />
-      <Articles pagination={pathContext.pagination} />
+      <Articles articles={markdownItems(data)} pagination={pathContext} />
     </Page>
   )
 }

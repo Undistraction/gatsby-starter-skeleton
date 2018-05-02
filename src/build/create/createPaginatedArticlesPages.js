@@ -28,7 +28,7 @@ const createPaginatedArticlesPage = (
     path: articlePagePath(groupIndex),
     component: path.resolve(PAGINATED_ARTICLES_TEMPLATE_PATH),
     context: {
-      pagination,
+      ...pagination,
     },
   })
   reporter.success(

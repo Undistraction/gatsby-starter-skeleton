@@ -24,11 +24,14 @@ const createPagination = (
   const groupsCount = allGroups.length
   const groupLength = group.length
   const pageIndex = inc(groupIndex)
+  const firstItemIndex = perPage * groupIndex
   return {
     items: group,
     itemsCount,
+    perPage,
     fromItemIndex: fromItemIndex(perPage, groupIndex),
     toItemIndex: toItemIndex(perPage, groupIndex, groupLength),
+    firstItemIndex,
     pageIndex,
     pageCount: groupsCount,
     previousPath: !isFirstPage(groupIndex)
