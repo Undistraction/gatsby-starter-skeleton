@@ -48,9 +48,6 @@ const NextPreviousNav = ({
   previousLabel,
   nextLabel,
 }) => {
-  console.log('PREVIOUS', previousPath)
-  console.log('NEXT', nextPath)
-
   return (
     <Layout>
       <LayoutPrevious>

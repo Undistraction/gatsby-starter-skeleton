@@ -1,23 +1,12 @@
 const path = require('path')
-const { isZero } = require('../utils/predicates')
-const { curry, compose, splitEvery, inc, dec } = require('ramda')
+const { createPagination, pagePath } = require('../utils/pagination')
+const { inc, compose, splitEvery } = require('ramda')
 const { mapIndexed } = require('ramda-adjunct')
-const { joinWithFSlash } = require('../utils/file')
-const { ARTICLES_TEMPLATE_PATH } = require('../const/templatePaths')
+const { PAGINATED_ARTICLES_TEMPLATE_PATH } = require('../const/templatePaths')
 const queryAllResourceNodes = require('../queries/queryAllResourceNodes')
 const reporter = require('../reporter')
 
 const markdownNodes = data => data.allMarkdownRemark.edges
-const isFirstPage = isZero
-const isLastPage = (index, total) => index === dec(total)
-const fromItemIndex = (perPage, index) => index * inc(perPage) || 1
-const toItemIndex = (perPage, index, groupLength) =>
-  index * perPage + groupLength
-
-const pagePath = curry(
-  (name, pageIndex) =>
-    pageIndex > 0 ? joinWithFSlash([name, pageIndex]) : name
-)
 
 const createPaginatedArticlesPage = (
   createPage,
@@ -25,30 +14,25 @@ const createPaginatedArticlesPage = (
   articlesPath,
   itemsCount
 ) => (group, groupIndex, allGroups) => {
-  const groupsCount = allGroups.length
-  const groupLength = group.length
-  const pageIndex = inc(groupIndex)
   const articlePagePath = pagePath(articlesPath)
+  const pagination = createPagination(
+    articlePagePath,
+    itemsCount,
+    perPage,
+    group,
+    groupIndex,
+    allGroups
+  )
+
   const page = createPage({
     path: articlePagePath(groupIndex),
-    component: path.resolve(ARTICLES_TEMPLATE_PATH),
+    component: path.resolve(PAGINATED_ARTICLES_TEMPLATE_PATH),
     context: {
-      items: group,
-      itemsCount,
-      fromItemIndex: fromItemIndex(perPage, groupIndex),
-      toItemIndex: toItemIndex(perPage, groupIndex, groupLength),
-      pageIndex,
-      pageCount: groupsCount,
-      previousPath: !isFirstPage(groupIndex)
-        ? articlePagePath(dec(groupIndex))
-        : null,
-      nextPath: !isLastPage(groupIndex, groupsCount)
-        ? articlePagePath(inc(groupIndex))
-        : null,
+      pagination,
     },
   })
   reporter.success(
-    `Created Paginated Articles Page ${pageIndex} of ${groupsCount}`
+    `Created Paginated Articles Page ${inc(groupIndex)} of ${allGroups.length}`
   )
   return page
 }

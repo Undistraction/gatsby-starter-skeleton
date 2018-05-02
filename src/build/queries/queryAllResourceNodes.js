@@ -2,14 +2,15 @@ const { ensureArray } = require('ramda-adjunct')
 const { compose, join } = require('ramda')
 const validatedConfig = require('../../config/validatedConfig')
 
-const toRegExpAlternatives = compose(join('|'), ensureArray)
+const toRegExpAlternatives = alternatives =>
+  `(?:${compose(join('|'), ensureArray)(alternatives)})`
 
-module.exports = (graphql, directories) =>
-  graphql(`
+module.exports = (graphql, directories) => {
+  return graphql(`
     {
       allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
-        filter: { fields: { slug: { regex: "${toRegExpAlternatives(
+        filter: { fields: { slug: { regex: "/${toRegExpAlternatives(
           directories
         )}/./" } } }
       ) {
@@ -41,3 +42,4 @@ module.exports = (graphql, directories) =>
       }
     }
   `)
+}

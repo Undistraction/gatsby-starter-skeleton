@@ -27,7 +27,7 @@ const createTagPage = (tag, tags, slug, createPage) =>
     resolve()
   })
 
-const createTagsPages = (graphql, createPage, taggedItemPaths) =>
+const createTagPages = (graphql, createPage, taggedItemPaths) =>
   queryAllResourceNodes(graphql, join('|', taggedItemPaths))
     .then(result =>
       pipe(
@@ -45,4 +45,4 @@ const createTagsPages = (graphql, createPage, taggedItemPaths) =>
       throw new Error(`Problem with page creation: ${error.toString()}`)
     })
 
-module.exports = createTagsPages
+module.exports = createTagPages

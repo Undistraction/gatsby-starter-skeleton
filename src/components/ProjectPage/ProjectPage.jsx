@@ -9,7 +9,6 @@ import Project from './Project'
 import { markdownItemMetadata, markdownItemTitle } from '../helpers/text'
 
 const ProjectPage = ({ data }) => {
-  console.log('??', data)
   const project = data.markdownRemark
   const { frontmatter } = project
 

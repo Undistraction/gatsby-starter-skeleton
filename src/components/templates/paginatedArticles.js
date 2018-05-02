@@ -1,6 +1,6 @@
 import graphql from 'graphql'
 
-import Template from '../ArticlesPage'
+import Template from '../PaginatedArticlesPage'
 
 export default Template
 

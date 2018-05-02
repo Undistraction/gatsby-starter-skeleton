@@ -29,7 +29,7 @@ const Layout = styled.div`
   ${spaceChildrenV('1ru')};
 `
 
-const Articles = ({ context }) => {
+const Articles = ({ pagination }) => {
   const {
     items,
     itemsCount,
@@ -37,7 +37,7 @@ const Articles = ({ context }) => {
     toItemIndex,
     previousPath,
     nextPath,
-  } = context
+  } = pagination
 
   return (
     <Layout>
@@ -54,7 +54,7 @@ const Articles = ({ context }) => {
 
 Articles.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
-  context: PropTypes.object.isRequired,
+  pagination: PropTypes.object.isRequired,
 }
 
 export default Articles

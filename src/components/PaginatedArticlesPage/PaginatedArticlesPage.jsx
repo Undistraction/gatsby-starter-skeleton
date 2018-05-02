@@ -8,13 +8,14 @@ import {
   articlesPageTitle,
 } from '../helpers/siteMetadata'
 
-const ArticlesPage = ({ data, pathContext }) => (
-  <Page title={articlesPageTitle(data)} hasImage={false}>
-    <Metadata {...articlesPageMetadata(data)} />
-    <Articles context={pathContext} />
-  </Page>
-)
-
+const ArticlesPage = ({ data, pathContext }) => {
+  return (
+    <Page title={articlesPageTitle(data)} hasImage={false}>
+      <Metadata {...articlesPageMetadata(data)} />
+      <Articles pagination={pathContext.pagination} />
+    </Page>
+  )
+}
 ArticlesPage.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,

@@ -27,8 +27,6 @@ const Layout = styled.footer`
 
 const SiteFooter = ({ owner, startYear, showCredit }) => {
   const endYear = currentYear()
-  console.log('END YEAR', endYear)
-
   const dateRange = endYear === startYear ? endYear : `${startYear}–${endYear}`
 
   return (

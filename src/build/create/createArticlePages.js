@@ -13,6 +13,7 @@ const createArticlePage = (slug, createPage) =>
       createPage({
         path: slug,
         component: path.resolve(ARTICLE_TEMPLATE_PATH),
+        // Slug is used to find this article in ArticleTempalte GraphQL query
         context: {
           slug,
         },
@@ -24,8 +25,8 @@ const createArticlePage = (slug, createPage) =>
     resolve()
   })
 
-const createArticlePages = (graphql, createPage, articlesPath) =>
-  queryAllResourceNodes(graphql, articlesPath)
+const createArticlePages = (graphql, createPage, articlesDir, articlesPath) =>
+  queryAllResourceNodes(graphql, articlesDir)
     .then(result =>
       compose(
         Promise.all,
