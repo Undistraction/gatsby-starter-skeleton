@@ -6,14 +6,8 @@ const { reportCreatePageSuccess } = require(`../utils/reporter`)
 const { markdownNodes, slugOfItemAtIndex } = require(`../utils/resources`)
 const queryAllResourceNodes = require(`../queries/queryAllResourceNodes`)
 
-const createResourcePage = (slug, idx, nodes, createPage, name, template) => {
-  console.log(`----------------------------------------------`)
-  console.log(nodes)
-  console.log(`----------------------------------------------`)
-  console.log(slug)
-  console.log(slugOfItemAtIndex(idx - 1, nodes), `<-`)
-  console.log(`<-`, slugOfItemAtIndex(idx + 1, nodes))
-  return new Promise((resolve, reject) => {
+const createResourcePage = (slug, idx, nodes, createPage, name, template) =>
+  new Promise((resolve, reject) => {
     try {
       createPage({
         path: slug,
@@ -30,7 +24,6 @@ const createResourcePage = (slug, idx, nodes, createPage, name, template) => {
     reportCreatePageSuccess(name, slug)
     resolve()
   })
-}
 
 const createResourcePages = (
   name,
