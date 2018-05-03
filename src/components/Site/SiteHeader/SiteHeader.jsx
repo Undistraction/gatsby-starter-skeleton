@@ -8,6 +8,8 @@ import SiteLogoLink from './SiteLogoLink'
 import SiteNav from './SiteNav'
 import SiteTitle from './SiteTitle'
 
+const Header = styled.div``
+
 const Layout = styled.div`
   ${flexVertical};
   ${spaceChildrenV(`0.5ru`)};
@@ -16,6 +18,12 @@ const Layout = styled.div`
   ${api({
     padding: `2.5ru 0 1ru`,
   })};
+
+  ${Header} {
+    ${api({
+      width: 100,
+    })};
+  }
 
   ${SiteTitle} {
     ${api({
@@ -26,7 +34,9 @@ const Layout = styled.div`
 
 const SiteHeader = ({ title, pages }) => (
   <Layout>
-    <SiteLogoLink />
+    <Header>
+      <SiteLogoLink />
+    </Header>
     <SiteTitle>{title}</SiteTitle>
     <SiteNav pages={pages} />
   </Layout>

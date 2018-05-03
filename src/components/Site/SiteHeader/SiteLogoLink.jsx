@@ -9,7 +9,6 @@ const Wrapper = styled(Link)`
     animation: ${scaleBounce()} 0.3s ease-in-out;
   }
 `
-
 const SiteLogoLink = () => (
   <Wrapper to="/">
     <Logo />

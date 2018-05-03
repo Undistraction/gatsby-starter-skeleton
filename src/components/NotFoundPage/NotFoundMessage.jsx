@@ -10,16 +10,16 @@ import spaceChildrenV from '../styles/mixins/spaceChildrenV'
 import spaceChildrenH from '../styles/mixins/spaceChildrenH'
 
 const Four = styled.div``
+const LogoWrapper = styled.div``
 
 const Layout = styled.div`
   ${flexVertical};
   ${spaceChildrenV(`2ru`)};
   text-align: center;
 
-  ${Four} {
-    position: relative;
+  ${LogoWrapper} {
     ${api({
-      top: `1ru`,
+      width: `200`,
     })};
   }
 `
@@ -27,6 +27,7 @@ const Layout = styled.div`
 const Header = styled.header`
   ${flexHorizontal};
   ${spaceChildrenH(`0.25ru`)};
+  align-items: center;
   ${api({
     fontSize: `s:giant`,
     fontFamily: `f:title`,
@@ -40,7 +41,9 @@ const NotFoundMessage = ({ path }) => (
   <Layout>
     <Header>
       <Four>4</Four>
-      <Logo />
+      <LogoWrapper>
+        <Logo />
+      </LogoWrapper>
       <Four>4</Four>
     </Header>
     <Body>
