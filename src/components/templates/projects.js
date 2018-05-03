@@ -26,7 +26,7 @@ export const query = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { slug: { regex: "/projects/./" } } }
+      filter: { fields: { type: { eq: "project" } } }
     ) {
       edges {
         node {

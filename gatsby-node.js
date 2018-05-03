@@ -1,3 +1,6 @@
+const RESOURCE_TYPE = require(`./src/build/const/resourceType`)
+const addResourceTypeToNode = require(`./src/build/augment/addResourceTypeToNode`)
+
 const { lensPath, set, pipe } = require(`ramda`)
 const createTagsPage = require(`./src/build/create/createTagsPage`)
 const createProjectPages = require(`./src/build/create/createProjectPages`)
@@ -16,10 +19,11 @@ const {
 
 const { resources } = validatedConfig().structure
 
-const augmentResource = (pathName, createNodeField, node) => {
+const augmentResource = (type, pathName, createNodeField, node) => {
   addSlugToNode(node, createNodeField, pathName)
   addMetadataToNode(node, createNodeField)
   addTagsToNode(node, createNodeField)
+  addResourceTypeToNode(type, node, createNodeField)
 }
 
 const lDateFormat = lensPath([`context`, `dateFormat`])
@@ -37,9 +41,19 @@ const createPageWithConfig = createPage =>
 exports.onCreateNode = ({ node, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators
   if (nodeIsMarkdownArticle(node)) {
-    augmentResource(resources.articles.path, createNodeField, node)
+    augmentResource(
+      RESOURCE_TYPE.ARTICLE,
+      resources.articles.path,
+      createNodeField,
+      node
+    )
   } else if (nodeIsMarkdownProject(node)) {
-    augmentResource(resources.projects.path, createNodeField, node)
+    augmentResource(
+      RESOURCE_TYPE.PROJECT,
+      resources.projects.path,
+      createNodeField,
+      node
+    )
   }
 }
 

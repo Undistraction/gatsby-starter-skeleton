@@ -6,7 +6,6 @@ export default Template
 export const query = graphql`
   query ProjectQuery($slug: String, $dateFormat: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
       html
       frontmatter {
         title
@@ -30,12 +29,11 @@ export const query = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "/src/content/articles/" } }
+      filter: { fields: { type: { eq: "article" } } }
     ) {
       totalCount
       edges {
         node {
-          id
           frontmatter {
             title
             date(formatString: $dateFormat)

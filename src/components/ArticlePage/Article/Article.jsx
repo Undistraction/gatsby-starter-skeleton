@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import { findIndex, pathEq } from 'ramda'
 import React from 'react'
 import styled from 'styled-components'
 import TagList from '../../shared/TagList'
@@ -8,27 +7,12 @@ import flexVertical from '../../styles/mixins/flexVertical'
 import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
 import {
   markdownItem,
-  markdownItems,
+  next,
+  previous,
   frontmatterTitle,
   fieldsSlug,
 } from '../../helpers/markdown'
 import NextPreviousNav from '../../shared/NextPreviousNav'
-
-const nodeIdPath = pathEq([`node`, `id`])
-
-const previousArticle = (article, articles) => {
-  const currentId = article.id
-  const currentIndex = findIndex(nodeIdPath(currentId))(articles)
-  return currentIndex > 0 ? articles[currentIndex - 1].node : null
-}
-
-const nextArticle = (article, articles) => {
-  const currentId = article.id
-  const currentIndex = findIndex(nodeIdPath(currentId))(articles)
-  return currentIndex < articles.length - 1
-    ? articles[currentIndex + 1].node
-    : null
-}
 
 const Layout = styled.article`
   ${flexVertical};
@@ -36,18 +20,17 @@ const Layout = styled.article`
 `
 const Article = ({ data }) => {
   const article = markdownItem(data)
-  const articles = markdownItems(data)
-  const next = nextArticle(article, articles)
-  const previous = previousArticle(article, articles)
+  const previousArticle = previous(data)
+  const nextArticle = next(data)
 
   const { tags } = article.fields
   return (
     <Layout>
       <NextPreviousNav
-        previousLabel={frontmatterTitle(previous)}
-        nextLabel={frontmatterTitle(next)}
-        previousPath={fieldsSlug(previous)}
-        nextPath={fieldsSlug(next)}
+        previousLabel={frontmatterTitle(previousArticle)}
+        nextLabel={frontmatterTitle(nextArticle)}
+        previousPath={fieldsSlug(previousArticle)}
+        nextPath={fieldsSlug(nextArticle)}
       />
       <HTMLText htmlText={article.html} />
       <TagList tags={tags} />

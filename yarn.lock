@@ -9131,6 +9131,10 @@ ramda-adjunct@^2.5.0, ramda-adjunct@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/ramda-adjunct/-/ramda-adjunct-2.6.0.tgz#ec71a0868054bd2b957ef6e5ab046a6c702fedf4"
 
+ramda-adjunct@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/ramda-adjunct/-/ramda-adjunct-2.7.0.tgz#970f00703f3159304310613dac9b0074c1711b40"
+
 ramda-log@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/ramda-log/-/ramda-log-0.0.3.tgz#bdfcd33868c071acac4627866893b4e7ef3f7914"

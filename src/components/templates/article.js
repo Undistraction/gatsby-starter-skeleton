@@ -4,12 +4,17 @@ import Template from '../ArticlePage'
 export default Template
 
 export const query = graphql`
-  query ArticleQuery($slug: String, $dateFormat: String) {
+  query ArticleQuery(
+    $slug: String
+    $previousSlug: String
+    $nextSlug: String
+    $dateFormat: String
+  ) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
       html
       frontmatter {
         title
+        date(formatString: $dateFormat)
         keywords
         image {
           childImageSharp {
@@ -28,23 +33,25 @@ export const query = graphql`
         }
       }
     }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "/src/content/articles/" } }
+    previous: markdownRemark(
+      fields: { type: { eq: "article" }, slug: { eq: $previousSlug } }
     ) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: $dateFormat)
-          }
-          fields {
-            slug
-          }
-          excerpt
-        }
+      id
+      frontmatter {
+        title
+      }
+      fields {
+        slug
+      }
+    }
+    next: markdownRemark(
+      fields: { type: { eq: "article" }, slug: { eq: $nextSlug } }
+    ) {
+      frontmatter {
+        title
+      }
+      fields {
+        slug
       }
     }
   }

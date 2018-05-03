@@ -30,17 +30,15 @@ export const query = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { slug: { regex: "/articles/./" } } }
+      filter: { fields: { type: { eq: "article" } } }
       skip: $startIndex
       limit: $thisGroupSize
     ) {
       edges {
         node {
-          id
           frontmatter {
             title
             date(formatString: $dateFormat)
-            keywords
             image {
               childImageSharp {
                 sizes {

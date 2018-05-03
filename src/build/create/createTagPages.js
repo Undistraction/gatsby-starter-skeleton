@@ -15,7 +15,6 @@ const createTagPage = (tag, tags, createPage) => {
         path: slug,
         component: path.resolve(TAG_TEMPLATE_PATH),
         context: {
-          // Data passed to context is available in page queries as GraphQL variables.
           tag,
           tags,
         },
