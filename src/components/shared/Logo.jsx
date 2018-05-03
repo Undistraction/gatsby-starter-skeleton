@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import api from '../styles/api'
 
 const Wrapper = styled.div`
   position: relative;
@@ -11,6 +12,10 @@ const Wrapper = styled.div`
     position: absolute;
     top: 0;
     left: 0;
+
+    path {
+      fill: black;
+    }
   }
 `
 

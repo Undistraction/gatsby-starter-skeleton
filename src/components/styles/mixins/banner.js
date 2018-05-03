@@ -6,7 +6,7 @@ export default (edge = `top`) => css`
     content: '';
     z-index: 1;
     ${api({
-      backgroundColor: `c:black`,
+      background: `g:backgroundInverted`,
       width: `1.5ru`,
       height: `100%`,
       position: `absolute`,
@@ -19,7 +19,7 @@ export default (edge = `top`) => css`
     content: '';
     z-index: 1;
     ${api({
-      backgroundColor: `c:black`,
+      background: `g:backgroundInverted`,
       width: `1.5ru`,
       height: `100%`,
       position: `absolute`,

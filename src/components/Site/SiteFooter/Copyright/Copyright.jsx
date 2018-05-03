@@ -9,7 +9,7 @@ const Layout = styled.p`
   position: relative;
   ${api({
     padding: `1ru`,
-    background: `c:black`,
+    background: `g:backgroundInverted`,
     color: `c:white`,
   })};
 `

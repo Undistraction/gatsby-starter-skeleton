@@ -9,7 +9,7 @@ const Button = styled(TextLink)`
   display: block;
   ${api({
     color: `c:white`,
-    backgroundColor: `c:black`,
+    background: `g:backgroundInverted`,
   })};
 `
 

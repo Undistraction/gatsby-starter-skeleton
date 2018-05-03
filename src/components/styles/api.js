@@ -21,6 +21,7 @@ const config = {
     rhythm: 23,
     color: {
       black: `#070707`,
+      offBlack: `#222`,
       white: `#F5F5F5`,
       offWhite: `#D8D8D8`,
       lightGrey: `#CCC`,
@@ -44,6 +45,7 @@ const config = {
     },
     gradient: {
       background: `linear-gradient(to bottom, c:white, c:offWhite)`,
+      backgroundInverted: `linear-gradient(to bottom, c:black, c:offBlack)`,
     },
   },
 }

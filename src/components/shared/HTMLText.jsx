@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import api from '../styles/api'
 
 const PageText = styled.div`
   p:first-child {
@@ -13,8 +14,10 @@ const PageText = styled.div`
     font-weight: normal;
     margin-right: 0.2em;
     padding: 12px 10px 5px;
-    background: black;
     color: white;
+    ${api({
+      background: `g:backgroundInverted`,
+    })};
   }
 `
 

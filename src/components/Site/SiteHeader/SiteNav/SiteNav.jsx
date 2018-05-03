@@ -15,7 +15,7 @@ const Layout = styled.nav`
   ${banner(`bottom`)}
   ${api({
     position: `relative`,
-    backgroundColor: `c:black`,
+    background: `g:backgroundInverted`,
     padding: `0.75ru 1ru`,
     color: `c:white`,
   })};

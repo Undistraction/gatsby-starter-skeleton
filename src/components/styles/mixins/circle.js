@@ -5,8 +5,8 @@ export default diameter => css`
   border-radius: 50%;
 
   ${api({
-    background: [`c:black`],
-    width: [diameter],
-    height: [diameter],
+    background: `g:backgroundInverted`,
+    width: diameter,
+    height: diameter,
   })};
 `

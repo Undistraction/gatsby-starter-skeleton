@@ -7,6 +7,7 @@ export default (edge = `right`, size = `16`, backgroundColor = `red`) => {
   return css`
     &::after {
       content: '';
+      z-index: -1;
       position: absolute;
       bottom: 50%;
       transform: translate(${translation}, 50%) rotate(45deg);
