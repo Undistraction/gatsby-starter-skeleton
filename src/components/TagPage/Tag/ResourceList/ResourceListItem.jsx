@@ -8,7 +8,13 @@ import flexHorizontal from '../../../styles/mixins/flexHorizontal'
 import spaceChildrenV from '../../../styles/mixins/spaceChildrenV'
 import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'
 import TextLink from '../../../shared/TextLink'
-import { resourceType } from '../../../helpers/resources'
+import {
+  frontmatterImageSizes,
+  fieldsSlug,
+  frontmatterTitle,
+  fieldsType,
+} from '../../../helpers/markdown'
+import { firstToUpper } from '../../../helpers/formatting'
 
 const Media = styled.div``
 const Info = styled.div`
@@ -28,18 +34,18 @@ const Layout = styled.div`
 `
 
 const ResourceListItem = ({ resource }) => {
-  const { frontmatter, fields } = resource
+  const slug = fieldsSlug(resource)
   return (
     <Layout>
       <Media>
-        <Link to={fields.slug}>
-          <Img sizes={frontmatter.image.childImageSharp.sizes} />
+        <Link to={slug}>
+          <Img sizes={frontmatterImageSizes(resource)} />
         </Link>
       </Media>
       <Info>
         <Header>
-          {resourceType(resource.fields.slug)}:{` `}
-          <TextLink to={fields.slug}>{frontmatter.title}</TextLink>
+          {firstToUpper(fieldsType(resource))}:{` `}
+          <TextLink to={slug}>{frontmatterTitle(resource)}</TextLink>
         </Header>
         <Body>
           <p>{resource.excerpt}</p>
@@ -50,7 +56,6 @@ const ResourceListItem = ({ resource }) => {
 }
 
 ResourceListItem.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   resource: PropTypes.object.isRequired,
 }
 

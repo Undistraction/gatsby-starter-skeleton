@@ -9,16 +9,18 @@ import {
 } from '../helpers/siteMetadata'
 import { markdownItemNodes } from '../helpers/markdown'
 
-const ArticlesPage = ({ data, pathContext }) => (
-  <Page title={articlesPageTitle(data)} hasImage={false}>
-    <Metadata {...articlesPageMetadata(data)} />
-    <Articles articles={markdownItemNodes(data)} pagination={pathContext} />
-  </Page>
-)
+const ArticlesPage = ({ data, pathContext }) => {
+  console.log(data)
+  return (
+    <Page title={articlesPageTitle(data)} hasImage={false}>
+      <Metadata {...articlesPageMetadata(data)} />
+      <Articles articles={markdownItemNodes(data)} pagination={pathContext} />
+    </Page>
+  )
+}
 ArticlesPage.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
+
   pathContext: PropTypes.object.isRequired,
 }
 

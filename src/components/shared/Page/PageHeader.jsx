@@ -7,17 +7,17 @@ import transformCenterH from '../../styles/mixins/transformCenterH'
 
 const PageTitle = styled.h1`
   font-weight: bold;
-  ${curvedInset('bottom')};
+  ${curvedInset(`bottom`)};
   ${api({
-    padding: '0.2ru 2ru',
-    baseline: 's:primaryTitle',
+    padding: `0.2ru 2ru`,
+    baseline: `s:primaryTitle`,
   })};
 `
 
 const Wrapper = styled.header`
   position: relative;
   ${api({
-    textAlign: 'center',
+    textAlign: `center`,
   })};
 
   ${PageTitle} {
@@ -25,7 +25,7 @@ const Wrapper = styled.header`
     position: absolute;
     z-index: 2;
     ${api({
-      bottom: '-1.5ru',
+      bottom: `-1.5ru`,
     })};
   }
 `

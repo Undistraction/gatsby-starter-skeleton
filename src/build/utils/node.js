@@ -1,9 +1,8 @@
-const NODE_TYPES = require(`../const/nodeTypes`)
+const NODE_TYPE = require(`../const/nodeType`)
 
 const isNodeType = (node, nodeType) => node.internal.type === nodeType
 
-const isTypeMarkdownRemark = node =>
-  isNodeType(node, NODE_TYPES.MARKDOWN_REMARK)
+const isTypeMarkdownRemark = node => isNodeType(node, NODE_TYPE.MARKDOWN_REMARK)
 
 module.exports = {
   isTypeMarkdownRemark,

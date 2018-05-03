@@ -6,33 +6,33 @@ import flexVertical from '../../styles/mixins/flexVertical'
 import PageBody from './PageBody'
 import PageHeader from './PageHeader'
 
-export const LayoutHeader = styled.div``
-export const LayoutBody = styled.div``
+export const Header = styled.div``
+export const Body = styled.div``
 
 const Layout = styled.div`
   ${flexVertical};
 
-  ${LayoutHeader} {
+  ${Header} {
     ${({ hasImage }) =>
       api({
-        flex: '0 0 auto',
-        marginBottom: hasImage ? 0 : '3ru',
+        flex: `0 0 auto`,
+        marginBottom: hasImage ? 0 : `3ru`,
       })};
   }
 
-  ${LayoutBody} {
+  ${Body} {
     flex: 1 0 auto;
   }
 `
 
 const Page = ({ title, children, hasImage }) => (
   <Layout hasImage={hasImage}>
-    <LayoutHeader>
+    <Header>
       <PageHeader title={title} />
-    </LayoutHeader>
-    <LayoutBody>
+    </Header>
+    <Body>
       <PageBody>{children}</PageBody>
-    </LayoutBody>
+    </Body>
   </Layout>
 )
 

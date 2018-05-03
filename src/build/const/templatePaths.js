@@ -1,8 +1,4 @@
-const path = require(`path`)
-
-const TEMPLATES_DIR = `./src/components/templates/`
-
-const termplatePath = file => path.join(TEMPLATES_DIR, file)
+const { termplatePath } = require(`../utils/templates`)
 
 const ARTICLE_TEMPLATE_PATH = termplatePath(`article.js`)
 const PAGINATED_ARTICLES_TEMPLATE_PATH = termplatePath(`paginatedArticles.js`)

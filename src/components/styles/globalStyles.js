@@ -37,7 +37,7 @@ export default api =>
 
     body {
       ${api({
-        backgroundColor: [`c:bg`],
+        background: [`g:background`],
       })}
     }
 

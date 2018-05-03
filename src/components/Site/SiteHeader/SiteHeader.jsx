@@ -34,7 +34,7 @@ const SiteHeader = ({ title, pages }) => (
 
 SiteHeader.propTypes = {
   title: PropTypes.string.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
+
   pages: PropTypes.object.isRequired,
 }
 

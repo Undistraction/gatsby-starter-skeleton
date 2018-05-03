@@ -17,7 +17,6 @@ const ArticlesList = ({ articles }) => (
 )
 
 ArticlesList.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   articles: PropTypes.array.isRequired,
 }
 

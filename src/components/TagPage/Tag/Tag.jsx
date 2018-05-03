@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { isEmptyArray } from 'ramda-adjunct'
 import styled from 'styled-components'
 import ResourceList from './ResourceList'
 import flexVertical from '../../styles/mixins/flexVertical'
@@ -21,30 +22,30 @@ const Layout = styled.div`
   ${spaceChildrenV(`2ru`)};
 `
 
-const Tag = ({ taggedItems, tag, tags }) =>
-  !taggedItems ? (
-    <Layout>
+const Tag = ({ taggedItems, tag, tags }) => (
+  <Layout>
+    {isEmptyArray(taggedItems) ? (
       <p>No tags found for: {tag}</p>
-    </Layout>
-  ) : (
-    <Layout>
-      <Header>
-        {taggedItems.length} items are tagged with {tag}
-      </Header>
-      <Body>
-        <ResourceList resources={taggedItems} />
-      </Body>
-      <Footer>
-        <TagList tags={tags} />
-      </Footer>
-    </Layout>
-  )
+    ) : (
+      <React.Fragment>
+        <Header>
+          {taggedItems.length} items are tagged with {tag}
+        </Header>
+        <Body>
+          <ResourceList resources={taggedItems} />
+        </Body>
+        <Footer>
+          <TagList tags={tags} />
+        </Footer>
+      </React.Fragment>
+    )}
+  </Layout>
+)
 
 Tag.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   taggedItems: PropTypes.array,
   tag: PropTypes.string.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
+
   tags: PropTypes.array,
 }
 

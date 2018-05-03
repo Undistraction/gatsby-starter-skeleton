@@ -16,7 +16,6 @@ const ResourceList = ({ resources }) => (
 )
 
 ResourceList.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   resources: PropTypes.array.isRequired,
 }
 

@@ -70,7 +70,6 @@ const ProjectsListItem = ({ project }) => (
 )
 
 ProjectsListItem.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   project: PropTypes.object.isRequired,
 }
 

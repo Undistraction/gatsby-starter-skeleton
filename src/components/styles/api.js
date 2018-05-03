@@ -22,6 +22,7 @@ const config = {
     color: {
       black: `#070707`,
       white: `#F5F5F5`,
+      offWhite: `#D8D8D8`,
       grey: `#AAA`,
       lightGrey: `#E9E9E9`,
       bg: `c:white`,
@@ -40,6 +41,9 @@ const config = {
     font: {
       default: `Cousine, monospace`,
       title: `Berkshire Swash, cursive`,
+    },
+    gradient: {
+      background: `linear-gradient(to bottom, c:white, c:offWhite)`,
     },
   },
 }

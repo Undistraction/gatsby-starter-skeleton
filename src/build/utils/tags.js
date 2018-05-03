@@ -1,12 +1,17 @@
-const { pipe, flatten, path, map, uniq } = require(`ramda`)
+const { pair, pipe, flatten, path, map, uniq } = require(`ramda`)
+const { prefixWithFSlash, joinWithFSlash } = require(`./file`)
 const { toSlug } = require(`./url`)
 
-const collectTags = pipe(map(path([`node`, `fields`, `tags`])), flatten, uniq)
+const collectUniqueTags = pipe(
+  map(path([`node`, `fields`, `tags`])),
+  flatten,
+  uniq
+)
 
-const toTagSlug = tag => `tags/${toSlug(tag)}`
+const toTagSlug = pipe(toSlug, pair(`tags`), joinWithFSlash, prefixWithFSlash)
 
 // eslint-disable-next-line import/prefer-default-export
 module.exports = {
-  collectTags,
+  collectUniqueTags,
   toTagSlug,
 }

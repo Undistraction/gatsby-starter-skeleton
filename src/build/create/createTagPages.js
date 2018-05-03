@@ -1,7 +1,8 @@
-const { collectTags, toTagSlug } = require(`../utils/tags`)
-const { pipe, map } = require(`ramda`)
 const path = require(`path`)
-const reporter = require(`../reporter`)
+const { pipe, map } = require(`ramda`)
+const { reportCreatePageSuccess } = require(`../utils/reporter`)
+const { throwBuildError } = require(`../utils/errors`)
+const { collectUniqueTags, toTagSlug } = require(`../utils/tags`)
 const { TAG_TEMPLATE_PATH } = require(`../const/templatePaths`)
 const queryAllResourceNodes = require(`../queries/queryAllResourceNodes`)
 
@@ -22,7 +23,7 @@ const createTagPage = (tag, tags, createPage) => {
     } catch (error) {
       reject(error)
     }
-    reporter.success(`Created Tag Page for '${tag}' at slug '${slug}'.`)
+    reportCreatePageSuccess(`Tag`, slug)
     resolve()
   })
 }
@@ -32,7 +33,7 @@ const createTagPages = (graphql, createPage, taggedItemPaths) =>
     .then(result =>
       pipe(
         markdownNodes,
-        collectTags,
+        collectUniqueTags,
         tags =>
           map(tag => {
             createTagPage(tag, tags, createPage)
@@ -40,8 +41,6 @@ const createTagPages = (graphql, createPage, taggedItemPaths) =>
         Promise.all
       )(result.data)
     )
-    .catch(error => {
-      throw new Error(`Problem with page creation: ${error.toString()}`)
-    })
+    .catch(throwBuildError(`Tag`))
 
 module.exports = createTagPages

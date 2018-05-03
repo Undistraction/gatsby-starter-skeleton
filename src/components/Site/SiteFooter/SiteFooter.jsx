@@ -38,7 +38,6 @@ const SiteFooter = ({ owner, startYear, showCredit }) => {
 }
 
 SiteFooter.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   owner: PropTypes.string.isRequired,
   startYear: PropTypes.string.isRequired,
   showCredit: PropTypes.bool.isRequired,

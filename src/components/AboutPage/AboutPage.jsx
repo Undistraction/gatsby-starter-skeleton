@@ -20,7 +20,6 @@ const AboutPage = ({ data }) => (
 )
 
 AboutPage.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
 }
 

@@ -11,6 +11,7 @@ import {
   previous,
   frontmatterTitle,
   fieldsSlug,
+  fieldsTags,
 } from '../../helpers/markdown'
 import NextPreviousNav from '../../shared/NextPreviousNav'
 
@@ -23,7 +24,6 @@ const Article = ({ data }) => {
   const previousArticle = previous(data)
   const nextArticle = next(data)
 
-  const { tags } = article.fields
   return (
     <Layout>
       <NextPreviousNav
@@ -33,13 +33,12 @@ const Article = ({ data }) => {
         nextPath={fieldsSlug(nextArticle)}
       />
       <HTMLText htmlText={article.html} />
-      <TagList tags={tags} />
+      <TagList tags={fieldsTags(article)} />
     </Layout>
   )
 }
 
 Article.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
 }
 

@@ -26,7 +26,6 @@ const SiteNavLink = ({ page }) => (
 )
 
 SiteNavLink.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   page: PropTypes.object.isRequired,
 }
 

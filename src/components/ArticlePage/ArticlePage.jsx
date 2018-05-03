@@ -5,21 +5,20 @@ import Metadata from '../shared/Metadata'
 import Page from '../shared/Page'
 import Article from './Article'
 import {
-  markdownItemFrontmatter,
   markdownItemMetadata,
   markdownItemTitle,
+  markdownItemImageSizes,
 } from '../helpers/markdown'
 
 const ArticlePage = ({ data }) => (
   <Page title={markdownItemTitle(data)}>
     <Metadata {...markdownItemMetadata(data)} />
-    <Img sizes={markdownItemFrontmatter(data).image.childImageSharp.sizes} />
+    <Img sizes={markdownItemImageSizes(data)} />
     <Article data={data} />
   </Page>
 )
 
 ArticlePage.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
 }
 

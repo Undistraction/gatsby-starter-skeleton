@@ -12,7 +12,7 @@ const CreditIcon = styled.span`
 const Layout = styled.p`
   ${CreditIcon} {
     ${api({
-      position: 'relative',
+      position: `relative`,
       top: 2,
     })};
   }
@@ -20,8 +20,8 @@ const Layout = styled.p`
 
 const Credit = () => (
   <Layout>
-    Built by{' '}
-    <IconLink href="http://undistraction.com">
+    Built by{` `}
+    <IconLink to="http://undistraction.com">
       <CreditIcon />
       <span>Undistraction</span>
     </IconLink>

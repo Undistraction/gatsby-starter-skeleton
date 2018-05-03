@@ -42,6 +42,7 @@
     "ramda-adjunct": "^2.7.0",
     "react": "^16.3.2",
     "react-css-modules": "^4.7.1",
+    "react-dom": "^16.3.2",
     "react-helmet": "^5.2.0",
     "remark-retext": "^3.1.0",
     "retext-english": "^3.0.0",

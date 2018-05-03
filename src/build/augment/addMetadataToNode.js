@@ -7,14 +7,11 @@ const metadataFromFrontmatter = pipe(
   mergeRight(DEFAULT_METADATA)
 )
 
-const addMetadataToNode = (node, createNodeField) => {
-  const { frontmatter } = node
-
+const addMetadataToNode = (node, createNodeField) =>
   createNodeField({
     node,
     name: `metadata`,
-    value: metadataFromFrontmatter(frontmatter),
+    value: metadataFromFrontmatter(node.frontmatter),
   })
-}
 
 module.exports = addMetadataToNode

@@ -21,7 +21,6 @@ const Copyright = ({ owner, dateRange }) => (
 )
 
 Copyright.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   owner: PropTypes.string.isRequired,
   dateRange: PropTypes.string.isRequired,
 }

@@ -1,11 +1,9 @@
+const createResourcePages = require(`./src/build/create/createResourcePages`)
 const RESOURCE_TYPE = require(`./src/build/const/resourceType`)
 const addResourceTypeToNode = require(`./src/build/augment/addResourceTypeToNode`)
-
 const { lensPath, set, pipe } = require(`ramda`)
 const createTagsPage = require(`./src/build/create/createTagsPage`)
-const createProjectPages = require(`./src/build/create/createProjectPages`)
 const validatedConfig = require(`./src/config/validatedConfig`)
-const createArticlePages = require(`./src/build/create/createArticlePages`)
 const createPaginatedArticlesPages = require(`./src/build/create/createPaginatedArticlesPages`)
 const createProjectsPage = require(`./src/build/create/createProjectsPage`)
 const createTagPages = require(`./src/build/create/createTagPages`)
@@ -16,8 +14,16 @@ const {
   nodeIsMarkdownArticle,
   nodeIsMarkdownProject,
 } = require(`./src/build/utils/resources`)
+const {
+  ARTICLE_TEMPLATE_PATH,
+  PROJECT_TEMPLATE_PATH,
+} = require(`./src/build/const/templatePaths`)
 
 const { resources } = validatedConfig().structure
+
+// -----------------------------------------------------------------------------
+// Helpers
+// -----------------------------------------------------------------------------
 
 const augmentResource = (type, pathName, createNodeField, node) => {
   addSlugToNode(node, createNodeField, pathName)
@@ -73,7 +79,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     resources.articles.path
   )
 
-  const articlePages = createArticlePages(
+  const articlePages = createResourcePages(
+    `Article`,
+    ARTICLE_TEMPLATE_PATH,
     graphql,
     decoratedCreatePage,
     resources.articles.directory,
@@ -89,7 +97,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     resources.projects.path
   )
 
-  const projectPages = createProjectPages(
+  const projectPages = createResourcePages(
+    `Project`,
+    PROJECT_TEMPLATE_PATH,
     graphql,
     decoratedCreatePage,
     resources.projects.directory,

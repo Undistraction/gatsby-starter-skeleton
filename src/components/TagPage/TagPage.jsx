@@ -6,12 +6,14 @@ import Tag from './Tag'
 import { markdownItemNodes } from '../helpers/markdown'
 import { addTitleToMetadata } from '../helpers/metadata'
 
+const tagTitle = tag => `Tag ${tag}`
+
 const TagPage = ({ data, pathContext }) => {
   const metadata = data.site.siteMetadata.metadata.tag
   const { tag, tags } = pathContext
 
   return (
-    <Page title={tag} hasImage={false}>
+    <Page title={tagTitle(tag)} hasImage={false}>
       <Metadata {...addTitleToMetadata(metadata, tag)} />
       <Tag taggedItems={markdownItemNodes(data)} tag={tag} tags={tags} />
     </Page>
@@ -19,9 +21,8 @@ const TagPage = ({ data, pathContext }) => {
 }
 
 TagPage.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
+
   pathContext: PropTypes.object.isRequired,
 }
 

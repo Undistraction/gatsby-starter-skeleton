@@ -36,7 +36,6 @@ const SiteNav = ({ pages }) => (
 )
 
 SiteNav.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   pages: PropTypes.object.isRequired,
 }
 

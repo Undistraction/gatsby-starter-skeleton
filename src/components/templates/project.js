@@ -4,11 +4,17 @@ import Template from '../ProjectPage'
 export default Template
 
 export const query = graphql`
-  query ProjectQuery($slug: String, $dateFormat: String) {
+  query ProjectQuery(
+    $slug: String
+    $previousSlug: String
+    $nextSlug: String
+    $dateFormat: String
+  ) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         title
+        date(formatString: $dateFormat)
         keywords
         image {
           childImageSharp {
@@ -27,22 +33,25 @@ export const query = graphql`
         }
       }
     }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { type: { eq: "article" } } }
+    previous: markdownRemark(
+      fields: { type: { eq: "project" }, slug: { eq: $previousSlug } }
     ) {
-      totalCount
-      edges {
-        node {
-          frontmatter {
-            title
-            date(formatString: $dateFormat)
-          }
-          fields {
-            slug
-          }
-          excerpt
-        }
+      id
+      frontmatter {
+        title
+      }
+      fields {
+        slug
+      }
+    }
+    next: markdownRemark(
+      fields: { type: { eq: "project" }, slug: { eq: $nextSlug } }
+    ) {
+      frontmatter {
+        title
+      }
+      fields {
+        slug
       }
     }
   }

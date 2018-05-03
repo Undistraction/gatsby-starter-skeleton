@@ -16,7 +16,6 @@ const HomePage = ({ data }) => (
 )
 
 HomePage.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
 }
 

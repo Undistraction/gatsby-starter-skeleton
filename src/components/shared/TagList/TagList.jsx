@@ -13,23 +13,22 @@ const Layout = styled.ul`
   flex-wrap: wrap;
 
   ${api({
-    margin: '-0.25ru',
+    margin: `-0.25ru`,
   })};
 
   > * {
     ${api({
-      padding: '0.125ru',
+      padding: `0.125ru`,
     })};
   }
 `
 
 const TagList = ({ tags }) => {
-  const tagsElements = renderListItems(Tag, 'tag', tags)
+  const tagsElements = renderListItems(Tag, `tag`, tags)
   return <Layout>{tagsElements}</Layout>
 }
 
 TagList.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   tags: PropTypes.array,
 }
 

@@ -9,6 +9,12 @@ import spaceChildrenV from '../../../styles/mixins/spaceChildrenV'
 import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'
 import TextLink from '../../../shared/TextLink'
 import api from '../../../styles/api'
+import {
+  fieldsSlug,
+  frontmatterImageSizes,
+  frontmatterTitle,
+  frontmatterDate,
+} from '../../../helpers/markdown'
 
 const Media = styled.div``
 const Info = styled.div`
@@ -36,30 +42,28 @@ const Date = styled.time`
   })};
 `
 
-const ArticlesListItem = ({ article }) => {
-  const { frontmatter, fields } = article
-  return (
-    <Layout>
-      <Media>
-        <Link to={fields.slug}>
-          <Img sizes={frontmatter.image.childImageSharp.sizes} />
-        </Link>
-      </Media>
-      <Info>
-        <Header>
-          <TextLink to={fields.slug}>{frontmatter.title}</TextLink>
-          <Date>{frontmatter.date}</Date>
-        </Header>
-        <Body>
-          <p>{article.excerpt}</p>
-        </Body>
-      </Info>
-    </Layout>
-  )
-}
+const ArticlesListItem = ({ article }) => (
+  <Layout>
+    <Media>
+      <Link to={fieldsSlug(article)}>
+        <Img sizes={frontmatterImageSizes(article)} />
+      </Link>
+    </Media>
+    <Info>
+      <Header>
+        <TextLink to={fieldsSlug(article)}>
+          {frontmatterTitle(article)}
+        </TextLink>
+        <Date>{frontmatterDate(article)}</Date>
+      </Header>
+      <Body>
+        <p>{article.excerpt}</p>
+      </Body>
+    </Info>
+  </Layout>
+)
 
 ArticlesListItem.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   article: PropTypes.object.isRequired,
 }
 

@@ -35,5 +35,11 @@ module.exports = {
         components: [],
       },
     ],
+    'react/forbid-prop-types': [
+      'error',
+      {
+        forbid: ['any'],
+      },
+    ],
   },
 }

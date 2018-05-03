@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { inc } from 'ramda'
 import styled from 'styled-components'
 import ArticleList from './ArticleList/ArticleList'
 import api from '../../styles/api'
@@ -38,7 +39,7 @@ const Articles = ({ articles, pagination }) => {
       <Header>
         <NextPreviousNav previousPath={previousPath} nextPath={nextPath} />
         <ArticlesInfo>
-          {startIndex}–{endIndex} of {total}
+          {inc(startIndex)}–{endIndex} of {total}
         </ArticlesInfo>
       </Header>
       <Body>
@@ -49,9 +50,8 @@ const Articles = ({ articles, pagination }) => {
 }
 
 Articles.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   pagination: PropTypes.object.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
+
   articles: PropTypes.array.isRequired,
 }
 

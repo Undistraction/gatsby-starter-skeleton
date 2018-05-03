@@ -11,14 +11,11 @@ const slugFromFrontmatter = (path, frontmatter) =>
     joinWithFSlash
   )(frontmatter)
 
-const addSlugToNode = (node, createNodeField, path) => {
-  const { frontmatter } = node
-
+const addSlugToNode = (node, createNodeField, path) =>
   createNodeField({
     node,
     name: `slug`,
-    value: slugFromFrontmatter(path, frontmatter),
+    value: slugFromFrontmatter(path, node.frontmatter),
   })
-}
 
 module.exports = addSlugToNode

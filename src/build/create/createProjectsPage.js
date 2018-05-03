@@ -1,7 +1,8 @@
 const path = require(`path`)
+const { reportCreatePageSuccess } = require(`../utils/reporter`)
+const { throwBuildError } = require(`../utils/errors`)
 const { PROJECTS_TEMPLATE_PATH } = require(`../const/templatePaths`)
 const queryAllResourceNodes = require(`../queries/queryAllResourceNodes`)
-const reporter = require(`../reporter`)
 
 const markdownNodes = data => data.allMarkdownRemark.edges
 
@@ -18,10 +19,8 @@ const createProjectsPage = (graphql, createPage, projectDir, projectPath) =>
           projectsCount,
         },
       })
-      reporter.success(`Created Projects Page with ${projectsCount} projects`)
+      reportCreatePageSuccess(`Projects`, projectPath)
       return Promise.resolve()
     })
-    .catch(error => {
-      throw new Error(`Projects Page Couldn't Be Created: ${error.toString()}`)
-    })
+    .catch(throwBuildError(`Projects`))
 module.exports = createProjectsPage

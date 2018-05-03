@@ -16,6 +16,7 @@ export const query = graphql`
           fields {
             slug
             tags
+            type
           }
           excerpt
           frontmatter {
