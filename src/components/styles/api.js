@@ -35,6 +35,7 @@ const config = {
       secondaryTitle: `20`,
       primaryTitle: `28`,
       megaTitle: `32`,
+      giant: `130`,
     },
     font: {
       default: `Cousine, monospace`,
