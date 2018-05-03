@@ -18,11 +18,11 @@ const createTagsPage = (graphql, createPage, taggedItemPaths, tagsPath) =>
           tags,
         },
       })
-      reporter.success(`Created Projects Page with ${tags.length} tags`)
+      reporter.success(`Created Tags Page with ${tags.length} tags`)
       return Promise.resolve()
     })
     .catch(error => {
-      throw new Error(`Projects Page Couldn't Be Created: ${error.toString()}`)
+      throw new Error(`Tags Page Couldn't Be Created: ${error.toString()}`)
     })
 
 module.exports = createTagsPage
