@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import flexHorizontal from '../styles/mixins/flexHorizontal'
 import ArrowButtonLink from '../shared/ArrowButtonLink'
 import DisabledArrowButtonLink from '../shared/DisabledArrowButtonLink'
 
@@ -9,18 +8,18 @@ export const LayoutPrevious = styled.div``
 export const LayoutNext = styled.div``
 
 const Layout = styled.nav`
-  ${flexHorizontal};
+  justify-content: space-between;
 
   ${LayoutNext} {
-    margin-left: auto;
+    float: right;
   }
 
   ${LayoutPrevious} {
-    margin-right: auto;
+    float: left;
   }
 
   ${LayoutNext}, ${LayoutPrevious} {
-    flex: 0 0 auto;
+    max-width: 49%;
   }
 `
 

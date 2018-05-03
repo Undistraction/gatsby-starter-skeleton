@@ -37,7 +37,12 @@ const Articles = ({ articles, pagination }) => {
   return (
     <Layout>
       <Header>
-        <NextPreviousNav previousPath={previousPath} nextPath={nextPath} />
+        <NextPreviousNav
+          previousLabel="Newer"
+          previousPath={previousPath}
+          nextLabel="Older"
+          nextPath={nextPath}
+        />
         <ArticlesInfo>
           {inc(startIndex)}–{endIndex} of {total}
         </ArticlesInfo>

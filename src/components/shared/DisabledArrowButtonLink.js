@@ -7,6 +7,7 @@ const DisabledArrowButtonLink = styled.div`
   display: block;
   cursor: default;
   color: transparent;
+  user-select: none;
   ${p => arrow(p.direction, `0.6ru`, `c:disabled`)};
   ${api({
     padding: `0.4ru 1ru`,
