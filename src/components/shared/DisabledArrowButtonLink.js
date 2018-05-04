@@ -3,6 +3,7 @@ import api from '../styles/api'
 import arrow from '../styles/mixins/arrow'
 
 const DisabledArrowButtonLink = styled.div`
+  z-index: 1;
   position: relative;
   display: block;
   cursor: default;
