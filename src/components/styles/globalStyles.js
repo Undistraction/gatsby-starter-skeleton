@@ -37,7 +37,7 @@ export default api =>
 
     body {
       ${api({
-        background: [`g:background`],
+        background: `g:background`,
       })}
     }
 
@@ -46,9 +46,10 @@ export default api =>
     /* ---------------------------------------------------------------------- */
 
     body {
+      shazam: red;
       ${api({
-        fontFamily: [`f:default`],
-        baseline: [`scale:body`],
+        fontFamily: `f:default`,
+        baseline: `scale:body`,
       })}
     }
 
@@ -69,7 +70,7 @@ export default api =>
 
     p + p {
       ${api({
-        marginTop: [`1ru`],
+        marginTop: `1ru`,
       })}
     }
 
@@ -84,8 +85,8 @@ export default api =>
     h5,
     h6 {
       ${api({
-        baseline: [`s:body`],
-        fontWeight: [`normal`],
+        baseline: `s:body`,
+        fontWeight: `normal`,
         margin: [0],
       })}
     }

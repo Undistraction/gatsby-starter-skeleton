@@ -1,26 +1,26 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 import styled from 'styled-components'
-import Credit from './Credit'
-import Copyright from './Copyright'
+import { currentYear } from '../../helpers/date'
+import api from '../../styles/api'
 import blockCenterH from '../../styles/mixins/blockCenterH'
 import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
-import api from '../../styles/api'
-import { currentYear } from '../../helpers/date'
+import Copyright from './Copyright'
+import Credit from './Credit'
 
 const Layout = styled.footer`
   text-align: center;
   ${blockCenterH};
-  ${spaceChildrenV('1ru')};
+  ${spaceChildrenV(`1ru`)};
 
   ${api({
-    padding: '4ru 0 1ru',
-    baseline: 's:smallprint',
+    padding: `4ru 0 1ru`,
+    baseline: `s:smallprint`,
   })};
 
   > * {
     ${api({
-      margin: ['0 auto 1ru'],
+      margin: `0 auto 1ru`,
     })};
   }
 `

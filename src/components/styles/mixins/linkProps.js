@@ -4,7 +4,8 @@ import api from '../api'
 export default (defaultColor = `red`, highlightColor = `blue`) => css`
   ${api({
     color: defaultColor,
-  })} color: inherit;
+  })};
+  color: inherit;
   text-decoration: none;
   transition: all 0.5s ease-in-out;
 

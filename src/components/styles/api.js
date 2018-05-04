@@ -18,7 +18,7 @@ const breakpoints = [
 const config = {
   breakpoints,
   data: {
-    rhythm: 23,
+    rhythm: 26,
     color: {
       black: `#070707`,
       offBlack: `#222`,
@@ -44,7 +44,7 @@ const config = {
       title: `Berkshire Swash, cursive`,
     },
     gradient: {
-      background: `linear-gradient(to bottom, c:white, c:offWhite)`,
+      background: `linear-gradient(to bottom, c:white 25%, c:offWhite)`,
       backgroundInverted: `linear-gradient(to bottom, c:black, c:offBlack)`,
     },
   },

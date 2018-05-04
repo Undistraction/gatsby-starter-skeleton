@@ -14,7 +14,9 @@ const Wrapper = styled.div`
     left: 0;
 
     path {
-      fill: black;
+      ${api({
+        fill: `c:black`,
+      })};
     }
   }
 `
