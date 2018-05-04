@@ -10,14 +10,21 @@ const PageText = styled.div`
 
   p:first-child:first-letter {
     float: left;
-    font-size: 1.7em;
+    display: block;
+    width: 200px;
+    min-height: 100px;
     font-weight: normal;
-    margin-right: 0.2em;
-    padding: 12px 10px 5px;
     color: white;
-    ${api({
-      background: `g:backgroundInverted`,
-    })};
+    vertical-align: bottom;
+    ${api(
+      {
+        baseline: `s:megaTitle`,
+        background: `g:backgroundInverted`,
+        marginRight: `0.3em`,
+        padding: `0.2em 0.6em 0.1em`,
+      },
+      `WTF`
+    )};
   }
 `
 

@@ -2,7 +2,7 @@ import { css } from 'styled-components'
 import api from '../api'
 
 export default (edge = `top`) => css`
-  &::before {
+  ::before {
     content: '';
     z-index: 1;
     ${api({
@@ -15,7 +15,7 @@ export default (edge = `top`) => css`
     })};
   }
 
-  &::after {
+  ::after {
     content: '';
     z-index: 1;
     ${api({

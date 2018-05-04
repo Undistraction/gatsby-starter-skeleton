@@ -1,12 +1,12 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { inc } from 'ramda'
+import React from 'react'
 import styled from 'styled-components'
-import ArticleList from './ArticleList/ArticleList'
+import NextPreviousNav from '../../shared/NextPreviousNav'
 import api from '../../styles/api'
 import flexVertical from '../../styles/mixins/flexVertical'
 import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
-import NextPreviousNav from '../../shared/NextPreviousNav'
+import ArticleList from './ArticleList/ArticleList'
 
 const ArticlesInfo = styled.div`
   text-align: center;
@@ -18,9 +18,6 @@ const Header = styled.header`
   })};
 
   ${ArticlesInfo} {
-    ${api({
-      marginTop: `-1.5ru`,
-    })};
   }
 `
 

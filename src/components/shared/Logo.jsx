@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import api from '../styles/api'
 
-const Wrapper = styled.div`
+const Layout = styled.div`
   position: relative;
   width: 100%;
   // (height / width) * 100
@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 `
 
 const Logo = () => (
-  <Wrapper>
+  <Layout>
     <svg
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@ const Logo = () => (
 						c2.4-4.4,21.8-5.7,25.2-0.5C84.2,61.4,85.1,71.1,78.4,75.3z"
       />
     </svg>
-  </Wrapper>
+  </Layout>
 )
 
 export default Logo

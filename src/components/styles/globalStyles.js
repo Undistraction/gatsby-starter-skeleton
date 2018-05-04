@@ -20,8 +20,8 @@ export default api =>
     }
 
     *,
-    *:before,
-    *:after {
+    *::before,
+    *::after {
       box-sizing: inherit;
     }
 

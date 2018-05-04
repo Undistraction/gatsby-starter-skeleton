@@ -24,9 +24,6 @@ const Wrapper = styled.header`
     ${transformCenterH};
     position: absolute;
     z-index: 2;
-    ${api({
-      bottom: `-1.5ru`,
-    })};
   }
 `
 

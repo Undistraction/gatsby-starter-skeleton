@@ -15,21 +15,25 @@ const breakpoints = [
 // Configure CSS API
 // -----------------------------------------------------------------------------
 
+const rhythm = 28
+
 const config = {
   breakpoints,
   data: {
-    rhythm: 26,
+    rhythm,
+    baseline: {
+      lineHeight: rhythm, // Baseline height
+    },
     color: {
       black: `#070707`,
       offBlack: `#222`,
       white: `#F5F5F5`,
       offWhite: `#D8D8D8`,
-      lightGrey: `#CCC`,
       grey: `#AAA`,
       bg: `c:white`,
       text: `c:black`,
       highlight: `c:grey`,
-      disabled: `c:lightGrey`,
+      disabled: `c:offWhite`,
     },
     scale: {
       smallprint: `14`,
@@ -37,7 +41,7 @@ const config = {
       secondaryTitle: `20`,
       primaryTitle: `28`,
       megaTitle: `32`,
-      giant: `130`,
+      giant: `80`,
     },
     font: {
       default: `Cousine, monospace`,

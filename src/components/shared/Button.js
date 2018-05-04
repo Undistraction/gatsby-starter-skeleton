@@ -1,9 +1,9 @@
 import styled from 'styled-components'
+import BaseLink from '../shared/BaseLink'
 import api from '../styles/api'
 import linkProps from '../styles/mixins/linkProps'
-import TextLink from '../shared/TextLink'
 
-const Button = styled(TextLink)`
+const Button = styled(BaseLink)`
   ${linkProps(`c:white`, `c:highlight`)};
   font-weight: normal;
   display: block;
