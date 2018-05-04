@@ -32,6 +32,7 @@ if (seo.googleTrackingID) {
 }
 
 module.exports = {
+  // pathPrefix,
   siteMetadata: config,
   plugins,
 }
