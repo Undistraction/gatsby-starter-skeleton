@@ -1,5 +1,5 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 import styled from 'styled-components'
 import api from '../../../styles/api'
 import banner from '../../../styles/mixins/banner'
@@ -17,7 +17,7 @@ const Layout = styled.nav`
     position: `relative`,
     background: `g:backgroundInverted`,
     padding: `0.75ru 1ru`,
-    color: `c:white`,
+    color: `c:textInverted`,
   })};
 
   * > {

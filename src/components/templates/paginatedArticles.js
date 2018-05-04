@@ -1,11 +1,11 @@
 import graphql from 'graphql'
 
-import Template from '../PaginatedArticlesPage'
+import Template from '../ArticlesPage'
 
 export default Template
 
 export const query = graphql`
-  query PaginatedArticlesQuery(
+  query ArticlesQuery(
     $startIndex: Int
     $thisGroupSize: Int
     $dateFormat: String

@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   position: relative;
   z-index: 1;
   ${p => p.direction}: 0;
-  ${p => arrow(p.direction, `0.6ru`, `c:black`)};
+  ${p => arrow(p.direction, `0.6ru`, `g:backgroundInverted`)};
 
   &:hover {
     animation: ${({ direction }) =>

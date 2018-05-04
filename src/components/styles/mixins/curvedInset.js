@@ -5,7 +5,7 @@ export default edge => {
   const helper = edge === `top` ? `borderTopRadius` : `borderBottomRadius`
   return css`
     ${api({
-      background: `c:white`,
+      background: `c:backgroundEnd`,
       [helper]: `2ru`,
     })};
   `

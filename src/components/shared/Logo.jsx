@@ -15,7 +15,7 @@ const Layout = styled.div`
 
     path {
       ${api({
-        fill: `c:black`,
+        fill: `c:backgroundInvertedStart`,
       })};
     }
   }

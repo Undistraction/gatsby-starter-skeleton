@@ -1,19 +1,43 @@
+import { cond, equals } from 'ramda'
 import { css } from 'styled-components'
 import api from '../api'
 
-const underlineHover = color => css`
+const startProps = cond([
+  [
+    equals(`center`),
+    () => css`
+      left: 50%;
+      right: 50%;
+    `,
+  ],
+  [
+    equals(`left`),
+    () => css`
+      left: 0;
+      right: 100%;
+    `,
+  ],
+  [
+    equals(`right`),
+    () => css`
+      left: 100%;
+      right: 0;
+    `,
+  ],
+])
+
+const underlineHover = (color, type = `center`) => css`
   position: relative;
   ::after {
     content: '';
     transition: all 1s ease-in-out;
     z-index: 2;
     position: absolute;
-    left: 50%;
-    right: 50%;
+    ${startProps(type)};
 
     ${api({
-      height: `0.3em`,
-      bottom: `-0.3em`,
+      height: `0.2em`,
+      bottom: `-0.1em`,
       background: color,
     })};
   }

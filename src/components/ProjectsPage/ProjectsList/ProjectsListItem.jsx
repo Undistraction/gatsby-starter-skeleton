@@ -1,22 +1,18 @@
-// -----------------------------------------------------------------------------
-// Articles List > View > ArticlesListItem
-// -----------------------------------------------------------------------------
-
 import Img from 'gatsby-image'
 import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
+import {
+  fieldsSlug,
+  frontmatterImageSizes,
+  frontmatterTitle,
+} from '../../helpers/markdown'
+import scaleBounce from '../../styles/animations/scaleBounce'
 import api from '../../styles/api'
 import curvedInset from '../../styles/mixins/curvedInset'
 import flexVertical from '../../styles/mixins/flexVertical'
 import linkProps from '../../styles/mixins/linkProps'
-import scaleBounce from '../../styles/animations/scaleBounce'
-import {
-  fieldsSlug,
-  frontmatterTitle,
-  frontmatterImageSizes,
-} from '../../helpers/markdown'
 
 const TitleWrapper = styled.div`
   ${flexVertical};
@@ -36,7 +32,7 @@ const Title = styled.div`
     padding: `0.3ru 1ru 0`,
     marginH: `1ru`,
     top: `2px`,
-    borderBottom: `2px solid c:white`,
+    borderBottom: `2px solid c:backgroundEnd`,
   })};
 `
 
@@ -45,7 +41,7 @@ const ImgLayout = styled.div``
 const Layout = styled(Link)`
   position: relative;
   display: block;
-  ${linkProps(`c:black`, `c:highlight`)};
+  ${linkProps(`c:text`, `c:highlight`)};
 
   &:hover {
     animation: ${scaleBounce(1.05, 0.97)} 0.3s ease-in-out;

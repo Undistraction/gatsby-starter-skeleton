@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
 import api from '../api'
 
-export default (edge = `right`, size = `16`, backgroundColor = `red`) => {
+export default (edge = `right`, size = `16`, background = `red`) => {
   const translation = edge === `right` ? `50%` : `-50%`
   // const hyotenuse = Math.sqrt(size *)
   return css`
@@ -16,7 +16,7 @@ export default (edge = `right`, size = `16`, backgroundColor = `red`) => {
       ${api({
         width: size,
         height: size,
-        backgroundColor,
+        background,
       })};
     }
   `

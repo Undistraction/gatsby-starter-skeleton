@@ -30,7 +30,6 @@ export default api =>
     /* ---------------------------------------------------------------------- */
 
     html {
-      ${api.backgroundColor(`c:bg`)}
       overflow-y: scroll;
       overflow-x: hidden;
     }
@@ -46,7 +45,7 @@ export default api =>
     /* ---------------------------------------------------------------------- */
 
     body {
-      shazam: red;
+      word-spacing: -0.05em;
       ${api({
         fontFamily: `f:default`,
         baseline: `scale:body`,
@@ -73,6 +72,7 @@ export default api =>
         marginTop: `1ru`,
       })}
     }
+
 
     /* ---------------------------------------------------------------------- */
     /* Headers

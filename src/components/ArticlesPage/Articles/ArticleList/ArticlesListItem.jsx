@@ -1,20 +1,20 @@
-import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import Link from 'gatsby-link'
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import flexVertical from '../../../styles/mixins/flexVertical'
-import flexHorizontal from '../../../styles/mixins/flexHorizontal'
-import spaceChildrenV from '../../../styles/mixins/spaceChildrenV'
-import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'
-import TextLink from '../../../shared/TextLink'
-import api from '../../../styles/api'
 import {
   fieldsSlug,
+  frontmatterDate,
   frontmatterImageSizes,
   frontmatterTitle,
-  frontmatterDate,
 } from '../../../helpers/markdown'
+import TextLink from '../../../shared/TextLink'
+import api from '../../../styles/api'
+import flexHorizontal from '../../../styles/mixins/flexHorizontal'
+import flexVertical from '../../../styles/mixins/flexVertical'
+import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'
+import spaceChildrenV from '../../../styles/mixins/spaceChildrenV'
 
 const Media = styled.div``
 const Info = styled.div`
@@ -51,7 +51,7 @@ const ArticlesListItem = ({ article }) => (
     </Media>
     <Info>
       <Header>
-        <TextLink to={fieldsSlug(article)}>
+        <TextLink to={fieldsSlug(article)} underlineType="left">
           {frontmatterTitle(article)}
         </TextLink>
         <Date>{frontmatterDate(article)}</Date>

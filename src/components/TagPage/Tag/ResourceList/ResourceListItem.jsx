@@ -1,27 +1,36 @@
-import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import Link from 'gatsby-link'
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import flexVertical from '../../../styles/mixins/flexVertical'
-import flexHorizontal from '../../../styles/mixins/flexHorizontal'
-import spaceChildrenV from '../../../styles/mixins/spaceChildrenV'
-import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'
-import TextLink from '../../../shared/TextLink'
-import {
-  frontmatterImageSizes,
-  fieldsSlug,
-  frontmatterTitle,
-  fieldsType,
-} from '../../../helpers/markdown'
 import { firstToUpper } from '../../../helpers/formatting'
+import {
+  fieldsSlug,
+  fieldsType,
+  frontmatterImageSizes,
+  frontmatterTitle,
+} from '../../../helpers/markdown'
+import TextLink from '../../../shared/TextLink'
+import flexHorizontal from '../../../styles/mixins/flexHorizontal'
+import flexVertical from '../../../styles/mixins/flexVertical'
+import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'
+import spaceChildrenV from '../../../styles/mixins/spaceChildrenV'
 
-const Media = styled.div``
+const ResourceType = styled.h3``
+
+const Media = styled.div`
+  position: relative;
+`
+
 const Info = styled.div`
   ${flexVertical};
   ${spaceChildrenV(`0.5ru`)};
 `
-const Header = styled.header``
+const Header = styled.header`
+  > * {
+    display: block;
+  }
+`
 
 const Body = styled.div``
 const Layout = styled.div`
@@ -44,8 +53,10 @@ const ResourceListItem = ({ resource }) => {
       </Media>
       <Info>
         <Header>
-          {firstToUpper(fieldsType(resource))}:{` `}
-          <TextLink to={slug}>{frontmatterTitle(resource)}</TextLink>
+          <TextLink to={slug} underlineType="left">
+            {frontmatterTitle(resource)}
+          </TextLink>
+          <ResourceType>{firstToUpper(fieldsType(resource))}</ResourceType>
         </Header>
         <Body>
           <p>{resource.excerpt}</p>

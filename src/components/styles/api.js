@@ -25,15 +25,27 @@ const config = {
       lineHeight: rhythm, // Baseline height
     },
     color: {
+      // Colours
       black: `#070707`,
       offBlack: `#222`,
       white: `#F5F5F5`,
-      offWhite: `#D8D8D8`,
+      offWhite: `#EFEFEF`,
+      lightGrey: `#E4E4E4`,
       grey: `#AAA`,
-      bg: `c:white`,
+      darkGrey: `#888`,
+      // Aliases
+      // - Default
+      backgroundStart: `c:lightGrey`,
+      backgroundEnd: `c:white`,
       text: `c:black`,
       highlight: `c:grey`,
       disabled: `c:offWhite`,
+      // - Inverted
+      backgroundInvertedStart: `c:offBlack`,
+      backgroundInvertedEnd: `c:black`,
+      textInverted: `c:white`,
+      activeInverted: `c:darkGrey`,
+      highlightInverted: `c:grey`,
     },
     scale: {
       smallprint: `14`,
@@ -48,8 +60,8 @@ const config = {
       title: `Berkshire Swash, cursive`,
     },
     gradient: {
-      background: `linear-gradient(to bottom, c:white 25%, c:offWhite)`,
-      backgroundInverted: `linear-gradient(to bottom, c:black, c:offBlack)`,
+      background: `linear-gradient(to bottom, c:backgroundStart, c:backgroundEnd 18%)`,
+      backgroundInverted: `linear-gradient(to bottom, c:backgroundInvertedStart, c:backgroundInvertedEnd)`,
     },
   },
 }

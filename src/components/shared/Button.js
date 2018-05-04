@@ -4,11 +4,11 @@ import api from '../styles/api'
 import linkProps from '../styles/mixins/linkProps'
 
 const Button = styled(BaseLink)`
-  ${linkProps(`c:white`, `c:highlight`)};
+  ${linkProps(`c:textInverted`, `c:highlight`)};
   font-weight: normal;
   display: block;
   ${api({
-    color: `c:white`,
+    color: `c:textInverted`,
     background: `g:backgroundInverted`,
   })};
 `

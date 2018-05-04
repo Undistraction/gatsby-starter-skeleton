@@ -10,14 +10,14 @@ import underlineHover from '../../../../styles/mixins/underlineHover'
 const Link = styled(Button).attrs({
   activeClassName: `isActive`,
 })`
-  ${linkProps(`c:white`, `c:highlight`)};
+  ${linkProps(`c:textInverted`, `c:highlightInverted`)};
   background: transparent;
   letter-spacing: 0.5px;
-  ${underlineHover(`c:grey`)};
+  ${underlineHover(`c:highlightInverted`)};
 
   &.isActive {
     ${api({
-      color: `c:highlight`,
+      color: `c:activeInverted`,
     })};
   }
 `

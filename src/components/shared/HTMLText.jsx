@@ -16,15 +16,12 @@ const PageText = styled.div`
     font-weight: normal;
     color: white;
     vertical-align: bottom;
-    ${api(
-      {
-        baseline: `s:megaTitle`,
-        background: `g:backgroundInverted`,
-        marginRight: `0.3em`,
-        padding: `0.2em 0.6em 0.1em`,
-      },
-      `WTF`
-    )};
+    ${api({
+      baseline: `s:megaTitle`,
+      background: `g:backgroundInverted`,
+      marginRight: `0.3em`,
+      padding: `0.2em 0.6em 0.1em`,
+    })};
   }
 `
 
