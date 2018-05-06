@@ -7,7 +7,7 @@ keywords: keyword 1, keyword 3
 image: ./images/main.jpg
 ---
 
-This is example article 1. Vitae accusamus abhorreant vis ne. Ancillae suavitate
+This is example article 2. Vitae accusamus abhorreant vis ne. Ancillae suavitate
 persequeris ex est, vix ei aeque causae. An nisl adhuc ullamcorper sea, omnes
 labores senserit at pro. Mea graeci semper integre ex.
 
