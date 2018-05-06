@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import api from '../../../styles/api'
+import { api } from 'cssapi'
 import circle from '../../../styles/mixins/circle'
 import IconLink from '../../../shared/IconLink'
 

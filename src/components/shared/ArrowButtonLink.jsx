@@ -1,8 +1,8 @@
+import { api } from 'cssapi'
 import React from 'react'
 import styled from 'styled-components'
 import Button from '../shared/Button'
 import directionBounce from '../styles/animations/directionBounce'
-import api from '../styles/api'
 import arrow from '../styles/mixins/arrow'
 import singleLineTruncate from '../styles/mixins/singleLineTruncate'
 

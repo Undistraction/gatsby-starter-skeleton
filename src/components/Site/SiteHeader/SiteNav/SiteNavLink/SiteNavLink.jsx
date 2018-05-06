@@ -1,9 +1,9 @@
+import { api } from 'cssapi'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import { isHomePage } from '../../../../helpers/paths'
 import Button from '../../../../shared/Button'
-import api from '../../../../styles/api'
 import linkProps from '../../../../styles/mixins/linkProps'
 import underlineHover from '../../../../styles/mixins/underlineHover'
 

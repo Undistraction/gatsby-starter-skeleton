@@ -1,11 +1,24 @@
 import graphql from 'graphql'
-import React from 'react'
-import PropTypes from 'prop-types'
 import 'prismjs/themes/prism-twilight.css'
-import '../components/styles/global.css'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
 import Site from '../components/Site'
+import theApi from '../components/styles/api'
+import '../components/styles/global.css'
 
-const IndexLayout = ({ children, data }) => <Site data={data}>{children}</Site>
+// Note: VSCode currently doesn't respect object prop one-liner and removes
+// import, so we need to rename the prop. This is already fixed in the repo and
+// can be removed on next vscode releaase.
+const theme = {
+  api: theApi,
+}
+
+const IndexLayout = ({ children, data }) => (
+  <ThemeProvider theme={theme}>
+    <Site data={data}>{children}</Site>
+  </ThemeProvider>
+)
 
 IndexLayout.propTypes = {
   children: PropTypes.func.isRequired,

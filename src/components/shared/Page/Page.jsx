@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import api from '../../styles/api'
+import { api } from 'cssapi'
 import flexVertical from '../../styles/mixins/flexVertical'
 import PageBody from './PageBody'
 import PageHeader from './PageHeader'

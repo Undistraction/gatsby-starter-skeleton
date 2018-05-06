@@ -1,3 +1,4 @@
+import { api } from 'cssapi'
 import Img from 'gatsby-image'
 import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
@@ -9,7 +10,6 @@ import {
   frontmatterTitle,
 } from '../../helpers/markdown'
 import scaleBounce from '../../styles/animations/scaleBounce'
-import api from '../../styles/api'
 import curvedInset from '../../styles/mixins/curvedInset'
 import flexVertical from '../../styles/mixins/flexVertical'
 import linkProps from '../../styles/mixins/linkProps'

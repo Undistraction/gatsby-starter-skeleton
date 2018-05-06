@@ -1,9 +1,9 @@
+import { api } from 'cssapi'
 import PropTypes from 'prop-types'
 import { inc } from 'ramda'
 import React from 'react'
 import styled from 'styled-components'
 import NextPreviousNav from '../../shared/NextPreviousNav'
-import api from '../../styles/api'
 import ArticleList from './ArticleList/ArticleList'
 
 const ArticlesInfo = styled.div`

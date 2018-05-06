@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import api from '../../styles/api'
+import { api } from 'cssapi'
 
 export default styled.h2`
   ${api({

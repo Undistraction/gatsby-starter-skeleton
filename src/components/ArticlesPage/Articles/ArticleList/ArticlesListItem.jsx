@@ -1,3 +1,4 @@
+import { api } from 'cssapi'
 import Img from 'gatsby-image'
 import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
@@ -10,7 +11,6 @@ import {
   frontmatterTitle,
 } from '../../../helpers/markdown'
 import TextLink from '../../../shared/TextLink'
-import api from '../../../styles/api'
 import flexHorizontal from '../../../styles/mixins/flexHorizontal'
 import flexVertical from '../../../styles/mixins/flexVertical'
 import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'

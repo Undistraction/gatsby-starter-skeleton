@@ -1,8 +1,8 @@
+import { api } from 'cssapi'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import renderListItems from '../../helpers/renderListItems'
-import api from '../../styles/api'
 import HList from '../HList'
 import Tag from './Tag'
 
