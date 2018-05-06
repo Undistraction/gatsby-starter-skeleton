@@ -3,6 +3,6 @@ import api from '../api'
 
 export default values => css`
   & > * + * {
-    ${api.marginLeft(values)};
+    ${api({ marginLeft: values })};
   }
 `
