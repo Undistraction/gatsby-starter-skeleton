@@ -80,7 +80,7 @@
     "demo:deploy": "gh-pages -d demo/project/public",
     "demo:open": "open https://undistraction.github.io/gatsby-skeleton-starter",
     "demo":
-      "yarn demo:import && yarn demo:build && yarn demo:deploy && demo:open",
+      "yarn demo:import && yarn demo:build && yarn demo:deploy && yarn demo:open",
     "demo:dev": "cd ./demo/project && gatsby develop & yarn open",
     "demo:serve": "cd ./demo/project && gatsby serve & yarn open"
   },
