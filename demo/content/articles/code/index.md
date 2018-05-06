@@ -7,15 +7,55 @@ keywords: code, responsive
 image: ./images/main.jpg
 ---
 
-Embed code in your markdown and it will be styled using
-[Prism](http://prismjs.com/)
+There are a number of useful features to help you display code within your
+site's markdown content including syntax highlighting, the ability to embed code
+from files and to open code in a REPL.
+
+#### Basic Embedding
+
+Any code you embed using markdown's backtick syntax will be styled with Code
+will be styled using [Prism](http://prismjs.com/). If you follow the first three
+backticks with a keyword for the language, the correct highlighting will be used
+for that language, for example to embed JavaScript you would use the following:
+
+```
+&#96;&#96;&#96;javascript
+const example = 1
+&#96;&#96;&#96;
+```
+
+A full list of supported languages can be found
+[here](http://prismjs.com/#languages-list).
+
+The current prism theme is imported in the project's `./src/layout.js` file.
+
+#### External Files
+
+Any files you include in your project's `src/content/code` directory can be
+included with automatic syntax highlighting based on the file's extension using
+the following syntax within the markdown (note the backticks):
+
+```
+`embed:example.js`
+```
+
+Here is an example:
 
 `embed:example.js`
 
-You can also keep code examples locally in the `code` directory and open them up
-in a REPL of your choice:
+#### REPLs
 
-* [Open In Babel REPL](babel://example)
-* [Open In Codepen](codepen://example)
-* [Open In Code Sandbox](codesandbox://example)
-* [Open In Ramda](ramda://example)
+There is also a special syntax for opening JavaScript code in a REPL of your
+choice. By constructing a link using the filename of the repl as a prefix, a
+link will be constructed that opens an external page to the REPL with the
+contents of the file displayed.
+
+In the following examples, a file called `example.js` found in
+`src/content/code` will be opened in a REPL:
+
+```
+[Open In Babel REPL](babel://example)
+[Open In Codepen](codepen://example)
+[Open In Code Sandbox](codesandbox://example)
+[Open In Ramda](ramda://example)
+```

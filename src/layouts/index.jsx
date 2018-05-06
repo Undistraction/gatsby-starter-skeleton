@@ -1,5 +1,5 @@
 import graphql from 'graphql'
-import 'prismjs/themes/prism-twilight.css'
+import 'prismjs/themes/prism-tomorrow.css'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'

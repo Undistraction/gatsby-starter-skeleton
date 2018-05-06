@@ -82,7 +82,7 @@
     "demo":
       "yarn demo:import && yarn demo:build && yarn demo:deploy && yarn demo:open",
     "demo:dev":
-      "cd demo/project && rm -rf .cache && rm -rf content && cd ../ && cp -rf content project/content && cd project && yarn dev",
+      "cd demo && rm -rf project/.cache && rm -rf project/src/content && cp -r content project/src/content && cd project && yarn dev",
     "demo:serve": "cd ./demo/project && gatsby serve"
   },
   "devDependencies": {
