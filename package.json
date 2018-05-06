@@ -81,8 +81,9 @@
     "demo:open": "open https://undistraction.github.io/gatsby-skeleton-starter",
     "demo":
       "yarn demo:import && yarn demo:build && yarn demo:deploy && yarn demo:open",
-    "demo:dev": "cd ./demo/project && gatsby develop & yarn open",
-    "demo:serve": "cd ./demo/project && gatsby serve & yarn open"
+    "demo:dev":
+      "cd demo/project && rm -rf .cache && rm -rf content && cd ../ && cp -rf content project/content && cd project && yarn dev",
+    "demo:serve": "cd ./demo/project && gatsby serve"
   },
   "devDependencies": {
     "eslint": "^4.8.0",
