@@ -50,8 +50,13 @@ choice. By constructing a link using the filename of the repl as a prefix, a
 link will be constructed that opens an external page to the REPL with the
 contents of the file displayed.
 
+* [Open In Babel REPL](babel://example)
+* [Open In Codepen](codepen://example)
+* [Open In Code Sandbox](codesandbox://example)
+* [Open In Ramda](ramda://example)
+
 In the following examples, a file called `example.js` found in
-`src/content/code` will be opened in a REPL:
+`src/content/code` will be opened in a the chosen REPL:
 
 ```
 [Open In Babel REPL](babel://example)
