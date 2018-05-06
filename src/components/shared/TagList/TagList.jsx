@@ -7,15 +7,12 @@ import HList from '../HList'
 import Tag from './Tag'
 
 const Layout = styled(HList)`
-  ${api({
-    margin: `-0.25ru`,
-  })};
-
   > * {
     ${api({
       // Parent shoudln't usually manipulate padding of child, but here it is
       // used for layout so it's OK.
-      padding: `0.125ru`,
+      paddingRight: `0.25ru`,
+      paddingBottom: `0.25ru`,
     })};
   }
 `

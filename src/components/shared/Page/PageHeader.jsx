@@ -3,28 +3,32 @@ import React from 'react'
 import styled from 'styled-components'
 import api from '../../styles/api'
 import curvedInset from '../../styles/mixins/curvedInset'
-import transformCenterH from '../../styles/mixins/transformCenterH'
+import flexVertical from '../../styles/mixins/flexVertical'
 
 const PageTitle = styled.h1`
+  position: relative;
   font-weight: bold;
+  text-align: center;
+  z-index: 2;
   ${curvedInset(`bottom`)};
+
   ${api({
-    padding: `0.2ru 2ru`,
+    padding: `0 2ru`,
     baseline: `s:primaryTitle`,
   })};
 `
 
 const Wrapper = styled.header`
-  position: relative;
-  ${api({
-    textAlign: `center`,
-  })};
+  ${flexVertical};
+  position: absolute;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
 
-  ${PageTitle} {
-    ${transformCenterH};
-    position: absolute;
-    z-index: 2;
-  }
+  ${api({
+    paddingH: `1ru`,
+  })};
 `
 
 const PageHeader = ({ title }) => (

@@ -7,12 +7,13 @@ import PageBody from './PageBody'
 import PageHeader from './PageHeader'
 
 export const Header = styled.div``
-export const Body = styled.div``
+export const Body = styled.article``
 
 const Layout = styled.div`
   ${flexVertical};
 
   ${Header} {
+    position: relative;
     ${({ hasImage }) =>
       api({
         flex: `0 0 auto`,
@@ -22,7 +23,6 @@ const Layout = styled.div`
 
   ${Body} {
     flex: 1 0 auto;
-  }
 `
 
 const Page = ({ title, children, hasImage }) => (

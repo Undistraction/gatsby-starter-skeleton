@@ -1,31 +1,24 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import styled from 'styled-components'
-import TagList from '../../shared/TagList'
-import HTMLText from '../../shared/HTMLText'
-import flexVertical from '../../styles/mixins/flexVertical'
-import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
 import {
+  fieldsSlug,
+  fieldsTags,
+  frontmatterTitle,
   markdownItem,
   next,
   previous,
-  frontmatterTitle,
-  fieldsSlug,
-  fieldsTags,
 } from '../../helpers/markdown'
+import HTMLText from '../../shared/HTMLText'
 import NextPreviousNav from '../../shared/NextPreviousNav'
+import TagList from '../../shared/TagList'
 
-const Layout = styled.article`
-  ${flexVertical};
-  ${spaceChildrenV(`1ru`)};
-`
 const Article = ({ data }) => {
   const article = markdownItem(data)
   const previousArticle = previous(data)
   const nextArticle = next(data)
 
   return (
-    <Layout>
+    <React.Fragment>
       <NextPreviousNav
         previousLabel={frontmatterTitle(previousArticle)}
         nextLabel={frontmatterTitle(nextArticle)}
@@ -34,7 +27,7 @@ const Article = ({ data }) => {
       />
       <HTMLText htmlText={article.html} />
       <TagList tags={fieldsTags(article)} />
-    </Layout>
+    </React.Fragment>
   )
 }
 

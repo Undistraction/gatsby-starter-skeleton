@@ -4,8 +4,6 @@ import React from 'react'
 import styled from 'styled-components'
 import NextPreviousNav from '../../shared/NextPreviousNav'
 import api from '../../styles/api'
-import flexVertical from '../../styles/mixins/flexVertical'
-import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
 import ArticleList from './ArticleList/ArticleList'
 
 const ArticlesInfo = styled.div`
@@ -23,16 +21,11 @@ const Header = styled.header`
 
 const Body = styled.div``
 
-const Layout = styled.div`
-  ${flexVertical};
-  ${spaceChildrenV(`1ru`)};
-`
-
 const Articles = ({ articles, pagination }) => {
   const { total, startIndex, endIndex, previousPath, nextPath } = pagination
 
   return (
-    <Layout>
+    <React.Fragment>
       <Header>
         <NextPreviousNav
           previousLabel="Newer"
@@ -47,7 +40,7 @@ const Articles = ({ articles, pagination }) => {
       <Body>
         <ArticleList articles={articles} />
       </Body>
-    </Layout>
+    </React.Fragment>
   )
 }
 

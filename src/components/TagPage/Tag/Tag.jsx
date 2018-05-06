@@ -1,11 +1,11 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { isEmptyArray } from 'ramda-adjunct'
+import React from 'react'
 import styled from 'styled-components'
-import ResourceList from './ResourceList'
+import TagList from '../../shared/TagList'
 import flexVertical from '../../styles/mixins/flexVertical'
 import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
-import TagList from '../../shared/TagList'
+import ResourceList from './ResourceList'
 
 const Header = styled.header`
   ${flexVertical};
@@ -17,13 +17,8 @@ const Footer = styled.footer``
 
 const Body = styled.div``
 
-const Layout = styled.div`
-  ${flexVertical};
-  ${spaceChildrenV(`2ru`)};
-`
-
 const Tag = ({ taggedItems, tag, tags }) => (
-  <Layout>
+  <React.Fragment>
     {isEmptyArray(taggedItems) ? (
       <p>No tags found for: {tag}</p>
     ) : (
@@ -39,7 +34,7 @@ const Tag = ({ taggedItems, tag, tags }) => (
         </Footer>
       </React.Fragment>
     )}
-  </Layout>
+  </React.Fragment>
 )
 
 Tag.propTypes = {

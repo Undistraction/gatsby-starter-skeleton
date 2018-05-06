@@ -1,15 +1,17 @@
-import styled from 'styled-components'
 import React from 'react'
-import api from '../styles/api'
-import arrow from '../styles/mixins/arrow'
+import styled from 'styled-components'
 import Button from '../shared/Button'
 import directionBounce from '../styles/animations/directionBounce'
+import api from '../styles/api'
+import arrow from '../styles/mixins/arrow'
+import singleLineTruncate from '../styles/mixins/singleLineTruncate'
 
 const Wrapper = styled.div`
   position: relative;
   z-index: 1;
   ${p => p.direction}: 0;
   ${p => arrow(p.direction, `0.6ru`, `g:backgroundInverted`)};
+  ${singleLineTruncate};
 
   &:hover {
     animation: ${({ direction }) =>
@@ -19,9 +21,7 @@ const Wrapper = styled.div`
 
 const Link = styled(Button)`
   display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+
   ${api({
     padding: `0.4ru 1ru`,
   })};
