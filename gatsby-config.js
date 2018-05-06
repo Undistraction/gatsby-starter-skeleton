@@ -20,9 +20,9 @@ const plugins = [
   `gatsby-transformer-sharp`,
   feed(),
   favicon(),
-  sourceFileSystem(`articles`),
-  sourceFileSystem(`pages`),
-  sourceFileSystem(`projects`),
+  sourceFileSystem(config.structure.resources.articles.path),
+  sourceFileSystem(`/pages`),
+  sourceFileSystem(config.structure.resources.projects.path),
   remark(config),
 ]
 
