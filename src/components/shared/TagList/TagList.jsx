@@ -1,23 +1,20 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import flexHorizontal from '../../styles/mixins/flexHorizontal'
-import uiList from '../../styles/mixins/uiList'
-import Tag from './Tag'
-import api from '../../styles/api'
 import renderListItems from '../../helpers/renderListItems'
+import api from '../../styles/api'
+import HList from '../HList'
+import Tag from './Tag'
 
-const Layout = styled.ul`
-  ${flexHorizontal};
-  ${uiList};
-  flex-wrap: wrap;
-
+const Layout = styled(HList)`
   ${api({
     margin: `-0.25ru`,
   })};
 
   > * {
     ${api({
+      // Parent shoudln't usually manipulate padding of child, but here it is
+      // used for layout so it's OK.
       padding: `0.125ru`,
     })};
   }

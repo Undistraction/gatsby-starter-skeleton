@@ -1,15 +1,10 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import styled from 'styled-components'
-import spaceChildrenV from '../../../styles/mixins/spaceChildrenV'
-import uiList from '../../../styles/mixins/uiList'
-import ResourceListItem from './ResourceListItem'
 import renderListItems from '../../../helpers/renderListItems'
+import VList from '../../../shared/VList'
+import ResourceListItem from './ResourceListItem'
 
-const Layout = styled.ul`
-  ${uiList};
-  ${spaceChildrenV([`1ru`])};
-`
+const Layout = VList
 
 const ResourceList = ({ resources }) => (
   <Layout>{renderListItems(ResourceListItem, `resource`, resources)}</Layout>
