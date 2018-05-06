@@ -75,7 +75,7 @@
     "lint:js": "eslint src",
     "lint:css": "stylelint './src/**/*.js'",
     "lint": "npm run lint:js && npm run lint:css",
-    "demo:import": "bash scripts/demo-create.sh",
+    "demo:import": "bash scripts/demo-import.sh",
     "demo:build": "cd ./demo/project && gatsby build --prefix-paths",
     "demo:deploy": "gh-pages -d demo/project/public",
     "demo:open": "open https://undistraction.github.io/gatsby-skeleton-starter",
