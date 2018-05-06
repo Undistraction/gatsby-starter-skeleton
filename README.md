@@ -159,9 +159,20 @@ This process consists of the following steps:
 
 5. The demo version is deployed to Github pages.
 
-There are granular commands for each step, or the entire process can be run
-using:
+There are granular commands for each step:
+
+* `demo:import`
+* `demo:build`
+* `demo:deploy`
+* `demo:open`
+
+Or the entire process can be run using:
 
 ```bash
 yarn demo
 ```
+
+There are also convenience commands for testing the demo locally:
+
+* `demo:dev`
+* `demo:serve`
