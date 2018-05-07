@@ -11,7 +11,7 @@ const PageText = styled.div`
     })};
   }
 
-  > * > * {
+  > * + * {
     ${api({
       marginTop: scope`1ru`,
     })};
