@@ -1,17 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
-import Page from '../shared/Page'
+import PropTypes from 'prop-types'
+import React from 'react'
 import HTMLText from '../../components/shared/HTMLText'
+import { htmlAst, markdownItemImageSizes } from '../helpers/markdown'
+import { homePageMetadata, homePageTitle } from '../helpers/siteMetadata'
 import Metadata from '../shared/Metadata'
-import { htmlText, markdownItemImageSizes } from '../helpers/markdown'
-import { homePageTitle, homePageMetadata } from '../helpers/siteMetadata'
+import Page from '../shared/Page'
 
 const HomePage = ({ data }) => (
   <Page title={homePageTitle(data)}>
     <Metadata {...homePageMetadata(data)} />
     <Img sizes={markdownItemImageSizes(data)} />
-    <HTMLText htmlText={htmlText(data)} />
+    <HTMLText htmlAst={htmlAst(data)} />
   </Page>
 )
 

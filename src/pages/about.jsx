@@ -9,7 +9,7 @@ export default AboutPage
 export const query = graphql`
   query AboutPageQuery {
     markdownRemark(frontmatter: { slug: { eq: "about" } }) {
-      html
+      htmlAst
       frontmatter {
         image {
           childImageSharp {

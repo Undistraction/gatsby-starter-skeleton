@@ -11,7 +11,7 @@ export const query = graphql`
     $dateFormat: String
   ) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+      htmlAst
       frontmatter {
         date(formatString: $dateFormat)
         keywords

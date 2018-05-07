@@ -1,6 +1,5 @@
-import { scope } from 'cssapi'
+import { api, scope } from 'cssapi'
 import styled from 'styled-components'
-import api from '../styles/api'
 
 const TitlePrimary = styled.h1`
   font-weight: bold;

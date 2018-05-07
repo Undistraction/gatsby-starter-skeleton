@@ -1,5 +1,4 @@
 import graphql from 'graphql'
-
 import NotFoundPage from '../components/NotFoundPage'
 
 export default NotFoundPage

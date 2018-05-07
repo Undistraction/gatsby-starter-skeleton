@@ -35,7 +35,7 @@ const Project = ({ data }) => {
         />
       </Header>
       <Body>
-        <HTMLText htmlText={project.html} />
+        <HTMLText htmlAst={project.htmlAst} />
       </Body>
       <Footer>
         <TagList tags={fieldsTags(project)} />

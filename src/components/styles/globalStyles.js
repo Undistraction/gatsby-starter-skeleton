@@ -57,13 +57,15 @@ export default api =>
     }
 
     b,
-    em {
+    strong {
       font-weight: bold;
     }
 
-    i {
+    i,
+    em {
       font-style: italic;
     }
+
 
     p {
       margin: 0;
@@ -93,6 +95,17 @@ export default api =>
         fontWeight: `normal`,
         margin: [0],
       })}
+    }
+
+    /* ---------------------------------------------------------------------- */
+    /* List
+    /* ---------------------------------------------------------------------- */
+
+    ul,
+    ol {
+      padding-left: 0;
+      margin-left: 0;
+      list-style: none;
     }
 
 

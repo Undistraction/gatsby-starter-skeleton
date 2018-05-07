@@ -1,6 +1,6 @@
+import { api } from 'cssapi'
 import React from 'react'
 import styled from 'styled-components'
-import api from '../styles/api'
 import fixAspectRatio from '../styles/mixins/fixAspectRatio'
 
 const Layout = styled.div`

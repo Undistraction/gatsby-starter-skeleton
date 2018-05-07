@@ -9,7 +9,7 @@ export default HomePage
 export const query = graphql`
   query HomePageQuery {
     markdownRemark(frontmatter: { slug: { eq: "home" } }) {
-      html
+      htmlAst
       frontmatter {
         image {
           childImageSharp {

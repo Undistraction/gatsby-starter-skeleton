@@ -26,7 +26,7 @@ const lImageSizes = lensPath([`image`, `childImageSharp`, `sizes`])
 // Views
 // -----------------------------------------------------------------------------
 
-export const htmlText = view(compose(lMarkdownItem, lensProp(`html`)))
+export const htmlAst = view(compose(lMarkdownItem, lensProp(`htmlAst`)))
 export const markdownItem = view(lMarkdownItem)
 export const markdownItems = view(lMarkdownItems)
 export const markdownItemNodes = compose(pluck(`node`), view(lMarkdownItems))

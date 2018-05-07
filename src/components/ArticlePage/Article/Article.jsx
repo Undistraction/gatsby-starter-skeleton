@@ -16,6 +16,7 @@ const Article = ({ data }) => {
   const article = markdownItem(data)
   const previousArticle = previous(data)
   const nextArticle = next(data)
+  console.log(`ART`, article)
 
   return (
     <React.Fragment>
@@ -25,7 +26,7 @@ const Article = ({ data }) => {
         previousPath={fieldsSlug(previousArticle)}
         nextPath={fieldsSlug(nextArticle)}
       />
-      <HTMLText htmlText={article.html} />
+      <HTMLText htmlAst={article.htmlAst} />
       <TagList tags={fieldsTags(article)} />
     </React.Fragment>
   )

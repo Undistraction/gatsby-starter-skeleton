@@ -30,7 +30,8 @@ const plugins = [
   // Remove trailing slashes from urls
   `gatsby-plugin-remove-trailing-slashes`,
   // Audit page for accessibility issues
-  `gatsby-plugin-accessibilityjs`,
+  // Toggle to check for accessiblity issues
+  // `gatsby-plugin-accessibilityjs`,
   // Generate ./sitemap.xml for pages
   sitemap(),
   // Add robots.txt page

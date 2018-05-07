@@ -1,46 +1,53 @@
 import { api, scope } from 'cssapi'
 import PropTypes from 'prop-types'
 import React from 'react'
+import RehypeReact from 'rehype-react'
 import styled from 'styled-components'
+import TextLink from '../../../demo/project/src/components/shared/TextLink'
+import dropCap from '../styles/mixins/dropCap'
+import BlockQuote from './BlockQuote'
+import HorizontalRule from './HorizontalRule'
+import OrderedList from './OrderedList'
+import TitleSecondary from './TitleSecondary'
+import TitleTertiary from './TitleTertiary'
+import UnorderedList from './UnorderedList'
+
+const renderAst = new RehypeReact({
+  createElement: React.createElement,
+  components: {
+    h2: TitleSecondary,
+    h3: TitleTertiary,
+    ul: UnorderedList,
+    ol: OrderedList,
+    blockquote: BlockQuote,
+    a: TextLink,
+    hr: HorizontalRule,
+  },
+}).Compiler
 
 const PageText = styled.div`
-  p:first-child {
+  p:first-of-type {
     font-weight: bold;
     ${api({
       baseline: scope`s:lede`,
     })};
   }
 
-  > * + * {
+  div > * + * {
     ${api({
       marginTop: scope`1ru`,
     })};
   }
 
-  p:first-child:first-letter {
-    float: left;
-    display: block;
-    width: 200px;
-    min-height: 100px;
-    font-weight: normal;
-    color: white;
-    vertical-align: bottom;
-    ${api({
-      baseline: scope`s:megaTitle`,
-      background: `g:backgroundInverted`,
-      marginRight: `0.3em`,
-      padding: `0.2em 0.6em 0.1em`,
-    })};
+  div > p:first-of-type:first-letter {
+    ${dropCap(api)};
   }
 `
 
-const HTMLText = ({ htmlText }) => (
-  // eslint-disable-next-line react/no-danger
-  <PageText dangerouslySetInnerHTML={{ __html: htmlText }} />
-)
+const HTMLText = ({ htmlAst }) => <PageText>{renderAst(htmlAst)}</PageText>
 
 HTMLText.propTypes = {
-  htmlText: PropTypes.string.isRequired,
+  htmlAst: PropTypes.string.isRequired,
 }
 
 export default HTMLText
