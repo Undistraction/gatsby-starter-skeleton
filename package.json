@@ -78,10 +78,11 @@
     "demo:import": "bash scripts/demo-import.sh",
     "demo:copyContent": "bash scripts/demo-copy-content.sh",
     "demo:build": "cd ./demo/project && gatsby build --prefix-paths",
-    "demo:deploy": "gh-pages -d demo/project/public",
+    "demo:githubPages": "gh-pages -d demo/project/public",
     "demo:open": "open https://undistraction.github.io/gatsby-skeleton-starter",
-    "demo":
-      "yarn demo:import && yarn demo:copyContent && yarn demo:build && yarn demo:deploy && yarn demo:open",
+    "demo:update": "yarn demo:import && yarn demo:dev",
+    "demo:deploy":
+      "yarn demo:import && yarn demo:copyContent && yarn demo:build && yarn demo:githubPages && yarn demo:open",
     "demo:deleteCache": "bash scripts/demo-delete-cache.sh",
     "demo:dev":
       "yarn demo:deleteCache && yarn demo:copyContent && cd demo/project && yarn dev",
