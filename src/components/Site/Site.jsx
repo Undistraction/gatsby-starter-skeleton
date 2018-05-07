@@ -1,8 +1,8 @@
+import { api } from 'cssapi'
 import PropTypes from 'prop-types'
 import { merge } from 'ramda'
 import React from 'react'
 import styled from 'styled-components'
-import { api } from 'cssapi'
 import blockCenterH from '../styles/mixins/blockCenterH'
 import flexVertical from '../styles/mixins/flexVertical'
 import SiteBody from './SiteBody'
@@ -16,7 +16,6 @@ export const Footer = styled.div``
 const Layout = styled.div`
   ${flexVertical};
   ${blockCenterH};
-
   ${api({
     minHeight: `100vh`,
     maxWidth: [1100],

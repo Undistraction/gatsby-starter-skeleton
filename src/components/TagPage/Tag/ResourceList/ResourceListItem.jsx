@@ -29,11 +29,7 @@ const Info = styled.div`
   ${flexVertical};
   ${spaceChildrenV(`0.5ru`)};
 `
-const Header = styled.header`
-  > * {
-    display: block;
-  }
-`
+const Header = styled.header``
 
 const Body = styled.div``
 const Layout = styled.div`

@@ -1,6 +1,7 @@
 import { scope } from 'cssapi'
 import { injectGlobal } from 'styled-components'
 import styledNormalize from 'styled-normalize'
+import insetBorder from './mixins/insetBorder'
 
 export default api =>
   /* eslint-disable no-unused-expressions */
@@ -33,6 +34,8 @@ export default api =>
     html {
       overflow-y: scroll;
       overflow-x: hidden;
+      position: relative;
+      ${insetBorder(api)};
     }
 
     body {

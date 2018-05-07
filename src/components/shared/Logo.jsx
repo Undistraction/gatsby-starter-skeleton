@@ -1,23 +1,28 @@
-import { api } from 'cssapi'
 import React from 'react'
 import styled from 'styled-components'
+import api from '../styles/api'
+import fixAspectRatio from '../styles/mixins/fixAspectRatio'
 
 const Layout = styled.div`
-  position: relative;
-  width: 100%;
-  // (height / width) * 100
-  padding-bottom: 117.7083333%;
+  ${fixAspectRatio(96, 113)};
 
-  svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    path {
+  /* Have to use an id instead of a classname */
+  #logoGrad {
+    .gradientStart {
       ${api({
-        fill: `c:backgroundInvertedEnd`,
+        color: `c:backgroundInvertedStart`,
       })};
     }
+
+    .gradientEnd {
+      ${api({
+        color: `c:backgroundInvertedEnd`,
+      })};
+    }
+  }
+
+  svg path {
+    fill: url(#logoGrad);
   }
 `
 
@@ -34,6 +39,12 @@ const Logo = () => (
       viewBox="0 0 96 113"
     >
       <title>Skull Logo</title>
+      <defs>
+        <linearGradient id="logoGrad">
+          <stop offset="0" className="gradientStart" />
+          <stop offset="1" className="gradientEnd" />
+        </linearGradient>
+      </defs>
       <path d="M88.4,72c1-8.7,2.6-9.1,4.5-16.2c8-29-13.8-55.2-44.7-55.3l0,0h-0.1H48h-0.1l0,0l0,0h-0.1h-0.1h-0.1l0,0
 						C16.8,0.7-4.9,26.8,3,55.9c1.9,7,3.5,7.4,4.5,16.2c-7.4,3.6-8,21.8,8.1,21c4.2-0.5,8.9-2.5,8.9,3l-3.3,14.3c0,0,0,2.3,2,2.3
 						c1,0,48.6,0,49.6,0c2.2,0,2-2.4,2-2.4L71.5,96c0-5.5,4.6-3.5,8.9-3C96.4,93.9,95.9,75.7,88.4,72z M36.9,71.3
