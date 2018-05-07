@@ -5,10 +5,18 @@ import globalStyles from './globalStyles'
 // Define Breakpoints
 // -----------------------------------------------------------------------------
 
+const BREAKPOINT_NAMES = Object.freeze({
+  SMALL_UP: `smallUp`,
+  MEDIUM_UP: `mediumUp`,
+  LARGE_UP: `largeUp`,
+})
+
+const { SMALL_UP, MEDIUM_UP, LARGE_UP } = BREAKPOINT_NAMES
+
 const breakpoints = [
-  [`smallUp`, 400], // 400–900
-  [`mediumUp`, 900], // 900–1100
-  [`largeUp`, 1100], // 1100–
+  [SMALL_UP, 400], // 400–900
+  [MEDIUM_UP, 900], // 900–1100
+  [LARGE_UP, 1100], // 1100–
 ]
 
 // -----------------------------------------------------------------------------
@@ -23,6 +31,15 @@ const config = {
     rhythm,
     baseline: {
       lineHeight: rhythm, // Baseline height
+    },
+    scale: {
+      smallprint: `10`,
+      body: `14`,
+      lede: `16`,
+      secondaryTitle: `18`,
+      primaryTitle: `24`,
+      megaTitle: `28`,
+      giant: `44`,
     },
     color: {
       // Colours
@@ -47,14 +64,6 @@ const config = {
       activeInverted: `c:darkGrey`,
       highlightInverted: `c:grey`,
     },
-    scale: {
-      smallprint: `14`,
-      body: `18`,
-      secondaryTitle: `20`,
-      primaryTitle: `28`,
-      megaTitle: `32`,
-      giant: `80`,
-    },
     font: {
       default: `Cousine, monospace`,
       title: `Berkshire Swash, cursive`,
@@ -63,6 +72,29 @@ const config = {
       background: `linear-gradient(to bottom, c:backgroundStart, c:backgroundEnd 18%)`,
       backgroundInverted: `linear-gradient(to bottom, c:backgroundInvertedStart, c:backgroundInvertedEnd)`,
     },
+    // -------------------------------------------------------------------------
+    // SCOPES
+    // -------------------------------------------------------------------------
+    scopes: [
+      {
+        resolve: [SMALL_UP, MEDIUM_UP, LARGE_UP],
+        data: {
+          rhythm,
+          // baseline: {
+          //   lineHeight: rhythm, // Baseline height
+          // },
+          scale: {
+            smallprint: `14`,
+            body: `18`,
+            lede: `20`,
+            secondaryTitle: `22`,
+            primaryTitle: `28`,
+            megaTitle: `32`,
+            giant: `80`,
+          },
+        },
+      },
+    ],
   },
 }
 

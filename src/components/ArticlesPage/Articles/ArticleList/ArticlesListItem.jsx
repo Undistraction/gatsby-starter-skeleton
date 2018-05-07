@@ -1,4 +1,4 @@
-import { api } from 'cssapi'
+import { api, scope } from 'cssapi'
 import Img from 'gatsby-image'
 import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
@@ -32,26 +32,30 @@ const Layout = styled.div`
   ${spaceChildrenH(`1ru`)};
 
   ${Media} {
-    width: 25%;
+    flex: 0 0 25%;
   }
 `
 
 const Date = styled.time`
   ${api({
-    fontSize: `s:smallprint`,
+    fontSize: scope`s:smallprint`,
   })};
 `
 
 const ArticlesListItem = ({ article }) => (
   <Layout>
     <Media>
-      <Link to={fieldsSlug(article)}>
+      <Link to={fieldsSlug(article)} title={frontmatterTitle(article)}>
         <Img sizes={frontmatterImageSizes(article)} />
       </Link>
     </Media>
     <Info>
       <Header>
-        <TextLink to={fieldsSlug(article)} underlineType="left">
+        <TextLink
+          to={fieldsSlug(article)}
+          title={frontmatterTitle(article)}
+          underlineType="left"
+        >
           {frontmatterTitle(article)}
         </TextLink>
         <Date>{frontmatterDate(article)}</Date>

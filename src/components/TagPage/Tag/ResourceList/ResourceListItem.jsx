@@ -38,7 +38,7 @@ const Layout = styled.div`
   ${spaceChildrenH(`1ru`)};
 
   ${Media} {
-    width: 25%;
+    flex: 0 0 25%;
   }
 `
 
@@ -47,13 +47,17 @@ const ResourceListItem = ({ resource }) => {
   return (
     <Layout>
       <Media>
-        <Link to={slug}>
+        <Link to={slug} title={frontmatterTitle(resource)}>
           <Img sizes={frontmatterImageSizes(resource)} />
         </Link>
       </Media>
       <Info>
         <Header>
-          <TextLink to={slug} underlineType="left">
+          <TextLink
+            to={slug}
+            title={frontmatterTitle(resource)}
+            underlineType="left"
+          >
             {frontmatterTitle(resource)}
           </TextLink>
           <ResourceType>{firstToUpper(fieldsType(resource))}</ResourceType>

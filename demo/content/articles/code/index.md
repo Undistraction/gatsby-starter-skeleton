@@ -18,11 +18,11 @@ will be styled using [Prism](http://prismjs.com/). If you follow the first three
 backticks with a keyword for the language, the correct highlighting will be used
 for that language, for example to embed JavaScript you would use the following:
 
-```
-&#96;&#96;&#96;javascript
+````markdown
+```javascript
 const example = 1
-&#96;&#96;&#96;
 ```
+````
 
 A full list of supported languages can be found
 [here](http://prismjs.com/#languages-list).
@@ -35,7 +35,7 @@ Any files you include in your project's `src/content/code` directory can be
 included with automatic syntax highlighting based on the file's extension using
 the following syntax within the markdown (note the backticks):
 
-```
+```markdown
 `embed:example.js`
 ```
 
@@ -58,9 +58,9 @@ contents of the file displayed.
 In the following examples, a file called `example.js` found in
 `src/content/code` will be opened in a the chosen REPL:
 
-```
-[Open In Babel REPL](babel://example)
-[Open In Codepen](codepen://example)
-[Open In Code Sandbox](codesandbox://example)
-[Open In Ramda](ramda://example)
+```markdown
+* [Open In Babel REPL](babel://example)
+* [Open In Codepen](codepen://example)
+* [Open In Code Sandbox](codesandbox://example)
+* [Open In Ramda](ramda://example)
 ```

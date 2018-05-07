@@ -16,8 +16,8 @@ supplied, the embed will not be made responsive.
 
 A standed YouTube embed:
 
-```
-&lt;iframe src="https://www.youtube.com/embed/v30Ml-9xsRQ" frameborder="0" allowfullscreen></iframe>
+```markdown
+<iframe src="https://www.youtube.com/embed/v30Ml-9xsRQ" frameborder="0" allowfullscreen></iframe>
 ```
 
 <iframe src="https://www.youtube.com/embed/v30Ml-9xsRQ" frameborder="0"
@@ -25,8 +25,8 @@ allowfullscreen></iframe>
 
 A responisive YouTube embed:
 
-```
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/v30Ml-9xsRQ" frameborder="0" allowfullscreen></iframe>
+```markdown
+<iframe width="560" height="315" src="https://www.youtube.com/embed/v30Ml-9xsRQ" frameborder="0" allowfullscreen></iframe>
 ```
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/v30Ml-9xsRQ" frameborder="0" allowfullscreen></iframe>
@@ -35,13 +35,13 @@ A responisive YouTube embed:
 
 A standard Vimeo embed:
 
-```
-&lt;iframe src="https://player.vimeo.com/video/40686155?portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+```markdown
+<iframe src="https://player.vimeo.com/video/40686155?portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 ```
 
 A responsive Vimeo embed:
 
-```
+```markdown
 <iframe src="https://player.vimeo.com/video/40686155?portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 ```
 
@@ -51,8 +51,8 @@ A responsive Vimeo embed:
 
 A Soundcloud embed (Soundcloud embed are already responsive):
 
-```
-&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/188212367&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+```markdown
+<iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/188212367&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
 ```
 
 <iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/188212367&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>

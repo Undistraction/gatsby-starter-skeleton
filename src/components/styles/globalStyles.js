@@ -1,3 +1,4 @@
+import { scope } from 'cssapi'
 import { injectGlobal } from 'styled-components'
 import styledNormalize from 'styled-normalize'
 
@@ -48,7 +49,7 @@ export default api =>
       word-spacing: -0.05em;
       ${api({
         fontFamily: `f:default`,
-        baseline: `scale:body`,
+        baseline: scope`s:body`,
       })}
     }
 
@@ -67,9 +68,9 @@ export default api =>
       max-width: 60em;
     }
 
-    p + p {
+    * + p {
       ${api({
-        marginTop: `1ru`,
+        marginTop: scope`1ru`,
       })}
     }
 
@@ -85,7 +86,7 @@ export default api =>
     h5,
     h6 {
       ${api({
-        baseline: `s:body`,
+        baseline: scope`s:body`,
         fontWeight: `normal`,
         margin: [0],
       })}

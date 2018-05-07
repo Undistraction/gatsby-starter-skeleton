@@ -1,4 +1,4 @@
-import { api } from 'cssapi'
+import { api, s } from 'cssapi'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
@@ -11,7 +11,7 @@ const Layout = styled(HList)`
     ${api({
       // Parent shoudln't usually manipulate padding of child, but here it is
       // used for layout so it's OK.
-      paddingRight: `0.25ru`,
+      paddingRight: s`0.25ru`,
       paddingBottom: `0.25ru`,
     })};
   }

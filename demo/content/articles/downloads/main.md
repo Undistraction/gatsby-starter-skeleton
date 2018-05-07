@@ -17,3 +17,5 @@ create download links for those files like this:
 ```
 
 [Download this](pdfs/download-1.pdf) or [Download this](pdfs/download-2.pdf)
+
+Files will be served from `/downloads`.

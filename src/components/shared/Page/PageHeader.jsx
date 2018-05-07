@@ -1,7 +1,7 @@
+import { api, scope } from 'cssapi'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import { api } from 'cssapi'
 import curvedInset from '../../styles/mixins/curvedInset'
 import flexVertical from '../../styles/mixins/flexVertical'
 
@@ -14,7 +14,7 @@ const PageTitle = styled.h1`
 
   ${api({
     padding: `0 2ru`,
-    baseline: `s:primaryTitle`,
+    baseline: scope`s:primaryTitle`,
   })};
 `
 

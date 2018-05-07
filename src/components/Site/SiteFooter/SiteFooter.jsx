@@ -1,4 +1,4 @@
-import { api } from 'cssapi'
+import { api, scope } from 'cssapi'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
@@ -15,7 +15,7 @@ const Layout = styled.footer`
 
   ${api({
     padding: `4ru 0 1ru`,
-    baseline: `s:smallprint`,
+    baseline: scope`s:smallprint`,
   })};
 
   > * {

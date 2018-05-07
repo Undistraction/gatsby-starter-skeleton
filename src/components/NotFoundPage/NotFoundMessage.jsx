@@ -1,4 +1,4 @@
-import { api } from 'cssapi'
+import { api, scope } from 'cssapi'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
@@ -29,7 +29,7 @@ const Header = styled.header`
   ${spaceChildrenH(`-3ru`)};
   align-items: center;
   ${api({
-    fontSize: `s:giant`,
+    fontSize: scope`s:giant`,
     fontFamily: `f:title`,
     marginH: `auto`,
   })};

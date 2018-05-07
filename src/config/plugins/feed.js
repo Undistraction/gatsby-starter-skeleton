@@ -31,16 +31,18 @@ module.exports = () => ({
             allMarkdownRemark(
               limit: 1000,
               sort: { order: DESC, fields: [frontmatter___date] },
-              filter: { fields: { slug: { regex: "/articles/./" } } }
+              filter: { fields: { type: { eq: "article" } } }
             ) {
               edges {
                 node {
                   excerpt
                   html
-                  fields { slug }
+                  fields { 
+                    slug 
+                  }
                   frontmatter {
                     title
-                    date
+                    date(formatString: "ddd, DD MMM YYYY HH:mm:ss zzz")
                   }
                 }
               }
