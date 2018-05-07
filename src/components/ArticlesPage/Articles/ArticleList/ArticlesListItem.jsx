@@ -42,30 +42,29 @@ const Date = styled.time`
   })};
 `
 
-const ArticlesListItem = ({ article }) => (
-  <Layout>
-    <Media>
-      <Link to={fieldsSlug(article)} title={fieldsTitle(article)}>
-        <Img sizes={frontmatterImageSizes(article)} />
-      </Link>
-    </Media>
-    <Info>
-      <Header>
-        <TextLink
-          to={fieldsSlug(article)}
-          title={fieldsTitle(article)}
-          underlineType="left"
-        >
-          {fieldsTitle(article)}
-        </TextLink>
-        <Date>{frontmatterDate(article)}</Date>
-      </Header>
-      <Body>
-        <p>{article.excerpt}</p>
-      </Body>
-    </Info>
-  </Layout>
-)
+const ArticlesListItem = ({ article }) => {
+  const title = fieldsTitle(article)
+  return (
+    <Layout>
+      <Media>
+        <Link to={fieldsSlug(article)} title={title}>
+          <Img sizes={frontmatterImageSizes(article)} />
+        </Link>
+      </Media>
+      <Info>
+        <Header>
+          <TextLink to={fieldsSlug(article)} title={title} underlineType="left">
+            {title}
+          </TextLink>
+          <Date>{frontmatterDate(article)}</Date>
+        </Header>
+        <Body>
+          <p>{article.excerpt}</p>
+        </Body>
+      </Info>
+    </Layout>
+  )
+}
 
 ArticlesListItem.propTypes = {
   article: PropTypes.object.isRequired,

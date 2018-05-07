@@ -44,21 +44,19 @@ const Layout = styled.div`
 
 const ResourceListItem = ({ resource }) => {
   const slug = fieldsSlug(resource)
+  const title = fieldsTitle(resource)
+  console.log(`TITLE`, title)
   return (
     <Layout>
       <Media>
-        <Link to={slug} title={fieldsTitle(resource)}>
+        <Link to={slug} title={title}>
           <Img sizes={frontmatterImageSizes(resource)} />
         </Link>
       </Media>
       <Info>
         <Header>
-          <TextLink
-            to={slug}
-            title={fieldsTitle(resource)}
-            underlineType="left"
-          >
-            {fieldsTitle(resource)}
+          <TextLink to={slug} title={title} underlineType="left">
+            {title}
           </TextLink>
           <ResourceType>{firstToUpper(fieldsType(resource))}</ResourceType>
         </Header>

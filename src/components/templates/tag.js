@@ -14,13 +14,13 @@ export const query = graphql`
       edges {
         node {
           fields {
+            title
             slug
             tags
             type
           }
           excerpt
           frontmatter {
-            title
             keywords
             date
             image {
