@@ -41,8 +41,11 @@ graeci semper integre ex.
 
 ---
 
-Civibus efficiendi complectitur his at. Has id causae eruditi tractatos, ad duo
-enim soluta nostrud. Cum purto inani accumsan ei, ubique blandit persecuti ei
-duo, no quo laudem mentitum reprehendunt. Tale legendos principes ex quo,
-accusamus democritum pri ad. Est stet aeque voluptaria eu, eum scaevola
+Civibus efficiendi[^1] complectitur his at. Has id causae eruditi tractatos, ad
+duo enim soluta nostrud. Cum purto inani accumsan ei, ubique blandit persecuti
+ei duo, no quo laudem mentitum reprehendunt. Tale legendos principes ex quo,
+accusamus democritum pri ad. Est stet[^2] aeque voluptaria eu, eum scaevola
 tacimates interpretaris eu.
+
+[^1]: First footnote is here
+[^2]: And the second is here

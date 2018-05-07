@@ -26,7 +26,7 @@ const renderAst = new RehypeReact({
 }).Compiler
 
 const PageText = styled.div`
-  p:first-of-type {
+  div > p:first-of-type {
     font-weight: bold;
     ${api({
       baseline: scope`s:lede`,
@@ -35,12 +35,20 @@ const PageText = styled.div`
 
   div > * + * {
     ${api({
-      marginTop: scope`1ru`,
+      marginTop: `1ru`,
     })};
   }
 
   div > p:first-of-type:first-letter {
     ${dropCap(api)};
+  }
+
+  .footnote-backref {
+    display: none;
+  }
+
+  .footnote-ref {
+    /* Target using sup element */
   }
 `
 
