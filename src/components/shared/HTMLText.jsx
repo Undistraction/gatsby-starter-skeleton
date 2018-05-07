@@ -7,7 +7,7 @@ const PageText = styled.div`
   p:first-child {
     font-weight: bold;
     ${api({
-      fontSize: scope`s:lede`,
+      baseline: scope`s:lede`,
     })};
   }
 

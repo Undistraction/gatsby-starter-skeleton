@@ -4,7 +4,7 @@ import Button from './Button'
 
 const PillButton = styled(Button)`
   ${api({
-    fontSize: scope`s:smallprint`,
+    baseline: scope`s:smallprint`,
     borderRadius: `1ru`,
     padding: `0.25ru 0.5ru`,
   })};

@@ -11,12 +11,15 @@ import {
   frontmatterImageSizes,
 } from '../../../helpers/markdown'
 import TextLink from '../../../shared/TextLink'
+import TitleSecondary from '../../../shared/TitleSecondary'
 import flexHorizontal from '../../../styles/mixins/flexHorizontal'
 import flexVertical from '../../../styles/mixins/flexVertical'
 import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'
 import spaceChildrenV from '../../../styles/mixins/spaceChildrenV'
 
-const ResourceType = styled.h3``
+const ResourceType = styled.h3`
+  font-style: italic;
+`
 
 const Media = styled.div`
   position: relative;
@@ -45,7 +48,6 @@ const Layout = styled.div`
 const ResourceListItem = ({ resource }) => {
   const slug = fieldsSlug(resource)
   const title = fieldsTitle(resource)
-  console.log(`TITLE`, title)
   return (
     <Layout>
       <Media>
@@ -56,7 +58,7 @@ const ResourceListItem = ({ resource }) => {
       <Info>
         <Header>
           <TextLink to={slug} title={title} underlineType="left">
-            {title}
+            <TitleSecondary>{title}</TitleSecondary>
           </TextLink>
           <ResourceType>{firstToUpper(fieldsType(resource))}</ResourceType>
         </Header>

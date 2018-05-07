@@ -19,7 +19,7 @@ const lPrevious = lensProp(`previous`)
 const lMarkdownItemFields = compose(lMarkdownItem, lFields)
 const lMarkdownItemMetadata = compose(lMarkdownItemFields, lMetadata)
 const lMarkdownItemFrontmatter = compose(lMarkdownItem, lFrontmatter)
-const lMarkdownItemTitle = compose(lMarkdownItemFrontmatter, lTitle)
+const lMarkdownItemTitle = compose(lMarkdownItemFields, lTitle)
 const lImageSizes = lensPath([`image`, `childImageSharp`, `sizes`])
 
 // -----------------------------------------------------------------------------

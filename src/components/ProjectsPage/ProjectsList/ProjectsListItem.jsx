@@ -9,30 +9,13 @@ import {
   fieldsTitle,
   frontmatterImageSizes,
 } from '../../helpers/markdown'
+import TitleSecondary from '../../shared/TitleSecondary'
 import scaleBounce from '../../styles/animations/scaleBounce'
-import curvedInset from '../../styles/mixins/curvedInset'
-import flexVertical from '../../styles/mixins/flexVertical'
 import linkProps from '../../styles/mixins/linkProps'
 
-const TitleWrapper = styled.div`
-  ${flexVertical};
-  position: absolute;
-  align-items: center;
-  justify-content: flex-end;
-  bottom: -1px;
-  ${api({
-    offset: 0,
-  })};
-`
-
-const Title = styled.div`
-  position: relative;
-  ${curvedInset(`top`)};
+const Title = styled(TitleSecondary)`
   ${api({
     padding: `0.3ru 1ru 0`,
-    marginH: `1ru`,
-    top: `2px`,
-    borderBottom: `2px solid c:backgroundEnd`,
   })};
 `
 
@@ -53,15 +36,12 @@ const Layout = styled(Link)`
     font-weight: bold;
   }
 `
-
 const ProjectsListItem = ({ project }) => (
   <Layout to={fieldsSlug(project)}>
     <ImgLayout>
       <Img sizes={frontmatterImageSizes(project)} />
     </ImgLayout>
-    <TitleWrapper>
-      <Title>{fieldsTitle(project)}</Title>
-    </TitleWrapper>
+    <Title>{fieldsTitle(project)}</Title>
   </Layout>
 )
 

@@ -11,6 +11,7 @@ import {
   frontmatterImageSizes,
 } from '../../../helpers/markdown'
 import TextLink from '../../../shared/TextLink'
+import TitleSecondary from '../../../shared/TitleSecondary'
 import flexHorizontal from '../../../styles/mixins/flexHorizontal'
 import flexVertical from '../../../styles/mixins/flexVertical'
 import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'
@@ -38,7 +39,7 @@ const Layout = styled.div`
 
 const Date = styled.time`
   ${api({
-    fontSize: scope`s:smallprint`,
+    baseline: scope`s:smallprint`,
   })};
 `
 
@@ -54,9 +55,9 @@ const ArticlesListItem = ({ article }) => {
       <Info>
         <Header>
           <TextLink to={fieldsSlug(article)} title={title} underlineType="left">
-            {title}
+            <TitleSecondary>{title}</TitleSecondary>
+            <Date>{frontmatterDate(article)}</Date>
           </TextLink>
-          <Date>{frontmatterDate(article)}</Date>
         </Header>
         <Body>
           <p>{article.excerpt}</p>

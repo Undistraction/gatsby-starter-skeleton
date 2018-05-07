@@ -1,20 +1,19 @@
-import { api, scope } from 'cssapi'
+import { api } from 'cssapi'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import curvedInset from '../../styles/mixins/curvedInset'
 import flexVertical from '../../styles/mixins/flexVertical'
+import TitlePrimary from '../TitlePrimary'
 
-const PageTitle = styled.h1`
+const PageTitle = styled(TitlePrimary)`
   position: relative;
-  font-weight: bold;
   text-align: center;
   z-index: 2;
   ${curvedInset(`bottom`)};
 
   ${api({
     padding: `0 2ru`,
-    baseline: scope`s:primaryTitle`,
   })};
 `
 
