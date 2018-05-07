@@ -9,7 +9,6 @@ module.exports = () => ({
               title
               description
               url
-
             }
           }
         }
@@ -24,6 +23,7 @@ module.exports = () => ({
               url: site.siteMetadata.data.url + edge.node.fields.slug,
               guid: site.siteMetadata.data.url + edge.node.fields.slug,
               custom_elements: [{ 'content:encoded': edge.node.html }],
+              date: edge.node.frontmatter.date,
             })
           ),
         query: `
@@ -42,7 +42,7 @@ module.exports = () => ({
                   }
                   frontmatter {
                     title
-                    date(formatString: "ddd, DD MMM YYYY HH:mm:ss zzz")
+                    date
                   }
                 }
               }
