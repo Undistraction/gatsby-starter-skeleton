@@ -77,7 +77,7 @@ const structure = Joi.object().keys({
   downloadsDir: Joi.string()
     .regex(fileNameRegex)
     .required(),
-  replCodeDir: Joi.string()
+  codeDir: Joi.string()
     .regex(fileNameRegex)
     .required(),
   resources: Joi.object({

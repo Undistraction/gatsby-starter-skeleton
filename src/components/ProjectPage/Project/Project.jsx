@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import {
   fieldsSlug,
   fieldsTags,
-  frontmatterTitle,
+  fieldsTitle,
   markdownItem,
   next,
   previous,
@@ -28,8 +28,8 @@ const Project = ({ data }) => {
     <React.Fragment>
       <Header>
         <NextPreviousNav
-          previousLabel={frontmatterTitle(previousProject)}
-          nextLabel={frontmatterTitle(nextProject)}
+          previousLabel={fieldsTitle(previousProject)}
+          nextLabel={fieldsTitle(nextProject)}
           previousPath={fieldsSlug(previousProject)}
           nextPath={fieldsSlug(nextProject)}
         />

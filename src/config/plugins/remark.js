@@ -16,8 +16,8 @@ module.exports = ({ media, structure }) => ({
       // Generate downloadble links from local files
       copyLinkedFiles(structure.downloadsDir),
       images(media.images),
-      prismjs(),
       embedSnippet(structure),
+      prismjs(),
       codeRepls(structure),
       smartypants(),
     ],

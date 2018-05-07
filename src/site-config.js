@@ -81,7 +81,7 @@ module.exports = {
     // Directory path for downloads, relative to your root url
     downloadsDir: `downloads`,
     // Directly path for code used in REPLs
-    replCodeDir: `code`,
+    codeDir: `code`,
 
     // -------------------------------------------------------------------------
     // Pages

@@ -10,6 +10,7 @@ const createTagPages = require(`./src/build/create/createTagPages`)
 const addSlugToNode = require(`./src/build/augment/addSlugToNode`)
 const addMetadataToNode = require(`./src/build/augment/addMetadataToNode`)
 const addTagsToNode = require(`./src/build/augment/addTagsToNode`)
+const addOrphanlessTitleToNode = require(`./src/build/augment/addOrphanlessTitleToNode`)
 const {
   nodeIsMarkdownArticle,
   nodeIsMarkdownProject,
@@ -18,6 +19,7 @@ const {
   ARTICLE_TEMPLATE_PATH,
   PROJECT_TEMPLATE_PATH,
 } = require(`./src/build/const/templatePaths`)
+const { isTypeMarkdownRemark } = require(`./src/build/utils/node`)
 
 const { resources } = validatedConfig().structure
 
@@ -60,6 +62,9 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
       createNodeField,
       node
     )
+  }
+  if (isTypeMarkdownRemark(node)) {
+    addOrphanlessTitleToNode(node, createNodeField)
   }
 }
 

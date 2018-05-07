@@ -3,7 +3,7 @@ import React from 'react'
 import {
   fieldsSlug,
   fieldsTags,
-  frontmatterTitle,
+  fieldsTitle,
   markdownItem,
   next,
   previous,
@@ -20,8 +20,8 @@ const Article = ({ data }) => {
   return (
     <React.Fragment>
       <NextPreviousNav
-        previousLabel={frontmatterTitle(previousArticle)}
-        nextLabel={frontmatterTitle(nextArticle)}
+        previousLabel={fieldsTitle(previousArticle)}
+        nextLabel={fieldsTitle(nextArticle)}
         previousPath={fieldsSlug(previousArticle)}
         nextPath={fieldsSlug(nextArticle)}
       />

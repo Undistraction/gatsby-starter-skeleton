@@ -13,7 +13,6 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        title
         date(formatString: $dateFormat)
         keywords
         image {
@@ -25,6 +24,7 @@ export const query = graphql`
         }
       }
       fields {
+        title
         tags
         metadata {
           description
@@ -37,20 +37,16 @@ export const query = graphql`
       fields: { type: { eq: "project" }, slug: { eq: $previousSlug } }
     ) {
       id
-      frontmatter {
-        title
-      }
       fields {
+        title
         slug
       }
     }
     next: markdownRemark(
       fields: { type: { eq: "project" }, slug: { eq: $nextSlug } }
     ) {
-      frontmatter {
-        title
-      }
       fields {
+        title
         slug
       }
     }

@@ -6,9 +6,9 @@ import styled from 'styled-components'
 import { firstToUpper } from '../../../helpers/formatting'
 import {
   fieldsSlug,
+  fieldsTitle,
   fieldsType,
   frontmatterImageSizes,
-  frontmatterTitle,
 } from '../../../helpers/markdown'
 import TextLink from '../../../shared/TextLink'
 import flexHorizontal from '../../../styles/mixins/flexHorizontal'
@@ -47,7 +47,7 @@ const ResourceListItem = ({ resource }) => {
   return (
     <Layout>
       <Media>
-        <Link to={slug} title={frontmatterTitle(resource)}>
+        <Link to={slug} title={fieldsTitle(resource)}>
           <Img sizes={frontmatterImageSizes(resource)} />
         </Link>
       </Media>
@@ -55,10 +55,10 @@ const ResourceListItem = ({ resource }) => {
         <Header>
           <TextLink
             to={slug}
-            title={frontmatterTitle(resource)}
+            title={fieldsTitle(resource)}
             underlineType="left"
           >
-            {frontmatterTitle(resource)}
+            {fieldsTitle(resource)}
           </TextLink>
           <ResourceType>{firstToUpper(fieldsType(resource))}</ResourceType>
         </Header>

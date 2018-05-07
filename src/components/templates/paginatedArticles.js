@@ -1,5 +1,4 @@
 import graphql from 'graphql'
-
 import Template from '../ArticlesPage'
 
 export default Template
@@ -37,7 +36,6 @@ export const query = graphql`
       edges {
         node {
           frontmatter {
-            title
             date(formatString: $dateFormat)
             image {
               childImageSharp {
@@ -48,6 +46,7 @@ export const query = graphql`
             }
           }
           fields {
+            title
             slug
           }
           excerpt

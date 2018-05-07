@@ -13,7 +13,7 @@ module.exports = structure => ({
 
     // Article  code links are relative to this dir.
     // eg examples/path/to/file.js
-    directory: `${process.cwd()}/src/content/${structure.replCodeDir}`,
+    directory: `${process.cwd()}/src/content/${structure.codeDir}`,
 
     // Optional externals to load from a CDN.
     // This option only applies to REPLs that support it (eg Codepen).

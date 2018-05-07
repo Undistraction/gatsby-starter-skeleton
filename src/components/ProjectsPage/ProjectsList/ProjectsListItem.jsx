@@ -6,8 +6,8 @@ import React from 'react'
 import styled from 'styled-components'
 import {
   fieldsSlug,
+  fieldsTitle,
   frontmatterImageSizes,
-  frontmatterTitle,
 } from '../../helpers/markdown'
 import scaleBounce from '../../styles/animations/scaleBounce'
 import curvedInset from '../../styles/mixins/curvedInset'
@@ -60,7 +60,7 @@ const ProjectsListItem = ({ project }) => (
       <Img sizes={frontmatterImageSizes(project)} />
     </ImgLayout>
     <TitleWrapper>
-      <Title>{frontmatterTitle(project)}</Title>
+      <Title>{fieldsTitle(project)}</Title>
     </TitleWrapper>
   </Layout>
 )

@@ -1,4 +1,4 @@
-import { view, lensPath, lensProp, compose, pluck } from 'ramda'
+import { compose, lensPath, lensProp, pluck, view } from 'ramda'
 
 // -----------------------------------------------------------------------------
 // Lenses
@@ -37,8 +37,8 @@ export const markdownItemImageSizes = view(
   compose(lMarkdownItemFrontmatter, lImageSizes)
 )
 export const frontmatterImageSizes = view(compose(lFrontmatter, lImageSizes))
-export const frontmatterTitle = view(compose(lFrontmatter, lTitle))
 export const frontmatterDate = view(compose(lFrontmatter, lDate))
+export const fieldsTitle = view(compose(lFields, lTitle))
 export const fieldsSlug = view(compose(lFields, lSlug))
 export const fieldsType = view(compose(lFields, lType))
 export const fieldsTags = view(compose(lFields, lTags))

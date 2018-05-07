@@ -1,5 +1,4 @@
 import graphql from 'graphql'
-
 import Template from '../ProjectsPage'
 
 export default Template
@@ -32,7 +31,6 @@ export const query = graphql`
         node {
           id
           frontmatter {
-            title
             date(formatString: $dateFormat)
             keywords
             image {
@@ -44,6 +42,7 @@ export const query = graphql`
             }
           }
           fields {
+            title
             slug
           }
           excerpt

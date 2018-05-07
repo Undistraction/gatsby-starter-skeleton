@@ -6,9 +6,9 @@ import React from 'react'
 import styled from 'styled-components'
 import {
   fieldsSlug,
+  fieldsTitle,
   frontmatterDate,
   frontmatterImageSizes,
-  frontmatterTitle,
 } from '../../../helpers/markdown'
 import TextLink from '../../../shared/TextLink'
 import flexHorizontal from '../../../styles/mixins/flexHorizontal'
@@ -45,7 +45,7 @@ const Date = styled.time`
 const ArticlesListItem = ({ article }) => (
   <Layout>
     <Media>
-      <Link to={fieldsSlug(article)} title={frontmatterTitle(article)}>
+      <Link to={fieldsSlug(article)} title={fieldsTitle(article)}>
         <Img sizes={frontmatterImageSizes(article)} />
       </Link>
     </Media>
@@ -53,10 +53,10 @@ const ArticlesListItem = ({ article }) => (
       <Header>
         <TextLink
           to={fieldsSlug(article)}
-          title={frontmatterTitle(article)}
+          title={fieldsTitle(article)}
           underlineType="left"
         >
-          {frontmatterTitle(article)}
+          {fieldsTitle(article)}
         </TextLink>
         <Date>{frontmatterDate(article)}</Date>
       </Header>
