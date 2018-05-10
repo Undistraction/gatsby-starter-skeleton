@@ -1,9 +1,10 @@
 import { css } from 'styled-components'
+import mixin from '../../helpers/mixin'
 
-const elementBorder = api => css`
+const elementBorder = api => () => css`
   ${api({
     borderLeft: `1ru solid c:text`,
   })};
 `
 
-export default elementBorder
+export default mixin(elementBorder)

@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
-import api from '../api'
+import mixin from '../../helpers/mixin'
 
-const banner = (edge = `top`) => css`
+const banner = api => (edge = `top`) => css`
   ::before {
     content: '';
     z-index: 1;
@@ -29,4 +29,4 @@ const banner = (edge = `top`) => css`
   }
 `
 
-export default banner
+export default mixin(banner)

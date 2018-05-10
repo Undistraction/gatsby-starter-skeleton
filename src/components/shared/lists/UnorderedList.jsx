@@ -25,7 +25,7 @@ const UnorderedList = styled.ul`
         left: `-1ru`,
         height: `1ru`,
       })};
-      ${p => elementBorder(p.theme.api)};
+      ${elementBorder()};
     }
   }
 `

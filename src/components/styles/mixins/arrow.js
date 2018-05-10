@@ -1,7 +1,8 @@
 import { css } from 'styled-components'
+import mixin from '../../helpers/mixin'
 
-const arrow = (api, edge = `right`, size = `16`, background = `red`) => {
-  const translation = edge === `right` ? `50%` : `-50%`
+const arrow = (api, props) => (size = `16`, background = `red`) => {
+  const translation = props.direction === `right` ? `50%` : `-50%`
   // const hyotenuse = Math.sqrt(size *)
   return css`
     ::after {
@@ -11,7 +12,7 @@ const arrow = (api, edge = `right`, size = `16`, background = `red`) => {
       bottom: 50%;
       transform: translate(${translation}, 50%) rotate(45deg);
 
-      ${edge}: 0;
+      ${props.direction}: 0;
       ${api({
         width: size,
         height: size,
@@ -21,4 +22,4 @@ const arrow = (api, edge = `right`, size = `16`, background = `red`) => {
   `
 }
 
-export default arrow
+export default mixin(arrow)

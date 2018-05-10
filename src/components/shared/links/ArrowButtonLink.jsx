@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   z-index: 1;
   text-align: center;
   ${p => p.direction}: 0;
-  ${p => arrow(p.theme.api, p.direction, `0.6ru`, `g:backgroundInverted`)};
+  ${arrow(`0.6ru`, `g:backgroundInverted`)};
 
   &:hover {
     animation: ${({ direction }) =>

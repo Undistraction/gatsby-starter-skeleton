@@ -75,7 +75,7 @@ const PageText = styled.div`
   }
 
   div > p:first-of-type:first-letter {
-    ${dropCap(api)};
+    ${dropCap()};
   }
 
   ${Blockquote}, ${OrderedList}, ${UnorderedList} {

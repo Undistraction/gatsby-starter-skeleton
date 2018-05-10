@@ -1,10 +1,10 @@
 import { css } from 'styled-components'
-import api from '../api'
+import mixin from '../../helpers/mixin'
 
-const spaceChildrenV = values => css`
+const spaceChildrenV = api => values => css`
   & > * + * {
     ${api({ marginTop: values })};
   }
 `
 
-export default spaceChildrenV
+export default mixin(spaceChildrenV)

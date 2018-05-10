@@ -1,11 +1,13 @@
 import { scope } from 'cssapi'
 import { css } from 'styled-components'
+import mixin from '../../helpers/mixin'
 
-const dropCap = api => css`
+const dropCap = api => () => css`
   float: left;
   display: block;
   font-weight: normal;
   vertical-align: bottom;
+
   ${api({
     baseline: scope`s:primaryTitle`,
     background: `g:backgroundInverted`,
@@ -15,4 +17,4 @@ const dropCap = api => css`
   })};
 `
 
-export default dropCap
+export default mixin(dropCap)

@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
-import api from '../api'
+import mixin from '../../helpers/mixin'
 
-export default (defaultColor = `red`, highlightColor = `blue`) => css`
+const linkProps = api => (defaultColor = `red`, highlightColor = `blue`) => css`
   ${api({
     color: defaultColor,
   })};
@@ -25,3 +25,5 @@ export default (defaultColor = `red`, highlightColor = `blue`) => css`
     })};
   }
 `
+
+export default mixin(linkProps)

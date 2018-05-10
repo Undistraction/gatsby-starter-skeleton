@@ -1,6 +1,6 @@
 import { cond, equals } from 'ramda'
 import { css } from 'styled-components'
-import api from '../api'
+import mixin from '../../helpers/mixin'
 
 const startProps = cond([
   [
@@ -26,7 +26,7 @@ const startProps = cond([
   ],
 ])
 
-const underlineHover = (color, type = `center`) => css`
+const underlineHover = api => (color, type = `center`) => css`
   position: relative;
   ::after {
     content: '';
@@ -48,4 +48,4 @@ const underlineHover = (color, type = `center`) => css`
     transition: all 0.5s ease-in-out;
   }
 `
-export default underlineHover
+export default mixin(underlineHover)

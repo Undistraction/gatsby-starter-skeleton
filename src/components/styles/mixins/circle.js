@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
-import api from '../api'
+import mixin from '../../helpers/mixin'
 
-const circle = diameter => css`
+const circle = api => diameter => css`
   border-radius: 50%;
 
   ${api({
@@ -11,4 +11,4 @@ const circle = diameter => css`
   })};
 `
 
-export default circle
+export default mixin(circle)
