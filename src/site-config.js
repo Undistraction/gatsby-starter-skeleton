@@ -90,13 +90,17 @@ module.exports = {
     pages: {
       home: {
         // Page title
-        title: `Home`,
+        title: `Welcome To The Home Page`,
+        // Title used for nav
+        navTitle: `Home`,
         // Path used in URL
         path: `/`,
       },
       about: {
         // Page title
-        title: `About`,
+        title: `Welcome To The About Page`,
+        // Title used for nav
+        navTitle: `About`,
         // Path used in URL
         path: `/about`,
       },
@@ -117,6 +121,8 @@ module.exports = {
       articles: {
         // Page title
         title: `Articles`,
+        // Title used for nav
+        navTitle: `Articles`,
         // Name of dir containing markdown docs
         directory: `articles`,
         // Path used in URL
@@ -128,6 +134,8 @@ module.exports = {
       projects: {
         // Page title
         title: `Projects`,
+        // Title used for nav
+        navTitle: `Projects`,
         // Name of dir containing markdown docs
         directory: `projects`,
         // Path used in URL
@@ -137,6 +145,8 @@ module.exports = {
       tags: {
         // Page title
         title: `Tags`,
+        // Title used for nav
+        navTitle: `Tags`,
         // Path used in URL
         path: `/tags`,
       },

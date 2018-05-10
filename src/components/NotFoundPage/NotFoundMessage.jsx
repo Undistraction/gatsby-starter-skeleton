@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import Logo from '../shared/Logo'
-import TextLink from '../shared/TextLink'
+import TextLink from '../shared/links/TextLink'
 import spinOnYAxis from '../styles/animations/spinOnYAxis'
 import flexHorizontal from '../styles/mixins/flexHorizontal'
 import flexVertical from '../styles/mixins/flexVertical'
@@ -17,7 +17,6 @@ const Layout = styled.div`
   ${spaceChildrenV(`2ru`)};
   text-align: center;
   ${LogoWrapper} {
-    animation: ${spinOnYAxis(3)} 3s cubic-bezier(0.165, 0.84, 0.44, 1);
     ${api({
       width: `200`,
     })};
@@ -26,7 +25,8 @@ const Layout = styled.div`
 
 const Header = styled.header`
   ${flexHorizontal};
-  ${spaceChildrenH(`-3ru`)};
+  animation: ${spinOnYAxis(3)} 3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  ${spaceChildrenH(`-0.5ru`)};
   align-items: center;
   ${api({
     fontSize: scope`s:giant`,

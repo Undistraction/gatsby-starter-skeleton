@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import linkProps from '../styles/mixins/linkProps'
-import underlineHover from '../styles/mixins/underlineHover'
+import linkProps from '../../styles/mixins/linkProps'
+import underlineHover from '../../styles/mixins/underlineHover'
 import BaseLink from './BaseLink'
 
 // Filter out styled-component-specific props so they don't trigger Unknown Prop
@@ -17,7 +17,7 @@ const TextLink = styled(({ underlineType, ...rest }) => <BaseLink {...rest} />)`
 `
 
 TextLink.propTypes = {
-  to: PropTypes.string.isRequired,
+  to: PropTypes.string,
   children: PropTypes.node.isRequired,
   underlineType: PropTypes.string,
 }
@@ -25,5 +25,7 @@ TextLink.propTypes = {
 TextLink.defaultProps = {
   underlineType: `center`,
 }
+
+TextLink.displayName = `TextLink`
 
 export default TextLink

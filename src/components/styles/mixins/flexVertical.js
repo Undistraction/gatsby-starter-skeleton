@@ -1,6 +1,8 @@
 import { css } from 'styled-components'
 
-export default css`
+const flexVertical = css`
   display: flex;
   flex-direction: column;
 `
+
+export default flexVertical

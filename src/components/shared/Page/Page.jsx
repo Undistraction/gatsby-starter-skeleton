@@ -1,50 +1,51 @@
+import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import { api } from 'cssapi'
+import api from '../../styles/api'
+import defaultBorder from '../../styles/mixins/defaultBorder'
 import flexVertical from '../../styles/mixins/flexVertical'
-import PageBody from './PageBody'
-import PageHeader from './PageHeader'
+import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
+import TitlePrimary from '../titles/TitlePrimary'
 
-export const Header = styled.div``
-export const Body = styled.article``
+export const Header = styled.div`
+  position: relative;
+`
+
+const PageTitle = styled(TitlePrimary)`
+  text-align: center;
+  ${api({
+    borderWidth: `1px 0`,
+    paddingV: `1ru`,
+  })};
+  ${p => defaultBorder(p.theme.api)};
+`
 
 const Layout = styled.div`
   ${flexVertical};
-
-  ${Header} {
-    position: relative;
-    ${({ hasImage }) =>
-      api({
-        flex: `0 0 auto`,
-        marginBottom: hasImage ? 0 : `3ru`,
-      })};
-  }
-
-  ${Body} {
-    flex: 1 0 auto;
+  ${spaceChildrenV(`1ru`)};
 `
 
-const Page = ({ title, children, hasImage }) => (
-  <Layout hasImage={hasImage}>
-    <Header>
-      <PageHeader title={title} />
-    </Header>
-    <Body>
-      <PageBody>{children}</PageBody>
-    </Body>
+const Page = ({ title, children, imageSizes, nav }) => (
+  <Layout>
+    {imageSizes && <Img sizes={imageSizes} />}
+    {nav}
+    <PageTitle>{title}</PageTitle>
+    {children}
   </Layout>
 )
 
 Page.propTypes = {
   children: PropTypes.node,
   title: PropTypes.string.isRequired,
-  hasImage: PropTypes.bool,
+  imageSizes: PropTypes.object,
+  nav: PropTypes.node,
 }
 
 Page.defaultProps = {
   children: [],
-  hasImage: true,
+  imageSizes: null,
+  nav: null,
 }
 
 export default Page

@@ -1,6 +1,8 @@
 import { css } from 'styled-components'
 
-export default css`
+const flexHorizontal = css`
   display: flex;
   flex-direction: row;
 `
+
+export default flexHorizontal

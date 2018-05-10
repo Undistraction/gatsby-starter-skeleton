@@ -1,6 +1,8 @@
 import { css } from 'styled-components'
 
-export default css`
+const transformCenterH = css`
   left: 50%;
   transform: translate(-50%, 0);
 `
+
+export default transformCenterH

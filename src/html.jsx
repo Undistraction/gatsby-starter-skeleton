@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
+import React from 'react'
 
-let stylesStr;
-if (process.env.NODE_ENV === 'production') {
+let stylesStr
+if (process.env.NODE_ENV === `production`) {
   try {
     // eslint-disable-next-line global-require, import/no-unresolved, import/no-webpack-loader-syntax
-    stylesStr = require('!raw-loader!../public/styles.css');
+    stylesStr = require(`!raw-loader!../public/styles.css`)
   } catch (e) {
-    console.log(e);
+    console.log(e)
   }
 }
 
@@ -19,14 +19,14 @@ const html = ({
   postBodyComponents,
   headComponents,
 }) => {
-  let css;
-  if (process.env.NODE_ENV === 'production') {
+  let css
+  if (process.env.NODE_ENV === `production`) {
     css = (
       <style
         id="gatsby-inlined-css"
         dangerouslySetInnerHTML={{ __html: stylesStr }}
       />
-    );
+    )
   }
   return (
     // eslint-disable-next-line jsx-a11y/html-has-lang
@@ -56,8 +56,8 @@ const html = ({
         {postBodyComponents}
       </body>
     </html>
-  );
-};
+  )
+}
 
 html.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
@@ -71,11 +71,11 @@ html.propTypes = {
   postBodyComponents: PropTypes.array.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   headComponents: PropTypes.array.isRequired,
-};
+}
 
 html.defaultProps = {
   htmlAttributes: {},
   bodyAttributes: {},
-};
+}
 
-export default html;
+export default html

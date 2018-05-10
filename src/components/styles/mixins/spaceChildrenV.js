@@ -1,8 +1,10 @@
 import { css } from 'styled-components'
 import api from '../api'
 
-export default values => css`
+const spaceChildrenV = values => css`
   & > * + * {
     ${api({ marginTop: values })};
   }
 `
+
+export default spaceChildrenV

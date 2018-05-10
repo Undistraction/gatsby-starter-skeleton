@@ -39,6 +39,8 @@ export default api =>
     }
 
     body {
+      position:relative;
+      z-index: 10;
       ${api({
         background: `g:background`,
       })}
@@ -104,10 +106,17 @@ export default api =>
     ul,
     ol {
       padding-left: 0;
-      margin-left: 0;
+      margin: 0;
       list-style: none;
     }
 
+    /* ---------------------------------------------------------------------- */
+    /* Blockquote
+    /* ---------------------------------------------------------------------- */
+    
+    blockquote {
+      margin: 0;
+    }
 
     /* ---------------------------------------------------------------------- */
     /* Prism Syntax Hightlightling

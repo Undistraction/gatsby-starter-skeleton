@@ -1,13 +1,13 @@
 import { api, scope } from 'cssapi'
 import styled from 'styled-components'
-import Button from './Button'
+import Button from './ButtonLink'
 
-const PillButton = styled(Button)`
+const PillButtonLink = styled(Button)`
   ${api({
     baseline: scope`s:smallprint`,
     borderRadius: `1ru`,
-    padding: `0.25ru 0.5ru`,
+    padding: `0 0.5ru`,
   })};
 `
 
-export default PillButton
+export default PillButtonLink

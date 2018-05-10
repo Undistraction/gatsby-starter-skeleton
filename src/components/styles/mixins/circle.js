@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
 import api from '../api'
 
-export default diameter => css`
+const circle = diameter => css`
   border-radius: 50%;
 
   ${api({
@@ -10,3 +10,5 @@ export default diameter => css`
     height: diameter,
   })};
 `
+
+export default circle

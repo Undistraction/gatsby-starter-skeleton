@@ -1,5 +1,7 @@
 import { css } from 'styled-components'
 
-export default css`
+const blockCenterH = css`
   margin: 0 auto;
 `
+
+export default blockCenterH

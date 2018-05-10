@@ -8,6 +8,7 @@ export default (defaultColor = `red`, highlightColor = `blue`) => css`
   color: inherit;
   text-decoration: none;
   transition: all 0.5s ease-in-out;
+  cursor: pointer;
 
   &:link,
   &:visited,

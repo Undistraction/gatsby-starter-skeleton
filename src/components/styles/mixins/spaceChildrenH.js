@@ -1,8 +1,10 @@
 import { css } from 'styled-components'
 import api from '../api'
 
-export default values => css`
+const spaceChildrenH = values => css`
   & > * + * {
     ${api({ marginLeft: values })};
   }
 `
+
+export default spaceChildrenH

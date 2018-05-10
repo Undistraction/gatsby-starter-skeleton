@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export default styled.div`
   ${api({
     fontFamily: `f:title`,
-    baseline: scope`s:megaTitle`,
+    baseline: scope`s:primaryTitle`,
     letterSpacing: 1,
   })};
 `

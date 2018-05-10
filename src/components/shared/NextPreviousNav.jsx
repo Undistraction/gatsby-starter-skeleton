@@ -1,25 +1,22 @@
+import { api } from 'cssapi'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import ArrowButtonLink from '../shared/ArrowButtonLink'
-import DisabledArrowButtonLink from '../shared/DisabledArrowButtonLink'
+import ArrowButtonLink from '../shared/links/ArrowButtonLink'
+import DisabledArrowButtonLink from '../shared/links/DisabledArrowButtonLink'
+import flexHorizontal from '../styles/mixins/flexHorizontal'
 
 export const LayoutPrevious = styled.div``
 export const LayoutNext = styled.div``
 
 const Layout = styled.nav`
+  ${flexHorizontal};
   justify-content: space-between;
-
-  ${LayoutNext} {
-    float: right;
-  }
-
-  ${LayoutPrevious} {
-    float: left;
-  }
-
   ${LayoutNext}, ${LayoutPrevious} {
-    max-width: 49%;
+    ${api({
+      width: `calc(50% - 0.5ru)`,
+      flex: `0 -1 calc(50% - 0.5ru)`,
+    })};
   }
 `
 

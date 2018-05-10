@@ -1,7 +1,6 @@
 import { css } from 'styled-components'
-import api from '../api'
 
-export default (edge = `right`, size = `16`, background = `red`) => {
+const arrow = (api, edge = `right`, size = `16`, background = `red`) => {
   const translation = edge === `right` ? `50%` : `-50%`
   // const hyotenuse = Math.sqrt(size *)
   return css`
@@ -21,3 +20,5 @@ export default (edge = `right`, size = `16`, background = `red`) => {
     }
   `
 }
+
+export default arrow

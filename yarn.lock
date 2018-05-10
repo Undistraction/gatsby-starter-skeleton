@@ -2669,9 +2669,9 @@ css-what@2.1:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.0.tgz#9467d032c38cfaefb9f2d79501253062f87fa1bd"
 
-cssapi@^0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/cssapi/-/cssapi-0.7.2.tgz#2eea13f7054ab52f46c123e575361ab7adbea129"
+cssapi@0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/cssapi/-/cssapi-0.8.0.tgz#6134dae83efe9feb81624ba7b2017dc7e43ea77d"
   dependencies:
     dasherize "^2.0.0"
     ramda "^0.25.0"
@@ -9480,11 +9480,7 @@ quick-lru@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-1.1.0.tgz#4360b17c61136ad38078397ff11416e186dcfbb8"
 
-ramda-adjunct@^2.5.0, ramda-adjunct@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/ramda-adjunct/-/ramda-adjunct-2.6.0.tgz#ec71a0868054bd2b957ef6e5ab046a6c702fedf4"
-
-ramda-adjunct@^2.7.0:
+ramda-adjunct@^2.5.0, ramda-adjunct@^2.6.0, ramda-adjunct@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/ramda-adjunct/-/ramda-adjunct-2.7.0.tgz#970f00703f3159304310613dac9b0074c1711b40"
 

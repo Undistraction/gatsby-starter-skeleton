@@ -53,6 +53,7 @@ const seo = Joi.object().keys({
 
 const resource = Joi.object().keys({
   title: Joi.string().required(),
+  navTitle: Joi.string().optional(),
   directory: Joi.string()
     .regex(fileNameRegex)
     .allow(``)
@@ -67,6 +68,7 @@ const resource = Joi.object().keys({
 
 const page = Joi.object().keys({
   title: Joi.string(),
+  navTitle: Joi.string().optional(),
   path: Joi.string()
     .regex(pathRegex)
     .allow(``)

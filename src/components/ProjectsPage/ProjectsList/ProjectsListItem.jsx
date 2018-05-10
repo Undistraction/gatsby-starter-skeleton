@@ -9,7 +9,7 @@ import {
   fieldsTitle,
   frontmatterImageSizes,
 } from '../../helpers/markdown'
-import TitleSecondary from '../../shared/TitleSecondary'
+import TitleSecondary from '../../shared/titles/TitleSecondary'
 import scaleBounce from '../../styles/animations/scaleBounce'
 import linkProps from '../../styles/mixins/linkProps'
 

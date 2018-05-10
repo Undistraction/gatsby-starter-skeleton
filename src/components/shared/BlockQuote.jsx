@@ -1,12 +1,12 @@
 import { api } from 'cssapi'
 import styled from 'styled-components'
+import elementBorder from '../styles/mixins/elementBorder'
 
-const BlockQuote = styled.blockquote`
+const Blockquote = styled.blockquote`
+  ${p => elementBorder(p.theme.api)};
   ${api({
-    borderLeft: `1ru solid c:text`,
     paddingLeft: `0.5ru`,
-    marginH: `2ru`,
   })};
 `
 
-export default BlockQuote
+export default Blockquote

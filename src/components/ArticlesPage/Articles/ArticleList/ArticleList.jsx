@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import renderListItems from '../../../helpers/renderListItems'
-import VList from '../../../shared/VList'
+import VList from '../../../shared/lists/VList'
 import ArticlesListItem from './ArticlesListItem'
 
 const Layout = VList

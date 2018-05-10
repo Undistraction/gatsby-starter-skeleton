@@ -1,24 +1,45 @@
 // eslint-disable react/no-danger
 
-import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import React from 'react'
-import Metadata from '../shared/Metadata'
-import Page from '../shared/Page'
-import Project from './Project'
 import {
+  fieldsSlug,
+  fieldsTitle,
+  markdownItemImageSizes,
   markdownItemMetadata,
   markdownItemTitle,
-  markdownItemImageSizes,
+  next,
+  previous,
 } from '../helpers/markdown'
+import Metadata from '../shared/Metadata'
+import NextPreviousNav from '../shared/NextPreviousNav'
+import Page from '../shared/Page'
+import Project from './Project'
 
-const ProjectPage = ({ data }) => (
-  <Page title={markdownItemTitle(data)}>
-    <Metadata {...markdownItemMetadata(data)} />
-    <Img sizes={markdownItemImageSizes(data)} />
-    <Project data={data} />
-  </Page>
-)
+const ProjectPage = ({ data }) => {
+  const previousProject = previous(data)
+  const nextProject = next(data)
+
+  const nav = (
+    <NextPreviousNav
+      previousLabel={fieldsTitle(previousProject)}
+      nextLabel={fieldsTitle(nextProject)}
+      previousPath={fieldsSlug(previousProject)}
+      nextPath={fieldsSlug(nextProject)}
+    />
+  )
+
+  return (
+    <Page
+      title={markdownItemTitle(data)}
+      imageSizes={markdownItemImageSizes(data)}
+      nav={nav}
+    >
+      <Metadata {...markdownItemMetadata(data)} />
+      <Project data={data} />
+    </Page>
+  )
+}
 
 ProjectPage.propTypes = {
   data: PropTypes.object.isRequired,

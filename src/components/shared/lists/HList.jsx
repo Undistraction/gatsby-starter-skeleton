@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import flexHorizontal from '../styles/mixins/flexHorizontal'
-import uiList from '../styles/mixins/uiList'
+import flexHorizontal from '../../styles/mixins/flexHorizontal'
+import uiList from '../../styles/mixins/uiList'
 
 const HList = styled.ul`
   ${uiList};

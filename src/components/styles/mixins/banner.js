@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
 import api from '../api'
 
-export default (edge = `top`) => css`
+const banner = (edge = `top`) => css`
   ::before {
     content: '';
     z-index: 1;
@@ -28,3 +28,5 @@ export default (edge = `top`) => css`
     })};
   }
 `
+
+export default banner

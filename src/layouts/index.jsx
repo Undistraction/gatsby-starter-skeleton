@@ -40,24 +40,29 @@ export const query = graphql`
           resources {
             projects {
               title
+              navTitle
               path
             }
             articles {
               title
+              navTitle
               path
             }
             tags {
               title
+              navTitle
               path
             }
           }
           pages {
             about {
               title
+              navTitle
               path
             }
             home {
               title
+              navTitle
               path
             }
           }

@@ -10,12 +10,12 @@ const tagTitle = tag => `Tag ${tag}`
 
 const TagPage = ({ data, pathContext }) => {
   const metadata = data.site.siteMetadata.metadata.tag
-  const { tag, tags } = pathContext
+  const { tag } = pathContext
 
   return (
     <Page title={tagTitle(tag)} hasImage={false}>
       <Metadata {...addTitleToMetadata(metadata, tag)} />
-      <Tag taggedItems={markdownItemNodes(data)} tag={tag} tags={tags} />
+      <Tag taggedItems={markdownItemNodes(data)} tag={tag} />
     </Page>
   )
 }

@@ -37,7 +37,7 @@ const underlineHover = (color, type = `center`) => css`
 
     ${api({
       height: `0.2em`,
-      bottom: `-0.1em`,
+      bottom: 0,
       background: color,
     })};
   }

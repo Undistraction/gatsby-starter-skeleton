@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import { isHomePage } from '../../../../helpers/paths'
-import Button from '../../../../shared/Button'
+import Button from '../../../../shared/links/ButtonLink'
 import linkProps from '../../../../styles/mixins/linkProps'
 import underlineHover from '../../../../styles/mixins/underlineHover'
 
@@ -24,7 +24,7 @@ const Link = styled(Button).attrs({
 
 const SiteNavLink = ({ page }) => (
   <Link exact={isHomePage(page.path)} to={page.path}>
-    {page.title}
+    {page.navTitle}
   </Link>
 )
 

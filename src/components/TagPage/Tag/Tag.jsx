@@ -2,7 +2,6 @@ import PropTypes from 'prop-types'
 import { isEmptyArray } from 'ramda-adjunct'
 import React from 'react'
 import styled from 'styled-components'
-import TagList from '../../shared/TagList'
 import flexVertical from '../../styles/mixins/flexVertical'
 import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
 import ResourceList from './ResourceList'
@@ -13,11 +12,9 @@ const Header = styled.header`
   text-align: center;
 `
 
-const Footer = styled.footer``
-
 const Body = styled.div``
 
-const Tag = ({ taggedItems, tag, tags }) => (
+const Tag = ({ taggedItems, tag }) => (
   <React.Fragment>
     {isEmptyArray(taggedItems) ? (
       <p>No tags found for: {tag}</p>
@@ -29,9 +26,6 @@ const Tag = ({ taggedItems, tag, tags }) => (
         <Body>
           <ResourceList resources={taggedItems} />
         </Body>
-        <Footer>
-          <TagList tags={tags} />
-        </Footer>
       </React.Fragment>
     )}
   </React.Fragment>
@@ -40,8 +34,6 @@ const Tag = ({ taggedItems, tag, tags }) => (
 Tag.propTypes = {
   taggedItems: PropTypes.array,
   tag: PropTypes.string.isRequired,
-
-  tags: PropTypes.array,
 }
 
 Tag.defaultProps = {

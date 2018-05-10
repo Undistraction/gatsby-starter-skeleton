@@ -5,7 +5,7 @@ import UnorderedList from './UnorderedList'
 const OrderedList = styled(UnorderedList)`
   counter-reset: olItem;
 
-  li:before {
+  li:after {
     counter-increment: olItem;
     content: counter(olItem);
     position: absolute;
@@ -14,6 +14,7 @@ const OrderedList = styled(UnorderedList)`
       color: `c:textInverted`,
       width: `1ru`,
       left: `-1ru`,
+      top: 0,
     })};
   }
 `

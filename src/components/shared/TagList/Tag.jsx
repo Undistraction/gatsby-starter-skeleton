@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { tagPath } from '../../../build/utils/url'
-import PillButton from '../PillButton'
+import PillButtonLink from '../links/PillButtonLink'
 
-const Tag = ({ tag }) => <PillButton to={tagPath(tag)}>{tag}</PillButton>
+const Tag = ({ tag }) => (
+  <PillButtonLink to={tagPath(tag)}>{tag}</PillButtonLink>
+)
 
 Tag.propTypes = {
   tag: PropTypes.string.isRequired,

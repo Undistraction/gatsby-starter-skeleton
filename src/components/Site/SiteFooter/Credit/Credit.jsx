@@ -1,8 +1,8 @@
+import { api } from 'cssapi'
 import React from 'react'
 import styled from 'styled-components'
-import { api } from 'cssapi'
+import IconLink from '../../../shared/links/IconLink'
 import circle from '../../../styles/mixins/circle'
-import IconLink from '../../../shared/IconLink'
 
 const CreditIcon = styled.span`
   display: inline-block;

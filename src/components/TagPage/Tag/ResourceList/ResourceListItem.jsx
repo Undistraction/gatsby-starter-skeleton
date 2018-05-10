@@ -10,8 +10,8 @@ import {
   fieldsType,
   frontmatterImageSizes,
 } from '../../../helpers/markdown'
-import TextLink from '../../../shared/TextLink'
-import TitleSecondary from '../../../shared/TitleSecondary'
+import TextLink from '../../../shared/links/TextLink'
+import TitleSecondary from '../../../shared/titles/TitleSecondary'
 import flexHorizontal from '../../../styles/mixins/flexHorizontal'
 import flexVertical from '../../../styles/mixins/flexVertical'
 import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'

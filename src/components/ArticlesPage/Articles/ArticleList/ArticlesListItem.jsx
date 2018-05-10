@@ -10,8 +10,8 @@ import {
   frontmatterDate,
   frontmatterImageSizes,
 } from '../../../helpers/markdown'
-import TextLink from '../../../shared/TextLink'
-import TitleSecondary from '../../../shared/TitleSecondary'
+import TextLink from '../../../shared/links/TextLink'
+import TitleSecondary from '../../../shared/titles/TitleSecondary'
 import flexHorizontal from '../../../styles/mixins/flexHorizontal'
 import flexVertical from '../../../styles/mixins/flexVertical'
 import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'
@@ -22,10 +22,7 @@ const Info = styled.div`
   ${flexVertical};
   ${spaceChildrenV(`0.5ru`)};
 `
-const Header = styled.header`
-  ${flexVertical};
-  ${spaceChildrenV(`0.5ru`)};
-`
+const Header = styled.header``
 
 const Body = styled.div``
 const Layout = styled.div`
@@ -38,6 +35,7 @@ const Layout = styled.div`
 `
 
 const Date = styled.time`
+  display: block;
   ${api({
     baseline: scope`s:smallprint`,
   })};
@@ -56,8 +54,8 @@ const ArticlesListItem = ({ article }) => {
         <Header>
           <TextLink to={fieldsSlug(article)} title={title} underlineType="left">
             <TitleSecondary>{title}</TitleSecondary>
-            <Date>{frontmatterDate(article)}</Date>
           </TextLink>
+          <Date>{frontmatterDate(article)}</Date>
         </Header>
         <Body>
           <p>{article.excerpt}</p>

@@ -3,9 +3,6 @@
     "target": "es6",
     "jsx": "react"
   },
-  "include": ["src/**/*"],
-  "resolve": {
-    "modulesDirectories": ["src"]
-  },
+  "include": ["./src/**/*.js"],
   "exclude": ["node_modules", "dist", "coverage", "demo"]
 }
