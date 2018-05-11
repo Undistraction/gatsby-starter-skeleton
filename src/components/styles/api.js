@@ -23,26 +23,32 @@ const breakpoints = [
 // Configure CSS API
 // -----------------------------------------------------------------------------
 
-const rhythm = 28
+const rhythmDefault = 22
+const rhythmSmallUp = 28
 
 const config = {
   breakpoints,
   data: {
-    rhythm,
+    rhythm: rhythmDefault,
     baseline: {
-      lineHeight: rhythm, // Baseline height
+      lineHeight: rhythmDefault, // Baseline height
     },
     scale: {
-      smallprint: `10`,
-      body: `14`,
-      lede: `16`,
-      primaryTitle: `34`,
-      secondaryTitle: `18`,
-      contentPrimaryTitle: `32`,
-      contentSecondaryTitle: `24`,
-      contentTertiaryTitle: `18`,
-      megaTitle: `28`,
-      giant: `44`,
+      '-1': 10,
+      '0': 4,
+      '1': 20,
+      '2': 24,
+      '3': 30,
+      '4': 36,
+      smallprint: `s:-1`,
+      body: `s:0`,
+      lede: `s:1`,
+      secondaryTitle: `s:1`,
+      contentTertiaryTitle: `s:2`,
+      contentSecondaryTitle: `s:3`,
+      primaryTitle: `s:4`,
+      contentPrimaryTitle: `s:4`,
+      giant: 120,
     },
     color: {
       // Colours
@@ -88,20 +94,26 @@ const config = {
       {
         resolve: [SMALL_UP, MEDIUM_UP, LARGE_UP],
         data: {
-          rhythm,
-          // baseline: {
-          //   lineHeight: rhythm, // Baseline height
-          // },
+          rhythm: rhythmSmallUp,
+          baseline: {
+            lineHeight: rhythmSmallUp, // Baseline height
+          },
           scale: {
-            smallprint: `14`,
-            body: `18`,
-            lede: `20`,
-            primaryTitle: `42`,
-            secondaryTitle: `22`,
-            contentPrimaryTitle: `42`,
-            contentSecondaryTitle: `34`,
-            contentTertiaryTitle: `28`,
-            giant: `180`,
+            '-1': 12,
+            '0': 18,
+            '1': 22,
+            '2': 28,
+            '3': 36,
+            '4': 42,
+            smallprint: `s:-1`,
+            body: `s:0`,
+            lede: `s:1`,
+            secondaryTitle: `s:1`,
+            contentTertiaryTitle: `s:2`,
+            contentSecondaryTitle: `s:3`,
+            primaryTitle: `s:4`,
+            contentPrimaryTitle: `s:4`,
+            giant: 180,
           },
         },
       },

@@ -1,4 +1,5 @@
 import { api } from 'cssapi'
+import { prop } from 'ramda'
 import React from 'react'
 import styled from 'styled-components'
 import directionBounce from '../../styles/animations/directionBounce'
@@ -10,7 +11,7 @@ const Wrapper = styled.div`
   position: relative;
   z-index: 1;
   text-align: center;
-  ${p => p.direction}: 0;
+  ${prop(`direction`)}: 0;
   ${arrow(`0.6ru`, `g:backgroundInverted`)};
 
   &:hover {

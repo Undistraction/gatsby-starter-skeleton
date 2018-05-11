@@ -35,7 +35,7 @@
     "demo:serve": "cd ./demo/project && gatsby serve"
   },
   "dependencies": {
-    "cssapi": "0.8.0",
+    "cssapi": "^0.8.1",
     "ramda": "^0.25.0",
     "ramda-adjunct": "^2.7.0",
     "react": "^16.3.2",
