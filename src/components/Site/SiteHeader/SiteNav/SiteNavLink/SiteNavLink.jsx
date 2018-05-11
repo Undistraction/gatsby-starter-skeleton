@@ -11,9 +11,10 @@ const Link = styled(Button).attrs({
   activeClassName: `isActive`,
 })`
   ${linkProps(`c:textInverted`, `c:highlightInverted`)};
+  ${underlineHover(`c:highlightInverted`)};
   background: transparent;
   letter-spacing: 0.5px;
-  ${underlineHover(`c:highlightInverted`)};
+  z-index: 2;
 
   &.isActive {
     ${api({

@@ -94,8 +94,8 @@ export default api =>
     h6 {
       ${api({
         baseline: scope`s:body`,
-        fontWeight: `normal`,
-        margin: [0],
+        fontWeight: `bold`,
+        margin: 0,
       })}
     }
 
@@ -127,11 +127,15 @@ export default api =>
     * and overflow that we removed from <pre>.
     */
     .gatsby-highlight {
-      background-color: #2c2b28;
-      border-radius: 0.3em;
-      margin: 0.5em 0;
-      padding: 1em;
+      margin: 0;
+      background: red;
       overflow: auto;
+
+      ${api({
+        borderRadius: scope`0.5ru`,
+        padding: scope`1ru`,
+        background: `c:black`,
+      })}
     }
 
     /**
@@ -141,11 +145,11 @@ export default api =>
     * 2. Always fill the visible space in .gatsby-highlight.
     */
     .gatsby-highlight pre[class*='language-'] {
-      background-color: transparent;
       margin: 0;
       padding: 0;
       overflow: initial;
       float: left; /* 1 */
       min-width: 100%; /* 2 */
+      background: transparent;
     }
 `

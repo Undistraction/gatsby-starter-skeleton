@@ -2,9 +2,18 @@ import { css } from 'styled-components'
 import mixin from '../../helpers/mixin'
 
 const banner = api => (edge = `top`) => css`
+  z-index: 1;
+  position: relative;
+
+  ${api({
+    background: `g:backgroundInverted`,
+    color: `c:textInverted`,
+    borderRadius: `0.1ru`,
+  })};
+
   ::before {
     content: '';
-    z-index: 1;
+    z-index: -1;
     ${api({
       background: `g:backgroundInverted`,
       width: `1.5ru`,

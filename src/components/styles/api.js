@@ -14,7 +14,7 @@ const BREAKPOINT_NAMES = Object.freeze({
 const { SMALL_UP, MEDIUM_UP, LARGE_UP } = BREAKPOINT_NAMES
 
 const breakpoints = [
-  [SMALL_UP, 400], // 400–900
+  [SMALL_UP, 600], // 900–1100
   [MEDIUM_UP, 900], // 900–1100
   [LARGE_UP, 1100], // 1100–
 ]
@@ -23,7 +23,7 @@ const breakpoints = [
 // Configure CSS API
 // -----------------------------------------------------------------------------
 
-const rhythmDefault = 22
+const rhythmDefault = 21
 const rhythmSmallUp = 28
 
 const config = {
@@ -35,11 +35,11 @@ const config = {
     },
     scale: {
       '-1': 10,
-      '0': 4,
-      '1': 20,
-      '2': 24,
-      '3': 30,
-      '4': 36,
+      '0': 14,
+      '1': 17,
+      '2': 21,
+      '3': 24,
+      '4': 28,
       smallprint: `s:-1`,
       body: `s:0`,
       lede: `s:1`,
@@ -92,7 +92,7 @@ const config = {
     // -------------------------------------------------------------------------
     scopes: [
       {
-        resolve: [SMALL_UP, MEDIUM_UP, LARGE_UP],
+        resolve: [MEDIUM_UP, LARGE_UP],
         data: {
           rhythm: rhythmSmallUp,
           baseline: {
@@ -103,8 +103,8 @@ const config = {
             '0': 18,
             '1': 22,
             '2': 28,
-            '3': 36,
-            '4': 42,
+            '3': 33,
+            '4': 38,
             smallprint: `s:-1`,
             body: `s:0`,
             lede: `s:1`,

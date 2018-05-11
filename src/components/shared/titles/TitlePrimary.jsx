@@ -2,7 +2,6 @@ import { api, scope } from 'cssapi'
 import styled from 'styled-components'
 
 const TitlePrimary = styled.h1`
-  font-weight: bold;
   ${api({
     fontFamily: `f:title`,
     baseline: scope`s:primaryTitle`,

@@ -5,6 +5,5 @@ export default styled.div`
   ${api({
     fontFamily: `f:title`,
     baseline: scope`s:primaryTitle`,
-    letterSpacing: 1,
   })};
 `

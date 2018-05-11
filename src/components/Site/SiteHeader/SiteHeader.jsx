@@ -1,39 +1,30 @@
+import { api, scope } from 'cssapi'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import { api } from 'cssapi'
-import flexVertical from '../../styles/mixins/flexVertical'
-import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
+import VLayout from '../../shared/layouts/VLayout'
 import SiteLogoLink from './SiteLogoLink'
 import SiteNav from './SiteNav'
 import SiteTitle from './SiteTitle'
 
 const Header = styled.div``
 
-const Layout = styled.div`
-  ${flexVertical};
-  ${spaceChildrenV(`0.5ru`)};
+const Layout = styled(VLayout)`
   align-items: center;
   width: 100%;
   ${api({
-    padding: `2.5ru 0 1ru`,
+    padding: scope`2.5ru 0 1ru`,
   })};
 
   ${Header} {
     ${api({
-      width: 100,
-    })};
-  }
-
-  ${SiteTitle} {
-    ${api({
-      marginBottom: `0.5ru`,
+      width: [60, 80, 100],
     })};
   }
 `
 
 const SiteHeader = ({ title, pages }) => (
-  <Layout>
+  <Layout size="small">
     <Header>
       <SiteLogoLink />
     </Header>

@@ -4,10 +4,8 @@ import renderListItems from '../../../helpers/renderListItems'
 import VList from '../../../shared/lists/VList'
 import ArticlesListItem from './ArticlesListItem'
 
-const Layout = VList
-
 const ArticlesList = ({ articles }) => (
-  <Layout>{renderListItems(ArticlesListItem, `article`, articles)}</Layout>
+  <VList>{renderListItems(ArticlesListItem, `article`, articles)}</VList>
 )
 
 ArticlesList.propTypes = {

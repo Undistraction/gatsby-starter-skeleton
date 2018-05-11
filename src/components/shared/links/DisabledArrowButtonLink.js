@@ -1,4 +1,4 @@
-import { api } from 'cssapi'
+import { api, scope } from 'cssapi'
 import styled from 'styled-components'
 import arrow from '../../styles/mixins/arrow'
 
@@ -9,9 +9,9 @@ const DisabledArrowButtonLink = styled.div`
   cursor: default;
   color: transparent;
   user-select: none;
-  ${arrow(`0.6ru`, `c:disabled`)};
+  ${arrow(scope`0.6ru`, `c:disabled`)};
   ${api({
-    padding: `0.5ru 1ru`,
+    padding: scope`0.5ru 1ru`,
     backgroundColor: `c:disabled`,
   })};
 `

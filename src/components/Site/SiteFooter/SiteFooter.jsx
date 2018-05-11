@@ -2,40 +2,33 @@ import { api, scope } from 'cssapi'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import { currentYear } from '../../helpers/date'
+import { dateRange } from '../../helpers/formatting'
+import VLayout from '../../shared/layouts/VLayout'
 import blockCenterH from '../../styles/mixins/blockCenterH'
-import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
 import Copyright from './Copyright'
 import Credit from './Credit'
 
-const Layout = styled.footer`
-  text-align: center;
+const Layout = styled(VLayout.withComponent(`footer`))`
   ${blockCenterH};
-  ${spaceChildrenV(`1ru`)};
 
   ${api({
-    padding: `4ru 0 1ru`,
     baseline: scope`s:smallprint`,
   })};
 
   > * {
+    min-width: 75%;
     ${api({
-      margin: `0 auto 1ru`,
+      marginH: `auto`,
     })};
   }
 `
 
-const SiteFooter = ({ owner, startYear, showCredit }) => {
-  const endYear = currentYear()
-  const dateRange = endYear === startYear ? endYear : `${startYear}–${endYear}`
-
-  return (
-    <Layout>
-      <Copyright owner={owner} dateRange={dateRange} />
-      {showCredit && <Credit />}
-    </Layout>
-  )
-}
+const SiteFooter = ({ owner, startYear, showCredit }) => (
+  <Layout>
+    <Copyright owner={owner} dateRange={dateRange(startYear)} />
+    {showCredit && <Credit />}
+  </Layout>
+)
 
 SiteFooter.propTypes = {
   owner: PropTypes.string.isRequired,

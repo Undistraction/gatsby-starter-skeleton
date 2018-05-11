@@ -4,12 +4,39 @@ date: "2018-03-24"
 slug: "article-6"
 description: Sed nisi dolor, fringilla et consectetur eu, viverra vulputate felis. Ut est ex, ornare vitae dictum quis, egestas et est. Nam rhoncus purus eu justo feugiat, a venenatis enim ultricies. Mauris tristique elementum leo a viverra. Ut placerat, ex nec vestibulum iaculis, nibh ante sollicitudin elit, non aliquet nunc neque ac sapien. Aenean iaculis vulputate facilisis. Suspendisse elit purus, iaculis.
 keywords: keyword 2, keyword 8
+author: Lorem Ipsum Dolor
 image: ./images/main.jpg
 ---
 
 Vitae accusamus abhorreant vis ne. Ancillae suavitate persequeris ex est, vix ei
-aeque causae. An nisl adhuc ullamcorper sea, omnes labores senserit at pro. Mea
-graeci semper integre ex. Nunc et placerat turpis, placerat lobortis metus.
+aeque causae. An nisl adhuc ullamcorper sea, omnes labores senserit at pro.
+Suspendisse pulvinar congue elit, vitae tincidunt mauris tempus non. Morbi
+mattis tellus orci, sit amet tincidunt nibh ullamcorper vitae. Phasellus
+suscipit augue nec diam elementum, at porta est egestas. Mea graeci semper
+integre ex. Nunc et placerat turpis, placerat lobortis metus.
+
+```javascript
+import { isRhythmUnit } from '../utils/predicate'
+import transformer from './transformer'
+import { mulitplyUnitlessNumbersToDistance } from '../utils/converters'
+import keyToValueResolver from '../resolvers/keyToValueResolver'
+import { LENGTH_UNITS } from '../const/units'
+
+const rhythmUnitsToRemsTransformer = transformer(
+  isRhythmUnit,
+  (value, data, breakpointName) => {
+    const rhythm = keyToValueResolver(`rhythm`)(value, data, breakpointName)
+    return mulitplyUnitlessNumbersToDistance(
+      rhythm,
+      data.baseFontSize,
+      LENGTH_UNITS.REM
+    )(value)
+  }
+)
+
+export default rhythmUnitsToRemsTransformer
+```
+
 Aliquam eu tincidunt orci, nec placerat nulla. Sed facilisis et dolor vitae
 efficitur. Pellentesque varius justo feugiat auctor varius. Quisque et diam
 urna. Vivamus dapibus diam et magna rhoncus bibendum.

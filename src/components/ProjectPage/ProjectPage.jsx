@@ -5,6 +5,7 @@ import React from 'react'
 import {
   fieldsSlug,
   fieldsTitle,
+  markdownItem,
   markdownItemImageSizes,
   markdownItemMetadata,
   markdownItemTitle,
@@ -36,7 +37,7 @@ const ProjectPage = ({ data }) => {
       nav={nav}
     >
       <Metadata {...markdownItemMetadata(data)} />
-      <Project data={data} />
+      <Project project={markdownItem(data)} />
     </Page>
   )
 }

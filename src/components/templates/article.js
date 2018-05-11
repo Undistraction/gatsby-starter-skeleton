@@ -15,6 +15,7 @@ export const query = graphql`
       frontmatter {
         date(formatString: $dateFormat)
         keywords
+        author
         image {
           childImageSharp {
             sizes {

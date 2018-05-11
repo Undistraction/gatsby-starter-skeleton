@@ -6,7 +6,7 @@ import fixAspectRatio from '../styles/mixins/fixAspectRatio'
 const Layout = styled.div`
   ${fixAspectRatio(96, 113)};
 
-  /* Have to use an id instead of a classname */
+  /* Have to use an id instead of a classname as SVG doesn't support classes   for targeting gradients */
   #logoGrad {
     .gradientStart {
       ${api({

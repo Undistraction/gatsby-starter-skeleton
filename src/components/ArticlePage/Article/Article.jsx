@@ -1,21 +1,44 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { fieldsTags, markdownItem } from '../../helpers/markdown'
+import styled from 'styled-components'
+import {
+  fieldsTags,
+  frontmatterAuthor,
+  frontmatterDate,
+} from '../../helpers/markdown'
 import HTMLText from '../../shared/HTMLText'
+import ResourceFooter from '../../shared/ResourceFooter'
 import TagList from '../../shared/TagList'
+import HLayout from '../../shared/layouts/HLayout'
+import VLayout from '../../shared/layouts/VLayout'
+import TitleSecondary from '../../shared/titles/TitleSecondary'
 
-const Article = ({ data }) => {
-  const article = markdownItem(data)
-  return (
-    <React.Fragment>
-      <HTMLText htmlAst={article.htmlAst} />
+const Meta = styled(VLayout)``
+
+const Author = styled(HLayout)``
+
+const Article = ({ article }) => (
+  <React.Fragment>
+    <Meta size="tiny">
+      <Author>
+        Date: <TitleSecondary>{frontmatterDate(article)}</TitleSecondary>
+      </Author>
+      <Author>
+        Author: <TitleSecondary>{frontmatterAuthor(article)}</TitleSecondary>
+      </Author>
+      <Author>
+        Filed Under: <TitleSecondary>Programming</TitleSecondary>
+      </Author>
+    </Meta>
+    <HTMLText htmlAst={article.htmlAst} />
+    <ResourceFooter>
       <TagList tags={fieldsTags(article)} />
-    </React.Fragment>
-  )
-}
+    </ResourceFooter>
+  </React.Fragment>
+)
 
 Article.propTypes = {
-  data: PropTypes.object.isRequired,
+  article: PropTypes.object.isRequired,
 }
 
 export default Article

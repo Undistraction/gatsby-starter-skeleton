@@ -3,6 +3,7 @@ import React from 'react'
 import {
   fieldsSlug,
   fieldsTitle,
+  markdownItem,
   markdownItemImageSizes,
   markdownItemMetadata,
   markdownItemTitle,
@@ -34,7 +35,7 @@ const ArticlePage = ({ data }) => {
       nav={nav}
     >
       <Metadata {...markdownItemMetadata(data)} />
-      <Article data={data} />
+      <Article article={markdownItem(data)} />
     </Page>
   )
 }

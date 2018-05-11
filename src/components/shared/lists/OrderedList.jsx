@@ -1,19 +1,19 @@
-import { api } from 'cssapi'
+import { api, scope } from 'cssapi'
 import styled from 'styled-components'
 import UnorderedList from './UnorderedList'
 
 const OrderedList = styled(UnorderedList)`
-  counter-reset: olItem;
+  counter-reset: listItem;
 
   li:after {
-    counter-increment: olItem;
-    content: counter(olItem);
+    counter-increment: listItem;
+    content: counter(listItem);
     position: absolute;
     text-align: center;
     ${api({
       color: `c:textInverted`,
-      width: `1ru`,
-      left: `-1ru`,
+      width: scope`1ru`,
+      left: scope`-1ru`,
       top: 0,
     })};
   }

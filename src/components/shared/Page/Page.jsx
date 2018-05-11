@@ -1,38 +1,43 @@
+import { scope } from 'cssapi'
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import api from '../../styles/api'
 import defaultBorder from '../../styles/mixins/defaultBorder'
-import flexVertical from '../../styles/mixins/flexVertical'
-import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
+import VLayout from '../layouts/VLayout'
 import TitlePrimary from '../titles/TitlePrimary'
 
-export const Header = styled.div`
+export const Body = styled(VLayout)`
   position: relative;
+  ${api({
+    paddingH: scope`1ru`,
+  })};
+`
+
+export const Nav = styled.div`
+  ${api({
+    paddingH: [`1ru`, `1ru`, `1ru`, 0],
+  })};
 `
 
 const PageTitle = styled(TitlePrimary)`
   text-align: center;
+  ${defaultBorder([`top`, `bottom`])};
   ${api({
-    borderWidth: `1px 0`,
-    paddingV: `1ru`,
+    paddingV: scope`1ru`,
   })};
-  ${p => defaultBorder(p.theme.api)};
-`
-
-const Layout = styled.div`
-  ${flexVertical};
-  ${spaceChildrenV(`1ru`)};
 `
 
 const Page = ({ title, children, imageSizes, nav }) => (
-  <Layout>
+  <VLayout>
     {imageSizes && <Img sizes={imageSizes} />}
-    {nav}
-    <PageTitle>{title}</PageTitle>
-    {children}
-  </Layout>
+    {nav && <Nav>{nav}</Nav>}
+    <Body>
+      <PageTitle>{title}</PageTitle>
+      {children}
+    </Body>
+  </VLayout>
 )
 
 Page.propTypes = {

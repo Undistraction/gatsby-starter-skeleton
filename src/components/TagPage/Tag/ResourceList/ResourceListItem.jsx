@@ -10,12 +10,10 @@ import {
   fieldsType,
   frontmatterImageSizes,
 } from '../../../helpers/markdown'
+import HLayout from '../../../shared/layouts/HLayout'
+import VLayout from '../../../shared/layouts/VLayout'
 import TextLink from '../../../shared/links/TextLink'
 import TitleSecondary from '../../../shared/titles/TitleSecondary'
-import flexHorizontal from '../../../styles/mixins/flexHorizontal'
-import flexVertical from '../../../styles/mixins/flexVertical'
-import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'
-import spaceChildrenV from '../../../styles/mixins/spaceChildrenV'
 
 const ResourceType = styled.h3`
   font-style: italic;
@@ -25,17 +23,7 @@ const Media = styled.div`
   position: relative;
 `
 
-const Info = styled.div`
-  ${flexVertical};
-  ${spaceChildrenV(`0.5ru`)};
-`
-const Header = styled.header``
-
-const Body = styled.div``
-const Layout = styled.div`
-  ${flexHorizontal};
-  ${spaceChildrenH(`1ru`)};
-
+const Layout = styled(HLayout)`
   ${Media} {
     flex: 0 0 25%;
   }
@@ -51,17 +39,13 @@ const ResourceListItem = ({ resource }) => {
           <Img sizes={frontmatterImageSizes(resource)} />
         </Link>
       </Media>
-      <Info>
-        <Header>
-          <TextLink to={slug} title={title} underlineType="left">
-            <TitleSecondary>{title}</TitleSecondary>
-          </TextLink>
-          <ResourceType>{firstToUpper(fieldsType(resource))}</ResourceType>
-        </Header>
-        <Body>
-          <p>{resource.excerpt}</p>
-        </Body>
-      </Info>
+      <VLayout size="small">
+        <TextLink to={slug} title={title} underlineType="left">
+          <TitleSecondary>{title}</TitleSecondary>
+        </TextLink>
+        <ResourceType>{firstToUpper(fieldsType(resource))}</ResourceType>
+        <p>{resource.excerpt}</p>
+      </VLayout>
     </Layout>
   )
 }

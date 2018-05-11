@@ -6,7 +6,7 @@ import Page from '../shared/Page/Page'
 import TagList from '../shared/TagList'
 
 const TagsPage = ({ data, pathContext }) => (
-  <Page title={tagsPageTitle(data)} hasImage={false}>
+  <Page title={tagsPageTitle(data)}>
     <Metadata {...tagsPageMetadata(data)} />
     <TagList tags={pathContext.tags} />
   </Page>

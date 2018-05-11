@@ -1,38 +1,37 @@
+import { api } from 'cssapi'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import { api } from 'cssapi'
 import banner from '../../../styles/mixins/banner'
 import flexHorizontal from '../../../styles/mixins/flexHorizontal'
 import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'
 import uiList from '../../../styles/mixins/uiList'
 import SiteNavLink from './SiteNavLink/SiteNavLink'
 
-const Layout = styled.nav`
-  ${flexHorizontal};
-  ${uiList};
-  ${spaceChildrenH(`1ru`)};
-  ${banner(`bottom`)}
-  ${api({
-    position: `relative`,
-    background: `g:backgroundInverted`,
-    padding: `0.75ru 1ru`,
-    color: `c:textInverted`,
-  })};
+const Wrapper = styled.nav``
 
-  * > {
-    z-index: 1;
-  }}
+const Layout = styled.div`
+  ${flexHorizontal};
+  ${spaceChildrenH([`0.75ru`, `1ru`])};
+  ${uiList};
+  position: relative;
+  z-index: 99;
+  ${banner(`bottom`)};
+  ${api({
+    padding: [`0.5ru`, `0.75ru 1ru`],
+  })};
 `
 
 const SiteNav = ({ pages }) => (
-  <Layout>
-    <SiteNavLink page={pages.home} />
-    <SiteNavLink page={pages.articles} />
-    <SiteNavLink page={pages.projects} />
-    <SiteNavLink page={pages.tags} />
-    <SiteNavLink page={pages.about} />
-  </Layout>
+  <Wrapper>
+    <Layout>
+      <SiteNavLink page={pages.home} />
+      <SiteNavLink page={pages.articles} />
+      <SiteNavLink page={pages.projects} />
+      <SiteNavLink page={pages.tags} />
+      <SiteNavLink page={pages.about} />
+    </Layout>
+  </Wrapper>
 )
 
 SiteNav.propTypes = {

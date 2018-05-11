@@ -13,7 +13,7 @@ const TagPage = ({ data, pathContext }) => {
   const { tag } = pathContext
 
   return (
-    <Page title={tagTitle(tag)} hasImage={false}>
+    <Page title={tagTitle(tag)}>
       <Metadata {...addTitleToMetadata(metadata, tag)} />
       <Tag taggedItems={markdownItemNodes(data)} tag={tag} />
     </Page>

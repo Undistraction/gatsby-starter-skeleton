@@ -1,4 +1,4 @@
-import { api } from 'cssapi'
+import { api, scope } from 'cssapi'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
@@ -14,8 +14,7 @@ const Layout = styled.nav`
   justify-content: space-between;
   ${LayoutNext}, ${LayoutPrevious} {
     ${api({
-      width: `calc(50% - 0.5ru)`,
-      flex: `0 -1 calc(50% - 0.5ru)`,
+      width: scope`calc(50% - 0.5ru)`,
     })};
   }
 `

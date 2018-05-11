@@ -5,8 +5,8 @@ import Button from './ButtonLink'
 const PillButtonLink = styled(Button)`
   ${api({
     baseline: scope`s:smallprint`,
-    borderRadius: `1ru`,
-    padding: `0 0.5ru`,
+    borderRadius: scope`1ru`,
+    padding: scope`0.25ru 0.5ru`,
   })};
 `
 

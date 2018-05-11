@@ -2,32 +2,22 @@
 
 import PropTypes from 'prop-types'
 import React from 'react'
-import styled from 'styled-components'
-import { fieldsTags, markdownItem } from '../../helpers/markdown'
+import { fieldsTags } from '../../helpers/markdown'
 import HTMLText from '../../shared/HTMLText'
+import ResourceFooter from '../../shared/ResourceFooter'
 import TagList from '../../shared/TagList'
 
-const Header = styled.header``
-const Body = styled.div``
-const Footer = styled.footer``
-
-const Project = ({ data }) => {
-  const project = markdownItem(data)
-
-  return (
-    <React.Fragment>
-      <Body>
-        <HTMLText htmlAst={project.htmlAst} />
-      </Body>
-      <Footer>
-        <TagList tags={fieldsTags(project)} />
-      </Footer>
-    </React.Fragment>
-  )
-}
+const Project = ({ project }) => (
+  <React.Fragment>
+    <HTMLText htmlAst={project.htmlAst} />
+    <ResourceFooter>
+      <TagList tags={fieldsTags(project)} />
+    </ResourceFooter>
+  </React.Fragment>
+)
 
 Project.propTypes = {
-  data: PropTypes.object.isRequired,
+  project: PropTypes.object.isRequired,
 }
 
 export default Project

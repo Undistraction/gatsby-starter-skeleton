@@ -18,10 +18,11 @@ const Layout = styled.div`
   ${blockCenterH};
   ${api({
     minHeight: `100vh`,
-    maxWidth: [1100],
+    maxWidth: 1100,
+    minWidth: 300,
   })};
 
-  ${Header} {
+  ${Header}, ${Footer} {
     flex: 0 0 auto;
   }
 
@@ -30,9 +31,8 @@ const Layout = styled.div`
   }
 
   ${Footer} {
-    flex: 0 0 auto;
     ${api({
-      margin: scope`0 6ru`,
+      padding: scope`3ru 0 2ru`,
     })};
   }
 `

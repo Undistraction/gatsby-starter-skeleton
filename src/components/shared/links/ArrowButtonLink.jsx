@@ -1,4 +1,4 @@
-import { api } from 'cssapi'
+import { api, scope } from 'cssapi'
 import { prop } from 'ramda'
 import React from 'react'
 import styled from 'styled-components'
@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   z-index: 1;
   text-align: center;
   ${prop(`direction`)}: 0;
-  ${arrow(`0.6ru`, `g:backgroundInverted`)};
+  ${arrow(scope`0.6ru`, `g:backgroundInverted`)};
 
   &:hover {
     animation: ${({ direction }) =>
@@ -25,7 +25,7 @@ const Link = styled(Button)`
   ${singleLineTruncate};
 
   ${api({
-    padding: `0.5ru 1ru`,
+    padding: scope`0.5ru 1ru`,
   })};
 `
 

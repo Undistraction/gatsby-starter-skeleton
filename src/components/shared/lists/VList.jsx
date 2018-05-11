@@ -1,10 +1,9 @@
 import styled from 'styled-components'
-import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
 import uiList from '../../styles/mixins/uiList'
+import VLayout from '../layouts/VLayout'
 
-const VList = styled.ul`
+const VList = styled(VLayout.withComponent(`ul`))`
   ${uiList};
-  ${spaceChildrenV([`1ru`])};
 `
 
 export default VList

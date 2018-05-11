@@ -1,4 +1,15 @@
 import { compose, join, lensIndex, over, toUpper } from 'ramda'
+import { currentYear } from '../../../demo/project/src/components/helpers/date'
 
-// eslint-disable-next-line import/prefer-default-export
-export const firstToUpper = compose(join(``), over(lensIndex(0), toUpper))
+export const joinWithNoSpace = join(``)
+export const joinWithEnDash = join(`–`)
+
+export const firstToUpper = compose(
+  joinWithNoSpace,
+  over(lensIndex(0), toUpper)
+)
+
+export const dateRange = startYear => {
+  const endYear = currentYear()
+  return endYear === startYear ? endYear : joinWithEnDash([startYear, endYear])
+}

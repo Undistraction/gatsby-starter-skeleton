@@ -2,17 +2,11 @@ import PropTypes from 'prop-types'
 import { isEmptyArray } from 'ramda-adjunct'
 import React from 'react'
 import styled from 'styled-components'
-import flexVertical from '../../styles/mixins/flexVertical'
-import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
 import ResourceList from './ResourceList'
 
-const Header = styled.header`
-  ${flexVertical};
-  ${spaceChildrenV(`2ru`)};
+const Header = styled.div`
   text-align: center;
 `
-
-const Body = styled.div``
 
 const Tag = ({ taggedItems, tag }) => (
   <React.Fragment>
@@ -23,9 +17,7 @@ const Tag = ({ taggedItems, tag }) => (
         <Header>
           {taggedItems.length} items are tagged with {tag}
         </Header>
-        <Body>
-          <ResourceList resources={taggedItems} />
-        </Body>
+        <ResourceList resources={taggedItems} />
       </React.Fragment>
     )}
   </React.Fragment>
@@ -38,7 +30,6 @@ Tag.propTypes = {
 
 Tag.defaultProps = {
   taggedItems: [],
-  tags: [],
 }
 
 export default Tag

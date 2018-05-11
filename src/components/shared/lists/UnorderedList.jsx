@@ -8,22 +8,22 @@ const UnorderedList = styled.ul`
 
   ${api({
     baseline: scope`s:body`,
-    paddingLeft: `1ru`,
+    paddingLeft: scope`1ru`,
   })};
 
   li {
     position: relative;
     list-style: none;
     ${api({
-      paddingLeft: `0.5ru`,
+      paddingLeft: scope`0.5ru`,
     })};
 
     &::before {
       content: '';
       position: absolute;
       ${api({
-        left: `-1ru`,
-        height: `1ru`,
+        left: scope`-1ru`,
+        height: scope`1ru`,
       })};
       ${elementBorder()};
     }

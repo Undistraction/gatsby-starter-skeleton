@@ -1,10 +1,9 @@
 import styled from 'styled-components'
-import flexHorizontal from '../../styles/mixins/flexHorizontal'
 import uiList from '../../styles/mixins/uiList'
+import HLayout from '../layouts/HLayout'
 
-const HList = styled.ul`
+const HList = styled(HLayout.withComponent(`ul`))`
   ${uiList};
-  ${flexHorizontal};
   flex-wrap: wrap;
 `
 

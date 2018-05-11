@@ -71,7 +71,7 @@ const PageText = styled.div`
   }
 
   div {
-    ${spaceChildrenV(`1ru`)};
+    ${spaceChildrenV(scope`1ru`)};
   }
 
   div > p:first-of-type:first-letter {
@@ -80,11 +80,10 @@ const PageText = styled.div`
 
   ${Blockquote}, ${OrderedList}, ${UnorderedList} {
     ${api({
-      marginH: `1ru`,
+      marginH: scope`1ru`,
     })};
   }
 `
-
 const HTMLText = ({ htmlAst, theme }) => (
   <PageText>{renderAst(theme, htmlAst)}</PageText>
 )

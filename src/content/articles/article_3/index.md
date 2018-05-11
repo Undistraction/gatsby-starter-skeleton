@@ -3,15 +3,18 @@ title: "Eam Cetero Omnesque Officiis Ea Cu Vide Lucilius Est Melius Disputando E
 date: "2018-02-26"
 slug: "article-3"
 description: Sed nisi dolor, fringilla et consectetur eu, viverra vulputate felis. Ut est ex, ornare vitae dictum quis, egestas et est. Nam rhoncus purus eu justo feugiat, a venenatis enim ultricies. Mauris tristique elementum leo a viverra. Ut placerat, ex nec vestibulum iaculis, nibh ante sollicitudin elit, non aliquet nunc neque ac sapien. Aenean iaculis vulputate facilisis. Suspendisse elit purus, iaculis.
+author: Lorem Ipsum Dolor
 image: ./images/main.jpg
 ---
 
-This is example article 3. Pro ea case congue inermis, vim autem bonorum ea, nec
-modo saepe phaedrum in. Ei aeterno consectetuer nam. Suavitate assueverit mea
-ad. Illum novum noster eu usu, debitis meliore tibique ex pro. Sit novum primis
-delectus te, has ne velit oratio. Eos in tale erat probatus, nam eu stet volumus
-postulant. Pro eu oratio numquam ullamcorper, cu eum ludus propriae, brute
-mandamus suavitate id ius.
+Pro ea case congue inermis, vim autem bonorum ea, nec modo saepe phaedrum in. Ei
+aeterno consectetuer nam. Suavitate assueverit mea ad. Illum novum noster eu
+usu, debitis meliore tibique ex pro. Sit novum primis delectus te, has ne velit
+oratio. Suspendisse pulvinar congue elit, vitae tincidunt mauris tempus non.
+Morbi mattis tellus orci, sit amet tincidunt nibh ullamcorper vitae. Phasellus
+suscipit augue nec diam elementum, at porta est egestas. Eos in tale erat
+probatus, nam eu stet volumus postulant. Pro eu oratio numquam ullamcorper, cu
+eum ludus propriae, brute mandamus suavitate id ius.
 
 Ea melius copiosae laboramus his. Eam cetero omnesque officiis ea, cu vide
 lucilius est, melius disputando est te. Ubique efficiantur te eum, te nam debet

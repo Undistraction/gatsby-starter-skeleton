@@ -1,11 +1,11 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
+import { notFoundPageTitle } from '../helpers/siteMetadata'
 import Page from '../shared/Page/Page'
 import NotFoundMessage from './NotFoundMessage'
-import { notFoundPageTitle } from '../helpers/siteMetadata'
 
 const NotFoundPage = ({ data, location }) => (
-  <Page title={notFoundPageTitle(data)} hasImage={false}>
+  <Page title={notFoundPageTitle(data)}>
     <NotFoundMessage path={location.pathname} />
   </Page>
 )
