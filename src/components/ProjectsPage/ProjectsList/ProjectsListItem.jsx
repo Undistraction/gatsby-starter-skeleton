@@ -2,13 +2,13 @@ import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import BaseLink from '../../../../demo/project/src/components/shared/BaseLink'
 import {
   fieldsSlug,
   fieldsTitle,
   frontmatterImageSizes,
 } from '../../helpers/markdown'
 import VLayout from '../../shared/layouts/VLayout'
+import BaseLink from '../../shared/links/BaseLink'
 import TitleSecondary from '../../shared/titles/TitleSecondary'
 import scaleBounce from '../../styles/animations/scaleBounce'
 import linkProps from '../../styles/mixins/linkProps'
