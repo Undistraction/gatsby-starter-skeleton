@@ -1,10 +1,17 @@
+import { api, scope } from 'cssapi'
 import styled from 'styled-components'
-import HList from './HList'
 
-const CommaList = styled(HList)`
+const CommaList = styled.ul`
+  display: inline-block;
+
   > li {
+    display: inline-block;
+
     ::after {
-      content: ',';
+      ${api({
+        marginRight: scope`0.25ru`,
+      })};
+      content: ', ';
     }
 
     :last-child ::after {

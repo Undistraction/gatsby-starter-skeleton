@@ -20,7 +20,8 @@ pharetra ipsum vitae ex suscipit vulputate. Nulla bibendum tempor commodo. Cras
 molestie vestibulum dolor in faucibus. Nam faucibus est consectetur, convallis
 lorem nec, varius lacus.
 
-The font used on this site is _Cousine_
+The font used on this site is
+[Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro).
 
 * This is the regular weight.
 * _This is the regular weight in italics_.

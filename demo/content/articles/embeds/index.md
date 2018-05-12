@@ -41,6 +41,8 @@ A standard Vimeo embed:
 <iframe src="https://player.vimeo.com/video/40686155?portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 ```
 
+<iframe src="https://player.vimeo.com/video/40686155?portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 A responsive Vimeo embed:
 
 ```markdown

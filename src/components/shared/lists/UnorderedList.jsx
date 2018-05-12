@@ -1,15 +1,22 @@
 import { api, scope } from 'cssapi'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import elementBorder from '../../styles/mixins/elementBorder'
 import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
 
+const scaleMap = {
+  default: `body`,
+  small: `smallprint`,
+}
+
 const UnorderedList = styled.ul`
   ${spaceChildrenV(`0.5rem`)};
 
-  ${api({
-    baseline: scope`s:body`,
-    paddingLeft: scope`1ru`,
-  })};
+  ${p =>
+    api({
+      baseline: scope`s:${scaleMap[p.size]} 1`,
+      paddingLeft: scope`1ru`,
+    })(p)};
 
   li {
     position: relative;
@@ -29,5 +36,13 @@ const UnorderedList = styled.ul`
     }
   }
 `
+
+UnorderedList.propTypes = {
+  size: PropTypes.string,
+}
+
+UnorderedList.defaultProps = {
+  size: `default`,
+}
 
 export default UnorderedList

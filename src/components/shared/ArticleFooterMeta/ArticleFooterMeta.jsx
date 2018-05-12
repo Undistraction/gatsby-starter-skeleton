@@ -6,7 +6,7 @@ import { fieldsTags, frontmatterCategory } from '../../helpers/markdown'
 import defaultBorder from '../../styles/mixins/defaultBorder'
 import TagList from '../TagList'
 import VLayout from '../layouts/VLayout'
-import TextLink from '../links/TextLink'
+import ContentLink from '../links/ContentLink'
 
 const Layout = styled(VLayout)`
   ${defaultBorder(`top`)};
@@ -16,12 +16,14 @@ const Layout = styled(VLayout)`
 `
 
 const ArticleFooterMeta = ({ article }) => (
-  <Layout spacing="tiny">
-    <p>
+  <Layout spacing="none">
+    <div>
       Filed Under:{` `}
-      <TextLink>{frontmatterCategory(article)}</TextLink>
-      <TagList tags={fieldsTags(article)} />
-    </p>
+      <ContentLink>{frontmatterCategory(article)}</ContentLink>
+    </div>
+    <div>
+      Tagged With: <TagList tags={fieldsTags(article)} />
+    </div>
   </Layout>
 )
 

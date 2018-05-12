@@ -75,7 +75,7 @@ const config = {
       borderColor: `c:backgroundStart`,
     },
     font: {
-      default: `Cousine, monospace`,
+      default: `Source Code Pro, monospace`,
       title: `Berkshire Swash, cursive`,
     },
     gradient: {

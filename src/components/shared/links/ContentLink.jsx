@@ -9,6 +9,7 @@ const ContentLink = styled(TextLink)`
   ::before {
     content: '';
     position: absolute;
+    transition: all 1s ease-in-out;
 
     ${api({
       height: `0.2em`,
@@ -17,6 +18,12 @@ const ContentLink = styled(TextLink)`
       right: 0,
       background: `c:backgroundStart`,
     })};
+  }
+
+  &:hover ::before {
+    left: 50%;
+    right: 50%;
+    transition: all 0.5s ease-in-out;
   }
 `
 

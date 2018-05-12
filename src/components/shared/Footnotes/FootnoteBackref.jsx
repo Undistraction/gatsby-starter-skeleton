@@ -6,7 +6,7 @@ import BaseLink from '../links/BaseLink'
 const FootnoteRef = styled(BaseLink)`
   ${linkProps(`c:text`, `c:highlight`)};
   ${api({
-    baseline: `s:body`,
+    baseline: `s:smallprint`,
   })};
 `
 

@@ -1,6 +1,7 @@
 import { api, scope } from 'cssapi'
 import PropTypes from 'prop-types'
-import { test } from 'ramda'
+import { both, filter, lensPath, pipe, test } from 'ramda'
+import { isNotEmpty, isPlainObj, lensSatisfies } from 'ramda-adjunct'
 import React from 'react'
 import RehypeReact from 'rehype-react'
 import styled, { withTheme } from 'styled-components'
@@ -21,6 +22,9 @@ import ContentTitleTertiary from './titles/ContentTitleTertiary'
 const hrefIsBackref = test(/^#fnref/)
 const isClassedAsFootnoteRef = test(/footnote-ref/)
 const isClassedAsFootnotes = test(/footnotes/)
+const idIsFootnote = test(/^fn-/)
+const lhasIdProp = lensSatisfies(idIsFootnote, lensPath([`props`, `id`]))
+const isListOfFootnotes = pipe(filter(both(isPlainObj, lhasIdProp)), isNotEmpty)
 
 /* eslint-disable react/display-name, react/prop-types */
 const resolveAnchor = theme => ({ className, href, ...rest }) => {
@@ -45,6 +49,15 @@ const resolveDiv = theme => ({ className, ...rest }) => {
   }
   return <div className={className} {...rest} />
 }
+
+const resolveOl = theme => ({ children }) => (
+  <OrderedList
+    theme={theme}
+    size={isListOfFootnotes(children) ? `small` : `default`}
+  >
+    {children}
+  </OrderedList>
+)
 /* eslint-enable react/display-name, react/prop-types */
 
 const renderAst = (theme, ast) =>
@@ -54,8 +67,8 @@ const renderAst = (theme, ast) =>
       h1: ContentTitlePrimary,
       h2: ContentTitleSecondary,
       h3: ContentTitleTertiary,
+      ol: resolveOl(theme),
       ul: UnorderedList,
-      ol: OrderedList,
       blockquote: Blockquote,
       cite: Cite,
       a: resolveAnchor(theme),
@@ -65,19 +78,20 @@ const renderAst = (theme, ast) =>
   }).Compiler(ast)
 
 const PageText = styled.div`
-  div > p:first-of-type {
-    font-weight: bold;
-    ${api({
-      baseline: scope`s:lede`,
-    })};
-  }
-
   div {
     ${spaceChildrenV(scope`1ru`)};
   }
 
-  div > p:first-of-type:first-letter {
-    ${dropCap()};
+  div > p:first-of-type {
+    font-weight: bold;
+
+    ${api({
+      baseline: scope`s:lede`,
+    })};
+
+    :first-letter {
+      ${dropCap()};
+    }
   }
 
   ${Blockquote}, ${OrderedList}, ${UnorderedList} {
