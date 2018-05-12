@@ -3,11 +3,7 @@
   "description": "Gatsby Skeleton Starter",
   "version": "0.0.1",
   "author": "Pedr Browne <info@undistraction.com>",
-  "keywords": [
-    "gatsby",
-    "styled-components",
-    "cssapi"
-  ],
+  "keywords": ["gatsby", "styled-components", "cssapi"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
@@ -16,8 +12,10 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "preview": "gatsby build && gatsby serve",
-    "deploy-staging": "yarn run build && yarn run surge ./public example-com-staging.surge.sh",
-    "deploy-production": "yarn run build && yarn run surge ./public example.com",
+    "deploy-staging":
+      "yarn run build && yarn run surge ./public example-com-staging.surge.sh",
+    "deploy-production":
+      "yarn run build && yarn run surge ./public example.com",
     "test": "jest src/config src/styles --watch ",
     "graph": "open http://localhost:8000/___graphql",
     "lint:js": "eslint src",
@@ -29,9 +27,11 @@
     "demo:githubPages": "gh-pages -d demo/project/public",
     "demo:open": "open https://undistraction.github.io/gatsby-skeleton-starter",
     "demo:update": "yarn demo:import && yarn demo:dev",
-    "demo:deploy": "yarn demo:import && yarn demo:copyContent && yarn demo:build && yarn demo:githubPages && yarn demo:open",
+    "demo":
+      "yarn demo:import && yarn demo:copyContent && yarn demo:build && yarn demo:githubPages && yarn demo:open",
     "demo:deleteCache": "bash scripts/demo-delete-cache.sh",
-    "demo:dev": "yarn demo:deleteCache && yarn demo:copyContent && cd demo/project && yarn dev",
+    "demo:dev":
+      "yarn demo:deleteCache && yarn demo:copyContent && cd demo/project && yarn dev",
     "demo:serve": "cd ./demo/project && gatsby serve"
   },
   "dependencies": {
@@ -96,9 +96,5 @@
     "stylelint-processor-styled-components": "^1.2.0",
     "surge": "^0.19.0"
   },
-  "browserslist": [
-    "> 1%",
-    "IE >= 9",
-    "last 2 versions"
-  ]
+  "browserslist": ["> 1%", "IE >= 9", "last 2 versions"]
 }
