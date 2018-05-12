@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { merge } from 'ramda'
 import React from 'react'
 import styled from 'styled-components'
+import globalStyles from '../styles/globalStyles'
 import blockCenterH from '../styles/mixins/blockCenterH'
 import flexVertical from '../styles/mixins/flexVertical'
 import SiteBody from './SiteBody'
@@ -14,6 +15,16 @@ export const Body = styled.div``
 export const Footer = styled.div``
 
 const Layout = styled.div`
+  // ---------------------------------------------------------------------------
+  // Global Styles
+  // ---------------------------------------------------------------------------
+
+  ${globalStyles()};
+
+  // ---------------------------------------------------------------------------
+  // Component Styles
+  // ---------------------------------------------------------------------------
+
   ${flexVertical};
   ${blockCenterH};
   ${api({

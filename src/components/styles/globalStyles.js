@@ -1,9 +1,10 @@
 import { scope } from 'cssapi'
 import { injectGlobal } from 'styled-components'
 import styledNormalize from 'styled-normalize'
+import mixin from '../helpers/mixin'
 import insetBorder from './mixins/insetBorder'
 
-export default api =>
+const globalStyles = api => () =>
   /* eslint-disable no-unused-expressions */
   injectGlobal`
 
@@ -153,3 +154,5 @@ export default api =>
       background: transparent;
     }
 `
+
+export default mixin(globalStyles)
