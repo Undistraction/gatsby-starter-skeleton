@@ -3,7 +3,9 @@ title: "Favicons"
 date: "2016-12-22"
 slug: "favicons"
 description: Automatic Favicon Generation.
+category: Site
 keywords: images, favicons
+author: Pedr Browne
 image: ./images/main.jpg
 ---
 

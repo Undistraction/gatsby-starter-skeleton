@@ -4,6 +4,8 @@ date: "2017-04-29"
 slug: "downloads"
 description: Easily include downloadable files.
 keywords: downloads, pdf
+category: Downloads
+author: Pedr Browne
 image: ./images/main.jpg
 ---
 

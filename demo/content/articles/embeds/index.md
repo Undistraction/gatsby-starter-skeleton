@@ -4,6 +4,8 @@ date: "2017-09-22"
 slug: "embeds"
 description: Use iframe or objects embeds.
 keywords: iframe, object, embed, responsive
+category: Markdown
+author: Pedr Browne
 image: ./images/main.jpg
 ---
 

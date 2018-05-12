@@ -3,7 +3,9 @@ title: "Images"
 date: "2017-07-01"
 slug: "images"
 description: Use images in your markdown.
-keywords: images, responsive
+keywords: images, responsive, markdown
+category: Markdown
+author: Pedr Browne
 image: ./images/main.jpg
 ---
 

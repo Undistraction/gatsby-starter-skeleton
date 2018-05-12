@@ -4,6 +4,8 @@ date: "2017-02-01"
 slug: "twitter"
 description: Link to tweets.
 keywords: social-media, twitter
+category: Markdown
+author: Pedr Browne
 image: ./images/main.jpg
 ---
 
