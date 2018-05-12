@@ -4,6 +4,7 @@ date: "2018-03-24"
 slug: "article-6"
 description: Sed nisi dolor, fringilla et consectetur eu, viverra vulputate felis. Ut est ex, ornare vitae dictum quis, egestas et est. Nam rhoncus purus eu justo feugiat, a venenatis enim ultricies. Mauris tristique elementum leo a viverra. Ut placerat, ex nec vestibulum iaculis, nibh ante sollicitudin elit, non aliquet nunc neque ac sapien. Aenean iaculis vulputate facilisis. Suspendisse elit purus, iaculis.
 keywords: keyword 2, keyword 8
+category: Sollicitudin Elit
 author: Lorem Ipsum Dolor
 image: ./images/main.jpg
 ---
@@ -88,6 +89,8 @@ te vix, possit dictas audiam quo id.
 > nisl delenit pertinacia ad vis, in soluta dissentiet usu. Mundi iuvaret
 > inermis vim at, an graeco feugait contentiones mea, nec porro minimum
 > reformidans ut. Consul argumentum instructior et mei.
+
+<cite>Quisque Quam Nulla</cite>
 
 Civibus efficiendi[^1] complectitur his at. Has id causae eruditi tractatos, ad
 duo enim soluta nostrud. Cum purto inani accumsan ei, ubique blandit persecuti

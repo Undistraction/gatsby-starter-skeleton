@@ -12,9 +12,14 @@ export const query = graphql`
   ) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       htmlAst
+      wordCount {
+        words
+      }
+      timeToRead
       frontmatter {
         date(formatString: $dateFormat)
         keywords
+        category
         author
         image {
           childImageSharp {

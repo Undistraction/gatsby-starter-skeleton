@@ -21,7 +21,7 @@ const Layout = styled(HLayout)`
 `
 
 const Credit = () => (
-  <Layout size="tiny">
+  <Layout spacing="tiny">
     <div>Built by</div>
     <CreditIcon />
     <TextLink to="http://undistraction.com">

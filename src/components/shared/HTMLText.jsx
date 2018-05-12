@@ -7,6 +7,7 @@ import styled, { withTheme } from 'styled-components'
 import dropCap from '../styles/mixins/dropCap'
 import spaceChildrenV from '../styles/mixins/spaceChildrenV'
 import Blockquote from './Blockquote'
+import Cite from './Cite'
 import FootnoteRef from './Footnotes/FootnoteRef'
 import Footnotes from './Footnotes/Footnotes'
 import HorizontalRule from './HorizontalRule'
@@ -56,6 +57,7 @@ const renderAst = (theme, ast) =>
       ul: UnorderedList,
       ol: OrderedList,
       blockquote: Blockquote,
+      cite: Cite,
       a: resolveAnchor(theme),
       hr: HorizontalRule,
       div: resolveDiv(theme),

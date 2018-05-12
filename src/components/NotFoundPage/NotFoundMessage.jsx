@@ -32,8 +32,8 @@ const Header = styled(HLayout.withComponent(`header`))`
 const Body = styled.div``
 
 const NotFoundMessage = ({ path }) => (
-  <Layout size="large">
-    <Header size="smallInverse">
+  <Layout spacing="large">
+    <Header spacing="smallInverse">
       <Four>4</Four>
       <LogoWrapper>
         <Logo />

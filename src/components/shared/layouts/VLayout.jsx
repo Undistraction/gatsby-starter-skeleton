@@ -4,8 +4,9 @@ import styled from 'styled-components'
 import flexVertical from '../../styles/mixins/flexVertical'
 import spaceChildrenV from '../../styles/mixins/spaceChildrenV'
 
-const sizeMap = {
+const spacingMap = {
   default: `1ru`,
+  none: `0`,
   small: `0.5ru`,
   large: `2ru`,
   smallInverse: `-0.5ru`,
@@ -13,15 +14,21 @@ const sizeMap = {
 
 const VLayout = styled.div`
   ${flexVertical};
-  ${p => spaceChildrenV(scope`${sizeMap[p.size]}`)(p)};
+  ${p => spaceChildrenV(scope`${spacingMap[p.spacing]}`)(p)};
 `
 
 VLayout.propTypes = {
-  size: PropTypes.oneOf([`default`, `small`, `large`, `smallInverse`]),
+  spacing: PropTypes.oneOf([
+    `default`,
+    `none`,
+    `small`,
+    `large`,
+    `smallInverse`,
+  ]),
 }
 
 VLayout.defaultProps = {
-  size: `default`,
+  spacing: `default`,
 }
 
 export default VLayout

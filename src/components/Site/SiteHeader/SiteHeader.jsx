@@ -24,7 +24,7 @@ const Layout = styled(VLayout)`
 `
 
 const SiteHeader = ({ title, pages }) => (
-  <Layout size="small">
+  <Layout spacing="small">
     <Header>
       <SiteLogoLink />
     </Header>

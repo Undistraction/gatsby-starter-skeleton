@@ -10,12 +10,11 @@ const queryAllResourceNodes = require(`../queries/queryAllResourceNodes`)
 
 const markdownNodes = data => data.allMarkdownRemark.edges
 
-const createPaginatedArticlesPage = (
-  createPage,
-  groupSize,
-  articlesPath,
-  total
-) => (group, groupIndex, allGroups) => {
+const createArticlesPage = (createPage, groupSize, articlesPath, total) => (
+  group,
+  groupIndex,
+  allGroups
+) => {
   const articlePagePath = indexedPagePath(articlesPath)
   const pagination = createPagination(
     articlePagePath,
@@ -58,12 +57,7 @@ const createArticlesPages = (
       return compose(
         Promise.all,
         mapIndexed(
-          createPaginatedArticlesPage(
-            createPage,
-            groupSize,
-            articlesPath,
-            edges.length
-          )
+          createArticlesPage(createPage, groupSize, articlesPath, edges.length)
         )(groupedPages)
       )
     })

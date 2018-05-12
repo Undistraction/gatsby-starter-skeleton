@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import flexHorizontal from '../../styles/mixins/flexHorizontal'
 import spaceChildrenH from '../../styles/mixins/spaceChildrenH'
 
-const sizeMap = {
+const spacingMap = {
   default: `1ru`,
   tiny: `0.25ru`,
   small: `0.5ru`,
@@ -14,11 +14,11 @@ const sizeMap = {
 
 const HLayout = styled.div`
   ${flexHorizontal};
-  ${p => spaceChildrenH(scope`${sizeMap[p.size]}`)(p)};
+  ${p => spaceChildrenH(scope`${spacingMap[p.spacing]}`)(p)};
 `
 
 HLayout.propTypes = {
-  size: PropTypes.oneOf([
+  spacing: PropTypes.oneOf([
     `default`,
     `small`,
     `large`,
@@ -29,7 +29,7 @@ HLayout.propTypes = {
 }
 
 HLayout.defaultProps = {
-  size: `default`,
+  spacing: `default`,
 }
 
 export default HLayout

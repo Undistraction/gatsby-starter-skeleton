@@ -28,8 +28,8 @@ const createTagPage = (tag, tags, createPage) => {
   })
 }
 
-const createTagPages = (graphql, createPage, taggedItemPaths) =>
-  queryAllResourceNodes(graphql, taggedItemPaths)
+const createTagPages = (graphql, createPage, articlesDir) =>
+  queryAllResourceNodes(graphql, articlesDir)
     .then(result =>
       pipe(
         markdownNodes,

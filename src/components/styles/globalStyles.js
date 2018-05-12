@@ -69,6 +69,10 @@ const globalStyles = api => () =>
       font-style: italic;
     }
 
+    cite {
+      font-style: italic;
+    }
+
 
     p {
       margin: 0;

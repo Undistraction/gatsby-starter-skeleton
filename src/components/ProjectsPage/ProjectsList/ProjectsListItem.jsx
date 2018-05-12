@@ -32,7 +32,7 @@ const Layout = styled(BaseLink)`
 `
 const ProjectsListItem = ({ project }) => (
   <Layout to={fieldsSlug(project)}>
-    <VLayout size="small">
+    <VLayout spacing="small">
       <ImgLayout>
         <Img sizes={frontmatterImageSizes(project)} />
       </ImgLayout>

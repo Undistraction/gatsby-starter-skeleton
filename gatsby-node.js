@@ -4,7 +4,7 @@ const addResourceTypeToNode = require(`./src/build/augment/addResourceTypeToNode
 const { lensPath, set, pipe } = require(`ramda`)
 const createTagsPage = require(`./src/build/create/createTagsPage`)
 const validatedConfig = require(`./src/config/validatedConfig`)
-const createPaginatedArticlesPages = require(`./src/build/create/createPaginatedArticlesPages`)
+const createArticlesPages = require(`./src/build/create/createArticlesPages`)
 const createProjectsPage = require(`./src/build/create/createProjectsPage`)
 const createTagPages = require(`./src/build/create/createTagPages`)
 const addSlugToNode = require(`./src/build/augment/addSlugToNode`)
@@ -30,7 +30,6 @@ const { resources } = validatedConfig().structure
 const augmentResource = (type, pathName, createNodeField, node) => {
   addSlugToNode(node, createNodeField, pathName)
   addMetadataToNode(node, createNodeField)
-  addTagsToNode(node, createNodeField)
   addResourceTypeToNode(type, node, createNodeField)
 }
 
@@ -55,6 +54,7 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
       createNodeField,
       node
     )
+    addTagsToNode(node, createNodeField)
   } else if (nodeIsMarkdownProject(node)) {
     augmentResource(
       RESOURCE_TYPE.PROJECT,
@@ -71,12 +71,8 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
   const decoratedCreatePage = createPageWithConfig(createPage)
-  const taggedItemPaths = [
-    resources.articles.directory,
-    resources.projects.directory,
-  ]
 
-  const paginatedArticlePages = createPaginatedArticlesPages(
+  const paginatedArticlePages = createArticlesPages(
     graphql,
     decoratedCreatePage,
     resources.articles.groupSize,
@@ -93,7 +89,11 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     resources.articles.path
   )
 
-  const tagPages = createTagPages(graphql, decoratedCreatePage, taggedItemPaths)
+  const tagPages = createTagPages(
+    graphql,
+    decoratedCreatePage,
+    resources.articles.directory
+  )
 
   const projectsPage = createProjectsPage(
     graphql,
@@ -114,7 +114,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   const tagsPage = createTagsPage(
     graphql,
     decoratedCreatePage,
-    taggedItemPaths,
+    resources.articles.directory,
     resources.tags.path
   )
 

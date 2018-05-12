@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import renderListItems from '../../helpers/renderListItems'
-import HList from '../lists/HList'
+import CommaList from '../lists/CommaList'
 import Tag from './Tag'
 
 const TagList = ({ tags }) => {
   const tagsElements = renderListItems(Tag, `tag`, tags)
-  return <HList size="tiny">{tagsElements}</HList>
+  return <CommaList spacing="tiny">{tagsElements}</CommaList>
 }
 
 TagList.propTypes = {

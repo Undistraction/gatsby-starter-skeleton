@@ -13,15 +13,24 @@ export const query = graphql`
       totalCount
       edges {
         node {
+          excerpt(pruneLength: 170)
+          wordCount {
+            words
+          }
+          timeToRead
+          wordCount {
+            words
+          }
+          timeToRead
           fields {
             title
             slug
             tags
             type
           }
-          excerpt
           frontmatter {
-            keywords
+            author
+            category
             date
             image {
               childImageSharp {
@@ -41,6 +50,13 @@ export const query = graphql`
             title
             description
             keywords
+          }
+        }
+        structure {
+          resources {
+            articles {
+              title
+            }
           }
         }
       }

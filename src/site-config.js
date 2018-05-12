@@ -1,5 +1,6 @@
 // This configuration file allows you to customise many aspects of this Gatsby
 // starter.
+// For information on supported markdown syntax: https://github.com/remarkjs/remark/blob/master/test/fixtures/input/markdown-documentation-syntax.text
 
 module.exports = {
   // ---------------------------------------------------------------------------
@@ -19,7 +20,8 @@ module.exports = {
     // Show the credit in the footer (much appreciated)
     showCredit: true,
     // Formatting for dates displayed across the site
-    dateFormat: `DD MMMM, YYYY`,
+    // For format see: http://momentjs.com/docs/#/displaying/format/
+    dateFormat: `Do MMMM YYYY`,
   },
 
   // ---------------------------------------------------------------------------
@@ -119,8 +121,8 @@ module.exports = {
     resources: {
       // Configuration for articles.
       articles: {
-        // Page title
-        title: `Articles`,
+        // Resource Name (will be pluralised for page title)
+        title: `Article`,
         // Title used for nav
         navTitle: `Articles`,
         // Name of dir containing markdown docs
@@ -132,8 +134,8 @@ module.exports = {
       },
       // Configuration for projects
       projects: {
-        // Page title
-        title: `Projects`,
+        // Resource Name (will be pluralised for page title)
+        title: `Project`,
         // Title used for nav
         navTitle: `Projects`,
         // Name of dir containing markdown docs
@@ -143,8 +145,8 @@ module.exports = {
       },
       // Configuration for projects
       tags: {
-        // Page title
-        title: `Tags`,
+        // Resource Name (will be pluralised for page title)
+        title: `Tag`,
         // Title used for nav
         navTitle: `Tags`,
         // Path used in URL

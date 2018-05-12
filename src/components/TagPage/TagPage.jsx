@@ -1,21 +1,25 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { tagTitle } from '../helpers/formatting'
 import { markdownItemNodes } from '../helpers/markdown'
 import { addTitleToMetadata } from '../helpers/metadata'
+import { articlesResourceTitle, tagPageMetadata } from '../helpers/siteMetadata'
 import Metadata from '../shared/Metadata'
 import Page from '../shared/Page/Page'
 import Tag from './Tag'
 
-const tagTitle = tag => `Tag ${tag}`
-
 const TagPage = ({ data, pathContext }) => {
-  const metadata = data.site.siteMetadata.metadata.tag
+  const metadata = tagPageMetadata(data)
   const { tag } = pathContext
 
   return (
     <Page title={tagTitle(tag)}>
       <Metadata {...addTitleToMetadata(metadata, tag)} />
-      <Tag taggedItems={markdownItemNodes(data)} tag={tag} />
+      <Tag
+        articles={markdownItemNodes(data)}
+        articlesTitle={articlesResourceTitle(data)}
+        tag={tag}
+      />
     </Page>
   )
 }

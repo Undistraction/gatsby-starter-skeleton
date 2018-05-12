@@ -35,8 +35,15 @@ export const query = graphql`
     ) {
       edges {
         node {
+          excerpt(pruneLength: 170)
+          wordCount {
+            words
+          }
+          timeToRead
           frontmatter {
             date(formatString: $dateFormat)
+            category
+            author
             image {
               childImageSharp {
                 sizes {
@@ -46,10 +53,10 @@ export const query = graphql`
             }
           }
           fields {
+            tags
             title
             slug
           }
-          excerpt
         }
       }
     }

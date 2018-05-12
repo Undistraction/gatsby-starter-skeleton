@@ -1,4 +1,4 @@
-import { lensPath, view, lensProp, compose } from 'ramda'
+import { compose, lensPath, lensProp, view } from 'ramda'
 
 // -----------------------------------------------------------------------------
 // Lenses
@@ -27,9 +27,9 @@ const resourceTitle = name => view(lPageTitleForResource(name))
 export const homePageTitle = pageTitle(`home`)
 export const aboutPageTitle = pageTitle(`about`)
 export const notFoundPageTitle = pageTitle(`notFound`)
-export const articlesPageTitle = resourceTitle(`articles`)
-export const projectsPageTitle = resourceTitle(`projects`)
-export const tagsPageTitle = resourceTitle(`tags`)
+export const articlesResourceTitle = resourceTitle(`articles`)
+export const projectsResourceTitle = resourceTitle(`projects`)
+export const tagsResourceTitle = resourceTitle(`tags`)
 
 export const homePageMetadata = pageMetadata(`home`)
 export const aboutPageMetadata = pageMetadata(`about`)

@@ -39,7 +39,7 @@ const ResourceListItem = ({ resource }) => {
           <Img sizes={frontmatterImageSizes(resource)} />
         </Link>
       </Media>
-      <VLayout size="small">
+      <VLayout spacing="small">
         <TextLink to={slug} title={title} underlineType="left">
           <TitleSecondary>{title}</TitleSecondary>
         </TextLink>
