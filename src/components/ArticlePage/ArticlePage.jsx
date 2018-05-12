@@ -9,7 +9,7 @@ import {
   markdownItemTitle,
   next,
   previous,
-} from '../../../demo/project/src/components/helpers/markdown'
+} from '../helpers/markdown'
 import Metadata from '../shared/Metadata'
 import NextPreviousNav from '../shared/NextPreviousNav'
 import Page from '../shared/Page'

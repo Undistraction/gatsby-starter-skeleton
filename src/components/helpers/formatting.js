@@ -1,5 +1,5 @@
 import { compose, inc, join, lensIndex, over, toUpper } from 'ramda'
-import { currentYear } from '../../../demo/project/src/components/helpers/date'
+import { currentYear } from './date'
 
 export const joinWithNoSpace = join(``)
 export const joinWithEnDash = join(`–`)
