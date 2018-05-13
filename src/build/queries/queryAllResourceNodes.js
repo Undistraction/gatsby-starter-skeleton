@@ -11,6 +11,9 @@ module.exports = (graphql, directories) =>
       ) {
         edges {
           node {
+            frontmatter {
+              category
+            }
             fields {
               slug
               tags

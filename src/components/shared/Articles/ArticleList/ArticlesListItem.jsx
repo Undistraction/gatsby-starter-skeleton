@@ -1,3 +1,4 @@
+import { api } from 'cssapi'
 import Img from 'gatsby-image'
 import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
@@ -8,17 +9,26 @@ import {
   fieldsTitle,
   frontmatterImageSizes,
 } from '../../../helpers/markdown'
-import HLayout from '../../../shared/layouts/HLayout'
 import VLayout from '../../../shared/layouts/VLayout'
 import TextLink from '../../../shared/links/TextLink'
 import TitleSecondary from '../../../shared/titles/TitleSecondary'
+import spaceChildrenH from '../../../styles/mixins/spaceChildrenH'
+import spaceChildrenV from '../../../styles/mixins/spaceChildrenV'
 import ArticleFooterMeta from '../../ArticleFooterMeta'
 import ArticleHeadMeta from '../../ArticleHeadMeta'
 
-const Layout = styled(HLayout)`
+const Layout = styled.ul`
+  display: flex;
+  ${api({
+    flexDirection: [`column`, `column`, `row`],
+  })};
+  ${spaceChildrenH([0, 0, `1ru`])};
+  ${spaceChildrenV([`1ru`, `1ru`, 0])};
+
   > * :first-child {
-    flex: 0 0 25%;
-  }
+    ${api({
+      flex: [`0 0 100%`, `0 0 100%`, `0 0 33.3%`],
+    })}
 `
 
 const ArticlesListItem = ({ article }) => {

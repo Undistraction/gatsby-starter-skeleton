@@ -28,7 +28,6 @@ const SiteNav = ({ pages }) => (
       <SiteNavLink page={pages.home} />
       <SiteNavLink page={pages.articles} />
       <SiteNavLink page={pages.projects} />
-      <SiteNavLink page={pages.tags} />
       <SiteNavLink page={pages.about} />
     </Layout>
   </Wrapper>

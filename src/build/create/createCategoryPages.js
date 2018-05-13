@@ -2,43 +2,48 @@ const path = require(`path`)
 const { pipe, map } = require(`ramda`)
 const { reportCreatePageSuccess } = require(`../utils/reporter`)
 const { throwBuildError } = require(`../utils/errors`)
-const { collectUniqueTags, toTagSlug } = require(`../utils/tags`)
+const {
+  collectUniqueCategories,
+  toCategorySlug,
+} = require(`../utils/categories`)
 const { TAG_TEMPLATE_PATH } = require(`../const/templatePaths`)
 const queryAllResourceNodes = require(`../queries/queryAllResourceNodes`)
 
 const markdownNodes = data => data.allMarkdownRemark.edges
 
-const createTagPage = (tag, createPage) => {
-  const slug = toTagSlug(tag)
+const createCategoryPage = (category, categories, createPage) => {
+  const slug = toCategorySlug(category)
+
   return new Promise((resolve, reject) => {
     try {
       createPage({
         path: slug,
         component: path.resolve(TAG_TEMPLATE_PATH),
         context: {
-          tag,
+          tag: category,
         },
       })
     } catch (error) {
       reject(error)
     }
-    reportCreatePageSuccess(`Tag`, slug)
+    reportCreatePageSuccess(`Category`, slug)
     resolve()
   })
 }
 
-const createTagPages = (graphql, createPage, articlesDir) =>
+const createCategoryPages = (graphql, createPage, articlesDir) =>
   queryAllResourceNodes(graphql, articlesDir)
     .then(result =>
       pipe(
         markdownNodes,
-        collectUniqueTags,
-        map(tag => {
-          createTagPage(tag, createPage)
-        }),
+        collectUniqueCategories,
+        categories =>
+          map(category => {
+            createCategoryPage(category, categories, createPage)
+          }, categories),
         Promise.all
       )(result.data)
     )
-    .catch(throwBuildError(`Tag`))
+    .catch(throwBuildError(`Category`))
 
-module.exports = createTagPages
+module.exports = createCategoryPages

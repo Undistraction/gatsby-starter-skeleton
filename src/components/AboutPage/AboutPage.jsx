@@ -13,18 +13,12 @@ import { aboutPageMetadata, aboutPageTitle } from '../helpers/siteMetadata'
 import Metadata from '../shared/Metadata'
 import Page from '../shared/Page'
 
-const AboutPage = ({ data }) => {
-  console.log(`DATA`, data)
-  return (
-    <Page
-      title={aboutPageTitle(data)}
-      imageSizes={markdownItemImageSizes(data)}
-    >
-      <Metadata {...aboutPageMetadata(data)} />
-      <HTMLText htmlAst={markdownItemHTMLAst(data)} />
-    </Page>
-  )
-}
+const AboutPage = ({ data }) => (
+  <Page title={aboutPageTitle(data)} imageSizes={markdownItemImageSizes(data)}>
+    <Metadata {...aboutPageMetadata(data)} />
+    <HTMLText htmlAst={markdownItemHTMLAst(data)} />
+  </Page>
+)
 
 AboutPage.propTypes = {
   data: PropTypes.object.isRequired,

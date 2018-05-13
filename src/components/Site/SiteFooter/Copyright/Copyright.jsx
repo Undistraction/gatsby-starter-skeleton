@@ -9,7 +9,7 @@ const Layout = styled.p`
   position: relative;
   text-align: center;
   ${api({
-    padding: scope`1ru`,
+    padding: scope`0.5ru 1ru`,
   })};
 `
 

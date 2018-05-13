@@ -1,8 +1,8 @@
+const createCategoryPages = require(`./src/build/create/createCategoryPages`)
 const createResourcePages = require(`./src/build/create/createResourcePages`)
 const RESOURCE_TYPE = require(`./src/build/const/resourceType`)
 const addResourceTypeToNode = require(`./src/build/augment/addResourceTypeToNode`)
 const { lensPath, set, pipe } = require(`ramda`)
-const createTagsPage = require(`./src/build/create/createTagsPage`)
 const validatedConfig = require(`./src/config/validatedConfig`)
 const createArticlesPages = require(`./src/build/create/createArticlesPages`)
 const createProjectsPage = require(`./src/build/create/createProjectsPage`)
@@ -95,6 +95,12 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     resources.articles.directory
   )
 
+  const categoryPages = createCategoryPages(
+    graphql,
+    decoratedCreatePage,
+    resources.articles.directory
+  )
+
   const projectsPage = createProjectsPage(
     graphql,
     decoratedCreatePage,
@@ -111,19 +117,12 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     resources.projects.path
   )
 
-  const tagsPage = createTagsPage(
-    graphql,
-    decoratedCreatePage,
-    resources.articles.directory,
-    resources.tags.path
-  )
-
   return Promise.all([
     paginatedArticlePages,
     articlePages,
     tagPages,
+    categoryPages,
     projectsPage,
     projectPages,
-    tagsPage,
   ])
 }

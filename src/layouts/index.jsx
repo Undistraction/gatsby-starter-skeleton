@@ -48,11 +48,6 @@ export const query = graphql`
               navTitle
               path
             }
-            tags {
-              title
-              navTitle
-              path
-            }
           }
           pages {
             about {
