@@ -6,8 +6,8 @@ const {
   collectUniqueCategories,
   toCategorySlug,
 } = require(`../utils/categories`)
-const { TAG_TEMPLATE_PATH } = require(`../const/templatePaths`)
-const queryAllResourceNodes = require(`../queries/queryAllResourceNodes`)
+const { CATEGORY_TEMPLATE_PATH } = require(`../const/templatePaths`)
+const queryMarkdownNodesByDir = require(`../queries/queryMarkdownNodesByDir`)
 
 const markdownNodes = data => data.allMarkdownRemark.edges
 
@@ -18,9 +18,9 @@ const createCategoryPage = (category, categories, createPage) => {
     try {
       createPage({
         path: slug,
-        component: path.resolve(TAG_TEMPLATE_PATH),
+        component: path.resolve(CATEGORY_TEMPLATE_PATH),
         context: {
-          tag: category,
+          category,
         },
       })
     } catch (error) {
@@ -32,7 +32,7 @@ const createCategoryPage = (category, categories, createPage) => {
 }
 
 const createCategoryPages = (graphql, createPage, articlesDir) =>
-  queryAllResourceNodes(graphql, articlesDir)
+  queryMarkdownNodesByDir(graphql, articlesDir)
     .then(result =>
       pipe(
         markdownNodes,

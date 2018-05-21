@@ -49,15 +49,15 @@ module.exports = {
       description: `The Projects`,
       keywords: `projects`,
     },
-    tags: {
-      title: `Site / Tags Page`,
-      description: `All tags used on the site`,
-      keywords: `tags`,
-    },
     tag: {
       title: `Tag: `,
       description: `Resources tagged with`,
       keywords: `tags`,
+    },
+    category: {
+      title: `Category: `,
+      description: `Resources in category`,
+      keywords: `categories`,
     },
   },
 

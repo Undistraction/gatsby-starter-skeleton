@@ -4,7 +4,7 @@ const { reportCreatePageSuccess } = require(`../utils/reporter`)
 const { throwBuildError } = require(`../utils/errors`)
 const { collectUniqueTags, toTagSlug } = require(`../utils/tags`)
 const { TAG_TEMPLATE_PATH } = require(`../const/templatePaths`)
-const queryAllResourceNodes = require(`../queries/queryAllResourceNodes`)
+const queryMarkdownNodesByDir = require(`../queries/queryMarkdownNodesByDir`)
 
 const markdownNodes = data => data.allMarkdownRemark.edges
 
@@ -28,7 +28,7 @@ const createTagPage = (tag, createPage) => {
 }
 
 const createTagPages = (graphql, createPage, articlesDir) =>
-  queryAllResourceNodes(graphql, articlesDir)
+  queryMarkdownNodesByDir(graphql, articlesDir)
     .then(result =>
       pipe(
         markdownNodes,

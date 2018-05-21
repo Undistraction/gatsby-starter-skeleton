@@ -3,7 +3,6 @@ import { css } from 'styled-components'
 
 const arrow = (api, props) => (size = `16`, background = `red`) => {
   const translation = props.direction === `right` ? `50%` : `-50%`
-  // const hyotenuse = Math.sqrt(size *)
   return css`
     ::after {
       content: '';

@@ -12,7 +12,6 @@ const Credit = () => (
   <Layout spacing="tiny">
     <div>Built by</div>
     <UndistractionLink to="http://undistraction.com">
-      <CreditIcon />
       Undistraction
     </UndistractionLink>
   </Layout>

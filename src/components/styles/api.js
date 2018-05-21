@@ -79,7 +79,7 @@ const config = {
       title: `Berkshire Swash, cursive`,
     },
     gradient: {
-      background: `linear-gradient(to bottom, c:backgroundStart, c:backgroundStop 18%)`,
+      background: `linear-gradient(to bottom, c:backgroundStart, c:backgroundStop 15ru)`,
       backgroundInverted: `linear-gradient(to bottom, c:backgroundInvertedStart, c:backgroundInvertedEnd)`,
       lightFade: `linear-gradient(to left ,transparent, c:borderColor 30%, c:borderColor 70%, transparent 100%)`,
     },

@@ -2,12 +2,12 @@ const path = require(`path`)
 const { reportCreatePageSuccess } = require(`../utils/reporter`)
 const { throwBuildError } = require(`../utils/errors`)
 const { PROJECTS_TEMPLATE_PATH } = require(`../const/templatePaths`)
-const queryAllResourceNodes = require(`../queries/queryAllResourceNodes`)
+const queryMarkdownNodesByDir = require(`../queries/queryMarkdownNodesByDir`)
 
 const markdownNodes = data => data.allMarkdownRemark.edges
 
 const createProjectsPage = (graphql, createPage, projectDir, projectPath) =>
-  queryAllResourceNodes(graphql, projectDir)
+  queryMarkdownNodesByDir(graphql, projectDir)
     .then(result => {
       const edges = markdownNodes(result.data)
       const projectsCount = edges.length

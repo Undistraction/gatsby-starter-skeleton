@@ -1,33 +1,30 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import { pluraliseWithNumber } from '../../helpers/formatting'
 import Articles from '../../shared/Articles/Articles'
 
 const Meta = styled.header`
   text-align: center;
 `
 
-const Tag = ({ articles, articlesTitle, tag }) => (
+const SearchResults = ({ articles, title }) => (
   <React.Fragment>
     <React.Fragment>
       <Meta>
-        {pluraliseWithNumber(articlesTitle, articles.length)} tagged with{` `}
-        <i>{tag}</i>
+        {title[0]} <i>{title[1]}</i>
       </Meta>
       <Articles articles={articles} />
     </React.Fragment>
   </React.Fragment>
 )
 
-Tag.propTypes = {
+SearchResults.propTypes = {
   articles: PropTypes.array,
-  tag: PropTypes.string.isRequired,
-  articlesTitle: PropTypes.string.isRequired,
+  title: PropTypes.array.isRequired,
 }
 
-Tag.defaultProps = {
+SearchResults.defaultProps = {
   articles: [],
 }
 
-export default Tag
+export default SearchResults
