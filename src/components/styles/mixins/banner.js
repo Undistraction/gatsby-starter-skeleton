@@ -1,5 +1,5 @@
+import { mixin } from 'cssapi'
 import { css } from 'styled-components'
-import mixin from '../../helpers/mixin'
 
 const banner = api => (edge = `top`) => css`
   z-index: 1;

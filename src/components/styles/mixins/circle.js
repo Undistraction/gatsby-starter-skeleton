@@ -1,5 +1,5 @@
 import { css } from 'styled-components'
-import mixin from '../../helpers/mixin'
+import { mixin } from 'cssapi'
 
 const circle = api => diameter => css`
   border-radius: 50%;

@@ -1,6 +1,6 @@
 import { cond, equals } from 'ramda'
 import { css } from 'styled-components'
-import mixin from '../../helpers/mixin'
+import { mixin } from 'cssapi'
 
 const startProps = cond([
   [

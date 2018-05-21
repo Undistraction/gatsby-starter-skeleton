@@ -1,6 +1,6 @@
 import { scope } from 'cssapi'
 import { css } from 'styled-components'
-import mixin from '../../helpers/mixin'
+import { mixin } from 'cssapi'
 
 const dropCap = api => () => css`
   float: left;

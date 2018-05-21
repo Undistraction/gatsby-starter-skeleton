@@ -18,7 +18,7 @@ const Layout = styled(VLayout)`
 
   ${Header} {
     ${api({
-      width: [60, 80, 100],
+      width: [60, 70, 80],
     })};
   }
 `

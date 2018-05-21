@@ -1,5 +1,5 @@
+import { mixin } from 'cssapi'
 import { css } from 'styled-components'
-import mixin from '../../helpers/mixin'
 
 const arrow = (api, props) => (size = `16`, background = `red`) => {
   const translation = props.direction === `right` ? `50%` : `-50%`

@@ -1,7 +1,6 @@
-import { scope } from 'cssapi'
+import { mixin, scope } from 'cssapi'
 import { injectGlobal } from 'styled-components'
 import styledNormalize from 'styled-normalize'
-import mixin from '../helpers/mixin'
 import insetBorder from './mixins/insetBorder'
 
 const globalStyles = api => () =>
