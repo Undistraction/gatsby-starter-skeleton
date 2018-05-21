@@ -1,5 +1,5 @@
-import { css } from 'styled-components'
 import { mixin } from 'cssapi'
+import { css } from 'styled-components'
 
 const linkProps = api => (defaultColor = `red`, highlightColor = `blue`) => css`
   ${api({
@@ -18,7 +18,7 @@ const linkProps = api => (defaultColor = `red`, highlightColor = `blue`) => css`
     })};
   }
 
-  &:hover {
+  html.feat-no-touchevents &:hover {
     transition: all 0.5s ease-in-out;
     ${api({
       color: highlightColor,

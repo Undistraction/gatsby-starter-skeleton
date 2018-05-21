@@ -1,6 +1,6 @@
+import { mixin } from 'cssapi'
 import { cond, equals } from 'ramda'
 import { css } from 'styled-components'
-import { mixin } from 'cssapi'
 
 const startProps = cond([
   [
@@ -42,7 +42,7 @@ const underlineHover = api => (color, type = `center`) => css`
     })};
   }
 
-  :hover::after {
+  html.feat-no-touchevents &:hover::after {
     left: 0;
     right: 0;
     transition: all 0.5s ease-in-out;

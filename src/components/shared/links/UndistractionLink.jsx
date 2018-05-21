@@ -25,7 +25,7 @@ const Layout = styled(BaseLink)`
   font-weight: bold;
   position: relative;
 
-  &:hover {
+  html.feat-no-touchevents &:hover {
     ${CreditIcon} {
       transition: all 0.3s ease-in-out;
       transform: scale(0);

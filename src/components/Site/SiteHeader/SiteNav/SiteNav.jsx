@@ -18,7 +18,7 @@ const Layout = styled.div`
   z-index: 99;
   ${banner(`bottom`)};
   ${api({
-    padding: [`0.5ru`, `0.75ru 1ru`],
+    padding: [`0.5ru`, `0.75ru 1.25ru`],
   })};
 `
 

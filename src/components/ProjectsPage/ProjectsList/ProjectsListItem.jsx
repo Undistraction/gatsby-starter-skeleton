@@ -26,7 +26,7 @@ const Layout = styled(BaseLink)`
   display: block;
   ${linkProps(`c:text`, `c:highlight`)};
 
-  &:hover {
+  html.feat-no-touchevents &:hover {
     animation: ${scaleBounce(1.05, 0.97)} 0.3s ease-in-out;
   }
 `

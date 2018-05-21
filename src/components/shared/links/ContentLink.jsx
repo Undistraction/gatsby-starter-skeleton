@@ -2,9 +2,6 @@ import { api } from 'cssapi'
 import styled from 'styled-components'
 import TextLink from './TextLink'
 
-// Filter out styled-component-specific props so they don't trigger Unknown Prop
-// Warnings on wrapped React components
-// eslint-disable-next-line no-unused-vars
 const ContentLink = styled(TextLink)`
   ::before {
     content: '';
@@ -20,7 +17,7 @@ const ContentLink = styled(TextLink)`
     })};
   }
 
-  &:hover ::before {
+  html.feat-no-touchevents &:hover::before {
     left: 50%;
     right: 50%;
     transition: all 0.5s ease-in-out;
