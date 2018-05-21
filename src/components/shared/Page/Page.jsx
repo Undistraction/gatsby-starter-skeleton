@@ -11,7 +11,7 @@ import TitlePrimary from '../titles/TitlePrimary'
 export const Body = styled(VLayout)`
   position: relative;
   ${api({
-    paddingH: scope`1ru`,
+    paddingH: [`1ru`, `1ru`, `1ru`, 0],
   })};
 `
 

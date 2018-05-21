@@ -5,7 +5,6 @@ import { isNotEmpty, isPlainObj, lensSatisfies } from 'ramda-adjunct'
 import React from 'react'
 import RehypeReact from 'rehype-react'
 import styled, { withTheme } from 'styled-components'
-import dropCap from '../styles/mixins/dropCap'
 import spaceChildrenV from '../styles/mixins/spaceChildrenV'
 import Blockquote from './Blockquote'
 import Cite from './Cite'
@@ -88,10 +87,6 @@ const PageText = styled.div`
     ${api({
       baseline: scope`s:lede`,
     })};
-
-    :first-letter {
-      ${dropCap()};
-    }
   }
 
   ${Blockquote}, ${OrderedList}, ${UnorderedList} {
