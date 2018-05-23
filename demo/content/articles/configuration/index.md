@@ -3,7 +3,7 @@ title: "Configuration"
 date: "2018-05-01"
 slug: "configuration"
 description: Configuring the site
-keywords: config, setup, configuration
+keywords: settings, config
 category: Configuration
 author: Pedr Browne
 image: ./images/main.jpg

@@ -63,6 +63,46 @@ _Italic_, **Bold**, **_Bold italic_**
 
 _Italic_, **Bold**, **_Bold italic_**
 
+# Typographic embellishments
+
+There are a number of additional typographic embellishments that will happen automatically.
+
+## Quotes
+
+Single and double quotes will be replaced by printers quotes:
+
+```markdown
+"Example"
+'Example'
+```
+
+"Example"
+'Example'
+
+## Ellipses
+
+If you type three dots, they will be replaced by the ellipsis character:
+
+```markdown
+...
+```
+
+...
+
+## Dashes
+
+Two dashes in a row will be replaced by an en-dash.
+
+```markdown
+--
+```
+
+--
+
+Em Dash
+
+---
+
 # Links
 
 ```markdown
@@ -150,3 +190,26 @@ Lorem `ipsum` dolor sit amet
 ```
 
 Lorem `ipsum` dolor sit amet
+
+# Footnotes
+
+Add footnote references:
+
+```markdown
+Civibus efficiendi[^1] complectitur his at. Est stet[^2] aeque voluptaria eu, eum scaevola.
+
+[^1]: First footnote is here
+[^2]: And the second is here
+```
+
+Civibus efficiendi[^1] complectitur his at. Est stet[^2] aeque voluptaria eu, eum scaevola.
+
+[^1]: First footnote is here
+[^2]: And the second is here
+
+
+---
+
+# Plugins Used
+
+- [gatsby-remark-smartypants](https://www.gatsbyjs.org/packages/gatsby-remark-smartypants)

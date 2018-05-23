@@ -1,11 +1,11 @@
 ---
-title: "Code Blocks"
+title: "Code"
 date: "2017-08-10"
 slug: "code"
-description: Sed nisi dolor, fringilla et consectetur eu, viverra vulputate felis. Ut est ex, ornare vitae dictum quis, egestas et est. Nam rhoncus purus eu justo feugiat, a venenatis enim ultricies. Mauris tristique elementum leo a viverra. Ut placerat, ex nec vestibulum iaculis, nibh ante sollicitudin elit, non aliquet nunc neque ac sapien. Aenean iaculis vulputate facilisis. Suspendisse elit purus, iaculis.
+description: Features for integrating code
 author: Pedr Browne
-category: Markdown
-keywords: code, responsive
+category: Feature
+keywords: markdown, code, responsive, repl
 image: ./images/main.jpg
 ---
 

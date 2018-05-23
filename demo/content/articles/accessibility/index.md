@@ -2,9 +2,9 @@
 title: "Accessibility"
 date: "2018-01-01"
 slug: "accessibility"
-description: Ensuring the site is accessible.
+description: Ensuring the site is accessible
 keywords: accessibility, a11y
-category: Accessibility
+category: Feature
 author: Pedr Browne
 image: ./images/main.jpg
 ---
@@ -20,3 +20,9 @@ default in development and will be disabled in all other environments.
 You can add alt text to images defined in Markdown, but at present Gatsby offers
 no means of associating alt text with images defined in frontmatter. See the
 issue [here](https://github.com/gatsbyjs/gatsby/issues/2910)
+
+---
+
+# Plugins Used
+
+* [gatsby-plugin-accessibilityjs](https://www.gatsbyjs.org/packages/gatsby-plugin-accessibilityjs)
