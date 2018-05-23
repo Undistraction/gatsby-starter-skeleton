@@ -31,7 +31,7 @@ const plugins = [
   `gatsby-plugin-remove-trailing-slashes`,
   // Audit page for accessibility issues
   // Toggle to check for accessiblity issues
-  // `gatsby-plugin-accessibilityjs`,
+  `gatsby-plugin-accessibilityjs`,
   // Generate ./sitemap.xml for pages
   sitemap(),
   // Add robots.txt page
