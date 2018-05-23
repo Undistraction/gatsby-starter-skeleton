@@ -95,12 +95,12 @@ const PageText = styled.div`
     })};
   }
 `
-const HTMLText = ({ htmlAst, theme }) => (
+const MarkdownContent = ({ htmlAst, theme }) => (
   <PageText>{renderAst(theme, htmlAst)}</PageText>
 )
-HTMLText.propTypes = {
+MarkdownContent.propTypes = {
   htmlAst: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
 }
 
-export default withTheme(HTMLText)
+export default withTheme(MarkdownContent)

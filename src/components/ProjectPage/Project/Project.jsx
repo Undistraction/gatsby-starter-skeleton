@@ -2,11 +2,11 @@
 
 import PropTypes from 'prop-types'
 import React from 'react'
-import HTMLText from '../../shared/HTMLText'
+import MarkdownContent from '../../shared/MarkdownContent'
 
 const Project = ({ project }) => (
   <React.Fragment>
-    <HTMLText htmlAst={project.htmlAst} />
+    <MarkdownContent htmlAst={project.htmlAst} />
   </React.Fragment>
 )
 

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import HTMLText from '../../components/shared/HTMLText'
+import MarkdownContent from '../../components/shared/MarkdownContent'
 import {
   markdownItemHTMLAst,
   markdownItemImageSizes,
@@ -12,7 +12,7 @@ import Page from '../shared/Page'
 const HomePage = ({ data }) => (
   <Page title={homePageTitle(data)} imageSizes={markdownItemImageSizes(data)}>
     <Metadata {...homePageMetadata(data)} />
-    <HTMLText htmlAst={markdownItemHTMLAst(data)} />
+    <MarkdownContent htmlAst={markdownItemHTMLAst(data)} />
   </Page>
 )
 
