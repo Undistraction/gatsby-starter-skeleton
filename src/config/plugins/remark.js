@@ -10,6 +10,8 @@ module.exports = ({ media, structure }) => ({
   resolve: `gatsby-transformer-remark`,
   options: {
     plugins: [
+      // Easy video embed
+      `gatsby-remark-embed-video`,
       // Use Code Sandbox to embed code from a 'code' directory via reference
       embeddedCodeSandbox(structure),
       // Wrap iframes and objects in a responsive wrapper that maintains

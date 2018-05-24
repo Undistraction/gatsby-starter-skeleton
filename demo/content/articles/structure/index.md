@@ -1,6 +1,6 @@
 ---
 title: "Structure"
-date: "2017-01-02"
+date: "2018-5-29"
 slug: "structure"
 description: Structure of the site.
 keywords: site, website, blog, pages
@@ -42,8 +42,8 @@ URLs. For example you could change 'Articles' to 'Posts' or 'Writings'. All
 Articles must include an image that is at least 2400px wide.
 
 ## Projects
-
-Projects are structured the same way as Articles, though they don't support
+`
+Projects are structured the same way as Articles, though they don't supportz`
 categorisation. If you don't want to include projects pages it is easy to remove
 them from the site. Like Articles you can change the name of the resource from
 `src/site-config.js` and like Articles, Projects must include an image.

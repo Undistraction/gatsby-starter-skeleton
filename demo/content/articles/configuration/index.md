@@ -1,6 +1,6 @@
 ---
 title: "Configuration"
-date: "2018-05-01"
+date: "2018-5-30"
 slug: "configuration"
 description: Configuring the site
 keywords: settings, config

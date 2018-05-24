@@ -14,7 +14,9 @@ item to be made responsive you must define its proportions, so you must supply
 both width and height set to unitless or pixel values. If both values are not
 supplied, the embed will not be made responsive.
 
-#### YouTube
+
+
+## YouTube
 
 A standed YouTube embed:
 
@@ -33,7 +35,7 @@ A responisive YouTube embed:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/v30Ml-9xsRQ" frameborder="0" allowfullscreen></iframe>
 
-#### Vimeo
+## Vimeo
 
 A standard Vimeo embed:
 
@@ -51,7 +53,7 @@ A responsive Vimeo embed:
 
 <iframe src="https://player.vimeo.com/video/40686155?portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-#### Soundcloud
+## Soundcloud
 
 A Soundcloud embed (Soundcloud embed are already responsive):
 
@@ -61,8 +63,22 @@ A Soundcloud embed (Soundcloud embed are already responsive):
 
 <iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/188212367&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
 
+# Simple Embeds
+
+There is also a simple form of embed for Vimeo and YouTube that will embed at a ratio of 16:9
+
+```markdown
+`video: https://www.youtube.com/embed/v30Ml-9xsRQ`
+`youtube: https://www.youtube.com/watch?v=v30Ml-9xsRQ` 
+`youtube: v30Ml-9xsRQ`
+
+`vimeo: https://vimeo.com/40686155`
+`vimeo: 40686155`
+```
+
 ---
 
 # Plugins Used
 
 * [gatsby-remark-responsive-iframe](https://www.gatsbyjs.org/packages/gatsby-remark-responsive-iframe)
+* [gatsby-remark-embed-video](https://www.gatsbyjs.org/packages/gatsby-remark-embed-video)

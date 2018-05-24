@@ -73,6 +73,7 @@
     "gatsby-remark-code-repls": "^1.0.10",
     "gatsby-remark-copy-linked-files": "^1.5.32",
     "gatsby-remark-embed-snippet": "^1.0.2",
+    "gatsby-remark-embed-video": "^1.2.0",
     "gatsby-remark-embedded-codesandbox": "^1.1.0",
     "gatsby-remark-images": "^1.5.62",
     "gatsby-remark-prismjs": "^2.0.2",
