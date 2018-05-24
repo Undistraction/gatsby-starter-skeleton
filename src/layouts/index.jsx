@@ -14,11 +14,14 @@ const theme = {
   api: theApi,
 }
 
-const IndexLayout = ({ children, data }) => (
-  <ThemeProvider theme={theme}>
-    <Site data={data}>{children}</Site>
-  </ThemeProvider>
-)
+const IndexLayout = ({ children, data }) => {
+  console.log(`>>>>>>`, theme)
+  return (
+    <ThemeProvider theme={theme}>
+      <Site data={data}>{children}</Site>
+    </ThemeProvider>
+  )
+}
 
 IndexLayout.propTypes = {
   children: PropTypes.func.isRequired,

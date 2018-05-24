@@ -14,9 +14,9 @@ simple design ready for customisation. Additional information is available in
 the project's
 [Github repo](https://github.com/Undistraction/gatsby-skeleton-starter).
 
-You will find information about the feature included in the
-[Articles](/articles) of this site. Use it to learn from or as the basis for
-your own Gatsby site.
+You will find information about the feature included in this starter in the form
+of different [Articles](articles). Use this starter to learn from or as the
+basis for your own site.
 
 For information on using starters with Gatsby, see Gatsby's own documentation
 [here](https://www.gatsbyjs.org/docs/gatsby-starters/#gatsby-starters).

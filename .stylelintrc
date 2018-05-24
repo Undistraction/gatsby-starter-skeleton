@@ -4,5 +4,8 @@
     "stylelint-config-standard",
     "stylelint-config-styled-components"
   ],
-  "syntax": "css"
+  "syntax": "css",
+  "rules": {
+    "block-no-empty": null
+  }
 }
