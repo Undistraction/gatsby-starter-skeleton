@@ -66,8 +66,8 @@ module.exports = {
   // ---------------------------------------------------------------------------
 
   seo: {
-    // Your Google Tracking ID, in the form: UA-000000-0.
-    // If you leave undefined, the tracking code will not be added.
+    // Your Google Tracking ID, in the form: UA-000000-0
+    // If you leave undefined, the tracking code will not be added
     googleTrackingID: undefined,
   },
 
@@ -119,7 +119,7 @@ module.exports = {
     // -------------------------------------------------------------------------
 
     resources: {
-      // Configuration for articles.
+      // Configuration for articles
       articles: {
         // Resource Name (will be pluralised for page title)
         title: `Article`,
@@ -161,9 +161,11 @@ module.exports = {
 
   media: {
     images: {
-      // The maximum width an image will be displayed at
+      // The maximum width an image used on the site will be displayed at.
+      // Responsive images will be generated at double this width to provide for
+      // hi-dpi screens.
       maxWidth: 1200,
-      // JPG quality for images encoded for the site.
+      // JPG quality for images encoded for the site
       quality: 60,
     },
   },

@@ -7,11 +7,10 @@ keywords: keyword 2, keyword 4
 image: ./images/main.jpg
 ---
 
-This is example project 4. Quo cu dicant deterruisset. Ius et modo idque simul,
-at aliquam necessitatibus sea. Vel et alii tacimates similique. Ut epicurei
-vulputate pri, pro ad sanctus nostrum evertitur. Sale corpora ius in, at quo
-altera fierent. Nam te saepe utinam, amet rebum oportere qui in. Et modus
-splendide necessitatibus vim.
+Quo cu dicant deterruisset. Ius et modo idque simul, at aliquam necessitatibus
+sea. Vel et alii tacimates similique. Ut epicurei vulputate pri, pro ad sanctus
+nostrum evertitur. Sale corpora ius in, at quo altera fierent. Nam te saepe
+utinam, amet rebum oportere qui in. Et modus splendide necessitatibus vim.
 
 His id dolorem indoctum facilisis, dicant inimicus electram no ius. Nostro
 fierent elaboraret ea vis, duo falli euripidis eu, nam at postulant

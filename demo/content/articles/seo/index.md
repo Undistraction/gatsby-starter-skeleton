@@ -1,6 +1,6 @@
 ---
 title: "SEO"
-date: "2017-01-01"
+date: "2017-09-27"
 slug: "seo"
 description: Optimising Site For Search Engines.
 keywords: seo, google, search

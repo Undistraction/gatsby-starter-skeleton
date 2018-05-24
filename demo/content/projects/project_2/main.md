@@ -7,7 +7,7 @@ keywords: keyword 2, keyword 3, keyword 5
 image: ./images/main.jpg
 ---
 
-This is example project 2. Civibus efficiendi complectitur his at. Has id causae
+Civibus efficiendi complectitur his at. Has id causae
 eruditi tractatos, ad duo enim soluta nostrud. Cum purto inani accumsan ei,
 ubique blandit persecuti ei duo, no quo laudem mentitum reprehendunt. Tale
 legendos principes ex quo, accusamus democritum pri ad. Est stet aeque

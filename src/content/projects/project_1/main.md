@@ -7,7 +7,7 @@ keywords: keyword 5, keyword 8, keyword 9
 image: ./images/main.jpg
 ---
 
-This is example project 1. His id dolorem indoctum facilisis, dicant inimicus
+His id dolorem indoctum facilisis, dicant inimicus
 electram no ius. Nostro fierent elaboraret ea vis, duo falli euripidis eu, nam
 at postulant suscipiantur. Erat graecis mei ex, equidem molestiae est ad, eum
 velit eirmod dissentiet id. In per deseruisse appellantur, et per quem doming.

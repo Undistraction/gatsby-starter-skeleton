@@ -1,6 +1,6 @@
 ---
 title: "Markdown"
-date: "2018-5-31"
+date: "2018-05-31"
 slug: "markdown"
 description: Supported Markdown Tags.
 category: Markdown

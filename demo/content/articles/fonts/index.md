@@ -1,6 +1,6 @@
 ---
 title: "Fonts"
-date: "2018-01-01"
+date: "2018-07-12"
 slug: "fonts"
 description: Fonts used in the starter.
 keywords: fonts, typography, google fonts
