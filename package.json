@@ -3,7 +3,11 @@
   "description": "Gatsby Skeleton Starter",
   "version": "0.0.1",
   "author": "Pedr Browne <info@undistraction.com>",
-  "keywords": ["gatsby", "styled-components", "cssapi"],
+  "keywords": [
+    "gatsby",
+    "styled-components",
+    "cssapi"
+  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
@@ -12,17 +16,14 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "preview": "gatsby build && gatsby serve",
-    "deploy-staging":
-      "yarn run build && yarn run surge ./public example-com-staging.surge.sh",
-    "deploy-production":
-      "yarn run build && yarn run surge ./public example.com",
+    "deploy-staging": "yarn run build && yarn run surge ./public example-com-staging.surge.sh",
+    "deploy-production": "yarn run build && yarn run surge ./public example.com",
     "test": "jest src/config src/styles --watch ",
     "graph": "open http://localhost:8000/___graphql",
     "lint:js": "eslint src",
     "lint:css": "stylelint './src/**/*.js'",
     "lint": "npm run lint:js && npm run lint:css",
-    "demo":
-      "yarn demo:import && yarn demo:copy && yarn demo:build && yarn demo:githubPages && yarn demo:open",
+    "demo": "yarn demo:import && yarn demo:copy && yarn demo:build && yarn demo:githubPages && yarn demo:open",
     "demo:import": "bash scripts/demo-import.sh",
     "demo:copy": "bash scripts/demo-copy-content.sh",
     "demo:build": "cd ./demo/project && gatsby build --prefix-paths",
@@ -30,8 +31,7 @@
     "demo:open": "open https://undistraction.github.io/gatsby-skeleton-starter",
     "demo:update": "yarn demo:import && yarn demo:dev",
     "demo:deleteCache": "bash scripts/demo-delete-cache.sh",
-    "demo:dev":
-      "yarn demo:deleteCache && yarn demo:copy && cd demo/project && yarn dev",
+    "demo:dev": "yarn demo:deleteCache && yarn demo:copy && cd demo/project && yarn dev",
     "demo:serve": "cd ./demo/project && gatsby serve"
   },
   "dependencies": {
@@ -73,6 +73,7 @@
     "gatsby-remark-code-repls": "^1.0.10",
     "gatsby-remark-copy-linked-files": "^1.5.32",
     "gatsby-remark-embed-snippet": "^1.0.2",
+    "gatsby-remark-embedded-codesandbox": "^1.1.0",
     "gatsby-remark-images": "^1.5.62",
     "gatsby-remark-prismjs": "^2.0.2",
     "gatsby-remark-responsive-iframe": "^1.4.18",
@@ -96,5 +97,9 @@
     "stylelint-processor-styled-components": "^1.2.0",
     "surge": "^0.19.0"
   },
-  "browserslist": ["> 1%", "IE >= 9", "last 2 versions"]
+  "browserslist": [
+    "> 1%",
+    "IE >= 9",
+    "last 2 versions"
+  ]
 }

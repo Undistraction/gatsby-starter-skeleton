@@ -6,12 +6,12 @@ module.exports = structure => ({
     // eg <a href="...">Click here</a>
     defaultText: `Open in REPL`,
 
-    // // Optional runtime dependencies to load from NPM.
-    // // This option only applies to REPLs that support it (eg CodeSandbox).
-    // // eg ['react', 'react-dom'] or ['react@15', 'react-dom@15']
+    // Optional runtime dependencies to load from NPM.
+    // This option only applies to REPLs that support it (eg CodeSandbox).
+    // eg ['react', 'react-dom'] or ['react@15', 'react-dom@15']
     // dependencies: ['react', 'react-dom'],
 
-    // Article  code links are relative to this dir.
+    // Article code links are relative to this dir.
     // eg examples/path/to/file.js
     directory: `${process.cwd()}/src/content/${structure.codeDir}`,
 

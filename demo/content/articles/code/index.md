@@ -41,8 +41,6 @@ the following syntax within the markdown (note the backticks):
 `embed:example.js`
 ```
 
-Here is an example:
-
 `embed:example.js`
 
 #### REPLs
@@ -66,3 +64,23 @@ In the following examples, a file called `example.js` found in
 * [Open In Code Sandbox](codesandbox://example)
 * [Open In Ramda](ramda://example)
 ```
+
+#### Code Sandbox Embeds
+
+You can also use [Code Sandbox](https://codesandbox.io/) to embed code in the page within their component, making the code interactive. 
+
+The code must be in its own directory (within the `src/content/code` directory), and there must be a `package.json` that directory. You can declare any libraries used by your code there as you would with any `package.json`. 
+
+
+You can pass options to configure how the component should look - it can just run display the code for example. By default it displays the full editor. For more information on this see the plugin's [README](https://github.com/elboman/gatsby-remark-embedded-codesandbox/blob/master/README.md).
+
+[embedded example](embedded-codesandbox://example)
+
+---
+
+# Plugins Used
+
+- [gatsby-remark-code-repls](https://www.gatsbyjs.org/packages/gatsby-remark-code-repls)
+- [gatsby-remark-prismjs](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs)
+- [gatsby-remark-embed-snippet](https://www.gatsbyjs.org/packages/gatsby-remark-embed-snippet)
+- [gatsby-remark-embedded-codesandbox](https://www.gatsbyjs.org/packages/gatsby-remark-embedded-codesandbox)
