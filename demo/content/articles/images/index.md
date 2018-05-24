@@ -12,7 +12,7 @@ image: ./images/main.jpg
 # Responsive Images
 
 Use images in your markdown and they will be made responsive. Just refer to them
-by their filepath, relative to the markdown document. For example if you have a
+by their file-path, relative to the markdown document. For example if you have a
 directory called `images` in the same directory as your main markdown file you
 can display an image like this:
 
@@ -32,10 +32,6 @@ You can use the following filetypes:
 * webp
 * tif
 * tiff
-
-# Image Treatment
-
-By default all images are converted to greyscale
 
 ---
 

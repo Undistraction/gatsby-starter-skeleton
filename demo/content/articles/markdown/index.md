@@ -9,7 +9,7 @@ author: Pedr Browne
 image: ./images/main.jpg
 ---
 
-Both Pages, Articles and Projects support an extended superset of Markdown via [Github Flavoured Markdown](https://github.github.com/gfm/#what-is-github-flavored-markdown-). 
+Both Pages, Articles and Projects support an extended superset of Markdown via [Github Flavoured Markdown](https://github.github.com/gfm/#what-is-github-flavored-markdown-). Markdown documents support frontmatter for defining data associated with the mardown document. 
 
 # Headings
 
@@ -89,7 +89,7 @@ And then...
 
 ## Dashes
 
-Two dashes in a row will be replaced by an en-dash.
+Two dashes in a row will be replaced by an en-dash:
 
 ```markdown
 5--10
@@ -100,6 +100,16 @@ Two dashes in a row will be replaced by an en-dash.
 Em Dash
 
 ---
+
+## Strikethrough
+
+Wrapping text in two tilde (~) characters will strike it through:
+
+```markdown
+~~Example~~
+```
+
+~~Example~~
 
 # Links
 
