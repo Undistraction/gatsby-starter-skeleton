@@ -30,13 +30,3 @@ aeterno consectetuer nam. Suavitate assueverit mea ad. Illum novum noster eu
 usu, debitis meliore tibique ex pro. Sit novum primis delectus te, has ne velit
 oratio. Eos in tale erat probatus, nam eu stet volumus postulant. Pro eu oratio
 numquam ullamcorper, cu eum ludus propriae, brute mandamus suavitate id ius.
-
-`video: https://www.youtube.com/embed/2Xc9gXyf2G4`
-`youtube: https://www.youtube.com/watch?v=2Xc9gXyf2G4` 
-`youtube: 2Xc9gXyf2G4`
-
-`vimeo: https://vimeo.com/5299404`
-`vimeo: 5299404`
-
-`videoPress: https://videopress.com/v/kUJmAcSf`
-`videoPress: kUJmAcSf`
