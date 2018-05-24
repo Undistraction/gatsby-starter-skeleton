@@ -11,6 +11,7 @@ import Cite from './Cite'
 import FootnoteRef from './Footnotes/FootnoteRef'
 import Footnotes from './Footnotes/Footnotes'
 import HorizontalRule from './HorizontalRule'
+import Table from './Table'
 import ContentLink from './links/ContentLink'
 import OrderedList from './lists/OrderedList'
 import UnorderedList from './lists/UnorderedList'
@@ -73,6 +74,7 @@ const renderAst = (theme, ast) =>
       a: resolveAnchor(theme),
       hr: HorizontalRule,
       div: resolveDiv(theme),
+      table: Table,
     },
   }).Compiler(ast)
 

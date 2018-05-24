@@ -9,7 +9,7 @@ author: Pedr Browne
 image: ./images/main.jpg
 ---
 
-Both Pages, Articles and Projects support an extended superset of Markdown.
+Both Pages, Articles and Projects support an extended superset of Markdown via [Github Flavoured Markdown](https://github.github.com/gfm/#what-is-github-flavored-markdown-). 
 
 # Headings
 
@@ -72,32 +72,30 @@ There are a number of additional typographic embellishments that will happen aut
 Single and double quotes will be replaced by printers quotes:
 
 ```markdown
-"Example"
-'Example'
+"Double" and 'Single'
 ```
 
-"Example"
-'Example'
+"Double" and 'Sxample'
 
 ## Ellipses
 
 If you type three dots, they will be replaced by the ellipsis character:
 
 ```markdown
-...
+And then...
 ```
 
-...
+And then...
 
 ## Dashes
 
 Two dashes in a row will be replaced by an en-dash.
 
 ```markdown
---
+5--10
 ```
 
---
+5--10
 
 Em Dash
 
@@ -190,6 +188,24 @@ Lorem `ipsum` dolor sit amet
 ```
 
 Lorem `ipsum` dolor sit amet
+
+# Tables
+
+Although tables are not supported in basic Markdown, they are here using the GFM Markdown syntax. This can be fidly, but you'll find a handy table generator [here](https://www.tablesgenerator.com/markdown_tables)
+
+```markdown
+| Column 1      | Column 2      | Column 3 |
+| ------------- |-------------- | -------- |
+| Alpha         | 1             | A        |
+| Bravo         | 2             | B        |
+| Charlie       | 3             | C        |
+```
+
+| Column 1      | Column 2      | Column 3 |
+| ------------- |-------------- | -------- |
+| Alpha         | 1             | A        |
+| Bravo         | 2             | B        |
+| Charlie       | 3             | C        |
 
 # Footnotes
 
