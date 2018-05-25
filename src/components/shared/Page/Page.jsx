@@ -37,6 +37,7 @@ const Page = ({ title, children, imageSizes, nav }) => (
       <PageTitle>{title}</PageTitle>
       {children}
     </Body>
+    {nav && <Nav>{nav}</Nav>}
   </VLayout>
 )
 
