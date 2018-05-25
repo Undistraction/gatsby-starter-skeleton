@@ -26,7 +26,7 @@ const resourceTitle = name => view(lPageTitleForResource(name))
 
 export const homePageTitle = pageTitle(`home`)
 export const aboutPageTitle = pageTitle(`about`)
-export const notFoundPageTitle = pageTitle(`notFound`)
+export const FourOhFourPageTitle = pageTitle(`notFound`)
 export const articlesResourceTitle = resourceTitle(`articles`)
 export const projectsResourceTitle = resourceTitle(`projects`)
 export const tagsResourceTitle = resourceTitle(`tags`)

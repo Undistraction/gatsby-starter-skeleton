@@ -1,13 +1,13 @@
 import graphql from 'graphql'
-import NotFoundPage from '../components/NotFoundPage'
+import FourOhFourPage from '../components/FourOhFourPage'
 
-export default NotFoundPage
+export default FourOhFourPage
 
 // Note: Ideally this would be in its own file and imported from a Page
 // Container, but Gatsby preprocesses the pages looking for a graphql call.
 // Moving it anywhere else results in an error.
 export const query = graphql`
-  query NotFoundPageQuery {
+  query FourOhFourPageQuery {
     site {
       siteMetadata {
         structure {
