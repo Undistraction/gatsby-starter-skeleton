@@ -32,7 +32,6 @@ const createTagPages = (graphql, createPage, articlesDir) =>
       const edges = markdownEdges(result.data)
       if (!edges) return null
       return pipe(
-        markdownEdges,
         collectUniqueTags,
         map(tag => {
           createTagPage(tag, createPage)

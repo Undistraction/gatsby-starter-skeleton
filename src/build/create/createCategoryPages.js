@@ -10,8 +10,6 @@ const { CATEGORY_TEMPLATE_PATH } = require(`../const/templatePaths`)
 const queryMarkdownNodesByDir = require(`../queries/queryMarkdownNodesByDir`)
 const { markdownEdges } = require(`../utils/resources`)
 
-const markdownNodes = data => data.allMarkdownRemark.edges
-
 const createCategoryPage = (category, categories, createPage) => {
   const slug = toCategorySlug(category)
 
@@ -38,7 +36,6 @@ const createCategoryPages = (graphql, createPage, articlesDir) =>
       const edges = markdownEdges(result.data)
       if (!edges) return null
       return pipe(
-        markdownNodes,
         collectUniqueCategories,
         categories =>
           map(category => {
