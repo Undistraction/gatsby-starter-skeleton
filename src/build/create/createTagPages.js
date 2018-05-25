@@ -5,8 +5,7 @@ const { throwBuildError } = require(`../utils/errors`)
 const { collectUniqueTags, toTagSlug } = require(`../utils/tags`)
 const { TAG_TEMPLATE_PATH } = require(`../const/templatePaths`)
 const queryMarkdownNodesByDir = require(`../queries/queryMarkdownNodesByDir`)
-
-const markdownNodes = data => data.allMarkdownRemark.edges
+const { markdownEdges } = require(`../utils/resources`)
 
 const createTagPage = (tag, createPage) => {
   const slug = toTagSlug(tag)
@@ -29,16 +28,18 @@ const createTagPage = (tag, createPage) => {
 
 const createTagPages = (graphql, createPage, articlesDir) =>
   queryMarkdownNodesByDir(graphql, articlesDir)
-    .then(result =>
-      pipe(
-        markdownNodes,
+    .then(result => {
+      const edges = markdownEdges(result.data)
+      if (!edges) return null
+      return pipe(
+        markdownEdges,
         collectUniqueTags,
         map(tag => {
           createTagPage(tag, createPage)
         }),
         Promise.all
-      )(result.data)
-    )
+      )(edges)
+    })
     .catch(throwBuildError(`Tag`))
 
 module.exports = createTagPages

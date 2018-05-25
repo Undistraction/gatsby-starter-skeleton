@@ -1,10 +1,15 @@
 import PropTypes from 'prop-types'
+import { isEmpty } from 'ramda'
 import React from 'react'
 import ArticleList from './ArticleList/ArticleList'
 
 const Articles = ({ articles }) => (
   <React.Fragment>
-    <ArticleList articles={articles} />
+    {isEmpty(articles) ? (
+      <div>No Articles Yet</div>
+    ) : (
+      <ArticleList articles={articles} />
+    )}
   </React.Fragment>
 )
 

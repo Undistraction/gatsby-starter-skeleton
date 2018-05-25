@@ -3,7 +3,11 @@ const { compose } = require(`ramda`)
 const { mapIndexed } = require(`ramda-adjunct`)
 const { throwBuildError } = require(`../utils/errors`)
 const { reportCreatePageSuccess } = require(`../utils/reporter`)
-const { markdownNodes, slugOfItemAtIndex } = require(`../utils/resources`)
+const {
+  markdownEdges,
+  pluckNodes,
+  slugOfItemAtIndex,
+} = require(`../utils/resources`)
 const queryMarkdownNodesByDir = require(`../queries/queryMarkdownNodesByDir`)
 
 const createResourcePage = (slug, idx, nodes, createPage, name, template) =>
@@ -34,7 +38,9 @@ const createResourcePages = (
 ) =>
   queryMarkdownNodesByDir(graphql, articlesDir)
     .then(result => {
-      const nodes = markdownNodes(result.data)
+      const edges = markdownEdges(result.data)
+      if (!edges) return null
+      const nodes = pluckNodes(edges)
       return compose(
         Promise.all,
         mapIndexed((node, idx) =>

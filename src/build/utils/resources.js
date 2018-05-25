@@ -1,4 +1,12 @@
-const { view, lensIndex, lensPath, compose, pluck } = require(`ramda`)
+const {
+  pipe,
+  path,
+  view,
+  lensIndex,
+  lensPath,
+  compose,
+  pluck,
+} = require(`ramda`)
 const { inRange } = require(`ramda-adjunct`)
 const validatedConfig = require(`../../config/validatedConfig`)
 const { isTypeMarkdownRemark } = require(`./node`)
@@ -19,7 +27,11 @@ const nodeIsMarkdownProject = node =>
 
 const lFieldsSlug = lensPath([`fields`, `slug`])
 
-const markdownNodes = data => pluck(`node`, data.allMarkdownRemark.edges)
+const markdownEdges = path([`allMarkdownRemark`, `edges`])
+
+const markdownNodes = pipe(path([`allMarkdownRemark`, `edges`]), pluck(`node`))
+
+const pluckNodes = pluck(`node`)
 
 const slugOfItemAtIndex = (idx, nodes) => {
   if (!inRange(0, nodes.length, idx)) return null
@@ -30,5 +42,7 @@ module.exports = {
   nodeIsMarkdownArticle,
   nodeIsMarkdownProject,
   markdownNodes,
+  pluckNodes,
+  markdownEdges,
   slugOfItemAtIndex,
 }
