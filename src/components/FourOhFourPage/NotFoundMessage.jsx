@@ -41,9 +41,7 @@ const NotFoundMessage = ({ path }) => (
       <Four>4</Four>
     </Header>
     <Body>
-      <p>
-        There was no page at <i>{path}</i>.
-      </p>
+      <p>There was no page at that address.</p>
       <p>
         Would you like to go to the <TextLink to="/">Home page</TextLink>?
       </p>
