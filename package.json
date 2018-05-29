@@ -12,10 +12,6 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "preview": "gatsby build && gatsby serve",
-    "deploy-staging":
-      "yarn run build && yarn run surge ./public example-com-staging.surge.sh",
-    "deploy-production":
-      "yarn run build && yarn run surge ./public example.com",
     "test": "jest src/config src/styles --watch ",
     "graph": "open http://localhost:8000/___graphql",
     "lint:js": "eslint src",
