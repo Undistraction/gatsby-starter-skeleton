@@ -8,7 +8,11 @@ Status](https://img.shields.io/travis/Undistraction/gatsby-skeleton-starter.svg)
 
 This is a starter for a static site built with Gatsby. There is a demo version
 that outlines the features included in this starter
-[here](https://undistraction.github.io/gatsby-skeleton-starter). It is designed as a personal site for a developer or designer, with both Articles and Projects, and tagging and categorising of articles. However it would work well for anyone looking for a full-featured blog or personal site. The site is responsive and accessible.
+[here](https://undistraction.github.io/gatsby-skeleton-starter). It's designed
+as a personal site for a developer or designer, with both Articles and Projects
+resource types, and tagging and categorising for Articles, however it would work
+well for anyone looking for a full-featured blog or personal site. The site is
+responsive, accessible and search-engine friendly.
 
 ## Quickstart
 
@@ -26,7 +30,7 @@ of customisation without touching any other parts of the starter. Take a look at
 
 ## Maintainance
 
-## Linting
+### Linting
 
 Linting is via ESLint and Prettier, configured in `.eslintrc` and `.prettierrc`
 respectively.
@@ -57,8 +61,8 @@ Build a production version of the site to `/public`:
 yarn run build
 ```
 
-Run the built version of the site locally: Note: you will get a 404 if you
-haven't already built the site.
+Run the built version of the site locally: Note: you need to build the site
+first.
 
 ```bash
 yarn run serve
