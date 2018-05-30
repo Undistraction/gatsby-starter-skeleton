@@ -8,7 +8,7 @@ Status](https://img.shields.io/travis/Undistraction/gatsby-skeleton-starter.svg)
 
 This is a starter for a static site built with Gatsby. There is a demo version
 that outlines the features included in this starter
-[here](https://undistraction.github.io/gatsby-skeleton-starter). It's designed
+[here](https://undistraction.github.io/gatsby-skeleton-starter/). It's designed
 as a personal site for a developer or designer, with both Articles and Projects
 resource types, and tagging and categorising for Articles, however it would work
 well for anyone looking for a full-featured blog or personal site. The site is

@@ -23,7 +23,8 @@
     "demo:copy": "bash scripts/demo-copy-content.sh",
     "demo:build": "cd ./demo/project && gatsby build --prefix-paths",
     "demo:githubPages": "gh-pages -d demo/project/public",
-    "demo:open": "open https://undistraction.github.io/gatsby-skeleton-starter",
+    "demo:open":
+      "open https://undistraction.github.io/gatsby-skeleton-starter/",
     "demo:update": "yarn demo:import && yarn demo:dev",
     "demo:deleteCache": "bash scripts/demo-delete-cache.sh",
     "demo:dev":
