@@ -1,0 +1,2 @@
+webpackJsonp([51675561140883],{846:function(t,e){t.exports={pathContext:{action:"https://codepen.io/pen/define",payload:'{"editors":"0010","html":"<div id=\\"root\\"></div>","js":"/* eslint-disable */\\nconst x = 2;\\nconst y = 3;\\nconst z = x + y;\\n","js_external":"","js_pre_processor":"babel","layout":"left"}'}}}});
+//# sourceMappingURL=path---redirect-to-codepen-example-34a1ed5af88a04e07c8c.js.map

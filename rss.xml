@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>http://github.com/dylang/node-rss</link><generator>RSS for Node</generator><lastBuildDate>Wed, 30 May 2018 15:00:35 GMT</lastBuildDate><item><title><![CDATA[Fonts]]></title><description><![CDATA[There are two fonts used in the starter. Both fonts are loaded from Google
+fonts. Berkshire Swash  link  is
+used for the site and page…]]></description><link>https://example.com/articles/fonts</link><guid isPermaLink="false">https://example.com/articles/fonts</guid><pubDate>Thu, 12 Jul 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;There are two fonts used in the starter. Both fonts are loaded from Google
+fonts.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Berkshire Swash &lt;a href=&quot;https://fonts.google.com/specimen/Berkshire+Swash&quot;&gt;link&lt;/a&gt; is
+used for the site and page titles&lt;/li&gt;
+&lt;li&gt;Source Code Pro &lt;a href=&quot;https://fonts.google.com/specimen/Source+Code+Pro&quot;&gt;link&lt;/a&gt; is
+used for everything else.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To use different fonts you will need to make changes in two places.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The fonts are loaded in the &lt;code class=&quot;language-text&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt; of the site’s layout: &lt;code class=&quot;language-text&quot;&gt;src/html.jsx&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The font styles are declared in the CSSAPI config found in
+&lt;code class=&quot;language-text&quot;&gt;src/components/styles/api.js&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt; font&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    title&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`Berkshire Swash, cursive`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`Source Code Pro, monospace`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;</content:encoded></item><item><title><![CDATA[Markdown]]></title><description><![CDATA[Both Pages, Articles and Projects support an extended superset of Markdown via  Github Flavoured Markdown . Markdown documents support…]]></description><link>https://example.com/articles/markdown</link><guid isPermaLink="false">https://example.com/articles/markdown</guid><pubDate>Thu, 31 May 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Both Pages, Articles and Projects support an extended superset of Markdown via &lt;a href=&quot;https://github.github.com/gfm/#what-is-github-flavored-markdown-&quot;&gt;Github Flavoured Markdown&lt;/a&gt;. Markdown documents support frontmatter for defining data associated with the mardown document. &lt;/p&gt;
+&lt;h1&gt;Headings&lt;/h1&gt;
+&lt;p&gt;Heading are translated to the appropriate h tags, meaning that even though the
+page title is rendered outside the markdown, you don’t have to skp using primary
+headings.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;# Primary
+
+## Secondary
+
+### Tertiary&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h1&gt;Primary&lt;/h1&gt;
+&lt;h2&gt;Secondary&lt;/h2&gt;
+&lt;h3&gt;Tertiary&lt;/h3&gt;
+&lt;h1&gt;Paragraphs&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis metus
+eget sapien fermentum, sit amet maximus diam auctor. Suspendisse a dignissim
+tortor. Suspendisse vulputate risus purus, eget maximus diam maximus at. Sed
+sollicitudin nec est in congue. Quisque quam nulla, fringilla sed volutpat sed,
+fringilla non sapien. Sed tincidunt, turpis eget commodo pretium, nulla ligula
+faucibus dui, sed tempus urna arcu eget nibh. Nunc et placerat turpis, placerat
+lobortis metus. Aliquam eu tincidunt orci, nec placerat nulla. Sed facilisis et
+dolor vitae efficitur. Pellentesque varius justo feugiat auctor varius. Quisque
+et diam urna. Vivamus dapibus diam et magna rhoncus bibendum.&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis metus
+eget sapien fermentum, sit amet maximus diam auctor. Suspendisse a dignissim
+tortor. Suspendisse vulputate risus purus, eget maximus diam maximus at. Sed
+sollicitudin nec est in congue. Quisque quam nulla, fringilla sed volutpat sed,
+fringilla non sapien. Sed tincidunt, turpis eget commodo pretium, nulla ligula
+faucibus dui, sed tempus urna arcu eget nibh. Nunc et placerat turpis, placerat
+lobortis metus. Aliquam eu tincidunt orci, nec placerat nulla. Sed facilisis et
+dolor vitae efficitur. Pellentesque varius justo feugiat auctor varius. Quisque
+et diam urna. Vivamus dapibus diam et magna rhoncus bibendum.&lt;/p&gt;
+&lt;h1&gt;Weight / Styles&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;_Italic_, **Bold**, **_Bold italic_**&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;&lt;em&gt;Italic&lt;/em&gt;, &lt;strong&gt;Bold&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;Bold italic&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h1&gt;Typographic embellishments&lt;/h1&gt;
+&lt;p&gt;There are a number of additional typographic embellishments that will happen automatically.&lt;/p&gt;
+&lt;h2&gt;Quotes&lt;/h2&gt;
+&lt;p&gt;Single and double quotes will be replaced by printers quotes:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&amp;quot;Double&amp;quot; and &amp;#39;Single&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;“Double” and ‘Sxample’&lt;/p&gt;
+&lt;h2&gt;Ellipses&lt;/h2&gt;
+&lt;p&gt;If you type three dots, they will be replaced by the ellipsis character:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;And then...&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;And then…&lt;/p&gt;
+&lt;h2&gt;Dashes&lt;/h2&gt;
+&lt;p&gt;Two dashes in a row will be replaced by an en-dash:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;5--10&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;5—10&lt;/p&gt;
+&lt;p&gt;Em Dash&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Strikethrough&lt;/h2&gt;
+&lt;p&gt;Wrapping text in two tilde (~) characters will strike it through:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;~~Example~~&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;&lt;del&gt;Example&lt;/del&gt;&lt;/p&gt;
+&lt;h1&gt;Links&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;[imperdiet](http://example.com)&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;http://example.com&quot;&gt;imperdiet&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Lists&lt;/h1&gt;
+&lt;h2&gt;Unordered&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;* Mauris tristique elementum leo a viverra. Ut placerat, ex nec vestibulum
+  iaculis. Erat graecis mei ex
+* His id dolorem indoctum facilisis
+* In per deseruisse appellantur&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Mauris tristique elementum leo a viverra. Ut placerat, ex nec vestibulum
+iaculis. Erat graecis mei ex&lt;/li&gt;
+&lt;li&gt;His id dolorem indoctum facilisis&lt;/li&gt;
+&lt;li&gt;In per deseruisse appellantur&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Ordered&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;1. Mauris tristique elementum leo a viverra. Ut placerat, ex nec vestibulum
+  iaculis. Erat graecis mei ex
+2. His id dolorem indoctum facilisis
+3. In per deseruisse appellantur&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;Mauris tristique elementum leo a viverra. Ut placerat, ex nec vestibulum
+iaculis. Erat graecis mei ex&lt;/li&gt;
+&lt;li&gt;His id dolorem indoctum facilisis&lt;/li&gt;
+&lt;li&gt;In per deseruisse appellantur&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Blockquote&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&amp;gt; Vix porro noster ei, no usu facilis elaboraret. No debitis pertinacia pro,
+&amp;gt; nisl delenit pertinacia ad vis, in soluta dissentiet usu. Mundi iuvaret
+&amp;gt; inermis vim at, an graeco feugait contentiones mea, nec porro minimum
+&amp;gt; reformidans ut. Consul argumentum instructior et mei.
+
+&amp;lt;cite&amp;gt;Quisque Quam Nulla&amp;lt;/cite&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Vix porro noster ei, no usu facilis elaboraret. No debitis pertinacia pro,
+nisl delenit pertinacia ad vis, in soluta dissentiet usu. Mundi iuvaret
+inermis vim at, an graeco feugait contentiones mea, nec porro minimum
+reformidans ut. Consul argumentum instructior et mei.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;cite&gt;Quisque Quam Nulla&lt;/cite&gt;&lt;/p&gt;
+&lt;h2&gt;Horizontal Rule&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;---&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;&lt;/h2&gt;
+&lt;h1&gt;Code&lt;/h1&gt;
+&lt;h2&gt;Blocks&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;```javascript
+  const x = 1;
+```&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; x &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2&gt;Inline&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;Lorem `ipsum` dolor sit amet&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Lorem &lt;code class=&quot;language-text&quot;&gt;ipsum&lt;/code&gt; dolor sit amet&lt;/p&gt;
+&lt;h1&gt;Tables&lt;/h1&gt;
+&lt;p&gt;Although tables are not supported in basic Markdown, they are here using the GFM Markdown syntax. This can be fidly, but you’ll find a handy table generator &lt;a href=&quot;https://www.tablesgenerator.com/markdown_tables&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;| Column 1      | Column 2      | Column 3 |
+| ------------- |-------------- | -------- |
+| Alpha         | 1             | A        |
+| Bravo         | 2             | B        |
+| Charlie       | 3             | C        |&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Column 1&lt;/th&gt;
+&lt;th&gt;Column 2&lt;/th&gt;
+&lt;th&gt;Column 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Alpha&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Bravo&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Charlie&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1&gt;Footnotes&lt;/h1&gt;
+&lt;p&gt;Add footnote references:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;Civibus efficiendi[^1] complectitur his at. Est stet[^2] aeque voluptaria eu, eum scaevola.
+
+[^1]: First footnote is here
+[^2]: And the second is here&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Civibus efficiendi&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; complectitur his at. Est stet&lt;sup id=&quot;fnref-2&quot;&gt;&lt;a href=&quot;#fn-2&quot; class=&quot;footnote-ref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; aeque voluptaria eu, eum scaevola.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Plugins Used&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-remark-smartypants&quot;&gt;gatsby-remark-smartypants&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&quot;fn-1&quot;&gt;
+&lt;p&gt;First footnote is here&lt;/p&gt;
+&lt;a href=&quot;#fnref-1&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn-2&quot;&gt;
+&lt;p&gt;And the second is here&lt;/p&gt;
+&lt;a href=&quot;#fnref-2&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Configuration]]></title><description><![CDATA[There are several layers of configuration for the site and you can go as deep as
+you want or need. site-config.xml Much of the configuration…]]></description><link>https://example.com/articles/configuration</link><guid isPermaLink="false">https://example.com/articles/configuration</guid><pubDate>Wed, 30 May 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;There are several layers of configuration for the site and you can go as deep as
+you want or need.&lt;/p&gt;
+&lt;h1&gt;site-config.xml&lt;/h1&gt;
+&lt;p&gt;Much of the configuration for the site can be defined in &lt;code class=&quot;language-text&quot;&gt;site-config.xml&lt;/code&gt;. This
+is not a standard Gatsby configuration file and is specific to this starter. The
+contents of the file are well commented. By changing the content of this file
+you can customise many aspects of the site. The data defined in this file is
+used to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;construct pages&lt;/li&gt;
+&lt;li&gt;display data&lt;/li&gt;
+&lt;li&gt;supply data to plugins&lt;/li&gt;
+&lt;li&gt;configure and enable / disable features&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Plugins&lt;/h1&gt;
+&lt;p&gt;Gatsby uses a plugin architecture to add additional functionality. This starter
+uses a large number of plugins which are configured via &lt;code class=&quot;language-text&quot;&gt;gatsby-config.js&lt;/code&gt;. All
+plugin configuration is found there, or in individual files for each plugin
+within the &lt;code class=&quot;language-text&quot;&gt;/config&lt;/code&gt; directory. Many of the plugins draw configuration options
+from &lt;code class=&quot;language-text&quot;&gt;site-config.xml&lt;/code&gt;, however you can also edit the plugin configuration
+directly to further customise the behaviour and features offered by the plugins.&lt;/p&gt;
+&lt;h1&gt;Styling&lt;/h1&gt;
+&lt;p&gt;This site uses &lt;a href=&quot;https://github.com/Undistraction/cssapi&quot;&gt;CSSAPI&lt;/a&gt; to define
+styles used throughout the site. This gives you a single, centralised location
+to make changes to color, fonts and spacing amongst other things. Style
+configuration can be found in &lt;code class=&quot;language-text&quot;&gt;src/components/styles/api.js&lt;/code&gt;.&lt;/p&gt;
+&lt;h1&gt;Components&lt;/h1&gt;
+&lt;p&gt;The site uses
+&lt;a href=&quot;https://github.com/styled-components/styled-components&quot;&gt;Styled Components&lt;/a&gt;
+throughout. Pages and the components within them are each defined as a separate
+component found in &lt;code class=&quot;language-text&quot;&gt;src/components&lt;/code&gt;. Components used in more than one location
+can be found in &lt;code class=&quot;language-text&quot;&gt;src/components/shared&lt;/code&gt;. Note that elements generated from
+markdown are also transformed into components. This mapping of generic HTML
+elements to components happens in &lt;code class=&quot;language-text&quot;&gt;src/components/shared/MarkdownContent.jsx&lt;/code&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Structure]]></title><description><![CDATA[All content for the site lives in  . The starter will generate a
+site comprising of three main sets of pages. Generic Pages Generic pages…]]></description><link>https://example.com/articles/structure</link><guid isPermaLink="false">https://example.com/articles/structure</guid><pubDate>Tue, 29 May 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;All content for the site lives in &lt;code class=&quot;language-text&quot;&gt;src/content&lt;/code&gt;. The starter will generate a
+site comprising of three main sets of pages.&lt;/p&gt;
+&lt;h1&gt;Generic Pages&lt;/h1&gt;
+&lt;p&gt;Generic pages can be found in the &lt;code class=&quot;language-text&quot;&gt;src/content/pages&lt;/code&gt;. Each consists of a
+markdown document and a directory of images.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Home Page&lt;/li&gt;
+&lt;li&gt;About Page&lt;/li&gt;
+&lt;li&gt;404&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can view the 404 page when running your site in development by navigating to
+&lt;code class=&quot;language-text&quot;&gt;localhost:8000/404&lt;/code&gt;. Both the Home Page and the About Page must include an
+image at least 2400px wide.&lt;/p&gt;
+&lt;h1&gt;Resources&lt;/h1&gt;
+&lt;p&gt;There are two kinds of resource pages: Articles and Projects.&lt;/p&gt;
+&lt;h2&gt;Articles&lt;/h2&gt;
+&lt;p&gt;Articles can be found in &lt;code class=&quot;language-text&quot;&gt;src/content/articles&lt;/code&gt;. Like Pages they consist of a
+markdown document and a directory for images. They must include a set of
+frontmatter data used in building the site. Articles are displayed in
+chronological order, starting with the most recent. They should be categorised
+and tagged. The title for the article should be defined in the frontmatter, not
+in the markdown. You can change the name of the resource from
+&lt;code class=&quot;language-text&quot;&gt;src/site-config.js&lt;/code&gt;, and this will update across the site, including links and
+URLs. For example you could change ‘Articles’ to ‘Posts’ or ‘Writings’. All
+Articles must include an image that is at least 2400px wide.&lt;/p&gt;
+&lt;h2&gt;Projects&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Projects are structured the same way as Articles, though they don&amp;#39;t supportz&lt;/code&gt;
+categorisation. If you don’t want to include projects pages it is easy to remove
+them from the site. Like Articles you can change the name of the resource from
+&lt;code class=&quot;language-text&quot;&gt;src/site-config.js&lt;/code&gt; and like Articles, Projects must include an image.&lt;/p&gt;
+&lt;h1&gt;Tags and Categories&lt;/h1&gt;
+&lt;h2&gt;Tags&lt;/h2&gt;
+&lt;p&gt;Both Articles and Projects allow you to define keywords in their frontmatter. In
+both cases they will be used in the page metadata, however in the case of
+Articles the article they will also be used to associate tags with that Article.
+These tags become links that can be used to view all Articles that have been
+tagged with a given tag. You can add as many tags as you want to an Article or
+Project.&lt;/p&gt;
+&lt;h2&gt;Categories&lt;/h2&gt;
+&lt;p&gt;Articles also allow you to define a single Category per article. These are much
+higher-level than tags. Like tags, they will become links which can be used to
+view all Articles that fall within a given category.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Accessibility]]></title><description><![CDATA[Given the limitations inherent with content derived from markdown, I’ve tried to
+make this starter as accessible as possible. The site…]]></description><link>https://example.com/articles/accessibility</link><guid isPermaLink="false">https://example.com/articles/accessibility</guid><pubDate>Mon, 01 Jan 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Given the limitations inherent with content derived from markdown, I’ve tried to
+make this starter as accessible as possible. The site includes a plugin to flag
+accessibility errors in the D.O.M using
+&lt;a href=&quot;https://github.com/github/accessibilityjs&quot;&gt;accessibilityjs&lt;/a&gt;. This is enabled by
+default in development and will be disabled in all other environments.&lt;/p&gt;
+&lt;h1&gt;Issues&lt;/h1&gt;
+&lt;p&gt;You can add alt text to images defined in Markdown, but at present Gatsby offers
+no means of associating alt text with images defined in frontmatter. See the
+issue &lt;a href=&quot;https://github.com/gatsbyjs/gatsby/issues/2910&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Plugins Used&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-plugin-accessibilityjs&quot;&gt;gatsby-plugin-accessibilityjs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[SEO]]></title><description><![CDATA[Page Metadata Every page will include the following metadata tags: Non-Generated Pages For pages that are not generated using a template, i…]]></description><link>https://example.com/articles/seo</link><guid isPermaLink="false">https://example.com/articles/seo</guid><pubDate>Wed, 27 Sep 2017 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Page Metadata&lt;/h1&gt;
+&lt;p&gt;Every page will include the following metadata tags:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;title&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;title&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;meta&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;description&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;meta&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;keywords&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2&gt;Non-Generated Pages&lt;/h2&gt;
+&lt;p&gt;For pages that are not generated using a template, i.e.. all pages in the
+&lt;code class=&quot;language-text&quot;&gt;pages/&lt;/code&gt; directory, metadata is defined in &lt;code class=&quot;language-text&quot;&gt;site-config.js&lt;/code&gt; in its &lt;code class=&quot;language-text&quot;&gt;metadata&lt;/code&gt;
+fields.&lt;/p&gt;
+&lt;h2&gt;Generated Pages&lt;/h2&gt;
+&lt;p&gt;For pages that are generated, i.e. all pages in the &lt;code class=&quot;language-text&quot;&gt;templates/&lt;/code&gt; directory,
+metadata is defined in the index.md file’s frontmatter for the page.&lt;/p&gt;
+&lt;h2&gt;Hybrid Pages&lt;/h2&gt;
+&lt;p&gt;Tags and categories pages use a combination of text defined in &lt;code class=&quot;language-text&quot;&gt;site-config.js&lt;/code&gt;
+and the name of the tag or category.&lt;/p&gt;
+&lt;h1&gt;Robots.txt&lt;/h1&gt;
+&lt;p&gt;A &lt;code class=&quot;language-text&quot;&gt;robots.txt&lt;/code&gt; file is generated automatically for your site with the following
+configuration:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Sitemap: `http://example.com/sitemap.xml`,
+User-agent: *
+Allow: /&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h1&gt;Google Analytics&lt;/h1&gt;
+&lt;p&gt;If you add a tracking code to the &lt;code class=&quot;language-text&quot;&gt;seo.googleTrackingID&lt;/code&gt; field of
+&lt;code class=&quot;language-text&quot;&gt;site-config.js&lt;/code&gt;, Google’s tracking code will be included in your pages.&lt;/p&gt;
+&lt;h1&gt;Sitemap&lt;/h1&gt;
+&lt;p&gt;A sitemap is automatically generated to &lt;code class=&quot;language-text&quot;&gt;/sitemap.xml&lt;/code&gt; for your site every time
+it is built, meaning it will always be up-to-date. The sitemap uses the
+&lt;code class=&quot;language-text&quot;&gt;site.url&lt;/code&gt; field in &lt;code class=&quot;language-text&quot;&gt;site-config.js&lt;/code&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Plugins used&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet&quot;&gt;gatsby-plugin-react-helmet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[gatsby-plugin-google-analytics)&lt;/li&gt;
+&lt;li&gt;[gatsby-plugin-sitemap]](&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics&quot;&gt;https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap&quot;&gt;gatsby-plugin-sitemap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-plugin-robots-txt&quot;&gt;plugin-robots-txt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Embeds]]></title><description><![CDATA[Include responsive iframe or object embeds in your markdown. For the embedded
+item to be made responsive you must define its proportions, so…]]></description><link>https://example.com/articles/embeds</link><guid isPermaLink="false">https://example.com/articles/embeds</guid><pubDate>Fri, 22 Sep 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Include responsive iframe or object embeds in your markdown. For the embedded
+item to be made responsive you must define its proportions, so you must supply
+both width and height set to unitless or pixel values. If both values are not
+supplied, the embed will not be made responsive.&lt;/p&gt;
+&lt;h2&gt;YouTube&lt;/h2&gt;
+&lt;p&gt;A standed YouTube embed:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&amp;lt;iframe src=&amp;quot;https://www.youtube.com/embed/v30Ml-9xsRQ&amp;quot; frameborder=&amp;quot;0&amp;quot; allowfullscreen&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;iframe src=&quot;https://www.youtube.com/embed/v30Ml-9xsRQ&quot; frameborder=&quot;0&quot;
+allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;A responisive YouTube embed:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&amp;lt;iframe width=&amp;quot;560&amp;quot; height=&amp;quot;315&amp;quot; src=&amp;quot;https://www.youtube.com/embed/v30Ml-9xsRQ&amp;quot; frameborder=&amp;quot;0&amp;quot; allowfullscreen&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;div&gt;
+          &lt;div
+            class=&quot;gatsby-resp-iframe-wrapper&quot;
+            style=&quot;padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden;&quot;
+          &gt;
+            &lt;iframe src=&quot;https://www.youtube.com/embed/v30Ml-9xsRQ&quot; frameborder=&quot;0&quot; allowfullscreen style=&quot;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          &quot;&gt;&lt;/iframe&gt;
+          &lt;/div&gt;
+          &lt;/div&gt;
+&lt;h2&gt;Vimeo&lt;/h2&gt;
+&lt;p&gt;A standard Vimeo embed:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&amp;lt;iframe src=&amp;quot;https://player.vimeo.com/video/40686155?portrait=0&amp;quot; frameborder=&amp;quot;0&amp;quot; webkitallowfullscreen mozallowfullscreen allowfullscreen&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;iframe src=&quot;https://player.vimeo.com/video/40686155?portrait=0&quot; frameborder=&quot;0&quot; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;A responsive Vimeo embed:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&amp;lt;iframe src=&amp;quot;https://player.vimeo.com/video/40686155?portrait=0&amp;quot; width=&amp;quot;640&amp;quot; height=&amp;quot;360&amp;quot; frameborder=&amp;quot;0&amp;quot; webkitallowfullscreen mozallowfullscreen allowfullscreen&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;div&gt;
+          &lt;div
+            class=&quot;gatsby-resp-iframe-wrapper&quot;
+            style=&quot;padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden;&quot;
+          &gt;
+            &lt;iframe src=&quot;https://player.vimeo.com/video/40686155?portrait=0&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen style=&quot;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          &quot;&gt;&lt;/iframe&gt;
+          &lt;/div&gt;
+          &lt;/div&gt;
+&lt;h2&gt;Soundcloud&lt;/h2&gt;
+&lt;p&gt;A Soundcloud embed (Soundcloud embed are already responsive):&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&amp;lt;iframe width=&amp;quot;100%&amp;quot; height=&amp;quot;300&amp;quot; scrolling=&amp;quot;no&amp;quot; frameborder=&amp;quot;no&amp;quot; src=&amp;quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/188212367&amp;amp;amp;color=%23ff5500&amp;amp;amp;auto_play=false&amp;amp;amp;hide_related=false&amp;amp;amp;show_comments=true&amp;amp;amp;show_user=true&amp;amp;amp;show_reposts=false&amp;amp;amp;show_teaser=true&amp;amp;amp;visual=true&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;300&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/188212367&amp;amp;color=%23ff5500&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;show_teaser=true&amp;amp;visual=true&quot;&gt;&lt;/iframe&gt;
+&lt;h1&gt;Simple Embeds&lt;/h1&gt;
+&lt;p&gt;There is also a simple form of embed for Vimeo and YouTube that will embed at a ratio of 16:9&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;`video: https://www.youtube.com/embed/v30Ml-9xsRQ`
+`youtube: https://www.youtube.com/watch?v=v30Ml-9xsRQ` 
+`youtube: v30Ml-9xsRQ`
+
+`vimeo: https://vimeo.com/40686155`
+`vimeo: 40686155`&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;hr&gt;
+&lt;h1&gt;Plugins Used&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-remark-responsive-iframe&quot;&gt;gatsby-remark-responsive-iframe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-remark-embed-video&quot;&gt;gatsby-remark-embed-video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Code]]></title><description><![CDATA[There are a number of useful features to help you display code within your
+site’s markdown content including syntax highlighting, the…]]></description><link>https://example.com/articles/code</link><guid isPermaLink="false">https://example.com/articles/code</guid><pubDate>Thu, 10 Aug 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;There are a number of useful features to help you display code within your
+site’s markdown content including syntax highlighting, the ability to embed code
+from files and to open code in a REPL.&lt;/p&gt;
+&lt;h4&gt;Basic Embedding&lt;/h4&gt;
+&lt;p&gt;Any code you embed using markdown’s backtick syntax will be styled with Code
+will be styled using &lt;a href=&quot;http://prismjs.com/&quot;&gt;Prism&lt;/a&gt;. If you follow the first three
+backticks with a keyword for the language, the correct highlighting will be used
+for that language, for example to embed JavaScript you would use the following:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;```javascript
+const example = 1
+```&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;A full list of supported languages can be found
+&lt;a href=&quot;http://prismjs.com/#languages-list&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The current prism theme is imported in the project’s &lt;code class=&quot;language-text&quot;&gt;./src/layout.js&lt;/code&gt; file.&lt;/p&gt;
+&lt;h4&gt;External Files&lt;/h4&gt;
+&lt;p&gt;Any files you include in your project’s &lt;code class=&quot;language-text&quot;&gt;src/content/code&lt;/code&gt; directory can be
+included with automatic syntax highlighting based on the file’s extension using
+the following syntax within the markdown (note the backticks):&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;`embed:example.js`&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;&lt;div class=&quot;gatsby-highlight&quot;&gt;
+        &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code&gt;&lt;span class=&quot;token comment&quot;&gt;/* eslint-disable */&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; x &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; y &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; z &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; x &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; y&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+        &lt;/div&gt;&lt;/p&gt;
+&lt;h4&gt;REPLs&lt;/h4&gt;
+&lt;p&gt;There is also a special syntax for opening JavaScript code in a REPL of your
+choice. By constructing a link using the filename of the repl as a prefix, a
+link will be constructed that opens an external page to the REPL with the
+contents of the file displayed.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://babeljs.io/repl/#?presets=react&amp;code_lz=PQKgBApgzgNglgOwC4FoAmcoEMBGMJgjABQAxgPYJRJgAeYAvGAEwDcZl1YAno2AMzsKVGgC8-9ANQ92QA&quot; &gt;Open In Babel REPL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/redirect-to-codepen/example&quot; &gt;Open In Codepen&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://codesandbox.io/api/v1/sandboxes/define?parameters=N4IgZglgNgpgziAXKADgQwMYGs0HMYB0AVnAPYB2SoGFALjObVSACYwoNvkYTxUC-ggDQgI5NgA9iCZCBqMGTRCAD0AKgAE8KGNoBaFhDhoARrA1qVAHW4U4tDRI0BeDQCYA3Dfn2NATxcNAGYvW3JfAC9ApwBqf1CQfhExSQIAC1oAWyhmeXpGJBAAHkMANw0IFmcrEAAnUlJaGoA-IpUy5sTBIA&quot; &gt;Open In Code Sandbox&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ramdajs.com/repl/#?%2F%2A%20eslint-disable%20%2A%2F%0Aconst%20x%20%3D%202%3B%0Aconst%20y%20%3D%203%3B%0Aconst%20z%20%3D%20x%20%2B%20y%3B%0A&quot; &gt;Open In Ramda&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the following examples, a file called &lt;code class=&quot;language-text&quot;&gt;example.js&lt;/code&gt; found in
+&lt;code class=&quot;language-text&quot;&gt;src/content/code&lt;/code&gt; will be opened in a the chosen REPL:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;* [Open In Babel REPL](babel://example)
+* [Open In Codepen](codepen://example)
+* [Open In Code Sandbox](codesandbox://example)
+* [Open In Ramda](ramda://example)&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h4&gt;Code Sandbox Embeds&lt;/h4&gt;
+&lt;p&gt;You can also use &lt;a href=&quot;https://codesandbox.io/&quot;&gt;Code Sandbox&lt;/a&gt; to embed code in the page within their component, making the code interactive. &lt;/p&gt;
+&lt;p&gt;The code must be in its own directory (within the &lt;code class=&quot;language-text&quot;&gt;src/content/code&lt;/code&gt; directory), and there must be a &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; that directory. You can declare any libraries used by your code there as you would with any &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;You can pass options to configure how the component should look - it can just run display the code for example. By default it displays the full editor. For more information on this see the plugin’s &lt;a href=&quot;https://github.com/elboman/gatsby-remark-embedded-codesandbox/blob/master/README.md&quot;&gt;README&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;div&gt;
+          &lt;div
+            class=&quot;gatsby-resp-iframe-wrapper&quot;
+            style=&quot;padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden;&quot;
+          &gt;
+            &lt;iframe src=&quot;https://codesandbox.io/api/v1/sandboxes/define?embed=1&amp;amp;parameters=N4IgZglgNgpgziAXKCA7AJjAHgOgFYLIgDGA9qgC4yVIgD0AVAATxRoUC06EcAhgEawmDOgB1UZVHApMsTALxMATOMnSmATwVMAzKvLqAXtrkBqTeJABfADQgADr2IBrXgHMY-OOSShJVGiJUXgBbGFpsUPtYEDtMe2pMCQh4Xyt09KA&amp;amp;query=hidenavigation%3D1%26view%3Deditor&quot; class=&quot;embedded-codesandbox&quot; sandbox=&quot;allow-modals allow-forms allow-popups allow-scripts allow-same-origin&quot; style=&quot;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          &quot;&gt;&lt;/iframe&gt;
+          &lt;/div&gt;
+          &lt;/div&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Plugins Used&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-remark-code-repls&quot;&gt;gatsby-remark-code-repls&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-remark-prismjs&quot;&gt;gatsby-remark-prismjs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-remark-embed-snippet&quot;&gt;gatsby-remark-embed-snippet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-remark-embedded-codesandbox&quot;&gt;gatsby-remark-embedded-codesandbox&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Images]]></title><description><![CDATA[Responsive Images Use images in your markdown and they will be made responsive. Just refer to them
+by their file-path, relative to the…]]></description><link>https://example.com/articles/images</link><guid isPermaLink="false">https://example.com/articles/images</guid><pubDate>Sat, 01 Jul 2017 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Responsive Images&lt;/h1&gt;
+&lt;p&gt;Use images in your markdown and they will be made responsive. Just refer to them
+by their file-path, relative to the markdown document. For example if you have a
+directory called &lt;code class=&quot;language-text&quot;&gt;images&lt;/code&gt; in the same directory as your main markdown file you
+can display an image like this:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;![An example](images/example.png)&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;images/example.png&quot; alt=&quot;An example&quot;&gt;&lt;/p&gt;
+&lt;h1&gt;Supported Filetypes&lt;/h1&gt;
+&lt;p&gt;You can use the following filetypes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;jpeg&lt;/li&gt;
+&lt;li&gt;jpg&lt;/li&gt;
+&lt;li&gt;png&lt;/li&gt;
+&lt;li&gt;webp&lt;/li&gt;
+&lt;li&gt;tif&lt;/li&gt;
+&lt;li&gt;tiff&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;Plugins Used&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-image&quot;&gt;gatsby-image&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-transformer-sharp&quot;&gt;gatsby-transformer-sharp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-plugin-sharp&quot;&gt;gatsby-plugin-sharp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-remark-images&quot;&gt;gatsby-remark-images&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Downloads]]></title><description><![CDATA[You can offer visitors links to file downloads just by referencing the file you
+want to make available using its filepath relative to your…]]></description><link>https://example.com/articles/downloads</link><guid isPermaLink="false">https://example.com/articles/downloads</guid><pubDate>Sat, 29 Apr 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;You can offer visitors links to file downloads just by referencing the file you
+want to make available using its filepath relative to your markdown file. For
+example if you have a directory called &lt;code class=&quot;language-text&quot;&gt;pdfs&lt;/code&gt; in the same directory as your main
+markdown file you can create download links for those files like this:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;[Download this](pdfs/download-1.pdf) or [Download this](pdfs/download-2.pdf)&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;/gatsby-skeleton-starter/downloads/download-1-5cfe8938c2429eafebcb12cf44ba07e2.pdf&quot;&gt;Download this&lt;/a&gt; or &lt;a href=&quot;/gatsby-skeleton-starter/downloads/download-2-6d75155e50a2d56745bf3cb7e0b13e15.pdf&quot;&gt;Download this&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Files will be served from &lt;code class=&quot;language-text&quot;&gt;/downloads&lt;/code&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Plugins Used&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-remark-copy-linked-files&quot;&gt;gatsby-remark-copy-linked-files&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Twitter]]></title><description><![CDATA[If you include the html embed for a tweet within your markdown document, the
+JavaScript will be automatically loaded too: Plugins used…]]></description><link>https://example.com/articles/twitter</link><guid isPermaLink="false">https://example.com/articles/twitter</guid><pubDate>Wed, 01 Feb 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;If you include the html embed for a tweet within your markdown document, the
+JavaScript will be automatically loaded too:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&amp;lt;blockquote class=&amp;quot;twitter-tweet&amp;quot; data-lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;p lang=&amp;quot;en&amp;quot; dir=&amp;quot;ltr&amp;quot;&amp;gt;Brexit talks in chaos, pay falling and more people in poverty. Wouldn&amp;amp;#39;t it be better if the &amp;lt;a href=&amp;quot;https://twitter.com/Conservatives?ref_src=twsrc%5Etfw&amp;quot;&amp;gt;@Conservatives&amp;lt;/a&amp;gt; just got out of the way? &amp;lt;a href=&amp;quot;https://twitter.com/hashtag/PMQs?src=hash&amp;amp;amp;ref_src=twsrc%5Etfw&amp;quot;&amp;gt;#PMQs&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;https://t.co/TZvVN8ITkX&amp;quot;&amp;gt;pic.twitter.com/TZvVN8ITkX&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;&amp;amp;mdash; Jeremy Corbyn (@jeremycorbyn) &amp;lt;a href=&amp;quot;https://twitter.com/jeremycorbyn/status/938406524728291328?ref_src=twsrc%5Etfw&amp;quot;&amp;gt;December 6, 2017&amp;lt;/a&amp;gt;&amp;lt;/blockquote&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Brexit talks in chaos, pay falling and more people in poverty. Wouldn&amp;#39;t it be better if the &lt;a href=&quot;https://twitter.com/Conservatives?ref_src=twsrc%5Etfw&quot;&gt;@Conservatives&lt;/a&gt; just got out of the way? &lt;a href=&quot;https://twitter.com/hashtag/PMQs?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#PMQs&lt;/a&gt; &lt;a href=&quot;https://t.co/TZvVN8ITkX&quot;&gt;pic.twitter.com/TZvVN8ITkX&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jeremy Corbyn (@jeremycorbyn) &lt;a href=&quot;https://twitter.com/jeremycorbyn/status/938406524728291328?ref_src=twsrc%5Etfw&quot;&gt;December 6, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1&gt;Plugins used&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-plugin-twitter&quot;&gt;gatsby-plugin-twitter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Favicons]]></title><description><![CDATA[Favicons sre automatically generated during the build process from a single
+source image. Just replace the image found in   with
+your own…]]></description><link>https://example.com/articles/favicons</link><guid isPermaLink="false">https://example.com/articles/favicons</guid><pubDate>Thu, 22 Dec 2016 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Favicons sre automatically generated during the build process from a single
+source image. Just replace the image found in &lt;code class=&quot;language-text&quot;&gt;images/favicon/favicon.png&lt;/code&gt; with
+your own image of the same dimensions (1500px x 1500px) and it will be used
+instead.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Plugins Used&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Creatiwity/gatsby-plugin-favicon/issues&quot;&gt;gatsby-plugin-favicon&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[RSS]]></title><description><![CDATA[Whenever you build your site, an RSS feed is generated to   with entries for every Article page. It uses the following fields form  ’s…]]></description><link>https://example.com/articles/rss</link><guid isPermaLink="false">https://example.com/articles/rss</guid><pubDate>Fri, 01 Jul 2016 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Whenever you build your site, an RSS feed is generated to &lt;code class=&quot;language-text&quot;&gt;/rss.xml&lt;/code&gt; with entries for every Article page. It uses the following fields form &lt;code class=&quot;language-text&quot;&gt;site-config.xml&lt;/code&gt;’s &lt;code class=&quot;language-text&quot;&gt;data&lt;/code&gt; field:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;title&lt;/li&gt;
+&lt;li&gt;description&lt;/li&gt;
+&lt;li&gt;url&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;Plugins Used&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-plugin-feed&quot;&gt;gatsby-plugin-feed&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item></channel></rss>

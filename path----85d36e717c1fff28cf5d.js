@@ -1,0 +1,2 @@
+webpackJsonp([60335399758886],{233:function(t,e){t.exports={data:{site:{siteMetadata:{data:{owner:"Your Name Here",title:"Gatsby Skeleton",startYear:"2017",showCredit:!0},structure:{resources:{projects:{title:"Project",navTitle:"Projects",path:"/projects"},articles:{title:"Article",navTitle:"Articles",path:"/articles"}},pages:{about:{title:"Welcome To The About Page",navTitle:"About",path:"/about"},home:{title:"Welcome To The Home Page",navTitle:"Home",path:"/"}}}}}},layoutContext:{}}}});
+//# sourceMappingURL=path----85d36e717c1fff28cf5d.js.map
