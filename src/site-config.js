@@ -143,7 +143,7 @@ module.exports = {
         // Path used in URL
         path: `/projects`,
       },
-      // Configuration for projects
+      // Configuration for tags
       tags: {
         // Resource Name (will be pluralised for page title)
         title: `Tag`,

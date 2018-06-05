@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import VLayout from '../../shared/layouts/VLayout'
 import SiteLogoLink from './SiteLogoLink'
 import SiteNav from './SiteNav'
-import SiteTitle from './SiteTitle'
 
 const Header = styled.div``
 
@@ -28,7 +27,6 @@ const SiteHeader = ({ title, pages }) => (
     <Header>
       <SiteLogoLink />
     </Header>
-    <SiteTitle>{title}</SiteTitle>
     <SiteNav pages={pages} />
   </Layout>
 )

@@ -12,6 +12,7 @@ const arrow = (api, props) => (size = `16`, background = `red`) => {
       transform: translate(${translation}, 50%) rotate(45deg);
 
       ${props.direction}: 0;
+      
       ${api({
         width: size,
         height: size,

@@ -10,10 +10,7 @@ const insetBorder = api => css`
       offset: `0.5ru`,
       border: `1px solid c:borderColor`,
       borderRadius: `0.2ru`,
-    })};
-
-    ${api.mq(`largeUp`, {
-      display: `block`,
+      display: { [`largeUp+50`]: `block` },
     })};
   }
 `

@@ -65,6 +65,7 @@ const config = {
       backgroundStop: `c:white`,
       text: `c:black`,
       highlight: `c:red`,
+      active: `c:darkGrey`,
       disabled: `c:offWhite`,
       // - Inverted
       backgroundInvertedStart: `c:offBlack`,

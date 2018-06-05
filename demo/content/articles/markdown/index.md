@@ -9,7 +9,9 @@ author: Pedr Browne
 image: ./images/main.jpg
 ---
 
-Both Pages, Articles and Projects support an extended superset of Markdown via [Github Flavoured Markdown](https://github.github.com/gfm/#what-is-github-flavored-markdown-). Markdown documents support frontmatter for defining data associated with the mardown document. 
+Both Pages, Articles and Projects support an extended superset of Markdown via [Github Flavoured Markdown](https://github.github.com/gfm/#what-is-github-flavored-markdown-). Markdown documents support frontmatter for defining data associated with the markdown document.
+
+You'll find an outline of the supported markdown elements below, or for more in depth information see Remark's own outline [here](https://github.com/remarkjs/remark/blob/master/test/fixtures/input/markdown-documentation-syntax.text).
 
 # Headings
 

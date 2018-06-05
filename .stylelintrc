@@ -4,7 +4,6 @@
     "stylelint-config-recommended",
     "stylelint-config-styled-components"
   ],
-  "syntax": "css",
   "rules": {
     "block-no-empty": null
   }

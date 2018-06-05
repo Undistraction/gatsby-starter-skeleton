@@ -3,7 +3,11 @@
   "description": "Gatsby Skeleton Starter",
   "version": "0.0.1",
   "author": "Pedr Browne <info@undistraction.com>",
-  "keywords": ["gatsby", "styled-components", "cssapi"],
+  "keywords": [
+    "gatsby",
+    "styled-components",
+    "cssapi"
+  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
@@ -17,25 +21,22 @@
     "lint:js": "eslint src",
     "lint:css": "stylelint './src/**/*.js'",
     "lint": "npm run lint:js && npm run lint:css",
-    "demo":
-      "yarn demo:import && yarn demo:copy && yarn demo:build && yarn demo:githubPages && yarn demo:open",
+    "demo": "yarn demo:import && yarn demo:copy && yarn demo:build && yarn demo:githubPages && yarn demo:open",
     "demo:import": "bash scripts/demo-import.sh",
     "demo:copy": "bash scripts/demo-copy-content.sh",
     "demo:build": "cd ./demo/project && gatsby build --prefix-paths",
     "demo:githubPages": "gh-pages -d demo/project/public",
-    "demo:open":
-      "open https://undistraction.github.io/gatsby-skeleton-starter/",
+    "demo:open": "open https://undistraction.github.io/gatsby-skeleton-starter/",
     "demo:update": "yarn demo:import && yarn demo:dev",
     "demo:deleteCache": "bash scripts/demo-delete-cache.sh",
-    "demo:dev":
-      "yarn demo:deleteCache && yarn demo:copy && cd demo/project && yarn dev",
+    "demo:dev": "yarn demo:deleteCache && yarn demo:copy && cd demo/project && yarn dev",
     "demo:serve": "cd ./demo/project && gatsby serve",
     "surge:deploy": "surge --domain gatsby-skeleton-starter.surge.sh public/"
   },
   "dependencies": {
-    "cssapi": "0.8.8",
+    "cssapi": "^0.9.0",
     "ramda": "^0.25.0",
-    "ramda-adjunct": "^2.7.0",
+    "ramda-adjunct": "^2.9.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-helmet": "^5.2.0",
@@ -96,5 +97,9 @@
     "stylelint-processor-styled-components": "^1.2.0",
     "surge": "^0.19.0"
   },
-  "browserslist": ["> 1%", "IE >= 9", "last 2 versions"]
+  "browserslist": [
+    "> 1%",
+    "IE >= 9",
+    "last 2 versions"
+  ]
 }
