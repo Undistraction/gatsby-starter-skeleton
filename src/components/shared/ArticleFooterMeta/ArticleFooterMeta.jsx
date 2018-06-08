@@ -5,9 +5,9 @@ import styled from 'styled-components'
 import { categoryPath } from '../../../build/utils/url'
 import { fieldsTags, frontmatterCategory } from '../../helpers/markdown'
 import defaultBorder from '../../styles/mixins/defaultBorder'
-import TagList from '../TagList'
 import VLayout from '../layouts/VLayout'
-import ContentLink from '../links/ContentLink'
+import TextLink from '../links/TextLink'
+import TagList from '../TagList'
 
 const Layout = styled(VLayout)`
   ${defaultBorder(`top`)};
@@ -22,7 +22,7 @@ const ArticleFooterMeta = ({ article }) => {
     <Layout spacing="none">
       <div>
         Filed Under:{` `}
-        <ContentLink to={categoryPath(category)}>{category}</ContentLink>
+        <TextLink to={categoryPath(category)}>{category}</TextLink>
       </div>
       <div>
         Tagged With: <TagList tags={fieldsTags(article)} />
