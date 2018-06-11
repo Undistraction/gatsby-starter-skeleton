@@ -77,7 +77,7 @@ Single and double quotes will be replaced by printers quotes:
 "Double" and 'Single'
 ```
 
-"Double" and 'Sxample'
+"Double" and 'Single'
 
 ## Ellipses
 
@@ -91,7 +91,9 @@ And then...
 
 ## Dashes
 
-Two dashes in a row will be replaced by an en-dash:
+The type of dash can be controlled by the number of dashes used:
+
+### En Dash (Two dashes)
 
 ```markdown
 5--10
@@ -99,9 +101,14 @@ Two dashes in a row will be replaced by an en-dash:
 
 5--10
 
-Em Dash
+### Em Dash (Three dashes)
 
----
+```markdown
+5---10
+```
+
+5---10
+
 
 ## Strikethrough
 
