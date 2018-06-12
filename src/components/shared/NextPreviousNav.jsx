@@ -10,8 +10,9 @@ export const LayoutPrevious = styled.div``
 export const LayoutNext = styled.div``
 
 const Layout = styled.nav`
-  ${flexHorizontal};
   justify-content: space-between;
+  ${flexHorizontal};
+
   ${LayoutNext}, ${LayoutPrevious} {
     ${api({
       width: scope`calc(50% - 0.5ru)`,

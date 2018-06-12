@@ -15,11 +15,7 @@ export const Body = styled(VLayout)`
   })};
 `
 
-export const Nav = styled.div`
-  ${api({
-    paddingH: [`1ru`, `1ru`, `1ru`, 0],
-  })};
-`
+export const NavWrapper = styled.div``
 
 const PageTitle = styled(TitlePrimary)`
   text-align: center;
@@ -32,12 +28,12 @@ const PageTitle = styled(TitlePrimary)`
 const Page = ({ title, children, imageSizes, nav }) => (
   <VLayout>
     {imageSizes && <Img sizes={imageSizes} />}
-    {nav && <Nav>{nav}</Nav>}
+    {nav && <NavWrapper>{nav}</NavWrapper>}
     <Body>
       <PageTitle>{title}</PageTitle>
       {children}
     </Body>
-    {nav && <Nav>{nav}</Nav>}
+    {nav && <NavWrapper>{nav}</NavWrapper>}
   </VLayout>
 )
 
