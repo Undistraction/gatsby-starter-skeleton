@@ -2,6 +2,8 @@ const { inc } = require(`ramda`)
 
 const reporter = require(`../reporter`)
 
+const reportConfigWasValid = () => reporter.success(`site-config.js was valid`)
+
 const reportCreatePageSuccess = (name, path) =>
   reporter.success(`Created ${name} Page at ${path}`)
 
@@ -11,6 +13,7 @@ const reportCreatePaginatedPageSuccess = (name, path, idx, total) =>
   )
 
 module.exports = {
+  reportConfigWasValid,
   reportCreatePageSuccess,
   reportCreatePaginatedPageSuccess,
 }

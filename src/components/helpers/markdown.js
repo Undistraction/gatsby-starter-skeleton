@@ -50,9 +50,9 @@ export const markdownItemImageSizes = view(
   compose(lMarkdownItemFrontmatter, lImageSizes)
 )
 export const frontmatterImageSizes = view(compose(lFrontmatter, lImageSizes))
-export const frontmatterDate = view(compose(lFrontmatter, lDate))
-export const frontmatterAuthor = view(compose(lFrontmatter, lAuthor))
-export const frontmatterCategory = view(compose(lFrontmatter, lCategory))
+export const frontmatterDate = view(compose(lFields, lDate))
+export const frontmatterAuthor = view(compose(lFields, lAuthor))
+export const frontmatterCategory = view(compose(lFields, lCategory))
 // Fields
 export const fieldsTitle = view(compose(lFields, lTitle))
 export const fieldsSlug = view(compose(lFields, lSlug))

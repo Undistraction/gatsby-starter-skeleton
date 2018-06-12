@@ -85,6 +85,7 @@
     "gh-pages": "^1.1.0",
     "github-pages": "^3.0.2",
     "jest": "^21.2.1",
+    "moment": "^2.22.2",
     "postcss-sass": "^0.2.0",
     "prettier": "^1.7.4",
     "rehype-react": "^3.0.2",

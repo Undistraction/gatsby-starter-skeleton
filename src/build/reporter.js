@@ -1,7 +1,7 @@
 const reporter = require(`gatsby-cli/lib/reporter`)
-const validatedConfig = require(`../config/validatedConfig`)
+const config = require(`../site-config`)
 
-const toMessage = message => `${validatedConfig().cli.emoji} ${message}`
+const toMessage = message => `${config.cli.emoji} ${message}`
 
 module.exports = {
   success: message => reporter.success(toMessage(message)),

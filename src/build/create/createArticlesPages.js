@@ -1,4 +1,4 @@
-const path = require(`path`)
+const { resolve } = require(`path`)
 const { throwBuildError } = require(`../utils/errors`)
 const { reportCreatePaginatedPageSuccess } = require(`../utils/reporter`)
 const { indexedPagePath } = require(`../utils/url`)
@@ -23,12 +23,11 @@ const createArticlesPage = (createPage, groupSize, articlesPath, total) => (
     groupIndex,
     allGroups
   )
-
   const pagePath = articlePagePath(groupIndex)
 
   const page = createPage({
     path: pagePath,
-    component: path.resolve(ARTICLES_TEMPLATE_PATH),
+    component: resolve(ARTICLES_TEMPLATE_PATH),
     context: {
       ...pagination,
     },

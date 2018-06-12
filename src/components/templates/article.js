@@ -17,10 +17,7 @@ export const query = graphql`
       }
       timeToRead
       frontmatter {
-        date(formatString: $dateFormat)
         keywords
-        category
-        author
         image {
           childImageSharp {
             sizes {
@@ -32,6 +29,9 @@ export const query = graphql`
       fields {
         title
         tags
+        date(formatString: $dateFormat)
+        category
+        author
         metadata {
           description
           title

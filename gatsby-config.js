@@ -1,4 +1,4 @@
-const validatedConfig = require(`./src/config/validatedConfig`)
+const config = require(`./src/site-config`)
 const feed = require(`./src/config/plugins/feed`)
 const sitemap = require(`./src/config/plugins/sitemap`)
 const robots = require(`./src/config/plugins/robots`)
@@ -7,7 +7,6 @@ const sourceFileSystem = require(`./src/config/plugins/sourceFilesystem`)
 const googleAnalytics = require(`./src/config/plugins/googleAnalytics`)
 const remark = require(`./src/config/plugins/remark`)
 
-const config = validatedConfig()
 const { seo } = config
 
 // -----------------------------------------------------------------------------

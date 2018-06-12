@@ -1,7 +1,8 @@
 const { compact } = require(`ramda-adjunct`)
-const { pair, pipe, path, map, uniq } = require(`ramda`)
-const { prefixWithFSlash, joinWithFSlash } = require(`./file`)
+const { apply, pair, pipe, path, map, uniq } = require(`ramda`)
+const { prefixWithFSlash } = require(`./file`)
 const { toSlug } = require(`./url`)
+const { join } = require(`path`)
 
 const collectUniqueCategories = pipe(
   map(path([`node`, `frontmatter`, `category`])),
@@ -11,7 +12,7 @@ const collectUniqueCategories = pipe(
 const toCategorySlug = pipe(
   toSlug,
   pair(`categories`),
-  joinWithFSlash,
+  apply(join),
   prefixWithFSlash
 )
 

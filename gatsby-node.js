@@ -1,15 +1,17 @@
+const parseFrontmatter = require(`./src/build/augment/parseFrontmatter`)
 const createCategoryPages = require(`./src/build/create/createCategoryPages`)
 const createResourcePages = require(`./src/build/create/createResourcePages`)
 const RESOURCE_TYPE = require(`./src/build/const/resourceType`)
+const { reportConfigWasValid } = require(`./src/build/utils/reporter`)
 const addResourceTypeToNode = require(`./src/build/augment/addResourceTypeToNode`)
 const { lensPath, set, pipe } = require(`ramda`)
-const validatedConfig = require(`./src/config/validatedConfig`)
+const config = require(`./src/site-config`)
+const validateConfig = require(`./src/config/validateConfig`)
 const createArticlesPages = require(`./src/build/create/createArticlesPages`)
 const createProjectsPage = require(`./src/build/create/createProjectsPage`)
 const createTagPages = require(`./src/build/create/createTagPages`)
 const addSlugToNode = require(`./src/build/augment/addSlugToNode`)
 const addMetadataToNode = require(`./src/build/augment/addMetadataToNode`)
-const addTagsToNode = require(`./src/build/augment/addTagsToNode`)
 const addOrphanlessTitleToNode = require(`./src/build/augment/addOrphanlessTitleToNode`)
 const {
   nodeIsMarkdownArticle,
@@ -21,13 +23,17 @@ const {
 } = require(`./src/build/const/templatePaths`)
 const { isTypeMarkdownRemark } = require(`./src/build/utils/node`)
 
-const { resources } = validatedConfig().structure
+const { resources } = config.structure
 
 // -----------------------------------------------------------------------------
 // Helpers
 // -----------------------------------------------------------------------------
 
-const augmentResource = (type, pathName, createNodeField, node) => {
+const augmentArticle = (type, pathName, createNodeField, node) => {
+  addMetadataToNode(node, createNodeField)
+}
+
+const augmentProject = (type, pathName, createNodeField, node) => {
   addSlugToNode(node, createNodeField, pathName)
   addMetadataToNode(node, createNodeField)
   addResourceTypeToNode(type, node, createNodeField)
@@ -39,7 +45,7 @@ const lDateFormat = lensPath([`context`, `dateFormat`])
 // page queries. This is the only way to get dynamic vars into the queries
 // because interpolation isn't supported.
 const createPageWithConfig = createPage =>
-  pipe(set(lDateFormat, validatedConfig().data.dateFormat), createPage)
+  pipe(set(lDateFormat, config.data.dateFormat), createPage)
 
 // -----------------------------------------------------------------------------
 // Gatsby Callbacks
@@ -48,15 +54,19 @@ const createPageWithConfig = createPage =>
 exports.onCreateNode = ({ node, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators
   if (nodeIsMarkdownArticle(node)) {
-    augmentResource(
+    parseFrontmatter(node, createNodeField, {
+      type: RESOURCE_TYPE.ARTICLE,
+      path: resources.articles.path,
+    })
+    augmentArticle(
       RESOURCE_TYPE.ARTICLE,
       resources.articles.path,
       createNodeField,
       node
     )
-    addTagsToNode(node, createNodeField)
+    console.log(node)
   } else if (nodeIsMarkdownProject(node)) {
-    augmentResource(
+    augmentProject(
       RESOURCE_TYPE.PROJECT,
       resources.projects.path,
       createNodeField,
@@ -66,6 +76,11 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
   if (isTypeMarkdownRemark(node)) {
     addOrphanlessTitleToNode(node, createNodeField)
   }
+}
+
+exports.onPreBootstrap = () => {
+  validateConfig(config)
+  reportConfigWasValid()
 }
 
 exports.createPages = ({ graphql, boundActionCreators }) => {

@@ -8,10 +8,10 @@ const {
   pluck,
 } = require(`ramda`)
 const { inRange } = require(`ramda-adjunct`)
-const validatedConfig = require(`../../config/validatedConfig`)
+const config = require(`../../site-config`)
 const { isTypeMarkdownRemark } = require(`./node`)
 
-const { resources } = validatedConfig().structure
+const { resources } = config.structure
 
 const ARTICLES_REGEXP = new RegExp(`content/${resources.articles.directory}/`)
 const PROJECT_REGEXP = new RegExp(`content/${resources.projects.directory}/`)
@@ -27,10 +27,8 @@ const nodeIsMarkdownArticle = node =>
 const nodeIsMarkdownProject = node =>
   isTypeMarkdownRemark(node) && isProjectByPath(node.fileAbsolutePath)
 
-const nodeIsMarkdownPage = node => {
-  console.log(`IS MARKDOWEN`, node.fileAbsolutePath)
-  return isTypeMarkdownRemark(node) && isPageByPath(node.fileAbsolutePath)
-}
+const nodeIsMarkdownPage = node =>
+  isTypeMarkdownRemark(node) && isPageByPath(node.fileAbsolutePath)
 
 const lFieldsSlug = lensPath([`fields`, `slug`])
 
