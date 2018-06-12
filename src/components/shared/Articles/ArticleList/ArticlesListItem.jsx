@@ -28,7 +28,8 @@ const Layout = styled.ul`
   > * :first-child {
     ${api({
       flex: [`0 0 100%`, `0 0 100%`, `0 0 33.3%`],
-    })}
+    })};
+  }
 `
 
 const ArticlesListItem = ({ article }) => {
