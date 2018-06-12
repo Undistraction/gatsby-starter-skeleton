@@ -15,15 +15,22 @@ const { resources } = validatedConfig().structure
 
 const ARTICLES_REGEXP = new RegExp(`content/${resources.articles.directory}/`)
 const PROJECT_REGEXP = new RegExp(`content/${resources.projects.directory}/`)
+const PAGE_REGEXP = new RegExp(`pages/`)
 
 const isArticleByPath = filepath => ARTICLES_REGEXP.test(filepath)
 const isProjectByPath = filepath => PROJECT_REGEXP.test(filepath)
+const isPageByPath = filepath => PAGE_REGEXP.test(filepath)
 
 const nodeIsMarkdownArticle = node =>
   isTypeMarkdownRemark(node) && isArticleByPath(node.fileAbsolutePath)
 
 const nodeIsMarkdownProject = node =>
   isTypeMarkdownRemark(node) && isProjectByPath(node.fileAbsolutePath)
+
+const nodeIsMarkdownPage = node => {
+  console.log(`IS MARKDOWEN`, node.fileAbsolutePath)
+  return isTypeMarkdownRemark(node) && isPageByPath(node.fileAbsolutePath)
+}
 
 const lFieldsSlug = lensPath([`fields`, `slug`])
 
@@ -41,6 +48,7 @@ const slugOfItemAtIndex = (idx, nodes) => {
 module.exports = {
   nodeIsMarkdownArticle,
   nodeIsMarkdownProject,
+  nodeIsMarkdownPage,
   markdownNodes,
   pluckNodes,
   markdownEdges,
