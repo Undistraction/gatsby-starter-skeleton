@@ -1,0 +1,12 @@
+{
+  "name": "gatsby-plugin-node-fields",
+  "version": "0.0.0",
+  "description": "A plugin for crating node fields",
+  "main": "index.js",
+  "author": "Pedr Browne",
+  "license": "MIT",
+  "dependencies": {
+    "ramda": "^0.25.0",
+    "ramda-adjunct": "^2.9.0"
+  }
+}

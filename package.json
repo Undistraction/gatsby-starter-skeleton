@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "cssapi": "^0.9.0",
+    "gatsby-node-fields-plugin": "https://github.com/Undistraction/gatsby-node-fields-plugin",
     "ramda": "^0.25.0",
     "ramda-adjunct": "^2.9.0",
     "react": "^16.3.2",

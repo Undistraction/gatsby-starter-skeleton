@@ -6,6 +6,7 @@ const favicon = require(`./src/config/plugins/favicon`)
 const sourceFileSystem = require(`./src/config/plugins/sourceFilesystem`)
 const googleAnalytics = require(`./src/config/plugins/googleAnalytics`)
 const remark = require(`./src/config/plugins/remark`)
+const nodeFields = require(`./src/config/plugins/nodeFields`)
 
 const { seo } = config
 
@@ -39,10 +40,14 @@ const plugins = [
   feed(),
   // Generate favicon from ./src/images/favicon/favicon.png
   favicon(),
+  // Add directories
   sourceFileSystem(config.structure.resources.articles.path),
   sourceFileSystem(config.structure.resources.projects.path),
   sourceFileSystem(`/pages`),
+  // Markdown related plugins
   remark(config),
+  // Attach and transform fields to nodes
+  nodeFields(),
 ]
 
 // Add support for Google analytics if a tracking code was defined in

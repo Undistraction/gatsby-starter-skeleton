@@ -4755,6 +4755,13 @@ gatsby-module-loader@^1.0.11:
     babel-runtime "^6.26.0"
     loader-utils "^0.2.16"
 
+"gatsby-node-fields-plugin@https://github.com/Undistraction/gatsby-node-fields-plugin":
+  version "0.0.0"
+  resolved "https://github.com/Undistraction/gatsby-node-fields-plugin#7a94edc25b0bb9c66e07eefa4caf7479170f8239"
+  dependencies:
+    ramda "^0.25.0"
+    ramda-adjunct "^2.5.0"
+
 gatsby-paginate@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/gatsby-paginate/-/gatsby-paginate-1.0.6.tgz#ebc619e8747ba48386b07227a35eb1044289bcb2"
