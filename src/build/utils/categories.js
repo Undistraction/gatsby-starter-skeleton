@@ -1,22 +1,21 @@
-const { compact } = require(`ramda-adjunct`)
-const { apply, pair, pipe, path, map, uniq } = require(`ramda`)
-const { prefixWithFSlash } = require(`./file`)
+const { compact, appendFlipped } = require(`ramda-adjunct`)
+const { apply, append, pipe, path, map, uniq } = require(`ramda`)
 const { toSlug } = require(`./url`)
-const { join } = require(`path`)
+const urlJoin = require(`url-join`)
 
 const collectUniqueCategories = pipe(
   map(path([`node`, `frontmatter`, `category`])),
   compact,
-  uniq
-)
-const toCategorySlug = pipe(
-  toSlug,
-  pair(`categories`),
-  apply(join),
-  prefixWithFSlash
+  uniq,
+  append(`Uncategorised`)
 )
 
-// eslint-disable-next-line import/prefer-default-export
+const toCategorySlug = pipe(
+  toSlug,
+  appendFlipped([`/`, `categories`]),
+  apply(urlJoin)
+)
+
 module.exports = {
   collectUniqueCategories,
   toCategorySlug,

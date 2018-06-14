@@ -1,6 +1,6 @@
 const { mergeRight } = require(`ramda-adjunct`)
 const { pick, path, apply, prop, either, pair, pipe } = require(`ramda`)
-const { join } = require(`path`)
+const urlJoin = require(`url-join`)
 const moment = require(`moment`)
 const { isTypeMarkdownRemark } = require(`../../utils/node`)
 const { preventOrphans } = require(`../../utils/string`)
@@ -54,7 +54,7 @@ const descriptors = [
           const resourcePath = nodeIsMarkdownArticle(node)
             ? context.resources.articles.path
             : context.resources.projects.path
-          return pipe(pair(resourcePath), apply(join))(value)
+          return pipe(pair(resourcePath), apply(urlJoin))(value)
         },
       },
     ],

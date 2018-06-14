@@ -1,8 +1,11 @@
 const NODE_TYPE = require(`../const/nodeType`)
+const { curry, equals } = require(`ramda`)
 
-const isNodeType = (node, nodeType) => node.internal.type === nodeType
+const isNodeType = curry((nodeType, node) =>
+  equals(node.internal.type, nodeType)
+)
 
-const isTypeMarkdownRemark = node => isNodeType(node, NODE_TYPE.MARKDOWN_REMARK)
+const isTypeMarkdownRemark = isNodeType(NODE_TYPE.MARKDOWN_REMARK)
 
 module.exports = {
   isTypeMarkdownRemark,
