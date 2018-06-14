@@ -1,5 +1,6 @@
 import { api, scope } from 'cssapi'
 import PropTypes from 'prop-types'
+import { isNotEmpty } from 'ramda-adjunct'
 import React from 'react'
 import styled from 'styled-components'
 import { categoryPath } from '../../../build/utils/url'
@@ -16,17 +17,26 @@ const Layout = styled(VLayout)`
   })};
 `
 
+const TagLabel = styled.div`
+  display: inline-block;
+`
+
 const ArticleFooterMeta = ({ article }) => {
   const category = frontmatterCategory(article)
+  const tags = fieldsTags(article)
   return (
     <Layout spacing="none">
       <div>
         Filed Under:{` `}
         <TextLink to={categoryPath(category)}>{category}</TextLink>
       </div>
-      <div>
-        Tagged With: <TagList tags={fieldsTags(article)} />
-      </div>
+      {isNotEmpty(tags) && (
+        <div>
+          <TagLabel>Tagged With:</TagLabel>
+          {` `}
+          <TagList tags={fieldsTags(article)} />
+        </div>
+      )}
     </Layout>
   )
 }

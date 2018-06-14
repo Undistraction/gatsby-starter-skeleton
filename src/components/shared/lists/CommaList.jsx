@@ -2,7 +2,7 @@ import { api, scope } from 'cssapi'
 import styled from 'styled-components'
 
 const CommaList = styled.ul`
-  display: inline-block;
+  display: inline;
 
   > li {
     display: inline-block;
