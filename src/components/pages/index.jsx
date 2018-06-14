@@ -1,14 +1,14 @@
 import graphql from 'graphql'
-import AboutPage from '../components/AboutPage'
+import HomePage from '../HomePage'
 
-export default AboutPage
+export default HomePage
 
 // Note: Ideally this would be in its own file and imported from a Page
 // Container, but Gatsby preprocesses the pages looking for a graphql call.
 // Moving it anywhere else results in an error.
 export const query = graphql`
-  query AboutPageQuery {
-    markdownRemark(frontmatter: { slug: { eq: "about" } }) {
+  query HomePageQuery {
+    markdownRemark(frontmatter: { slug: { eq: "home" } }) {
       htmlAst
       frontmatter {
         image {
@@ -23,7 +23,7 @@ export const query = graphql`
     site {
       siteMetadata {
         metadata {
-          about {
+          home {
             title
             description
             keywords
@@ -31,7 +31,7 @@ export const query = graphql`
         }
         structure {
           pages {
-            about {
+            home {
               title
             }
           }

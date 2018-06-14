@@ -12,8 +12,14 @@ const reportCreatePaginatedPageSuccess = (name, path, idx, total) =>
     `Created Paginated ${name} Page ${inc(idx)} of ${total} at ${path}`
   )
 
+const reportBuildSuccess = () => reporter.success(`Site was built successfully`)
+
+const reportBuildError = error => reporter.error(`Site build Failed: `, error)
+
 module.exports = {
   reportConfigWasValid,
   reportCreatePageSuccess,
   reportCreatePaginatedPageSuccess,
+  reportBuildSuccess,
+  reportBuildError,
 }

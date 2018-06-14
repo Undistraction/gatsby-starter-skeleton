@@ -1,5 +1,5 @@
 import graphql from 'graphql'
-import FourOhFourPage from '../components/FourOhFourPage'
+import FourOhFourPage from '../FourOhFourPage'
 
 export default FourOhFourPage
 

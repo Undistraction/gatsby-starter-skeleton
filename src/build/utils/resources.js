@@ -1,3 +1,4 @@
+const RESOURCE_TYPE = require(`../const/resourceType`)
 const {
   pipe,
   path,
@@ -30,6 +31,13 @@ const nodeIsMarkdownProject = node =>
 const nodeIsMarkdownPage = node =>
   isTypeMarkdownRemark(node) && isPageByPath(node.fileAbsolutePath)
 
+const resourceTypeForMarkdownNode = node => {
+  if (nodeIsMarkdownArticle(node)) return RESOURCE_TYPE.ARTICLE
+  if (nodeIsMarkdownProject(node)) return RESOURCE_TYPE.PROJECT
+  if (nodeIsMarkdownPage(node)) return RESOURCE_TYPE.PAGE
+  return `Unknown`
+}
+
 const lFieldsSlug = lensPath([`fields`, `slug`])
 
 const markdownEdges = path([`allMarkdownRemark`, `edges`])
@@ -44,11 +52,13 @@ const slugOfItemAtIndex = (idx, nodes) => {
 }
 
 module.exports = {
+  isArticleByPath,
   nodeIsMarkdownArticle,
   nodeIsMarkdownProject,
   nodeIsMarkdownPage,
   markdownNodes,
   pluckNodes,
   markdownEdges,
+  resourceTypeForMarkdownNode,
   slugOfItemAtIndex,
 }

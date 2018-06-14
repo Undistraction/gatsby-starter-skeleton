@@ -1,12 +1,13 @@
 const config = require(`./src/site-config`)
-const feed = require(`./src/config/plugins/feed`)
-const sitemap = require(`./src/config/plugins/sitemap`)
-const robots = require(`./src/config/plugins/robots`)
-const favicon = require(`./src/config/plugins/favicon`)
-const sourceFileSystem = require(`./src/config/plugins/sourceFilesystem`)
-const googleAnalytics = require(`./src/config/plugins/googleAnalytics`)
-const remark = require(`./src/config/plugins/remark`)
-const nodeFields = require(`./src/config/plugins/nodeFields`)
+const feed = require(`./src/build/config/plugins/feed`)
+const sitemap = require(`./src/build/config/plugins/sitemap`)
+const robots = require(`./src/build/config/plugins/robots`)
+const favicon = require(`./src/build/config/plugins/favicon`)
+const sourceFileSystem = require(`./src/build/config/plugins/sourceFilesystem`)
+const googleAnalytics = require(`./src/build/config/plugins/googleAnalytics`)
+const remark = require(`./src/build/config/plugins/remark`)
+const nodeFields = require(`./src/build/config/plugins/nodeFields`)
+const pageCreator = require(`./src/build/config/plugins/pageCreator`)
 
 const { seo } = config
 
@@ -32,6 +33,8 @@ const plugins = [
   // Audit page for accessibility issues
   // Toggle to check for accessiblity issues
   `gatsby-plugin-accessibilityjs`,
+  // Set directory for pages
+  ...pageCreator([`${__dirname}/src/components/pages`]),
   // Generate ./sitemap.xml for pages
   sitemap(),
   // Add robots.txt page

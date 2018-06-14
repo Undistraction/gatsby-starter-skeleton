@@ -122,7 +122,7 @@ const cli = Joi.object().keys({
 // Exports
 // -----------------------------------------------------------------------------
 
-module.exports = Joi.object().keys({
+const schema = Joi.object().keys({
   data,
   metadata,
   seo,
@@ -130,3 +130,5 @@ module.exports = Joi.object().keys({
   media,
   cli,
 })
+
+module.exports = schema

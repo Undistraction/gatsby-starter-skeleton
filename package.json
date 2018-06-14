@@ -35,7 +35,8 @@
   },
   "dependencies": {
     "cssapi": "^0.9.0",
-    "gatsby-node-fields-plugin": "https://github.com/Undistraction/gatsby-node-fields-plugin",
+    "gatsby-plugin-node-fields": "0.0.6",
+    "gatsby-plugin-page-creator": "^1.0.1",
     "ramda": "^0.25.0",
     "ramda-adjunct": "^2.9.0",
     "react": "^16.3.2",
@@ -54,7 +55,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-react": "^7.4.0",
-    "gatsby": "^1.9.259",
+    "gatsby": "^1.9.271",
     "gatsby-image": "^1.0.14",
     "gatsby-link": "^1.6.21",
     "gatsby-paginate": "^1.0.6",

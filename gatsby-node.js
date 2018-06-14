@@ -1,9 +1,13 @@
 const createCategoryPages = require(`./src/build/create/createCategoryPages`)
 const createResourcePages = require(`./src/build/create/createResourcePages`)
-const { reportConfigWasValid } = require(`./src/build/utils/reporter`)
+const {
+  reportConfigWasValid,
+  reportBuildError,
+  reportBuildSuccess,
+} = require(`./src/build/utils/reporter`)
 const { lensPath, set, pipe } = require(`ramda`)
 const config = require(`./src/site-config`)
-const validateConfig = require(`./src/config/validateConfig`)
+const validateConfig = require(`./src/build/config/validateConfig`)
 const createArticlesPages = require(`./src/build/create/createArticlesPages`)
 const createProjectsPage = require(`./src/build/create/createProjectsPage`)
 const createTagPages = require(`./src/build/create/createTagPages`)
@@ -28,7 +32,7 @@ const createPageWithConfig = createPage =>
   pipe(set(lDateFormat, config.data.dateFormat), createPage)
 
 // -----------------------------------------------------------------------------
-// Gatsby Callbacks
+// Validate Site Config
 // -----------------------------------------------------------------------------
 
 exports.onPreBootstrap = () => {
@@ -36,9 +40,17 @@ exports.onPreBootstrap = () => {
   reportConfigWasValid()
 }
 
+// -----------------------------------------------------------------------------
+// Create Site Pages
+// -----------------------------------------------------------------------------
+
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
   const decoratedCreatePage = createPageWithConfig(createPage)
+
+  // ---------------------------------------------------------------------------
+  // Articles
+  // ---------------------------------------------------------------------------
 
   const paginatedArticlePages = createArticlesPages(
     graphql,
@@ -57,17 +69,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     resources.articles.path
   )
 
-  const tagPages = createTagPages(
-    graphql,
-    decoratedCreatePage,
-    resources.articles.directory
-  )
-
-  const categoryPages = createCategoryPages(
-    graphql,
-    decoratedCreatePage,
-    resources.articles.directory
-  )
+  // ---------------------------------------------------------------------------
+  // Projects
+  // ---------------------------------------------------------------------------
 
   const projectsPage = createProjectsPage(
     graphql,
@@ -85,6 +89,24 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     resources.projects.path
   )
 
+  // ---------------------------------------------------------------------------
+  // Meta
+  // ---------------------------------------------------------------------------
+
+  const tagPages = createTagPages(
+    graphql,
+    decoratedCreatePage,
+    resources.articles.directory
+  )
+
+  const categoryPages = createCategoryPages(
+    graphql,
+    decoratedCreatePage,
+    resources.articles.directory
+  )
+
+  // ---------------------------------------------------------------------------
+
   return Promise.all([
     paginatedArticlePages,
     articlePages,
@@ -93,4 +115,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     projectsPage,
     projectPages,
   ])
+    .then(reportBuildSuccess)
+    .catch(reportBuildError)
 }
