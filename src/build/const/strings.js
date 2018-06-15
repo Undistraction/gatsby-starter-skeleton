@@ -1,5 +1,5 @@
-const UNCATEGORISED = `Uncategorised`
+const UNCATEGORISED_CATEGORY = `Uncategorised`
 
 module.exports = {
-  UNCATEGORISED,
+  UNCATEGORISED_CATEGORY,
 }

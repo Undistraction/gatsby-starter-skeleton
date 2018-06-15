@@ -24,15 +24,17 @@ const TagWrapper = styled(HList)`
   }
 `
 
+const CategoryWrapper = styled.div``
+
 const ArticleFooterMeta = ({ article }) => {
   const category = frontmatterCategory(article)
   const tags = fieldsTags(article)
   return (
     <Layout spacing="none">
-      <div>
+      <CategoryWrapper>
         Filed Under:{` `}
         <TextLink to={categoryPath(category)}>{category}</TextLink>
-      </div>
+      </CategoryWrapper>
       {isNotEmpty(tags) && (
         <TagWrapper spacing="tiny">
           <div>Tagged With:</div>
