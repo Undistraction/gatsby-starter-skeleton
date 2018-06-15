@@ -1,3 +1,4 @@
+const { UNCATEGORISED } = require(`../const/strings`)
 const { compact, appendFlipped } = require(`ramda-adjunct`)
 const { apply, append, pipe, path, map, uniq } = require(`ramda`)
 const { toSlug } = require(`./url`)
@@ -7,7 +8,7 @@ const collectUniqueCategories = pipe(
   map(path([`node`, `frontmatter`, `category`])),
   compact,
   uniq,
-  append(`Uncategorised`)
+  append(UNCATEGORISED)
 )
 
 const toCategorySlug = pipe(

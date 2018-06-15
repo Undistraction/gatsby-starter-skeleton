@@ -11,7 +11,6 @@ const collectUniqueTags = pipe(
 
 const toTagSlug = pipe(toSlug, appendFlipped([`/`, `tags`]), apply(urlJoin))
 
-// eslint-disable-next-line import/prefer-default-export
 module.exports = {
   collectUniqueTags,
   toTagSlug,

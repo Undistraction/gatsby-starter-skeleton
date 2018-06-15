@@ -1,5 +1,4 @@
 const { inc } = require(`ramda`)
-
 const reporter = require(`../reporter`)
 
 const reportConfigWasValid = () => reporter.success(`site-config.js was valid`)

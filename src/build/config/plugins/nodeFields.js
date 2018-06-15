@@ -1,3 +1,4 @@
+const { UNCATEGORISED } = require(`../../const/strings`)
 const { mergeRight } = require(`ramda-adjunct`)
 const { pick, path, apply, prop, either, pair, pipe } = require(`ramda`)
 const urlJoin = require(`url-join`)
@@ -75,7 +76,7 @@ const descriptors = [
       {
         name: `category`,
         getter: path([`frontmatter`, `category`]),
-        defaultValue: `Uncategorised`,
+        defaultValue: UNCATEGORISED,
       },
       {
         name: `tags`,
