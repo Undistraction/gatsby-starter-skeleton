@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import { isNotEmpty } from 'ramda-adjunct'
 import React from 'react'
 import styled from 'styled-components'
-import HList from '../../../../demo/project/src/components/shared/lists/HList'
 import { categoryPath } from '../../../build/utils/url'
 import { fieldsTags, frontmatterCategory } from '../../helpers/markdown'
 import defaultBorder from '../../styles/mixins/defaultBorder'
 import VLayout from '../layouts/VLayout'
 import TextLink from '../links/TextLink'
+import HList from '../lists/HList'
 import TagList from '../TagList'
 
 const Layout = styled(VLayout)`
