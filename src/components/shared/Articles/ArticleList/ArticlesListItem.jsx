@@ -34,6 +34,7 @@ const Layout = styled.ul`
 
 const ArticlesListItem = ({ article }) => {
   const title = fieldsTitle(article)
+  console.log(article)
   return (
     <Layout>
       <Link to={fieldsSlug(article)} title={title}>

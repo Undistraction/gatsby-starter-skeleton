@@ -30,7 +30,7 @@ module.exports = () => ({
           {
             allMarkdownRemark(
               limit: 1000,
-              sort: { order: DESC, fields: [frontmatter___date] },
+              sort: { order: DESC, fields: [fields___date] },
               filter: { fields: { type: { eq: "article" } } }
             ) {
               edges {

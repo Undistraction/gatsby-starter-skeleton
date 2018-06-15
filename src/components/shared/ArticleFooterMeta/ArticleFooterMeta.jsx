@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { isNotEmpty } from 'ramda-adjunct'
 import React from 'react'
 import styled from 'styled-components'
+import HList from '../../../../demo/project/src/components/shared/lists/HList'
 import { categoryPath } from '../../../build/utils/url'
 import { fieldsTags, frontmatterCategory } from '../../helpers/markdown'
 import defaultBorder from '../../styles/mixins/defaultBorder'
@@ -17,8 +18,10 @@ const Layout = styled(VLayout)`
   })};
 `
 
-const TagLabel = styled.div`
-  display: inline-block;
+const TagWrapper = styled(HList)`
+  > *:first-child {
+    flex: 0 0 auto;
+  }
 `
 
 const ArticleFooterMeta = ({ article }) => {
@@ -31,11 +34,11 @@ const ArticleFooterMeta = ({ article }) => {
         <TextLink to={categoryPath(category)}>{category}</TextLink>
       </div>
       {isNotEmpty(tags) && (
-        <div>
-          <TagLabel>Tagged With:</TagLabel>
+        <TagWrapper spacing="tiny">
+          <div>Tagged With:</div>
           {` `}
           <TagList tags={fieldsTags(article)} />
-        </div>
+        </TagWrapper>
       )}
     </Layout>
   )

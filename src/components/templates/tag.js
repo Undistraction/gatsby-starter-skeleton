@@ -4,10 +4,10 @@ import Template from '../TagPage'
 export default Template
 
 export const query = graphql`
-  query TagQuery($tag: String) {
+  query TagQuery($tag: String, $dateFormat: String) {
     allMarkdownRemark(
       limit: 100
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [fields___date], order: DESC }
       filter: { fields: { tags: { in: [$tag] } } }
     ) {
       totalCount
@@ -24,14 +24,18 @@ export const query = graphql`
           timeToRead
           fields {
             title
-            slug
             tags
-            type
+            date(formatString: $dateFormat)
+            category
+            author
+            slug
+            metadata {
+              description
+              title
+              keywords
+            }
           }
           frontmatter {
-            author
-            category
-            date
             image {
               childImageSharp {
                 sizes {

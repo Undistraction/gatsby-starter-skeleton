@@ -24,7 +24,7 @@ export const query = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [fields___date], order: DESC }
       filter: { fields: { type: { eq: "project" } } }
     ) {
       edges {

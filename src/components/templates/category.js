@@ -4,10 +4,10 @@ import Template from '../CategoryPage'
 export default Template
 
 export const query = graphql`
-  query CategoryQuery($category: String) {
+  query CategoryQuery($category: String, $dateFormat: String) {
     allMarkdownRemark(
       limit: 100
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [fields___date], order: DESC }
       filter: { frontmatter: { category: { eq: $category } } }
     ) {
       totalCount
@@ -24,14 +24,18 @@ export const query = graphql`
           timeToRead
           fields {
             title
-            slug
             tags
-            type
+            date(formatString: $dateFormat)
+            category
+            author
+            slug
+            metadata {
+              description
+              title
+              keywords
+            }
           }
           frontmatter {
-            author
-            category
-            date
             image {
               childImageSharp {
                 sizes {
