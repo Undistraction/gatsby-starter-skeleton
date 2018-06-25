@@ -15,11 +15,6 @@ const CategoryPage = ({ data, pathContext }) => {
   const metadata = categoryPageMetadata(data)
   const { category } = pathContext
 
-  console.log(`---------------------------------------------------------------`)
-  console.log(`Data`, data)
-  console.log(`Path Context`, pathContext)
-  console.log(`---------------------------------------------------------------`)
-
   const articles = markdownItemNodes(data)
 
   return (
