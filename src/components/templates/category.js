@@ -8,7 +8,7 @@ export const query = graphql`
     allMarkdownRemark(
       limit: 100
       sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { category: { eq: $category } } }
+      filter: { fields: { category: { eq: $category } } }
     ) {
       totalCount
       edges {
