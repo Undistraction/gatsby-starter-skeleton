@@ -9,7 +9,6 @@ import Page from '../shared/Page/Page'
 import SearchResults from '../shared/SearchResults'
 
 const TagPage = ({ data, pathContext }) => {
-  console.log(data)
   const metadata = tagPageMetadata(data)
   const { tag } = pathContext
   const articles = markdownItemNodes(data)
