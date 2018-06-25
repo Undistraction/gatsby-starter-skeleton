@@ -34,7 +34,7 @@
     "surge:deploy": "surge --domain gatsby-skeleton-starter.surge.sh public/"
   },
   "dependencies": {
-    "cssapi": "^0.9.0",
+    "cssapi": "0.9.7",
     "gatsby-plugin-node-fields": "0.0.6",
     "gatsby-plugin-page-creator": "^1.0.1",
     "ramda": "^0.25.0",
