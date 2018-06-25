@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>http://github.com/dylang/node-rss</link><generator>RSS for Node</generator><lastBuildDate>Tue, 05 Jun 2018 17:31:15 GMT</lastBuildDate><item><title><![CDATA[Fonts]]></title><description><![CDATA[There are two fonts used in the starter. Both fonts are loaded from Google
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>http://github.com/dylang/node-rss</link><generator>RSS for Node</generator><lastBuildDate>Mon, 25 Jun 2018 09:58:16 GMT</lastBuildDate><item><title><![CDATA[Fonts]]></title><description><![CDATA[There are two fonts used in the starter. Both fonts are loaded from Google
 fonts. Berkshire Swash  link  is
 used for the site and page…]]></description><link>https://example.com/articles/fonts</link><guid isPermaLink="false">https://example.com/articles/fonts</guid><pubDate>Thu, 12 Jul 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;There are two fonts used in the starter. Both fonts are loaded from Google
 fonts.&lt;/p&gt;
@@ -68,7 +68,7 @@ et diam urna. Vivamus dapibus diam et magna rhoncus bibendum.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
       &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&amp;quot;Double&amp;quot; and &amp;#39;Single&amp;#39;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
-&lt;p&gt;“Double” and ‘Sxample’&lt;/p&gt;
+&lt;p&gt;“Double” and ‘Single’&lt;/p&gt;
 &lt;h2&gt;Ellipses&lt;/h2&gt;
 &lt;p&gt;If you type three dots, they will be replaced by the ellipsis character:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
@@ -76,13 +76,17 @@ et diam urna. Vivamus dapibus diam et magna rhoncus bibendum.&lt;/p&gt;
       &lt;/div&gt;
 &lt;p&gt;And then…&lt;/p&gt;
 &lt;h2&gt;Dashes&lt;/h2&gt;
-&lt;p&gt;Two dashes in a row will be replaced by an en-dash:&lt;/p&gt;
+&lt;p&gt;The type of dash can be controlled by the number of dashes used:&lt;/p&gt;
+&lt;h3&gt;En Dash (Two dashes)&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
       &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;5--10&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
+&lt;p&gt;5–10&lt;/p&gt;
+&lt;h3&gt;Em Dash (Three dashes)&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;5---10&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
 &lt;p&gt;5—10&lt;/p&gt;
-&lt;p&gt;Em Dash&lt;/p&gt;
-&lt;hr&gt;
 &lt;h2&gt;Strikethrough&lt;/h2&gt;
 &lt;p&gt;Wrapping text in two tilde (~) characters will strike it through:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
@@ -534,7 +538,7 @@ markdown file you can create download links for those files like this:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
       &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;[Download this](pdfs/download-1.pdf) or [Download this](pdfs/download-2.pdf)&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
-&lt;p&gt;&lt;a href=&quot;/gatsby-skeleton-starter/downloads/download-1-5cfe8938c2429eafebcb12cf44ba07e2.pdf&quot;&gt;Download this&lt;/a&gt; or &lt;a href=&quot;/gatsby-skeleton-starter/downloads/download-2-6d75155e50a2d56745bf3cb7e0b13e15.pdf&quot;&gt;Download this&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/gatsby-starter-skeleton/downloads/download-1-5cfe8938c2429eafebcb12cf44ba07e2.pdf&quot;&gt;Download this&lt;/a&gt; or &lt;a href=&quot;/gatsby-starter-skeleton/downloads/download-2-6d75155e50a2d56745bf3cb7e0b13e15.pdf&quot;&gt;Download this&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Files will be served from &lt;code class=&quot;language-text&quot;&gt;/downloads&lt;/code&gt;.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1&gt;Plugins Used&lt;/h1&gt;
