@@ -19,6 +19,8 @@ const Layout = styled(VLayout)`
 `
 
 const TagWrapper = styled(HList)`
+  flex-wrap: nowrap;
+
   > *:first-child {
     flex: 0 0 auto;
   }

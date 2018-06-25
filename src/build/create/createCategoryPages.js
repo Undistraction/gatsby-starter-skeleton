@@ -11,6 +11,7 @@ const queryMarkdownNodesByDir = require(`../queries/queryMarkdownNodesByDir`)
 const { markdownEdges } = require(`../utils/resources`)
 
 const createCategoryPage = (category, categories, createPage) => {
+  console.log(`Category`, category)
   const slug = toCategorySlug(category)
 
   return new Promise((resolve, reject) => {
