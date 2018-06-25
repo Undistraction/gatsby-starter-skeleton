@@ -33,7 +33,8 @@
     "surge:deploy": "surge --domain gatsby-starter-skeleton.surge.sh public/",
     "publish:patch": "npm version patch && sudo npm publish",
     "publish:minor": "npm version minor && sudo npm publish",
-    "publish:major": "npm version major && sudo npm publish"
+    "publish:major": "npm version major && sudo npm publish",
+    "postpublish": "yarn demo"
   },
   "dependencies": {
     "cssapi": "0.9.7",
