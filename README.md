@@ -105,4 +105,4 @@ yarn demo
 There are also convenience commands for testing the demo locally:
 
 * `demo:dev`
-* `demo:serve
+* `demo:serve`
