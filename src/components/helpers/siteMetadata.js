@@ -6,12 +6,29 @@ import { compose, lensPath, lensProp, view } from 'ramda'
 
 const lSiteMetadata = lensPath([`site`, `siteMetadata`])
 const lStructure = lensPath([`structure`])
-const lPageMetadata = compose(lSiteMetadata, lensPath([`metadata`]))
+const lPageMetadata = compose(
+  lSiteMetadata,
+  lensPath([`metadata`])
+)
 const lPageTitleForPage = name =>
-  compose(lSiteMetadata, lStructure, lensPath([`pages`, name, `title`]))
+  compose(
+    lSiteMetadata,
+    lStructure,
+    lensPath([`pages`, name, `title`])
+  )
 const lPageTitleForResource = name =>
-  compose(lSiteMetadata, lStructure, lensPath([`resources`, name, `title`]))
-export const pageMetadata = name => view(compose(lPageMetadata, lensProp(name)))
+  compose(
+    lSiteMetadata,
+    lStructure,
+    lensPath([`resources`, name, `title`])
+  )
+export const pageMetadata = name =>
+  view(
+    compose(
+      lPageMetadata,
+      lensProp(name)
+    )
+  )
 
 // -----------------------------------------------------------------------------
 // Views

@@ -4,7 +4,7 @@
 
 import PropTypes from 'prop-types'
 import React from 'react'
-import MarkdownContent from '../../components/shared/MarkdownContent'
+import MarkdownContent from '../shared/MarkdownContent'
 import {
   markdownItemHTMLAst,
   markdownItemImageSizes,

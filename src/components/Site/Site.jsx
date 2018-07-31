@@ -15,15 +15,7 @@ export const Body = styled.div``
 export const Footer = styled.div``
 
 const Layout = styled.div`
-  // ---------------------------------------------------------------------------
-  // Global Styles
-  // ---------------------------------------------------------------------------
-
   ${globalStyles()};
-
-  // ---------------------------------------------------------------------------
-  // Component Styles
-  // ---------------------------------------------------------------------------
 
   ${flexVertical};
   ${blockCenterH};
@@ -62,7 +54,7 @@ const Site = ({ data, children }) => {
         <SiteHeader title={title} pages={pagesData} />
       </Header>
       <Body>
-        <SiteBody>{children()}</SiteBody>
+        <SiteBody>{children}</SiteBody>
       </Body>
       <Footer>
         <SiteFooter {...{ owner, startYear, showCredit }} />

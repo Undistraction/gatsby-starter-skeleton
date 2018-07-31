@@ -42,13 +42,21 @@ const lFieldsSlug = lensPath([`fields`, `slug`])
 
 const markdownEdges = path([`allMarkdownRemark`, `edges`])
 
-const markdownNodes = pipe(path([`allMarkdownRemark`, `edges`]), pluck(`node`))
+const markdownNodes = pipe(
+  path([`allMarkdownRemark`, `edges`]),
+  pluck(`node`)
+)
 
 const pluckNodes = pluck(`node`)
 
 const slugOfItemAtIndex = (idx, nodes) => {
   if (!inRange(0, nodes.length, idx)) return null
-  return view(compose(lensIndex(idx), lFieldsSlug))(nodes)
+  return view(
+    compose(
+      lensIndex(idx),
+      lFieldsSlug
+    )
+  )(nodes)
 }
 
 module.exports = {

@@ -7,6 +7,7 @@ import api from '../../styles/api'
 import defaultBorder from '../../styles/mixins/defaultBorder'
 import VLayout from '../layouts/VLayout'
 import TitlePrimary from '../titles/TitlePrimary'
+import DefaultLayout from '../../layouts/DefaultLayout'
 
 export const Body = styled(VLayout)`
   position: relative;
@@ -26,15 +27,17 @@ const PageTitle = styled(TitlePrimary)`
 `
 
 const Page = ({ title, children, imageSizes, nav }) => (
-  <VLayout>
-    {imageSizes && <Img sizes={imageSizes} />}
-    {nav && <NavWrapper>{nav}</NavWrapper>}
-    <Body>
-      <PageTitle>{title}</PageTitle>
-      {children}
-    </Body>
-    {nav && <NavWrapper>{nav}</NavWrapper>}
-  </VLayout>
+  <DefaultLayout>
+    <VLayout>
+      {imageSizes && <Img fluid={imageSizes} />}
+      {nav && <NavWrapper>{nav}</NavWrapper>}
+      <Body>
+        <PageTitle>{title}</PageTitle>
+        {children}
+      </Body>
+      {nav && <NavWrapper>{nav}</NavWrapper>}
+    </VLayout>
+  </DefaultLayout>
 )
 
 Page.propTypes = {

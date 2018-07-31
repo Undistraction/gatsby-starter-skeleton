@@ -90,11 +90,11 @@ This process consists of the following steps:
 
 There are granular commands for each step:
 
-* `demo:import`
-* `demo:copy`
-* `demo:build`
-* `demo:deploy`
-* `demo:open`
+- `demo:import`
+- `demo:copy`
+- `demo:build`
+- `demo:deploy`
+- `demo:open`
 
 Or the entire process can be run using:
 
@@ -104,5 +104,5 @@ yarn demo
 
 There are also convenience commands for testing the demo locally:
 
-* `demo:dev`
-* `demo:serve
+- `demo:dev`
+- `demo:serve

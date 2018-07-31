@@ -29,7 +29,10 @@ const lDateFormat = lensPath([`context`, `dateFormat`])
 // page queries. This is the only way to get dynamic vars into the queries
 // because interpolation isn't supported.
 const createPageWithConfig = createPage =>
-  pipe(set(lDateFormat, config.data.dateFormat), createPage)
+  pipe(
+    set(lDateFormat, config.data.dateFormat),
+    createPage
+  )
 
 // -----------------------------------------------------------------------------
 // Validate Site Config
@@ -44,8 +47,8 @@ exports.onPreBootstrap = () => {
 // Create Site Pages
 // -----------------------------------------------------------------------------
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
   const decoratedCreatePage = createPageWithConfig(createPage)
 
   // ---------------------------------------------------------------------------

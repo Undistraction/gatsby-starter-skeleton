@@ -1,4 +1,4 @@
-import graphql from 'graphql'
+import { graphql } from 'gatsby'
 import Template from '../TagPage'
 
 export default Template
@@ -38,8 +38,8 @@ export const query = graphql`
           frontmatter {
             image {
               childImageSharp {
-                sizes {
-                  ...GatsbyImageSharpSizes
+                fluid {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }

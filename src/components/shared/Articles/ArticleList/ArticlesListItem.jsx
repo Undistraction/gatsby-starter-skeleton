@@ -1,6 +1,6 @@
 import { api } from 'cssapi'
 import Img from 'gatsby-image'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
@@ -37,7 +37,7 @@ const ArticlesListItem = ({ article }) => {
   return (
     <Layout>
       <Link to={fieldsSlug(article)} title={title}>
-        <Img sizes={frontmatterImageSizes(article)} />
+        <Img fluid={frontmatterImageSizes(article)} />
       </Link>
       <VLayout spacing="small">
         <TextLink to={fieldsSlug(article)} title={title} underlineType="left">

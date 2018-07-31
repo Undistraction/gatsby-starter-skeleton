@@ -24,7 +24,10 @@ const isClassedAsFootnoteRef = test(/footnote-ref/)
 const isClassedAsFootnotes = test(/footnotes/)
 const idIsFootnote = test(/^fn-/)
 const lhasIdProp = lensSatisfies(idIsFootnote, lensPath([`props`, `id`]))
-const isListOfFootnotes = pipe(filter(both(isPlainObj, lhasIdProp)), isNotEmpty)
+const isListOfFootnotes = pipe(
+  filter(both(isPlainObj, lhasIdProp)),
+  isNotEmpty
+)
 
 /* eslint-disable react/display-name, react/prop-types */
 const resolveAnchor = theme => ({ className, href, ...rest }) => {

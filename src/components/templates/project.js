@@ -1,4 +1,4 @@
-import graphql from 'graphql'
+import { graphql } from 'gatsby'
 import Template from '../ProjectPage'
 
 export default Template
@@ -17,8 +17,8 @@ export const query = graphql`
         keywords
         image {
           childImageSharp {
-            sizes {
-              ...GatsbyImageSharpSizes
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
         }

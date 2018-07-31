@@ -1,5 +1,5 @@
 import Img from 'gatsby-image'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
@@ -36,7 +36,7 @@ const ResourceListItem = ({ resource }) => {
     <Layout>
       <Media>
         <Link to={slug} title={title}>
-          <Img sizes={frontmatterImageSizes(resource)} />
+          <Img fluid={frontmatterImageSizes(resource)} />
         </Link>
       </Media>
       <VLayout spacing="small">

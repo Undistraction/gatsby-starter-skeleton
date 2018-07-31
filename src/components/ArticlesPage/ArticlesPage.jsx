@@ -16,8 +16,8 @@ const Meta = styled.header`
   text-align: center;
 `
 
-const ArticlesPage = ({ data, pathContext }) => {
-  const { previousPath, nextPath } = pathContext
+const ArticlesPage = ({ data, pageContext }) => {
+  const { previousPath, nextPath } = pageContext
 
   const nav = (
     <NextPreviousNav
@@ -31,14 +31,14 @@ const ArticlesPage = ({ data, pathContext }) => {
   return (
     <Page title={pluralise(articlesResourceTitle(data))} nav={nav}>
       <Metadata {...articlesPageMetadata(data)} />
-      <Meta>{pagination(pathContext)}</Meta>
-      <Articles articles={markdownItemNodes(data)} pagination={pathContext} />
+      <Meta>{pagination(pageContext)}</Meta>
+      <Articles articles={markdownItemNodes(data)} pagination={pageContext} />
     </Page>
   )
 }
 ArticlesPage.propTypes = {
   data: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired,
 }
 
 export default ArticlesPage

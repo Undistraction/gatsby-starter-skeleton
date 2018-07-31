@@ -7,7 +7,13 @@ const splitOnComma = split(`,`)
 const trimAll = map(trim)
 
 const stringListToArray = pipe(
-  when(isNonEmptyString, compose(trimAll, splitOnComma)),
+  when(
+    isNonEmptyString,
+    compose(
+      trimAll,
+      splitOnComma
+    )
+  ),
   when(isNotArray, stubArray)
 )
 

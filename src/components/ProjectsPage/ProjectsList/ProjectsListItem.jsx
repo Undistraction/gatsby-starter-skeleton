@@ -34,7 +34,7 @@ const ProjectsListItem = ({ project }) => (
   <Layout to={fieldsSlug(project)}>
     <VLayout spacing="small">
       <ImgLayout>
-        <Img sizes={frontmatterImageSizes(project)} />
+        <Img fluid={frontmatterImageSizes(project)} />
       </ImgLayout>
       <Title>{fieldsTitle(project)}</Title>
     </VLayout>

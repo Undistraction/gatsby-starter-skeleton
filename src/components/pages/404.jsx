@@ -1,4 +1,4 @@
-import graphql from 'graphql'
+import { graphql } from 'gatsby'
 import FourOhFourPage from '../FourOhFourPage'
 
 export default FourOhFourPage

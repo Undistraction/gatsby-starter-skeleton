@@ -11,9 +11,9 @@ import Metadata from '../shared/Metadata'
 import Page from '../shared/Page/Page'
 import SearchResults from '../shared/SearchResults'
 
-const CategoryPage = ({ data, pathContext }) => {
+const CategoryPage = ({ data, pageContext }) => {
   const metadata = categoryPageMetadata(data)
-  const { category } = pathContext
+  const { category } = pageContext
 
   const articles = markdownItemNodes(data)
 
@@ -36,7 +36,7 @@ const CategoryPage = ({ data, pathContext }) => {
 
 CategoryPage.propTypes = {
   data: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired,
 }
 
 export default CategoryPage

@@ -55,7 +55,10 @@ const descriptors = [
           const resourcePath = nodeIsMarkdownArticle(node)
             ? context.resources.articles.path
             : context.resources.projects.path
-          return pipe(pair(resourcePath), apply(urlJoin))(value)
+          return pipe(
+            pair(resourcePath),
+            apply(urlJoin)
+          )(value)
         },
       },
     ],

@@ -8,9 +8,9 @@ import Metadata from '../shared/Metadata'
 import Page from '../shared/Page/Page'
 import SearchResults from '../shared/SearchResults'
 
-const TagPage = ({ data, pathContext }) => {
+const TagPage = ({ data, pageContext }) => {
   const metadata = tagPageMetadata(data)
-  const { tag } = pathContext
+  const { tag } = pageContext
   const articles = markdownItemNodes(data)
   return (
     <Page title={tagTitle(tag)}>
@@ -31,7 +31,7 @@ const TagPage = ({ data, pathContext }) => {
 
 TagPage.propTypes = {
   data: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired,
 }
 
 export default TagPage

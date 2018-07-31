@@ -1,4 +1,4 @@
-import graphql from 'graphql'
+import { graphql } from 'gatsby'
 import AboutPage from '../AboutPage'
 
 export default AboutPage
@@ -13,8 +13,8 @@ export const query = graphql`
       frontmatter {
         image {
           childImageSharp {
-            sizes {
-              ...GatsbyImageSharpSizes
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
         }

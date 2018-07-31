@@ -6,16 +6,16 @@ import Metadata from '../shared/Metadata'
 import Page from '../shared/Page/Page'
 import TagList from '../shared/TagList'
 
-const TagsPage = ({ data, pathContext }) => (
+const TagsPage = ({ data, pageContext }) => (
   <Page title={pluralise(tagsResourceTitle(data))}>
     <Metadata {...tagsPageMetadata(data)} />
-    <TagList tags={pathContext.tags} />
+    <TagList tags={pageContext.tags} />
   </Page>
 )
 
 TagsPage.propTypes = {
   data: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired,
 }
 
 export default TagsPage

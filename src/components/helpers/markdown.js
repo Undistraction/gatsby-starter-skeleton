@@ -22,11 +22,23 @@ const lHtmlAst = lensProp(`htmlAst`)
 const lMetadata = lensProp(`metadata`)
 const lNext = lensProp(`next`)
 const lPrevious = lensProp(`previous`)
-const lMarkdownItemFields = compose(lMarkdownItem, lFields)
-const lMarkdownItemMetadata = compose(lMarkdownItemFields, lMetadata)
-const lMarkdownItemFrontmatter = compose(lMarkdownItem, lFrontmatter)
-const lMarkdownItemTitle = compose(lMarkdownItemFields, lTitle)
-const lImageSizes = lensPath([`image`, `childImageSharp`, `sizes`])
+const lMarkdownItemFields = compose(
+  lMarkdownItem,
+  lFields
+)
+const lMarkdownItemMetadata = compose(
+  lMarkdownItemFields,
+  lMetadata
+)
+const lMarkdownItemFrontmatter = compose(
+  lMarkdownItem,
+  lFrontmatter
+)
+const lMarkdownItemTitle = compose(
+  lMarkdownItemFields,
+  lTitle
+)
+const lImageSizes = lensPath([`image`, `childImageSharp`, `fluid`])
 
 // -----------------------------------------------------------------------------
 // Views
@@ -35,28 +47,84 @@ const lImageSizes = lensPath([`image`, `childImageSharp`, `sizes`])
 // Item
 export const markdownItem = view(lMarkdownItem)
 export const markdownItems = view(lMarkdownItems)
-export const markdownItemNodes = compose(pluck(`node`), view(lMarkdownItems))
+export const markdownItemNodes = compose(
+  pluck(`node`),
+  view(lMarkdownItems)
+)
 export const markdownItemFrontmatter = view(lMarkdownItemFrontmatter)
 export const markdownItemMetadata = view(lMarkdownItemMetadata)
 export const markdownItemTitle = view(lMarkdownItemTitle)
-export const markdownItemHTMLAst = view(compose(lMarkdownItem, lHtmlAst))
+export const markdownItemHTMLAst = view(
+  compose(
+    lMarkdownItem,
+    lHtmlAst
+  )
+)
 
 // Item Fields
 export const timeToRead = view(lTimeToRead)
-export const wordCount = view(compose(lWordCount, lWords))
+export const wordCount = view(
+  compose(
+    lWordCount,
+    lWords
+  )
+)
 
 // Frontmatter
 export const markdownItemImageSizes = view(
-  compose(lMarkdownItemFrontmatter, lImageSizes)
+  compose(
+    lMarkdownItemFrontmatter,
+    lImageSizes
+  )
 )
-export const frontmatterImageSizes = view(compose(lFrontmatter, lImageSizes))
-export const frontmatterDate = view(compose(lFields, lDate))
-export const frontmatterAuthor = view(compose(lFields, lAuthor))
-export const frontmatterCategory = view(compose(lFields, lCategory))
+export const frontmatterImageSizes = view(
+  compose(
+    lFrontmatter,
+    lImageSizes
+  )
+)
+export const frontmatterDate = view(
+  compose(
+    lFields,
+    lDate
+  )
+)
+export const frontmatterAuthor = view(
+  compose(
+    lFields,
+    lAuthor
+  )
+)
+export const frontmatterCategory = view(
+  compose(
+    lFields,
+    lCategory
+  )
+)
 // Fields
-export const fieldsTitle = view(compose(lFields, lTitle))
-export const fieldsSlug = view(compose(lFields, lSlug))
-export const fieldsType = view(compose(lFields, lType))
-export const fieldsTags = view(compose(lFields, lTags))
+export const fieldsTitle = view(
+  compose(
+    lFields,
+    lTitle
+  )
+)
+export const fieldsSlug = view(
+  compose(
+    lFields,
+    lSlug
+  )
+)
+export const fieldsType = view(
+  compose(
+    lFields,
+    lType
+  )
+)
+export const fieldsTags = view(
+  compose(
+    lFields,
+    lTags
+  )
+)
 export const next = view(lNext)
 export const previous = view(lPrevious)
