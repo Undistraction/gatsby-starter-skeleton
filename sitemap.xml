@@ -19,8 +19,8 @@
 <url> <loc>https://example.com/gatsby-starter-skeleton/articles/rss</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://example.com/gatsby-starter-skeleton/projects</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://example.com/gatsby-starter-skeleton/projects/projec</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://example.com/gatsby-starter-skeleton/projects/project-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://example.com/gatsby-starter-skeleton/projects/project-3</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://example.com/gatsby-starter-skeleton/projects/project-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://example.com/gatsby-starter-skeleton/projects/project-4</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://example.com/gatsby-starter-skeleton/tags/fonts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://example.com/gatsby-starter-skeleton/tags/typography</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>

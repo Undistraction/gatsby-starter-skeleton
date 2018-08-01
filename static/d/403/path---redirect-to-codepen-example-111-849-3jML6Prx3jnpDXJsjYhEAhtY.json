@@ -1,0 +1,1 @@
+{"pageContext":{"action":"https://codepen.io/pen/define","payload":"{\"editors\":\"0010\",\"html\":\"<div id=\\\"root\\\"></div>\",\"js\":\"/* eslint-disable */\\nconst x = 2;\\nconst y = 3;\\nconst z = x + y;\\n\",\"js_external\":\"\",\"js_pre_processor\":\"babel\",\"layout\":\"left\"}"}}
